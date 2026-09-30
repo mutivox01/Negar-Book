@@ -113,7 +113,11 @@ const cardHTML = p => `
     </div>
     <div class="${state.view === 'list' ? 'flex-1' : 'px-[3px] py-3.5'}">
       <span class="text-[9px] text-[#9aa19e]">${p.catLabel}</span>
-      <h3 class="mt-1 text-xs font-extrabold">${p.title}</h3>
+      <h3 class="mt-1 text-xs font-extrabold">
+        <a href="./product.html">
+          ${p.title}
+        </a>
+      </h3>
       ${state.view === 'list' ? `<p class="mt-1 text-[10px] text-muted">${p.author}</p>` : ''}
       <div class="mt-3 flex items-center gap-2">
         <strong class="text-[10px] sm:text-xs">${toman(p.price)} <small class="text-[8px] font-medium text-[#9aa19e]">تومان</small></strong>
