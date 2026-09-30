@@ -1,0 +1,134 @@
+/* ===== Error Pages (400 / 401 / 500) ===== */
+
+.error-wrap {
+  animation: errFadeIn .5s ease-out both;
+}
+@keyframes errFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* حلقه‌های مداری پشت آیکون */
+.error-ring {
+  @apply absolute inset-0 rounded-full border border-border;
+  animation: errSpin 24s linear infinite;
+}
+.error-ring::before {
+  content: "";
+  @apply absolute top-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-ink;
+}
+.error-ring--2 {
+  @apply inset-[24px];
+  border-style: dashed;
+  animation-direction: reverse;
+  animation-duration: 32s;
+}
+.error-ring--2::before { @apply bg-accent; }
+
+@keyframes errSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* گوی مرکزی */
+.error-orb {
+  @apply relative z-[2] grid h-[120px] w-[120px] place-items-center rounded-full text-[54px]
+         text-white shadow-[0_20px_40px_rgba(0,0,0,.15)] transition-transform duration-200
+         sm:h-[140px] sm:w-[140px] sm:text-[64px];
+}
+.error-orb::after {
+  content: "";
+  @apply absolute inset-[-8px] rounded-full border-2 border-white/40;
+  animation: errPulse 2.4s ease-in-out infinite;
+}
+@keyframes errPulse {
+  0%, 100% { transform: scale(1); opacity: .6; }
+  50%      { transform: scale(1.08); opacity: .25; }
+}
+
+.error-orb--amber { background: linear-gradient(135deg, #e8b66a, #a5622c); }
+.error-orb--blue  { background: linear-gradient(135deg, #7d9bd1, #2c5aa0); }
+.error-orb--red   { background: linear-gradient(135deg, #d98a80, #a33226); }
+
+/* کاراکترهای شناور */
+.error-float {
+  @apply absolute z-[3] grid place-items-center rounded-full bg-white text-ink shadow-soft;
+  font-weight: 900;
+  min-width: 34px;
+  min-height: 34px;
+  animation: errFloat 3.6s ease-in-out infinite;
+}
+.error-float--1 { top: 6%;   right: 4%;  animation-delay: -0.4s; }
+.error-float--2 { bottom: 10%; left: 8%; animation-delay: -1.1s; }
+.error-float--3 { top: 30%;  left: -2%; animation-delay: -2.2s; min-width: 28px; min-height: 28px; }
+
+@keyframes errFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* عدد کد خطا */
+.error-code {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: clamp(64px, 12vw, 120px);
+  line-height: 1;
+  letter-spacing: -.08em;
+  background: linear-gradient(180deg, #17211f 30%, #d7f36b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: errCodeIn .7s ease-out both;
+}
+.error-code[data-tone="blue"] {
+  background: linear-gradient(180deg, #17211f 30%, #7d9bd1 100%);
+  -webkit-background-clip: text; background-clip: text;
+}
+.error-code[data-tone="red"] {
+  background: linear-gradient(180deg, #17211f 30%, #e66d5b 100%);
+  -webkit-background-clip: text; background-clip: text;
+}
+.error-code[data-tone="amber"] {
+  background: linear-gradient(180deg, #17211f 30%, #e8b66a 100%);
+  -webkit-background-clip: text; background-clip: text;
+}
+
+@keyframes errCodeIn {
+  from { opacity: 0; transform: scale(.9); filter: blur(6px); }
+  to   { opacity: 1; transform: scale(1);  filter: blur(0); }
+}
+
+/* دکمه‌ها */
+.btn-primary-error {
+  @apply inline-flex min-h-[46px] items-center gap-2 rounded-[13px] bg-accent px-5
+         text-[12px] font-extrabold text-ink transition hover:bg-[#e1fa87]
+         hover:-translate-y-px;
+}
+.btn-primary-error[data-tone="blue"] {
+  @apply bg-ink text-white hover:bg-[#0f1817];
+}
+.btn-primary-error[data-tone="red"] {
+  @apply bg-danger text-white hover:brightness-110;
+}
+
+.btn-secondary-error {
+  @apply inline-flex min-h-[46px] items-center gap-2 rounded-[13px] border border-border
+         bg-white px-5 text-[12px] font-extrabold text-ink transition
+         hover:border-[#cbd0c9] hover:-translate-y-px;
+}
+
+.btn-ghost-error {
+  @apply inline-flex min-h-[46px] items-center gap-2 rounded-[13px] px-4
+         text-[12px] font-extrabold text-muted transition hover:text-ink;
+}
+
+/* احترام به reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .error-ring,
+  .error-ring--2,
+  .error-orb::after,
+  .error-float {
+    animation: none !important;
+  }
+  .error-code { animation: none !important; }
+}
+

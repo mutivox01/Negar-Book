@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="پنل کاربری نِگار — سفارش‌ها، آدرس‌ها، علاقه‌مندی‌ها">
+  <title>حساب کاربری | نِگار</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+</head>
+
+<body class="bg-bg text-text antialiased">
+
+  <!-- Header ساده -->
+  <header class="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app">
+      <div class="flex h-20 items-center gap-4">
+        <button class="icon-btn lg:hidden" data-account-menu aria-label="منوی حساب">
+          <i class="ri-menu-4-line text-xl"></i>
+        </button>
+
+        <a href="../index.html" class="inline-flex shrink-0 items-center gap-2.5 text-ink" aria-label="صفحه اصلی">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+
+        <div class="mr-auto flex items-center gap-2">
+          <a href="./shop.html" class="icon-btn hidden sm:grid" aria-label="فروشگاه"><i class="ri-store-2-line"></i></a>
+          <button class="icon-btn" aria-label="علاقه‌مندی‌ها">
+            <i class="ri-heart-3-line"></i>
+            <span class="counter">3</span>
+          </button>
+          <button class="icon-btn" aria-label="سبد خرید" data-cart-toggle>
+            <i class="ri-shopping-bag-3-line"></i>
+            <span class="counter">2</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container-app py-8 sm:py-10">
+
+    <!-- ==================== سرصفحه پروفایل ==================== -->
+    <section class="profile-header">
+      <div class="profile-glow" aria-hidden="true"></div>
+      <div class="relative z-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <div class="flex items-center gap-4">
+          <div class="profile-avatar">س.م</div>
+          <div>
+            <span class="section-kicker !text-white/60">خوش آمدی</span>
+            <h1 class="text-[clamp(18px,2.4vw,24px)] font-black text-white">سارا محمدی</h1>
+            <p class="mt-1 text-[11px] text-white/60">
+              <i class="ri-phone-line"></i> ۰۹۱۲۳۴۵۶۷۸۹
+              <span class="mx-2 text-white/30">·</span>
+              <i class="ri-mail-line"></i> sara@example.com
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <a href="#orders" class="inline-flex min-h-[42px] items-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink hover:bg-[#e1fa87] transition">
+            <i class="ri-shopping-bag-3-line"></i> سفارش‌های من
+          </a>
+          <button type="button" id="logoutBtn" class="inline-flex min-h-[42px] items-center gap-2 rounded-[13px] border border-white/20 px-4 text-[11px] font-extrabold text-white hover:bg-white/5 transition">
+            <i class="ri-logout-box-r-line"></i> خروج
+          </button>
+        </div>
+      </div>
+
+      <!-- خلاصه آمار -->
+      <div class="relative z-10 mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div class="acc-stat">
+          <i class="ri-shopping-bag-3-line"></i>
+          <b>۱۲</b>
+          <small>سفارش موفق</small>
+        </div>
+        <div class="acc-stat">
+          <i class="ri-heart-3-line"></i>
+          <b>۸</b>
+          <small>علاقه‌مندی</small>
+        </div>
+        <div class="acc-stat">
+          <i class="ri-wallet-3-line"></i>
+          <b>۱۲۵,۰۰۰</b>
+          <small>اعتبار کیف پول (تومان)</small>
+        </div>
+        <div class="acc-stat">
+          <i class="ri-award-line"></i>
+          <b>نقره‌ای</b>
+          <small>سطح عضویت</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Layout ==================== -->
+    <div class="mt-6 grid gap-5 lg:grid-cols-[260px_1fr]">
+
+      <!-- ========== سایدبار ========== -->
+      <aside id="accountSidebar" class="acc-sidebar">
+        <div class="mb-4 flex items-center justify-between lg:hidden">
+          <b class="text-sm font-black">حساب کاربری</b>
+          <button class="icon-btn" data-account-close><i class="ri-close-line"></i></button>
+        </div>
+
+        <nav class="acc-nav">
+          <button class="acc-nav-item is-active" data-acc-tab="dashboard">
+            <i class="ri-dashboard-3-line"></i> داشبورد
+          </button>
+          <button class="acc-nav-item" data-acc-tab="orders">
+            <i class="ri-file-list-3-line"></i> سفارش‌های من
+            <span class="acc-nav-badge">۱۲</span>
+          </button>
+          <button class="acc-nav-item" data-acc-tab="addresses">
+            <i class="ri-map-pin-line"></i> آدرس‌ها
+          </button>
+          <button class="acc-nav-item" data-acc-tab="wishlist">
+            <i class="ri-heart-3-line"></i> علاقه‌مندی‌ها
+            <span class="acc-nav-badge">۸</span>
+          </button>
+          <button class="acc-nav-item" data-acc-tab="wallet">
+            <i class="ri-wallet-3-line"></i> کیف پول
+          </button>
+          <button class="acc-nav-item" data-acc-tab="settings">
+            <i class="ri-settings-3-line"></i> تنظیمات حساب
+          </button>
+          <button class="acc-nav-item is-danger" id="logoutBtn2">
+            <i class="ri-logout-box-r-line"></i> خروج از حساب
+          </button>
+        </nav>
+      </aside>
+
+      <!-- ========== محتوا ========== -->
+      <div class="min-w-0">
+
+        <!-- ========== تب داشبورد ========== -->
+        <section class="acc-panel is-active" data-acc-panel="dashboard">
+          <div class="grid gap-4">
+
+            <!-- فعالیت اخیر -->
+            <div class="acc-card">
+              <div class="acc-card-head">
+                <div>
+                  <span class="section-kicker">آخرین رویدادها</span>
+                  <h2 class="text-[15px] font-black">فعالیت اخیر شما</h2>
+                </div>
+                <a href="#" class="text-[11px] font-bold text-muted hover:text-ink">همه فعالیت‌ها</a>
+              </div>
+
+              <ul class="acc-timeline">
+                <li>
+                  <span class="acc-timeline-dot bg-accent"></span>
+                  <div>
+                    <b>سفارش «NG-934821» ارسال شد</b>
+                    <small>۲ ساعت پیش</small>
+                  </div>
+                </li>
+                <li>
+                  <span class="acc-timeline-dot bg-ink"></span>
+                  <div>
+                    <b>نظر شما برای «ملت عشق» تأیید شد</b>
+                    <small>دیروز، ۱۵:۲۲</small>
+                  </div>
+                </li>
+                <li>
+                  <span class="acc-timeline-dot bg-[#c0a17a]"></span>
+                  <div>
+                    <b>۳ کتاب به علاقه‌مندی‌ها اضافه کردید</b>
+                    <small>۳ روز پیش</small>
+                  </div>
+                </li>
+                <li>
+                  <span class="acc-timeline-dot bg-danger"></span>
+                  <div>
+                    <b>سفارش «NG-931244» تحویل داده شد</b>
+                    <small>۱ هفته پیش</small>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- پیشنهادها -->
+            <div class="acc-card">
+              <div class="acc-card-head">
+                <div>
+                  <span class="section-kicker">بر اساس سلیقه‌ی شما</span>
+                  <h2 class="text-[15px] font-black">پیشنهاد برای شما</h2>
+                </div>
+                <a href="./shop.html" class="text-[11px] font-bold text-muted hover:text-ink">مشاهده همه</a>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
+                <article class="product-card min-w-0">
+                  <div class="product-cover bg-gradient-to-br from-[#aebca7] to-[#334c45]">
+                    <span class="absolute top-3 right-3 z-[2] rounded-full bg-white/15 px-2.5 py-1.5 text-[8px] backdrop-blur-[10px]">تازه</span>
+                    <button class="wish"><i class="ri-heart-3-line"></i></button>
+                    <div class="relative z-[1] text-[15px] font-black leading-snug">درختی که<br>روی ماه رشد کرد</div>
+                  </div>
+                  <div class="px-[3px] py-3">
+                    <span class="text-[9px] text-[#9aa19e]">رمان</span>
+                    <h3 class="mt-1 text-[11px] font-extrabold">درختی که روی ماه رشد کرد</h3>
+                    <div class="mt-2 flex items-center gap-2">
+                      <strong class="text-[10px]">۲۸۹,۰۰۰</strong>
+                      <button class="add-cart"><i class="ri-add-line"></i></button>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="product-card min-w-0">
+                  <div class="product-cover bg-gradient-to-br from-[#c8a879] to-[#483b29]">
+                    <span class="absolute top-3 right-3 z-[2] rounded-full bg-white/15 px-2.5 py-1.5 text-[8px] backdrop-blur-[10px]">پرفروش</span>
+                    <button class="wish"><i class="ri-heart-3-line"></i></button>
+                    <div class="relative z-[1] text-[15px] font-black leading-snug">هنر<br>شفاف اندیشیدن</div>
+                  </div>
+                  <div class="px-[3px] py-3">
+                    <span class="text-[9px] text-[#9aa19e]">تفکر</span>
+                    <h3 class="mt-1 text-[11px] font-extrabold">هنر شفاف اندیشیدن</h3>
+                    <div class="mt-2 flex items-center gap-2">
+                      <strong class="text-[10px]">۳۴۵,۰۰۰</strong>
+                      <button class="add-cart"><i class="ri-add-line"></i></button>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="product-card min-w-0">
+                  <div class="product-cover bg-gradient-to-br from-[#c58a80] to-[#4a221f]">
+                    <button class="wish"><i class="ri-heart-3-line"></i></button>
+                    <div class="relative z-[1] text-[15px] font-black leading-snug">ملت<br>عشق</div>
+                  </div>
+                  <div class="px-[3px] py-3">
+                    <span class="text-[9px] text-[#9aa19e]">رمان</span>
+                    <h3 class="mt-1 text-[11px] font-extrabold">ملت عشق</h3>
+                    <div class="mt-2 flex items-center gap-2">
+                      <strong class="text-[10px]">۳۹۵,۰۰۰</strong>
+                      <button class="add-cart"><i class="ri-add-line"></i></button>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="product-card min-w-0">
+                  <div class="product-cover bg-gradient-to-br from-[#8d98c5] to-[#2f3656]">
+                    <button class="wish"><i class="ri-heart-3-line"></i></button>
+                    <div class="relative z-[1] text-[15px] font-black leading-snug">چرا<br>می‌خوانیم؟</div>
+                  </div>
+                  <div class="px-[3px] py-3">
+                    <span class="text-[9px] text-[#9aa19e]">توسعه فردی</span>
+                    <h3 class="mt-1 text-[11px] font-extrabold">چرا می‌خوانیم؟</h3>
+                    <div class="mt-2 flex items-center gap-2">
+                      <strong class="text-[10px]">۲۴۰,۰۰۰</strong>
+                      <button class="add-cart"><i class="ri-add-line"></i></button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ========== تب سفارش‌ها ========== -->
+        <section class="acc-panel" data-acc-panel="orders" id="orders">
+          <div class="acc-card">
+            <div class="acc-card-head">
+              <div>
+                <span class="section-kicker">تاریخچه</span>
+                <h2 class="text-[15px] font-black">سفارش‌های من</h2>
+              </div>
+
+              <div class="flex items-center gap-1.5 rounded-[13px] border border-border bg-white p-1 text-[10px]">
+                <button class="view-chip is-active" data-order-status="all">همه</button>
+                <button class="view-chip" data-order-status="pending">در انتظار</button>
+                <button class="view-chip" data-order-status="shipped">ارسال‌شده</button>
+                <button class="view-chip" data-order-status="delivered">تحویل‌شده</button>
+                <button class="view-chip" data-order-status="cancelled">لغو‌شده</button>
+              </div>
+            </div>
+
+            <div id="ordersList" class="space-y-3">
+              <!-- JS -->
+            </div>
+
+            <div id="ordersEmpty" class="hidden flex-col items-center gap-2 py-10 text-center">
+              <i class="ri-inbox-line text-[40px] text-muted"></i>
+              <b class="text-sm">سفارشی در این وضعیت وجود ندارد</b>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== تب آدرس‌ها ========== -->
+        <section class="acc-panel" data-acc-panel="addresses">
+          <div class="acc-card">
+            <div class="acc-card-head">
+              <div>
+                <span class="section-kicker">آدرس‌های ثبت‌شده</span>
+                <h2 class="text-[15px] font-black">آدرس‌های من</h2>
+              </div>
+              <button type="button" class="inline-flex min-h-[40px] items-center gap-2 rounded-[13px] bg-ink px-4 text-[11px] font-extrabold text-white hover:bg-[#0f1817] transition" data-address-new>
+                <i class="ri-add-line"></i> افزودن آدرس
+              </button>
+            </div>
+
+            <div id="addressList" class="grid gap-3 sm:grid-cols-2">
+              <!-- JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== تب علاقه‌مندی ========== -->
+        <section class="acc-panel" data-acc-panel="wishlist">
+          <div class="acc-card">
+            <div class="acc-card-head">
+              <div>
+                <span class="section-kicker">لیست شما</span>
+                <h2 class="text-[15px] font-black">علاقه‌مندی‌ها</h2>
+              </div>
+              <span class="rounded-full bg-bg px-2.5 py-1 text-[10px] font-bold" id="wishlistCount">۸ کالا</span>
+            </div>
+
+            <div id="wishlistGrid" class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+              <!-- JS -->
+            </div>
+
+            <div id="wishlistEmpty" class="hidden flex-col items-center gap-2 py-10 text-center">
+              <i class="ri-heart-3-line text-[40px] text-muted"></i>
+              <b class="text-sm">هنوز چیزی به علاقه‌مندی‌ها اضافه نکرده‌اید</b>
+              <a href="./shop.html" class="mt-2 inline-flex min-h-[42px] items-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink">
+                <i class="ri-store-2-line"></i> رفتن به فروشگاه
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== تب کیف پول ========== -->
+        <section class="acc-panel" data-acc-panel="wallet">
+          <div class="grid gap-4">
+
+            <div class="wallet-card">
+              <div class="relative z-10">
+                <span class="section-kicker !text-white/60">موجودی فعلی</span>
+                <div class="mt-2 flex items-end gap-2">
+                  <b class="text-[38px] font-black leading-none">۱۲۵,۰۰۰</b>
+                  <small class="mb-1 text-[12px] text-white/60">تومان</small>
+                </div>
+                <p class="mt-3 max-w-sm text-[11px] leading-6 text-white/60">
+                  با شارژ کیف پول، خریدهای بعدی خود را سریع‌تر و بدون نیاز به درگاه بانکی انجام دهید.
+                </p>
+
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <button type="button" class="inline-flex min-h-[44px] items-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink hover:bg-[#e1fa87] transition">
+                    <i class="ri-add-line"></i> شارژ کیف پول
+                  </button>
+                  <button type="button" class="inline-flex min-h-[44px] items-center gap-2 rounded-[13px] border border-white/20 px-4 text-[11px] font-extrabold text-white hover:bg-white/5 transition">
+                    <i class="ri-history-line"></i> تاریخچه تراکنش‌ها
+                  </button>
+                </div>
+              </div>
+
+              <div class="wallet-ornament" aria-hidden="true">
+                <i class="ri-wallet-3-line"></i>
+              </div>
+            </div>
+
+            <div class="acc-card">
+              <div class="acc-card-head">
+                <div>
+                  <span class="section-kicker">آخرین تراکنش‌ها</span>
+                  <h2 class="text-[15px] font-black">تاریخچه</h2>
+                </div>
+              </div>
+
+              <ul class="wallet-tx">
+                <li class="wallet-tx-item">
+                  <span class="wallet-tx-icon is-plus"><i class="ri-add-line"></i></span>
+                  <div class="flex-1">
+                    <b class="text-[12px]">شارژ کیف پول</b>
+                    <small class="block text-[10px] text-muted">۱۴۰۵/۰۵/۱۲ — ۱۴:۳۲</small>
+                  </div>
+                  <span class="wallet-tx-amount is-plus">+ ۱۰۰,۰۰۰ تومان</span>
+                </li>
+                <li class="wallet-tx-item">
+                  <span class="wallet-tx-icon is-minus"><i class="ri-shopping-bag-3-line"></i></span>
+                  <div class="flex-1">
+                    <b class="text-[12px]">خرید سفارش NG-934821</b>
+                    <small class="block text-[10px] text-muted">۱۴۰۵/۰۵/۰۸ — ۰۹:۱۲</small>
+                  </div>
+                  <span class="wallet-tx-amount is-minus">− ۲۸۹,۰۰۰ تومان</span>
+                </li>
+                <li class="wallet-tx-item">
+                  <span class="wallet-tx-icon is-plus"><i class="ri-refund-2-line"></i></span>
+                  <div class="flex-1">
+                    <b class="text-[12px]">بازگشت وجه سفارش لغو‌شده</b>
+                    <small class="block text-[10px] text-muted">۱۴۰۵/۰۵/۰۲ — ۱۷:۴۵</small>
+                  </div>
+                  <span class="wallet-tx-amount is-plus">+ ۱۹۸,۰۰۰ تومان</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ========== تب تنظیمات ========== -->
+        <section class="acc-panel" data-acc-panel="settings">
+          <div class="grid gap-4">
+
+            <div class="acc-card">
+              <div class="acc-card-head">
+                <div>
+                  <span class="section-kicker">اطلاعات شخصی</span>
+                  <h2 class="text-[15px] font-black">پروفایل</h2>
+                </div>
+              </div>
+
+              <form id="profileForm" class="grid gap-3 sm:grid-cols-2">
+                <div class="field">
+                  <label for="pFirstName">نام</label>
+                  <input id="pFirstName" type="text" value="سارا">
+                </div>
+                <div class="field">
+                  <label for="pLastName">نام خانوادگی</label>
+                  <input id="pLastName" type="text" value="محمدی">
+                </div>
+                <div class="field">
+                  <label for="pPhone">شماره موبایل</label>
+                  <input id="pPhone" type="tel" dir="ltr" class="text-right" value="09123456789">
+                </div>
+                <div class="field">
+                  <label for="pEmail">ایمیل</label>
+                  <input id="pEmail" type="email" dir="ltr" class="text-right" value="sara@example.com">
+                </div>
+                <div class="field sm:col-span-2">
+                  <label for="pBio">درباره من</label>
+                  <textarea id="pBio" rows="3" placeholder="چند خط درباره‌ی خودتان بنویسید..."></textarea>
+                </div>
+                <div class="flex justify-end sm:col-span-2">
+                  <button type="submit" class="inline-flex min-h-[44px] items-center gap-2 rounded-[13px] bg-accent px-5 text-[11px] font-extrabold text-ink hover:bg-[#e1fa87] transition">
+                    <i class="ri-save-line"></i> ذخیره تغییرات
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div class="acc-card">
+              <div class="acc-card-head">
+                <div>
+                  <span class="section-kicker">امنیت</span>
+                  <h2 class="text-[15px] font-black">تغییر رمز عبور</h2>
+                </div>
+              </div>
+
+              <form id="passwordForm" class="grid gap-3 sm:grid-cols-3">
+                <div class="field">
+                  <label for="pOld">رمز فعلی</label>
+                  <input id="pOld" type="password" placeholder="••••••••">
+                </div>
+                <div class="field">
+                  <label for="pNew">رمز جدید</label>
+                  <input id="pNew" type="password" placeholder="••••••••">
+                </div>
+                <div class="field">
+                  <label for="pConfirm">تکرار رمز جدید</label>
+                  <input id="pConfirm" type="password" placeholder="••••••••">
+                </div>
+                <div class="flex justify-end sm:col-span-3">
+                  <button type="submit" class="inline-flex min-h-[44px] items-center gap-2 rounded-[13px] bg-ink px-5 text-[11px] font-extrabold text-white hover:bg-[#0f1817] transition">
+                    <i class="ri-lock-password-line"></i> بروزرسانی رمز
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div class="acc-card">
+              <div class="acc-card-head">
+                <div>
+                  <span class="section-kicker">اعلان‌ها</span>
+                  <h2 class="text-[15px] font-black">ترجیحات اطلاع‌رسانی</h2>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label class="toggle-row">
+                  <span>
+                    <b>اطلاع از سفارش‌ها</b>
+                    <small>پیامک برای هر تغییر وضعیت سفارش</small>
+                  </span>
+                  <input type="checkbox" checked>
+                  <span class="toggle"></span>
+                </label>
+                <label class="toggle-row">
+                  <span>
+                    <b>خبرنامه کتاب‌های تازه</b>
+                    <small>هر هفته، یک ایمیل از تازه‌های نشر</small>
+                  </span>
+                  <input type="checkbox" checked>
+                  <span class="toggle"></span>
+                </label>
+                <label class="toggle-row">
+                  <span>
+                    <b>پیشنهادهای شخصی‌سازی‌شده</b>
+                    <small>بر اساس علاقه‌مندی‌ها و خریدهای قبلی</small>
+                  </span>
+                  <input type="checkbox">
+                  <span class="toggle"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="acc-card acc-card--danger">
+              <div class="acc-card-head">
+                <div>
+                  <span class="section-kicker !text-danger">منطقه حساس</span>
+                  <h2 class="text-[15px] font-black">حذف حساب کاربری</h2>
+                </div>
+              </div>
+              <p class="text-[11px] leading-6 text-muted">
+                با حذف حساب، همه اطلاعات سفارش‌ها، آدرس‌ها و علاقه‌مندی‌های شما برای همیشه پاک می‌شود.
+                این عملیات قابل بازگشت نیست.
+              </p>
+              <button type="button" class="mt-4 inline-flex min-h-[44px] items-center gap-2 rounded-[13px] border border-danger px-5 text-[11px] font-extrabold text-danger hover:bg-danger hover:text-white transition">
+                <i class="ri-delete-bin-6-line"></i> درخواست حذف حساب
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer ساده -->
+  <footer class="mt-12 border-t border-border bg-white">
+    <div class="container-app flex flex-col items-center justify-between gap-3 py-6 text-[11px] text-muted sm:flex-row">
+      <span>© ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.</span>
+      <div class="flex items-center gap-4">
+        <a href="./about.html" class="hover:text-ink">درباره ما</a>
+        <a href="#" class="hover:text-ink">حریم خصوصی</a>
+        <a href="#" class="hover:text-ink">تماس با ما</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div id="cartPanel" class="fixed top-0 right-0 bottom-0 z-[80] flex w-[min(390px,92vw)] translate-x-[105%] flex-col bg-white shadow-[-20px_0_70px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <div><b class="text-lg">سبد خرید</b><span class="mr-2 text-xs text-muted">۲ کالا</span></div>
+      <button class="icon-btn" data-cart-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="space-y-3 p-5">
+      <div class="flex items-center gap-3 rounded-2xl border border-border p-2">
+        <div class="mini-cover flex-[0_0_58px] !min-h-[78px] bg-[#657c71]">روایت<br>یک زندگی</div>
+        <div><b class="block text-[10px]">روایت یک زندگی</b><span class="mt-1.5 block text-[9px] text-[#909895]">۲۷۵,۰۰۰ تومان</span></div>
+      </div>
+    </div>
+    <div class="mt-auto border-t border-border p-5">
+      <div class="mb-4 flex justify-between"><span>جمع کل</span><b>۲۷۵,۰۰۰ تومان</b></div>
+      <a href="./cart.html" class="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink">
+        مشاهده سبد خرید
+      </a>
+    </div>
+  </div>
+  <div id="cartOverlay" class="fixed inset-0 z-[55] hidden bg-black/30" data-cart-close></div>
+
+  <!-- Modal آدرس -->
+  <div id="addressModal" class="fixed inset-0 z-[90] hidden items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4">
+    <div class="review-modal">
+      <header class="flex items-center justify-between border-b border-border p-5">
+        <b class="text-sm font-black">افزودن آدرس جدید</b>
+        <button class="icon-btn" data-address-close><i class="ri-close-line"></i></button>
+      </header>
+      <form id="addressForm" class="space-y-3 p-5">
+        <div class="field">
+          <label for="aTitle">عنوان آدرس</label>
+          <input id="aTitle" type="text" placeholder="مثلاً خانه، محل کار..." required>
+        </div>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <div class="field">
+            <label for="aProvince">استان</label>
+            <input id="aProvince" type="text" placeholder="تهران" required>
+          </div>
+          <div class="field">
+            <label for="aCity">شهر</label>
+            <input id="aCity" type="text" placeholder="تهران" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="aAddress">نشانی کامل</label>
+          <textarea id="aAddress" rows="3" placeholder="خیابان، کوچه، پلاک..." required></textarea>
+        </div>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <div class="field">
+            <label for="aPostal">کد پستی</label>
+            <input id="aPostal" type="text" dir="ltr" class="text-right" placeholder="۱۰ رقم" required>
+          </div>
+          <div class="field">
+            <label for="aPhone">شماره تماس</label>
+            <input id="aPhone" type="tel" dir="ltr" class="text-right" placeholder="۰۹۱۲..." required>
+          </div>
+        </div>
+        <div class="flex gap-2 pt-2">
+          <button type="button" class="pdp-ghost-btn flex-1 justify-center" data-address-close>انصراف</button>
+          <button type="submit" class="inline-flex min-h-[46px] flex-1 items-center justify-center gap-2 rounded-[13px] bg-ink px-4 text-[12px] font-extrabold text-white hover:bg-[#0f1817] transition">
+            <i class="ri-save-line"></i> ذخیره آدرس
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================
+      Account Modals
+  ========================================================= -->
+
+  <!-- Generic Modal -->
+  <div id="accountModal"
+      class="fixed inset-0 z-[110] hidden items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4">
+
+    <div class="account-modal w-full max-w-[680px] max-h-[90vh] overflow-hidden rounded-t-[24px] bg-white shadow-2xl sm:rounded-[24px]">
+
+      <header class="flex items-center justify-between border-b border-border p-5">
+        <div>
+          <span id="modalKicker" class="section-kicker"></span>
+          <h3 id="modalTitle" class="mt-1 text-[16px] font-black"></h3>
+        </div>
+
+        <button type="button"
+                class="icon-btn"
+                data-modal-close
+                aria-label="بستن">
+          <i class="ri-close-line"></i>
+        </button>
+      </header>
+
+      <div id="modalBody" class="max-h-[calc(90vh-90px)] overflow-y-auto p-5">
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+      Order Detail Modal
+  ========================================================= -->
+
+  <div id="orderDetailModal"
+      class="fixed inset-0 z-[105] hidden items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4">
+
+    <div class="w-full max-w-[760px] max-h-[92vh] overflow-hidden rounded-t-[24px] bg-white shadow-2xl sm:rounded-[24px]">
+
+      <header class="flex items-center justify-between border-b border-border p-5">
+        <div>
+          <span class="section-kicker">جزئیات سفارش</span>
+          <h3 id="orderDetailTitle" class="mt-1 text-[16px] font-black"></h3>
+        </div>
+
+        <button type="button"
+                class="icon-btn"
+                data-order-detail-close>
+          <i class="ri-close-line"></i>
+        </button>
+      </header>
+
+      <div id="orderDetailBody"
+          class="max-h-[calc(92vh-80px)] overflow-y-auto p-5">
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+      Wallet Charge Modal
+  ========================================================= -->
+
+  <div id="walletChargeModal"
+      class="fixed inset-0 z-[105] hidden items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4">
+
+    <div class="w-full max-w-[520px] overflow-hidden rounded-t-[24px] bg-white shadow-2xl sm:rounded-[24px]">
+
+      <header class="flex items-center justify-between border-b border-border p-5">
+        <div>
+          <span class="section-kicker">کیف پول</span>
+          <h3 class="mt-1 text-[16px] font-black">شارژ کیف پول</h3>
+        </div>
+
+        <button type="button"
+                class="icon-btn"
+                data-wallet-close>
+          <i class="ri-close-line"></i>
+        </button>
+      </header>
+
+      <form id="walletChargeForm" class="space-y-4 p-5">
+
+        <div>
+          <label class="mb-2 block text-[11px] font-bold">
+            مبلغ شارژ
+          </label>
+
+          <div class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <button type="button"
+                    class="wallet-amount"
+                    data-wallet-amount="100000">
+              ۱۰۰ هزار
+            </button>
+
+            <button type="button"
+                    class="wallet-amount"
+                    data-wallet-amount="200000">
+              ۲۰۰ هزار
+            </button>
+
+            <button type="button"
+                    class="wallet-amount"
+                    data-wallet-amount="500000">
+              ۵۰۰ هزار
+            </button>
+
+            <button type="button"
+                    class="wallet-amount"
+                    data-wallet-amount="1000000">
+              ۱ میلیون
+            </button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="walletAmount">
+            مبلغ دلخواه
+          </label>
+
+          <div class="relative">
+            <input id="walletAmount"
+                  type="number"
+                  min="10000"
+                  step="10000"
+                  placeholder="مثلاً ۲۵۰۰۰۰">
+
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[10px] text-muted">
+              تومان
+            </span>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-bg p-4 text-[11px] leading-6 text-muted">
+          حداقل مبلغ شارژ ۱۰,۰۰۰ تومان است.
+        </div>
+
+        <div class="flex gap-2">
+          <button type="button"
+                  class="pdp-ghost-btn flex-1 justify-center"
+                  data-wallet-close>
+            انصراف
+          </button>
+
+          <button type="submit"
+                  class="inline-flex min-h-[46px] flex-1 items-center justify-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink">
+            <i class="ri-secure-payment-line"></i>
+            ادامه پرداخت
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+      Delete Account Modal
+  ========================================================= -->
+
+  <div id="deleteAccountModal"
+      class="fixed inset-0 z-[120] hidden items-end justify-center bg-black/50 backdrop-blur-sm sm:items-center sm:p-4">
+
+    <div class="w-full max-w-[480px] overflow-hidden rounded-t-[24px] bg-white shadow-2xl sm:rounded-[24px]">
+
+      <div class="p-6 text-center">
+
+        <div class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-red-50 text-danger">
+          <i class="ri-delete-bin-6-line text-2xl"></i>
+        </div>
+
+        <h3 class="mt-4 text-[17px] font-black">
+          حذف حساب کاربری
+        </h3>
+
+        <p class="mt-2 text-[11px] leading-7 text-muted">
+          این عملیات دائمی است و اطلاعات حساب، آدرس‌ها،
+          علاقه‌مندی‌ها و سابقه حساب حذف خواهد شد.
+        </p>
+
+        <div class="field mt-5 text-right">
+          <label for="deleteAccountConfirm">
+            برای تأیید عبارت
+            <strong>حذف حساب</strong>
+            را وارد کنید.
+          </label>
+
+          <input id="deleteAccountConfirm"
+                type="text"
+                placeholder="حذف حساب">
+        </div>
+
+        <div class="mt-5 flex gap-2">
+
+          <button type="button"
+                  class="pdp-ghost-btn flex-1 justify-center"
+                  data-delete-close>
+            انصراف
+          </button>
+
+          <button type="button"
+                  id="confirmDeleteAccount"
+                  class="inline-flex min-h-[46px] flex-1 items-center justify-center gap-2 rounded-[13px] bg-danger px-4 text-[11px] font-extrabold text-white">
+            <i class="ri-delete-bin-6-line"></i>
+            حذف دائمی
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+      Transaction Detail Template
+  ========================================================= -->
+
+  <template id="transactionDetailTemplate">
+
+    <div class="space-y-4">
+
+      <div class="rounded-2xl bg-bg p-4">
+        <div class="flex items-center gap-3">
+
+          <div id="txModalIcon"
+              class="grid h-12 w-12 place-items-center rounded-xl">
+          </div>
+
+          <div>
+            <b id="txModalTitle" class="block text-[13px]"></b>
+            <small id="txModalDate"
+                  class="mt-1 block text-[10px] text-muted"></small>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="grid gap-2">
+
+        <div class="flex justify-between rounded-xl border border-border p-3 text-[11px]">
+          <span class="text-muted">مبلغ</span>
+          <strong id="txModalAmount"></strong>
+        </div>
+
+        <div class="flex justify-between rounded-xl border border-border p-3 text-[11px]">
+          <span class="text-muted">موجودی قبل</span>
+          <strong id="txModalBefore"></strong>
+        </div>
+
+        <div class="flex justify-between rounded-xl border border-border p-3 text-[11px]">
+          <span class="text-muted">موجودی بعد</span>
+          <strong id="txModalAfter"></strong>
+        </div>
+
+        <div class="flex justify-between rounded-xl border border-border p-3 text-[11px]">
+          <span class="text-muted">شناسه تراکنش</span>
+          <strong id="txModalId" dir="ltr"></strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </template>
+
+  <script src="../js/account.js"></script>
+</body>
+</html>

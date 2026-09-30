@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="فروشگاه کتاب نِگار - لیست کامل محصولات">
+  <title>فروشگاه | نِگار</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+
+</head>
+
+<body class="bg-bg text-text antialiased">
+
+  <!-- Announcement -->
+  <div class="bg-ink text-white">
+    <div class="container-app flex items-center justify-center gap-2 py-2 text-xs sm:text-sm">
+      <i class="ri-sparkling-2-line text-accent"></i>
+      <span>ارسال رایگان برای سفارش‌های بالای ۹۰۰ هزار تومان</span>
+      <span class="hidden sm:inline text-white/40">•</span>
+      <span class="hidden sm:inline text-white/70">تا پایان این هفته</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app">
+      <div class="flex h-20 items-center gap-4">
+        <button class="icon-btn lg:hidden" data-mobile-open aria-label="باز کردن منو">
+          <i class="ri-menu-4-line text-xl"></i>
+        </button>
+
+        <a href="../index.html" class="inline-flex shrink-0 items-center gap-2.5 text-ink" aria-label="صفحه اصلی">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+
+        <div class="hidden flex-1 lg:block">
+          <div class="search-box">
+            <i class="ri-search-2-line"></i>
+            <input id="searchInput" type="search" autocomplete="off"
+              placeholder="نام کتاب، نویسنده یا موضوع را جست‌وجو کنید">
+            <kbd>Ctrl K</kbd>
+            <div id="searchSuggestions" class="absolute top-[54px] right-0 left-0 z-20 border border-border rounded-[18px] bg-white p-2 shadow-soft hidden"></div>
+          </div>
+        </div>
+
+        <nav class="hidden items-center gap-1 xl:flex">
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="../index.html#categories">دسته‌بندی‌ها</a>
+          <button class="flex items-center gap-1 px-2.5 py-2.5 text-[11px] font-bold text-ink" data-mega-toggle>
+            فروشگاه <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="../index.html#offers">پیشنهادهای ویژه</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="../index.html#blog">مجله نِگار</a>
+        </nav>
+
+        <div class="mr-auto flex items-center gap-2">
+          <button class="icon-btn hidden sm:grid" aria-label="جست‌وجو" data-search-focus>
+            <i class="ri-search-line"></i>
+          </button>
+          <button class="icon-btn" aria-label="علاقه‌مندی‌ها">
+            <i class="ri-heart-3-line"></i>
+            <span class="counter">3</span>
+          </button>
+          <button class="icon-btn" aria-label="سبد خرید" data-cart-toggle>
+            <i class="ri-shopping-bag-3-line"></i>
+            <span class="counter">2</span>
+          </button>
+          <a href="./login.html" class="hidden h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold md:flex">
+            <i class="ri-user-3-line"></i>
+            <span>ورود / ثبت‌نام</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Desktop mega menu -->
+      <div id="megaMenu" class="hidden border-t border-border py-6 pb-8">
+        <div class="grid gap-8 md:grid-cols-4">
+          <div>
+            <p class="mb-2.5 text-xs font-black">کتاب و ادبیات</p>
+            <a href="#" class="menu-item">رمان و داستان</a>
+            <a href="#" class="menu-item">شعر</a>
+            <a href="#" class="menu-item">کلاسیک</a>
+            <a href="#" class="menu-item">نمایشنامه</a>
+          </div>
+          <div>
+            <p class="mb-2.5 text-xs font-black">دانش و توسعه</p>
+            <a href="#" class="menu-item">روان‌شناسی</a>
+            <a href="#" class="menu-item">کسب‌وکار</a>
+            <a href="#" class="menu-item">فلسفه</a>
+            <a href="#" class="menu-item">تاریخ و جامعه</a>
+          </div>
+          <div>
+            <p class="mb-2.5 text-xs font-black">کودک و نوجوان</p>
+            <a href="#" class="menu-item">داستان کودک</a>
+            <a href="#" class="menu-item">نوجوان</a>
+            <a href="#" class="menu-item">کمیک</a>
+            <a href="#" class="menu-item">آموزشی</a>
+          </div>
+          <div class="rounded-3xl bg-ink p-6 text-white">
+            <span class="mb-3 inline-flex rounded-full bg-white/10 px-3 py-1 text-xs">منتخب هفته</span>
+            <h3 class="text-xl font-black leading-8">کتاب‌هایی برای شروع یک فصل تازه</h3>
+            <p class="mt-2 text-sm leading-6 text-white/60">انتخاب سردبیر نِگار از میان تازه‌های نشر.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div id="mobileOverlay" class="fixed inset-0 z-[60] hidden bg-black/40 backdrop-blur-sm" data-mobile-close></div>
+  <aside id="mobileDrawer"
+    class="fixed top-0 right-0 bottom-0 z-[70] w-[min(340px,90vw)] translate-x-[105%]
+           bg-white shadow-[-20px_0_60px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <span class="font-black">منوی نِگار</span>
+      <button class="icon-btn" data-mobile-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="p-5">
+      <div class="search-box mb-6">
+        <i class="ri-search-2-line"></i>
+        <input type="search" placeholder="جست‌وجو در نِگار">
+      </div>
+      <a class="drawer-link" href="./shop.html">فروشگاه <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="../index.html#categories">دسته‌بندی‌ها <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="../index.html#offers">پیشنهادهای ویژه <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="../index.html#blog">مجله نِگار <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./account.html">حساب کاربری <i class="ri-arrow-left-s-line"></i></a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Breadcrumb + Page title -->
+    <section class="container-app pt-6 sm:pt-8">
+      <nav class="flex items-center gap-2 text-[10px] text-muted" aria-label="مسیر صفحه">
+        <a href="../index.html" class="hover:text-ink">خانه</a>
+        <i class="ri-arrow-left-s-line"></i>
+        <span class="text-ink font-bold">فروشگاه</span>
+      </nav>
+      <div class="mt-4 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <span class="section-kicker">همه محصولات</span>
+          <h1 class="text-[clamp(26px,4vw,38px)] font-black tracking-[-.05em]">فروشگاه نِگار</h1>
+          <p class="mt-2 text-xs text-muted">بیش از ۲,۴۰۰ عنوان کتاب، منتخب و آماده ارسال.</p>
+        </div>
+        <div class="flex items-center gap-2 text-[11px] text-muted">
+          <span class="hidden sm:inline">مرتب‌سازی:</span>
+          <select id="sortSelect"
+            class="h-[42px] min-w-[170px] cursor-pointer rounded-[13px] border border-border bg-white px-3 text-[11px] font-bold text-ink outline-none">
+            <option value="popular">محبوب‌ترین</option>
+            <option value="newest">جدیدترین</option>
+            <option value="cheap">ارزان‌ترین</option>
+            <option value="expensive">گران‌ترین</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop layout -->
+    <section class="container-app pt-6">
+      <div class="grid gap-5 lg:grid-cols-[260px_1fr]">
+
+        <!-- Sidebar filters -->
+        <aside id="filtersPanel"
+          class="fixed top-0 right-0 bottom-0 z-[75] w-[min(320px,88vw)] translate-x-[105%]
+                 overflow-y-auto bg-white p-5 shadow-[-20px_0_60px_rgba(0,0,0,.12)] transition-transform duration-300
+                 lg:sticky lg:top-[96px] lg:z-auto lg:h-fit lg:w-auto lg:translate-x-0 lg:rounded-[22px] lg:border lg:border-border lg:bg-white lg:p-5 lg:shadow-none">
+          <div class="mb-4 flex items-center justify-between lg:hidden">
+            <span class="font-black">فیلترها</span>
+            <button class="icon-btn" data-filters-close><i class="ri-close-line"></i></button>
+          </div>
+
+          <!-- Search -->
+          <div class="mb-5">
+            <label class="mb-2 block text-[11px] font-black">جست‌وجو</label>
+            <div class="search-box !h-[42px]">
+              <i class="ri-search-2-line"></i>
+              <input id="filterSearch" type="search" placeholder="نام کتاب...">
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div class="mb-5">
+            <p class="mb-2.5 text-[11px] font-black">دسته‌بندی</p>
+            <label class="filter-row"><input type="checkbox" name="cat" value="fiction" class="filter-cat"><span>رمان و داستان</span><b>۴۸۰</b></label>
+            <label class="filter-row"><input type="checkbox" name="cat" value="psychology" class="filter-cat"><span>روان‌شناسی</span><b>۳۲۰</b></label>
+            <label class="filter-row"><input type="checkbox" name="cat" value="business" class="filter-cat"><span>کسب‌وکار</span><b>۲۱۰</b></label>
+            <label class="filter-row"><input type="checkbox" name="cat" value="history" class="filter-cat"><span>تاریخ</span><b>۱۸۰</b></label>
+            <label class="filter-row"><input type="checkbox" name="cat" value="kids" class="filter-cat"><span>کودک و نوجوان</span><b>۵۴۰</b></label>
+            <label class="filter-row"><input type="checkbox" name="cat" value="poetry" class="filter-cat"><span>شعر</span><b>۱۴۰</b></label>
+          </div>
+
+          <!-- Price -->
+          <div class="mb-5">
+            <p class="mb-2.5 text-[11px] font-black">محدوده قیمت</p>
+            <div class="flex items-center gap-2">
+              <input id="priceMin" type="number" placeholder="از" class="filter-input">
+              <span class="text-muted">—</span>
+              <input id="priceMax" type="number" placeholder="تا" class="filter-input">
+            </div>
+            <p class="mt-2 text-[9px] text-muted">مقادیر به تومان</p>
+          </div>
+
+          <!-- Rating -->
+          <div class="mb-5">
+            <p class="mb-2.5 text-[11px] font-black">امتیاز</p>
+            <label class="filter-row"><input type="radio" name="rating" value="4" class="filter-rating"><span>۴ ستاره و بالاتر</span></label>
+            <label class="filter-row"><input type="radio" name="rating" value="3" class="filter-rating"><span>۳ ستاره و بالاتر</span></label>
+            <label class="filter-row"><input type="radio" name="rating" value="0" class="filter-rating" checked><span>همه</span></label>
+          </div>
+
+          <!-- Availability -->
+          <div class="mb-5">
+            <label class="filter-row"><input type="checkbox" id="onlyAvailable" class="filter-available"><span>فقط کالاهای موجود</span></label>
+            <label class="filter-row"><input type="checkbox" id="onlyDiscount" class="filter-discount"><span>فقط تخفیف‌دارها</span></label>
+          </div>
+
+          <button id="clearFilters"
+            class="min-h-[42px] w-full rounded-[13px] border border-border bg-bg text-[11px] font-extrabold text-ink hover:bg-[#eef0e7]">
+            پاک کردن فیلترها
+          </button>
+        </aside>
+
+        <!-- Products area -->
+        <div>
+          <!-- Toolbar (mobile) -->
+          <div class="mb-4 flex items-center justify-between gap-2 lg:hidden">
+            <button class="icon-btn !w-auto !px-3 gap-2 !text-[11px] font-bold" data-filters-open>
+              <i class="ri-equalizer-2-line"></i> فیلترها
+            </button>
+            <span id="resultCountMobile" class="text-[11px] text-muted">۱۲ محصول</span>
+          </div>
+
+          <!-- Active filters chips -->
+          <div id="activeChips" class="mb-4 hidden flex-wrap items-center gap-2"></div>
+
+          <!-- Result count desktop -->
+          <div class="mb-4 hidden items-center justify-between lg:flex">
+            <span id="resultCount" class="text-[11px] text-muted">نمایش ۱۲ محصول از ۱۲</span>
+            <div class="flex items-center gap-1 text-[10px]">
+              <span class="text-muted">نمایش:</span>
+              <button class="view-btn" data-view="grid" data-active="true"><i class="ri-grid-fill"></i></button>
+              <button class="view-btn" data-view="list" data-active="false"><i class="ri-list-check-2"></i></button>
+            </div>
+          </div>
+
+          <!-- Product grid -->
+          <div id="shopGrid" class="grid grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-[18px]">
+            <!-- کارت‌ها با JS رندر می‌شوند -->
+          </div>
+
+          <!-- Empty state -->
+          <div id="emptyState" class="hidden flex-col items-center justify-center gap-3 rounded-[22px] border border-dashed border-border bg-white py-16 text-center">
+            <i class="ri-search-eye-line text-[46px] text-muted"></i>
+            <b class="text-sm">محصولی با این مشخصات پیدا نشد</b>
+            <p class="text-[11px] text-muted">فیلترها را تغییر دهید یا جست‌وجو را پاک کنید.</p>
+            <button id="resetFromEmpty" class="mt-2 inline-flex min-h-[42px] items-center gap-2 rounded-[13px] bg-ink px-4 text-[11px] font-extrabold text-white">
+              نمایش همه محصولات
+            </button>
+          </div>
+
+          <!-- Pagination -->
+          <nav id="pagination" class="mt-8 flex items-center justify-center gap-1.5" aria-label="صفحه‌بندی"></nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="mt-[70px] border-y border-border bg-white">
+      <div class="container-app grid grid-cols-1 gap-5 py-[27px] sm:grid-cols-2 lg:grid-cols-4">
+        <div class="flex items-center gap-3">
+          <i class="grid h-11 w-11 place-items-center rounded-[14px] bg-bg text-[19px] ri-truck-line"></i>
+          <div><b class="block text-[10px]">ارسال سریع</b><span class="mt-1 block text-[8px] text-[#9aa19e]">تحویل مطمئن به سراسر کشور</span></div>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="grid h-11 w-11 place-items-center rounded-[14px] bg-bg text-[19px] ri-shield-check-line"></i>
+          <div><b class="block text-[10px]">خرید امن</b><span class="mt-1 block text-[8px] text-[#9aa19e]">پرداخت امن و تضمین اصالت</span></div>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="grid h-11 w-11 place-items-center rounded-[14px] bg-bg text-[19px] ri-customer-service-2-line"></i>
+          <div><b class="block text-[10px]">پشتیبانی واقعی</b><span class="mt-1 block text-[8px] text-[#9aa19e]">هر روز کنار شما هستیم</span></div>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="grid h-11 w-11 place-items-center rounded-[14px] bg-bg text-[19px] ri-refresh-line"></i>
+          <div><b class="block text-[10px]">بازگشت آسان</b><span class="mt-1 block text-[8px] text-[#9aa19e]">تا ۷ روز امکان بازگشت</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-ink text-white">
+    <div class="container-app grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div>
+        <a href="../index.html" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-[#aeb8b3]">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-7 text-white/55">
+          فروشگاهی برای کسانی که کتاب را فقط یک محصول نمی‌دانند؛ یک تجربه می‌دانند.
+        </p>
+        <div class="mt-5 flex gap-[7px]">
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-instagram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-telegram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-twitter-x-line"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">خرید</h3>
+        <a href="./shop.html" class="my-2 block text-[10px] text-[#aeb8b3]">همه کتاب‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تازه‌های نشر</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پرفروش‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تخفیف‌ها</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">راهنما</h3>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">شیوه ارسال</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پیگیری سفارش</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">سوالات متداول</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تماس با ما</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">با ما در ارتباط باش</h3>
+        <p class="text-sm leading-7 text-white/55">تهران، خیابان کتاب، پلاک ۲۴</p>
+        <p class="mt-2 text-sm text-white/75">۰۲۱-۱۲۳۴۵۶۷۸</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-app flex flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:justify-between">
+        <span>© ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.</span>
+        <span>طراحی شده برای تجربه‌ای ساده‌تر از خرید کتاب.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div id="cartPanel" class="fixed top-0 right-0 bottom-0 z-[80] flex w-[min(390px,92vw)] translate-x-[105%] flex-col bg-white shadow-[-20px_0_70px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <div><b class="text-lg">سبد خرید</b><span class="mr-2 text-xs text-muted">۲ کالا</span></div>
+      <button class="icon-btn" data-cart-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="space-y-3 p-5">
+      <div class="flex items-center gap-3 rounded-2xl border border-border p-2">
+        <div class="mini-cover flex-[0_0_58px] !min-h-[78px] bg-[#657c71]">روایت<br>یک زندگی</div>
+        <div><b class="block text-[10px]">روایت یک زندگی</b><span class="mt-1.5 block text-[9px] text-[#909895]">۲۷۵,۰۰۰ تومان</span></div>
+      </div>
+      <div class="flex items-center gap-3 rounded-2xl border border-border p-2">
+        <div class="mini-cover flex-[0_0_58px] !min-h-[78px] bg-[#98785a]">فلسفه<br>برای زندگی</div>
+        <div><b class="block text-[10px]">فلسفه برای زندگی</b><span class="mt-1.5 block text-[9px] text-[#909895]">۳۲۰,۰۰۰ تومان</span></div>
+      </div>
+    </div>
+    <div class="mt-auto border-t border-border p-5">
+      <div class="mb-4 flex justify-between"><span>جمع کل</span><b>۵۹۵,۰۰۰ تومان</b></div>
+      <a href="./cart.html" class="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink">
+        مشاهده سبد خرید
+      </a>
+    </div>
+  </div>
+  <div id="cartOverlay" class="fixed inset-0 z-[55] hidden bg-black/30" data-cart-close></div>
+
+  <!-- Overlay filters (mobile) -->
+  <div id="filtersOverlay" class="fixed inset-0 z-[70] hidden bg-black/40 backdrop-blur-sm lg:hidden" data-filters-close></div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/shop.js"></script>
+</body>
+</html>

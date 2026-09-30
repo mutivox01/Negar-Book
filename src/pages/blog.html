@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مجله نِگار — خواندنی‌های تازه درباره کتاب، ادبیات و اندیشه">
+  <title>مجله نِگار | خواندنی‌های تازه</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+</head>
+
+<body class="bg-bg text-text antialiased">
+
+  <!-- Announcement -->
+  <div class="bg-ink text-white">
+    <div class="container-app flex items-center justify-center gap-2 py-2 text-xs sm:text-sm">
+      <i class="ri-article-line text-accent"></i>
+      <span>مجله نِگار — هر هفته یک مقاله‌ی تازه درباره‌ی کتاب و اندیشه</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app">
+      <div class="flex h-20 items-center gap-4">
+        <button class="icon-btn lg:hidden" data-mobile-open aria-label="باز کردن منو">
+          <i class="ri-menu-4-line text-xl"></i>
+        </button>
+
+        <a href="../index.html" class="inline-flex shrink-0 items-center gap-2.5 text-ink" aria-label="صفحه اصلی">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+
+        <div class="hidden flex-1 lg:block">
+          <div class="search-box">
+            <i class="ri-search-2-line"></i>
+            <input id="searchInput" type="search" autocomplete="off" placeholder="جست‌وجو در مقالات...">
+            <kbd>Ctrl K</kbd>
+            <div id="searchSuggestions" class="absolute top-[54px] right-0 left-0 z-20 border border-border rounded-[18px] bg-white p-2 shadow-soft hidden"></div>
+          </div>
+        </div>
+
+        <nav class="hidden items-center gap-1 xl:flex">
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./category.html">دسته‌بندی‌ها</a>
+          <button class="flex items-center gap-1 px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" data-mega-toggle>
+            فروشگاه <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="../index.html#offers">پیشنهادهای ویژه</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-ink" href="./blog.html">مجله نِگار</a>
+        </nav>
+
+        <div class="mr-auto flex items-center gap-2">
+          <button class="icon-btn hidden sm:grid" aria-label="جست‌وجو" data-search-focus>
+            <i class="ri-search-line"></i>
+          </button>
+          <button class="icon-btn" aria-label="علاقه‌مندی‌ها">
+            <i class="ri-heart-3-line"></i>
+            <span class="counter">3</span>
+          </button>
+          <button class="icon-btn" aria-label="سبد خرید" data-cart-toggle>
+            <i class="ri-shopping-bag-3-line"></i>
+            <span class="counter">2</span>
+          </button>
+          <a href="./login.html" class="hidden h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold md:flex">
+            <i class="ri-user-3-line"></i>
+            <span>ورود / ثبت‌نام</span>
+          </a>
+        </div>
+      </div>
+
+      <div id="megaMenu" class="hidden border-t border-border py-6 pb-8">
+        <div class="grid gap-8 md:grid-cols-4">
+          <div>
+            <p class="mb-2.5 text-xs font-black">کتاب و ادبیات</p>
+            <a href="./category.html#fiction" class="menu-item">رمان و داستان</a>
+            <a href="#" class="menu-item">شعر</a>
+            <a href="#" class="menu-item">کلاسیک</a>
+            <a href="#" class="menu-item">نمایشنامه</a>
+          </div>
+          <div>
+            <p class="mb-2.5 text-xs font-black">دانش و توسعه</p>
+            <a href="./category.html#psychology" class="menu-item">روان‌شناسی</a>
+            <a href="#" class="menu-item">کسب‌وکار</a>
+            <a href="#" class="menu-item">فلسفه</a>
+            <a href="#" class="menu-item">تاریخ</a>
+          </div>
+          <div>
+            <p class="mb-2.5 text-xs font-black">کودک و نوجوان</p>
+            <a href="#" class="menu-item">داستان کودک</a>
+            <a href="#" class="menu-item">نوجوان</a>
+            <a href="#" class="menu-item">کمیک</a>
+            <a href="#" class="menu-item">آموزشی</a>
+          </div>
+          <div class="rounded-3xl bg-ink p-6 text-white">
+            <span class="mb-3 inline-flex rounded-full bg-white/10 px-3 py-1 text-xs">منتخب هفته</span>
+            <h3 class="text-xl font-black leading-8">کتاب‌هایی برای شروع یک فصل تازه</h3>
+            <p class="mt-2 text-sm leading-6 text-white/60">انتخاب سردبیر نِگار از میان تازه‌های نشر.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div id="mobileOverlay" class="fixed inset-0 z-[60] hidden bg-black/40 backdrop-blur-sm" data-mobile-close></div>
+  <aside id="mobileDrawer"
+    class="fixed top-0 right-0 bottom-0 z-[70] w-[min(340px,90vw)] translate-x-[105%]
+           bg-white shadow-[-20px_0_60px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <span class="font-black">منوی نِگار</span>
+      <button class="icon-btn" data-mobile-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="p-5">
+      <div class="search-box mb-6">
+        <i class="ri-search-2-line"></i>
+        <input type="search" placeholder="جست‌وجو در نِگار">
+      </div>
+      <a class="drawer-link" href="./shop.html">فروشگاه <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./category.html">دسته‌بندی‌ها <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./blog.html">مجله نِگار <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./about.html">درباره ما <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./account.html">حساب کاربری <i class="ri-arrow-left-s-line"></i></a>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- ==================== Hero ==================== -->
+    <section class="container-app pt-6 sm:pt-8">
+      <nav class="flex items-center gap-2 text-[10px] text-muted" aria-label="مسیر صفحه">
+        <a href="../index.html" class="hover:text-ink">خانه</a>
+        <i class="ri-arrow-left-s-line"></i>
+        <span class="text-ink font-bold">مجله نِگار</span>
+      </nav>
+
+      <div class="relative mt-4 overflow-hidden rounded-[28px] bg-ink p-7 text-white sm:rounded-[34px] sm:p-[clamp(30px,5vw,56px)]">
+        <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+          <div class="absolute -top-16 -left-16 h-[240px] w-[240px] rounded-full border border-accent/15"></div>
+          <div class="absolute bottom-[-80px] left-[40%] h-[220px] w-[220px] rounded-full border border-accent/10"></div>
+          <div class="absolute right-[8%] top-[18%] hidden text-accent/20 text-[130px] leading-none lg:block">
+            <i class="ri-article-line"></i>
+          </div>
+        </div>
+
+        <div class="relative z-10 max-w-2xl">
+          <span class="inline-flex items-center gap-1.5 rounded-full border border-[#dce7bd] bg-accent/10 px-3 py-1.5 text-[10px] font-extrabold text-accent">
+            <i class="ri-bookmark-3-line"></i> خواندنی‌های تازه
+          </span>
+          <h1 class="mt-4 text-[clamp(30px,5vw,54px)] font-black leading-[1.1] tracking-[-.06em]">
+            مجله نِگار،<br>
+            <span class="text-accent">خانه‌ای برای کلمات.</span>
+          </h1>
+          <p class="mt-4 max-w-lg text-[12px] leading-[2] text-white/60 sm:text-[13px]">
+            جستارها، نقدها، گفت‌وگوها و راهنماهای مطالعه — برای کسانی که کتاب را جدی می‌گیرند.
+          </p>
+
+          <!-- Quick stats -->
+          <div class="mt-6 flex flex-wrap gap-x-6 gap-y-3">
+            <div>
+              <b class="block text-[22px] font-black text-accent">۱۴۸</b>
+              <small class="text-[10px] text-white/50">مقاله منتشرشده</small>
+            </div>
+            <div class="border-r border-white/10 pr-6">
+              <b class="block text-[22px] font-black text-accent">۸</b>
+              <small class="text-[10px] text-white/50">دسته‌بندی</small>
+            </div>
+            <div class="border-r border-white/10 pr-6">
+              <b class="block text-[22px] font-black text-accent">۲۴</b>
+              <small class="text-[10px] text-white/50">نویسنده مهمان</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Featured Post ==================== -->
+    <section class="container-app pt-10 sm:pt-14">
+      <div class="mb-5 flex items-center justify-between">
+        <div>
+          <span class="section-kicker">مقاله ویژه</span>
+          <h2 class="text-[clamp(20px,2.6vw,26px)] font-black tracking-[-.04em]">از دست ندهید</h2>
+        </div>
+      </div>
+
+      <a href="./blog-single.html" class="featured-post">
+        <!-- Illustration -->
+        <div class="featured-post-cover">
+          <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+            <div class="absolute -top-12 -right-12 h-[200px] w-[200px] rounded-full border border-white/10"></div>
+            <div class="absolute bottom-[-60px] left-[-40px] h-[180px] w-[180px] rounded-full border border-white/10"></div>
+          </div>
+          <i class="ri-book-open-line relative z-[1] text-[80px] text-accent/60"></i>
+          <span class="absolute top-5 right-5 z-[2] rounded-full bg-accent px-3 py-1.5 text-[10px] font-black text-ink">
+            منتخب سردبیر
+          </span>
+        </div>
+
+        <!-- Content -->
+        <div class="featured-post-body">
+          <div class="flex flex-wrap items-center gap-3 text-[10px]">
+            <span class="rounded-full bg-bg px-2.5 py-1 font-bold text-muted">راهنمای مطالعه</span>
+            <span class="text-muted"><i class="ri-time-line"></i> ۸ دقیقه مطالعه</span>
+            <span class="text-muted"><i class="ri-calendar-line"></i> ۲ روز پیش</span>
+          </div>
+
+          <h3 class="mt-4 text-[clamp(20px,3vw,30px)] font-black leading-[1.4] tracking-[-.04em]">
+            چطور یک عادت مطالعه ماندگار بسازیم؟
+          </h3>
+
+          <p class="mt-3 max-w-xl text-[12px] leading-[2] text-muted">
+            همه‌ی ما می‌دانیم کتاب خواندن خوب است؛ اما چرا این‌قدر سخت است که شروع کنیم و
+            ادامه دهیم؟ در این مقاله، هفت راهکار عملی را بررسی می‌کنیم که می‌توانند
+            عادت مطالعه را برای همیشه در زندگی‌تان تغییر دهند.
+          </p>
+
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="author-mini-avatar bg-gradient-to-br from-[#87927a] to-[#3b4a3f] !h-[42px] !w-[42px] !text-[12px]">س.م</div>
+              <div>
+                <b class="block text-[11px] font-black">سارا محمدی</b>
+                <small class="text-[10px] text-muted">ویراستار مجله</small>
+              </div>
+            </div>
+
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-extrabold text-ink">
+              ادامه مطلب <i class="ri-arrow-left-line"></i>
+            </span>
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <!-- ==================== Layout (sidebar + grid) ==================== -->
+    <section class="container-app pt-12 sm:pt-16">
+      <div class="grid gap-6 lg:grid-cols-[1fr_300px]">
+
+        <!-- ========== Articles ========== -->
+        <div>
+
+          <!-- Toolbar -->
+          <div class="mb-5 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+            <div>
+              <span class="section-kicker">مقالات تازه</span>
+              <h2 class="text-[clamp(20px,2.6vw,26px)] font-black tracking-[-.04em]">
+                همه‌ی مقالات
+                <span id="articleCount" class="text-[12px] font-bold text-muted">(۱۴۸)</span>
+              </h2>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2">
+              <div class="search-box !h-[42px] !w-full !bg-white sm:!w-[220px]">
+                <i class="ri-search-2-line"></i>
+                <input id="blogSearch" type="search" placeholder="جست‌وجو در مقالات...">
+              </div>
+              <select id="blogSort" class="filter-input !h-[42px] !min-w-[140px] !w-auto">
+                <option value="newest">جدیدترین</option>
+                <option value="popular">محبوب‌ترین</option>
+                <option value="oldest">قدیمی‌ترین</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Category chips -->
+          <div id="blogCategories" class="mb-6 flex flex-wrap gap-2"></div>
+
+          <!-- Articles grid -->
+          <div id="articlesGrid" class="grid gap-5 sm:grid-cols-2">
+            <!-- JS -->
+          </div>
+
+          <!-- Empty -->
+          <div id="articlesEmpty" class="hidden flex-col items-center gap-3 rounded-[22px] border border-dashed border-border bg-white py-16 text-center">
+            <i class="ri-search-eye-line text-[46px] text-muted"></i>
+            <b class="text-sm">مقاله‌ای با این مشخصات پیدا نشد</b>
+            <p class="text-[11px] text-muted">فیلترها را تغییر دهید یا جست‌وجو را پاک کنید.</p>
+          </div>
+
+          <!-- Load more -->
+          <div id="loadMoreWrap" class="mt-8 flex justify-center">
+            <button id="loadMoreArticles" class="inline-flex min-h-[46px] items-center gap-2 rounded-[13px] border border-border bg-white px-5 text-[11px] font-extrabold text-ink transition hover:border-ink">
+              <i class="ri-add-line"></i> مقالات بیشتر
+            </button>
+          </div>
+
+        </div>
+
+        <!-- ========== Sidebar ========== -->
+        <aside class="space-y-5 lg:sticky lg:top-[104px] lg:h-fit">
+
+          <!-- Popular posts -->
+          <div class="blog-sidebar-card">
+            <h3 class="mb-4 text-[13px] font-black">
+              <i class="ri-fire-line text-accent-dark"></i> محبوب‌ترین‌ها
+            </h3>
+            <ul id="popularPosts" class="space-y-3"></ul>
+          </div>
+
+          <!-- Tags -->
+          <div class="blog-sidebar-card">
+            <h3 class="mb-4 text-[13px] font-black">
+              <i class="ri-price-tag-3-line"></i> برچسب‌ها
+            </h3>
+            <div id="blogTags" class="flex flex-wrap gap-1.5"></div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="blog-sidebar-cta">
+            <i class="ri-mail-star-line text-[28px] text-accent"></i>
+            <h3 class="mt-2 text-[13px] font-black text-white">خبرنامه مجله</h3>
+            <p class="mt-1.5 text-[10px] leading-6 text-white/60">
+              هر هفته یک مقاله‌ی خواندنی را برایتان ایمیل می‌کنیم.
+            </p>
+            <form id="blogNewsletter" class="mt-4 space-y-2">
+              <input type="email" placeholder="ایمیل شما"
+                class="w-full rounded-[11px] border border-white/10 bg-white/5 px-3 py-2.5 text-[11px] text-white placeholder:text-white/40 outline-none focus:border-white/30">
+              <button type="submit" class="inline-flex min-h-[40px] w-full items-center justify-center gap-2 rounded-[11px] bg-accent px-4 text-[11px] font-extrabold text-ink">
+                عضویت <i class="ri-arrow-left-line"></i>
+              </button>
+            </form>
+          </div>
+
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- ==================== Writers ==================== -->
+    <section class="container-app pt-14 sm:pt-20">
+      <div class="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <span class="section-kicker">نویسندگان مجله</span>
+          <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">قلم‌های ثابت مجله</h2>
+        </div>
+        <a href="#" class="inline-flex items-center gap-2 text-[11px] font-extrabold text-[#5f6965] hover:text-ink">
+          مشاهده همه <i class="ri-arrow-left-line"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        <a href="./author.html" class="author-mini-card">
+          <div class="author-mini-avatar bg-gradient-to-br from-[#87927a] to-[#3b4a3f]">س.م</div>
+          <b class="mt-3 block text-[12px] font-black">سارا محمدی</b>
+          <small class="mt-1 block text-[10px] text-muted">۲۸ مقاله · ویراستار</small>
+        </a>
+        <a href="./author.html" class="author-mini-card">
+          <div class="author-mini-avatar bg-gradient-to-br from-[#c0a17a] to-[#5a3f27]">ع.ح</div>
+          <b class="mt-3 block text-[12px] font-black">علی حکیمی</b>
+          <small class="mt-1 block text-[10px] text-muted">۲۲ مقاله · منتقد</small>
+        </a>
+        <a href="./author.html" class="author-mini-card">
+          <div class="author-mini-avatar bg-gradient-to-br from-[#8d98c5] to-[#2f3656]">ن.ک</div>
+          <b class="mt-3 block text-[12px] font-black">نگار کریمی</b>
+          <small class="mt-1 block text-[10px] text-muted">۱۸ مقاله · گفت‌وگو</small>
+        </a>
+        <a href="./author.html" class="author-mini-card">
+          <div class="author-mini-avatar bg-gradient-to-br from-[#c58a80] to-[#4a221f]">ر.ک</div>
+          <b class="mt-3 block text-[12px] font-black">رضا کریمی</b>
+          <small class="mt-1 block text-[10px] text-muted">۱۴ مقاله · جستار</small>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="container-app pt-14 sm:pt-20">
+      <div class="relative overflow-hidden rounded-[28px] bg-accent p-8 sm:p-12">
+        <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+          <div class="absolute -top-16 -right-16 h-[200px] w-[200px] rounded-full border border-ink/10"></div>
+          <div class="absolute bottom-[-80px] left-[20%] h-[180px] w-[180px] rounded-full border border-ink/10"></div>
+        </div>
+
+        <div class="relative z-10 flex flex-col items-start gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div class="max-w-xl">
+            <span class="section-kicker !text-ink/60">همکاری با مجله</span>
+            <h2 class="mt-2 text-[clamp(22px,3.5vw,34px)] font-black leading-[1.3] tracking-[-.05em] text-ink">
+              قلم داری؟<br>جای تو اینجاست.
+            </h2>
+            <p class="mt-3 max-w-md text-[11px] leading-[2] text-ink/70">
+              اگر درباره‌ی کتاب، ادبیات و اندیشه می‌نویسی، خوشحال می‌شویم
+              نوشته‌ات را در مجله نِگار منتشر کنیم.
+            </p>
+          </div>
+          <a href="#" class="inline-flex min-h-[48px] shrink-0 items-center gap-2 rounded-[13px] bg-ink px-5 text-[12px] font-extrabold text-white hover:bg-[#0f1817] transition">
+            <i class="ri-send-plane-line"></i> ارسال مقاله
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-14 bg-ink text-white sm:mt-20">
+    <div class="container-app grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div>
+        <a href="../index.html" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-[#aeb8b3]">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-7 text-white/55">
+          فروشگاهی برای کسانی که کتاب را فقط یک محصول نمی‌دانند؛ یک تجربه می‌دانند.
+        </p>
+        <div class="mt-5 flex gap-[7px]">
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-instagram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-telegram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-twitter-x-line"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">خرید</h3>
+        <a href="./shop.html" class="my-2 block text-[10px] text-[#aeb8b3]">همه کتاب‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تازه‌های نشر</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پرفروش‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تخفیف‌ها</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">راهنما</h3>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">شیوه ارسال</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پیگیری سفارش</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">سوالات متداول</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تماس با ما</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">با ما در ارتباط باش</h3>
+        <p class="text-sm leading-7 text-white/55">تهران، خیابان کتاب، پلاک ۲۴</p>
+        <p class="mt-2 text-sm text-white/75">۰۲۱-۱۲۳۴۵۶۷۸</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-app flex flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:justify-between">
+        <span>© ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.</span>
+        <span>طراحی شده برای تجربه‌ای ساده‌تر از خرید کتاب.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div id="cartPanel" class="fixed top-0 right-0 bottom-0 z-[80] flex w-[min(390px,92vw)] translate-x-[105%] flex-col bg-white shadow-[-20px_0_70px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <div><b class="text-lg">سبد خرید</b><span class="mr-2 text-xs text-muted">۲ کالا</span></div>
+      <button class="icon-btn" data-cart-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="space-y-3 p-5">
+      <div class="flex items-center gap-3 rounded-2xl border border-border p-2">
+        <div class="mini-cover flex-[0_0_58px] !min-h-[78px] bg-[#657c71]">روایت<br>یک زندگی</div>
+        <div><b class="block text-[10px]">روایت یک زندگی</b><span class="mt-1.5 block text-[9px] text-[#909895]">۲۷۵,۰۰۰ تومان</span></div>
+      </div>
+    </div>
+    <div class="mt-auto border-t border-border p-5">
+      <div class="mb-4 flex justify-between"><span>جمع کل</span><b>۲۷۵,۰۰۰ تومان</b></div>
+      <a href="./cart.html" class="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink">
+        مشاهده سبد خرید
+      </a>
+    </div>
+  </div>
+  <div id="cartOverlay" class="fixed inset-0 z-[55] hidden bg-black/30" data-cart-close></div>
+
+  <!-- <script src="../src/js/main.js"></script> -->
+  <script src="/src/js/blog.js"></script>
+</body>
+</html>

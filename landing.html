@@ -1,0 +1,1652 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="قالب نِگار — قالب فروشگاهی HTML حرفه‌ای با Tailwind v4، راست‌چین و ۳۶ صفحه‌ی آماده">
+  <meta name="keywords" content="قالب فروشگاهی, قالب HTML, Tailwind CSS, راست‌چین, قالب فارسی, نگار">
+  <title>قالب نِگار | قالب فروشگاهی HTML حرفه‌ای</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="قالب نِگار — قالب فروشگاهی HTML حرفه‌ای">
+  <meta property="og:description" content="۳۶ صفحه‌ی آماده، پنل مدیریت کامل، Chart.js، Swiper، راست‌چین و کاملاً ریسپانسیو">
+  <meta property="og:image" content="./assets/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23d7f36b'/%3E%3Ctext y='.9em' x='50%25' text-anchor='middle' font-size='70' font-weight='900' fill='%2317211f'%3EN%3C/text%3E%3C/svg%3E">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Tailwind v4 + Custom theme -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+  <style>
+    /* ========== Theme ========== */
+    :root {
+      --color-ink: #17211f;
+      --color-bg: #f7f7f3;
+      --color-surface: #ffffff;
+      --color-accent: #d7f36b;
+      --color-accent-dark: #a9c63d;
+      --color-text: #1c2724;
+      --color-muted: #78817e;
+      --color-border: #e7e9e4;
+      --color-danger: #e66d5b;
+      --color-success: #2e7d55;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+    }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+
+    /* ========== Helpers ========== */
+    .container-app {
+      width: min(1180px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+    @media (max-width: 700px) { .container-app { width: min(100% - 22px, 1180px); } }
+
+    .bg-ink { background: var(--color-ink); }
+    .bg-bg { background: var(--color-bg); }
+    .bg-accent { background: var(--color-accent); }
+    .text-ink { color: var(--color-ink); }
+    .text-accent { color: var(--color-accent); }
+    .text-accent-dark { color: var(--color-accent-dark); }
+    .text-muted { color: var(--color-muted); }
+    .text-danger { color: var(--color-danger); }
+    .text-success { color: var(--color-success); }
+    .border-border { border-color: var(--color-border); }
+
+    .shadow-soft {
+      box-shadow: 0 16px 50px rgba(24, 36, 31, .07);
+    }
+
+    /* ========== Nav ========== */
+    .landing-nav-link {
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #53605c;
+      border-radius: 10px;
+      transition: all .2s;
+    }
+    .landing-nav-link:hover { color: var(--color-ink); background: var(--color-bg); }
+    .landing-nav-link.is-active { color: var(--color-ink); background: var(--color-accent); }
+
+    /* ========== Hero Preview ========== */
+    .landing-hero-preview {
+      position: relative;
+      border-radius: 26px;
+      border: 1px solid var(--color-border);
+      background: #fff;
+      box-shadow: 0 30px 80px -20px rgba(24, 36, 31, .25), 0 0 0 1px rgba(24, 36, 31, .04);
+      overflow: hidden;
+    }
+
+    .landing-browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--color-border);
+      background: #fafaf7;
+    }
+    .landing-browser-dot {
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+    .landing-browser-url {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-size: 11px;
+      color: var(--color-muted);
+      margin-inline: 8px;
+      flex: 1;
+      max-width: 420px;
+    }
+    .landing-browser-url span { font-family: ui-monospace, monospace; }
+    .landing-browser-label {
+      margin-right: auto;
+      padding: 3px 10px;
+      border-radius: 99px;
+      background: var(--color-accent);
+      color: var(--color-ink);
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .landing-preview-content {
+      position: relative;
+      background: #f7f7f3;
+      overflow: hidden;
+    }
+    .landing-preview-iframe-wrap {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 62%;
+      overflow: hidden;
+    }
+    .landing-preview-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      transform: scale(0.5);
+      transform-origin: top left;
+      border: 0;
+      pointer-events: none;
+      background: #fff;
+    }
+
+    /* Floating badges */
+    .landing-float {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 15px 40px -10px rgba(24, 36, 31, .2);
+      z-index: 3;
+      animation: floatY 4s ease-in-out infinite;
+    }
+    .landing-float i { font-size: 20px; }
+    .landing-float b {
+      display: block;
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--color-ink);
+    }
+    .landing-float small {
+      display: block;
+      font-size: 9px;
+      color: var(--color-muted);
+      margin-top: 2px;
+    }
+    .landing-float--1 { top: 20%; right: -20px; animation-delay: 0s; }
+    .landing-float--2 { bottom: 22%; left: -20px; animation-delay: -1.5s; }
+    .landing-float--3 { top: -18px; left: 15%; animation-delay: -3s; }
+
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @media (max-width: 900px) {
+      .landing-float { padding: 8px 12px; }
+      .landing-float--1 { right: -10px; }
+      .landing-float--2 { left: -10px; }
+    }
+    @media (max-width: 640px) {
+      .landing-float { display: none; }
+    }
+
+    /* ========== Feature Card ========== */
+    .feat-card {
+      padding: 26px;
+      border-radius: 22px;
+      border: 1px solid var(--color-border);
+      background: #fff;
+      transition: all .3s;
+    }
+    .feat-card:hover {
+      transform: translateY(-4px);
+      border-color: #cbd0c9;
+      box-shadow: 0 20px 50px -15px rgba(24, 36, 31, .12);
+    }
+    .feat-icon {
+      display: grid;
+      place-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 15px;
+      font-size: 22px;
+    }
+    .feat-card h3 {
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 900;
+    }
+    .feat-card p {
+      margin-top: 8px;
+      font-size: 12px;
+      line-height: 1.9;
+      color: var(--color-muted);
+    }
+
+    /* ========== Page Card (grid صفحات) ========== */
+    .page-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 18px;
+      border: 1px solid var(--color-border);
+      background: #fff;
+      transition: all .3s;
+      cursor: pointer;
+      text-align: center;
+    }
+    .page-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-ink);
+      box-shadow: 0 20px 40px -15px rgba(24, 36, 31, .15);
+    }
+    .page-card-preview {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/10;
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #dce8dc, #8fb5a5);
+    }
+    .page-card-preview iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 400%;
+      height: 400%;
+      transform: scale(0.25);
+      transform-origin: top left;
+      border: 0;
+      pointer-events: none;
+    }
+    .page-card-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      padding: 3px 8px;
+      border-radius: 99px;
+      background: rgba(0,0,0,.55);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 900;
+      backdrop-filter: blur(8px);
+    }
+    .page-card-title {
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--color-ink);
+    }
+    .page-card-desc {
+      font-size: 10px;
+      color: var(--color-muted);
+    }
+
+    /* ========== Demo Tabs ========== */
+    .demo-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 6px;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+    .demo-tab {
+      padding: 8px 14px;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--color-muted);
+      border-radius: 10px;
+      transition: all .2s;
+    }
+    .demo-tab:hover { color: var(--color-ink); background: var(--color-bg); }
+    .demo-tab.is-active { color: #fff; background: var(--color-ink); }
+
+    .demo-frame {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      background: #fff;
+      box-shadow: 0 30px 60px -25px rgba(24, 36, 31, .2);
+    }
+    .demo-frame iframe {
+      width: 100%;
+      height: 700px;
+      border: 0;
+      display: block;
+      background: #fff;
+    }
+    @media (max-width: 768px) {
+      .demo-frame iframe { height: 500px; }
+    }
+
+    /* ========== Device Switcher ========== */
+    .device-switcher {
+      display: flex;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid var(--color-border);
+      border-radius: 11px;
+      background: #fff;
+    }
+    .device-btn {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      color: var(--color-muted);
+      transition: all .2s;
+    }
+    .device-btn:hover { color: var(--color-ink); }
+    .device-btn.is-active { background: var(--color-ink); color: #fff; }
+
+    .demo-frame.is-mobile iframe { max-width: 400px; margin: 0 auto; }
+    .demo-frame.is-tablet iframe { max-width: 768px; margin: 0 auto; }
+
+    /* ========== Pricing ========== */
+    .price-card {
+      position: relative;
+      padding: 32px 28px;
+      border-radius: 24px;
+      border: 1px solid var(--color-border);
+      background: #fff;
+      transition: all .3s;
+    }
+    .price-card:hover {
+      transform: translateY(-4px);
+      border-color: #cbd0c9;
+    }
+    .price-card.is-featured {
+      background: var(--color-ink);
+      color: #fff;
+      border-color: var(--color-ink);
+      box-shadow: 0 30px 70px -20px rgba(23, 33, 31, .4);
+    }
+    .price-card.is-featured .price-amount { color: var(--color-accent); }
+    .price-card.is-featured .price-desc { color: rgba(255,255,255,.6); }
+    .price-card.is-featured .price-feature { color: rgba(255,255,255,.85); }
+    .price-card.is-featured .price-feature i { color: var(--color-accent); }
+    .price-card.is-featured .price-btn {
+      background: var(--color-accent);
+      color: var(--color-ink);
+      border-color: var(--color-accent);
+    }
+    .price-badge {
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      padding: 6px 14px;
+      border-radius: 99px;
+      background: var(--color-accent);
+      color: var(--color-ink);
+      font-size: 10px;
+      font-weight: 900;
+    }
+    .price-amount {
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -.03em;
+      color: var(--color-ink);
+    }
+    .price-amount small {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--color-muted);
+    }
+    .price-features {
+      margin: 22px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .price-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 11.5px;
+      color: #4a5450;
+      line-height: 1.6;
+    }
+    .price-feature i {
+      color: var(--color-success);
+      font-size: 15px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+    .price-feature.is-off {
+      color: var(--color-muted);
+      opacity: .55;
+      text-decoration: line-through;
+    }
+    .price-feature.is-off i { color: var(--color-muted); }
+    .price-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 48px;
+      border-radius: 13px;
+      border: 2px solid var(--color-ink);
+      background: transparent;
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--color-ink);
+      transition: all .2s;
+    }
+    .price-btn:hover {
+      background: var(--color-ink);
+      color: #fff;
+    }
+
+    /* ========== Review Card ========== */
+    .review-card {
+      padding: 24px;
+      border-radius: 20px;
+      border: 1px solid var(--color-border);
+      background: #fff;
+      height: 100%;
+    }
+    .review-stars { color: #f0b429; font-size: 14px; }
+    .review-text {
+      margin-top: 14px;
+      font-size: 12px;
+      line-height: 2;
+      color: #4a5450;
+    }
+    .review-author {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--color-border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .review-avatar {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    /* ========== FAQ ========== */
+    .faq-item {
+      border-radius: 16px;
+      border: 1px solid var(--color-border);
+      background: #fff;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .faq-item[open] {
+      border-color: var(--color-ink);
+      box-shadow: 0 15px 40px -15px rgba(24, 36, 31, .12);
+    }
+    .faq-item summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 20px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      list-style: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary i {
+      display: grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid var(--color-border);
+      font-size: 14px;
+      color: var(--color-muted);
+      transition: all .25s;
+      flex-shrink: 0;
+    }
+    .faq-item[open] summary i {
+      background: var(--color-ink);
+      color: #fff;
+      border-color: var(--color-ink);
+      transform: rotate(45deg);
+    }
+    .faq-item p {
+      padding: 0 20px 20px;
+      font-size: 12px;
+      line-height: 2.1;
+      color: #4a5450;
+      border-top: 1px dashed var(--color-border);
+      padding-top: 16px;
+    }
+
+    /* ========== Marquee ========== */
+    .marquee {
+      display: flex;
+      gap: 30px;
+      animation: scroll 35s linear infinite;
+      width: max-content;
+    }
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--color-muted);
+      white-space: nowrap;
+    }
+    .marquee-item i { font-size: 20px; color: var(--color-ink); }
+    @keyframes scroll {
+      to { transform: translateX(50%); }
+    }
+
+    /* ========== Drawer & helpers ========== */
+    .drawer-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 4px;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .icon-btn {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      color: var(--color-ink);
+      transition: all .2s;
+    }
+    .icon-btn:hover { border-color: #cbd0c9; transform: translateY(-1px); }
+    .icon-btn.is-active { background: var(--color-ink); color: #fff; border-color: var(--color-ink); }
+
+    /* ========== Toast ========== */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 999;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: var(--color-ink);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 0 20px 50px -10px rgba(0,0,0,.3);
+      animation: toastIn .35s ease-out;
+    }
+    @keyframes toastIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========== Reduced motion ========== */
+    @media (prefers-reduced-motion: reduce) {
+      .landing-float, .marquee { animation: none !important; }
+      .feat-card, .page-card, .price-card, .page-card:hover, .feat-card:hover { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==================== Top Banner با Countdown ==================== -->
+  <div class="bg-ink text-white">
+    <div class="container-app flex flex-wrap items-center justify-center gap-2 py-2 text-xs sm:text-sm">
+      <i class="ri-flashlight-line text-accent"></i>
+      <span>تخفیف <b class="text-accent">۳۰٪</b> به مناسبت رونمایی</span>
+      <span class="mx-1 hidden text-white/30 sm:inline">·</span>
+      <span class="inline-flex items-center gap-1.5">
+        <i class="ri-timer-line text-accent"></i>
+        <span id="bannerCountdown" class="font-mono text-accent">۰۰:۰۰:۰۰:۰۰</span>
+      </span>
+      <a href="#pricing" class="mr-2 inline-flex items-center gap-1 rounded-full bg-accent px-3 py-1 text-[10px] font-black text-ink">
+        خرید <i class="ri-arrow-left-line"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- ==================== Header ==================== -->
+  <header class="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app">
+      <div class="flex h-20 items-center gap-4">
+
+        <a href="#home" class="inline-flex shrink-0 items-center gap-2.5 text-ink">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[18px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-muted">قالب فروشگاهی</small>
+          </span>
+        </a>
+
+        <nav class="hidden items-center gap-1 xl:flex">
+          <a class="landing-nav-link is-active" href="#home">خانه</a>
+          <a class="landing-nav-link" href="#features">ویژگی‌ها</a>
+          <a class="landing-nav-link" href="#pages">صفحات</a>
+          <a class="landing-nav-link" href="#demo">پیش‌نمایش</a>
+          <a class="landing-nav-link" href="#pricing">خرید</a>
+          <a class="landing-nav-link" href="#reviews">نظرات</a>
+          <a class="landing-nav-link" href="#faq">سوالات</a>
+        </nav>
+
+        <div class="mr-auto flex items-center gap-2">
+          <a href="#demo" class="hidden h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold md:flex hover:bg-bg transition">
+            <i class="ri-play-circle-line"></i>
+            <span>پیش‌نمایش</span>
+          </a>
+          <a href="#pricing" class="inline-flex h-[42px] items-center gap-2 rounded-[13px] bg-ink px-4 text-xs font-bold text-white hover:opacity-90 transition">
+            <i class="ri-shopping-cart-2-line"></i>
+            <span>خرید</span>
+          </a>
+          <button class="icon-btn lg:hidden" data-mobile-open aria-label="منو">
+            <i class="ri-menu-4-line"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div id="mobileOverlay" class="fixed inset-0 z-[60] hidden bg-black/40 backdrop-blur-sm" data-mobile-close></div>
+  <aside id="mobileDrawer"
+    class="fixed top-0 right-0 bottom-0 z-[70] w-[min(320px,88vw)] translate-x-[105%]
+           bg-white shadow-[-20px_0_60px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <span class="font-black">منوی نِگار</span>
+      <button class="icon-btn" data-mobile-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="p-5">
+      <a class="drawer-link" href="#home" data-mobile-close>خانه <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="#features" data-mobile-close>ویژگی‌ها <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="#pages" data-mobile-close>صفحات <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="#demo" data-mobile-close>پیش‌نمایش <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="#pricing" data-mobile-close>خرید <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="#reviews" data-mobile-close>نظرات <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="#faq" data-mobile-close>سوالات <i class="ri-arrow-left-s-line"></i></a>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- ==================== Hero ==================== -->
+    <section id="home" class="relative overflow-hidden pt-12 pb-16 sm:pt-16 sm:pb-24">
+      <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div class="absolute -top-40 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-accent/20 blur-3xl"></div>
+        <div class="absolute top-40 -right-20 h-[300px] w-[300px] rounded-full border border-accent/30"></div>
+        <div class="absolute top-20 -left-32 h-[400px] w-[400px] rounded-full border border-ink/5"></div>
+      </div>
+
+      <div class="container-app relative">
+        <div class="mx-auto max-w-4xl text-center">
+
+          <div class="inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-[11px] font-bold shadow-soft">
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-accent px-2.5 py-0.5 text-[10px] font-black text-ink">
+              <i class="ri-sparkling-2-line"></i> جدید ۱۴۰۵
+            </span>
+            <span class="text-muted">نسخه ۱.۰ — با Tailwind CSS v4</span>
+          </div>
+
+          <h1 class="mt-6 text-[clamp(32px,6vw,68px)] font-black leading-[1.1] tracking-[-.06em]">
+            قالب فروشگاهی نِگار،<br>
+            <span class="text-accent-dark">آماده برای راه‌اندازی.</span>
+          </h1>
+
+          <p class="mx-auto mt-6 max-w-2xl text-[13px] leading-[2.1] text-[#4a5450] sm:text-[15px]">
+            یک قالب کامل و حرفه‌ای برای فروشگاه‌های کتاب، لوازم تحریر و محصولات فرهنگی.
+            با <b class="text-ink">۳۶ صفحه‌ی آماده</b>، پنل مدیریت، Chart.js، Swiper و کاملاً راست‌چین.
+          </p>
+
+          <div class="mt-9 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
+            <a href="#pricing" class="inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-[14px] bg-ink px-7 text-[13px] font-extrabold text-white hover:opacity-90 transition sm:w-auto">
+              <i class="ri-shopping-cart-2-line"></i>
+              خرید قالب — ۱,۹۰۰,۰۰۰ تومان
+            </a>
+            <a href="#demo" class="inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-[14px] border border-border bg-white px-7 text-[13px] font-extrabold text-ink hover:bg-bg transition sm:w-auto">
+              <i class="ri-play-circle-line text-accent-dark"></i>
+              پیش‌نمایش زنده
+            </a>
+          </div>
+
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[11px] text-muted">
+            <span class="inline-flex items-center gap-1.5">
+              <i class="ri-shield-check-line text-success"></i> لایسنس کامل
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <i class="ri-customer-service-2-line text-accent-dark"></i> ۶ ماه پشتیبانی
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <i class="ri-refresh-line" style="color:#5d658a"></i> آپدیت رایگان
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <i class="ri-star-fill" style="color:#f0b429"></i> امتیاز ۴.۹ از ۵
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Hero Preview (iframe live) -->
+        <div class="mt-14 sm:mt-20">
+          <div class="landing-hero-preview">
+            <div class="landing-browser-bar">
+              <span class="landing-browser-dot" style="background:var(--color-danger)"></span>
+              <span class="landing-browser-dot" style="background:#f0b429"></span>
+              <span class="landing-browser-dot" style="background:var(--color-success)"></span>
+              <div class="landing-browser-url">
+                <i class="ri-lock-2-line" style="font-size:10px"></i>
+                <span>demo.negar.ir</span>
+              </div>
+              <span class="landing-browser-label">پیش‌نمایش زنده</span>
+            </div>
+            <div class="landing-preview-content">
+              <div class="landing-preview-iframe-wrap">
+                <iframe src="../index.html" loading="lazy" class="landing-preview-iframe" title="پیش‌نمایش قالب نِگار"></iframe>
+              </div>
+            </div>
+
+            <div class="landing-float landing-float--1">
+              <i class="ri-smartphone-line text-accent-dark"></i>
+              <div>
+                <b>ریسپانسیو</b>
+                <small>موبایل، تبلت، دسکتاپ</small>
+              </div>
+            </div>
+
+            <div class="landing-float landing-float--2">
+              <i class="ri-speed-up-line text-accent-dark"></i>
+              <div>
+                <b>۹۸/۱۰۰</b>
+                <small>امتیاز PageSpeed</small>
+              </div>
+            </div>
+
+            <div class="landing-float landing-float--3">
+              <i class="ri-window-line text-accent-dark"></i>
+              <div>
+                <b>۳۶ صفحه</b>
+                <small>آماده‌ی استفاده</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech logos strip -->
+        <div class="mt-14 border-y border-border py-6 overflow-hidden">
+          <div class="marquee">
+            <span class="marquee-item"><i class="ri-html5-line"></i> HTML5</span>
+            <span class="marquee-item"><i class="ri-tailwind-css-line"></i> Tailwind CSS v4</span>
+            <span class="marquee-item"><i class="ri-bar-chart-2-line"></i> Chart.js</span>
+            <span class="marquee-item"><i class="ri-slideshow-line"></i> Swiper</span>
+            <span class="marquee-item"><i class="ri-smartphone-line"></i> Responsive</span>
+            <span class="marquee-item"><i class="ri-layout-right-line"></i> RTL</span>
+            <span class="marquee-item"><i class="ri-moon-line"></i> Dark Ready</span>
+            <span class="marquee-item"><i class="ri-palette-line"></i> Customizable</span>
+            <span class="marquee-item"><i class="ri-html5-line"></i> HTML5</span>
+            <span class="marquee-item"><i class="ri-tailwind-css-line"></i> Tailwind CSS v4</span>
+            <span class="marquee-item"><i class="ri-bar-chart-2-line"></i> Chart.js</span>
+            <span class="marquee-item"><i class="ri-slideshow-line"></i> Swiper</span>
+            <span class="marquee-item"><i class="ri-smartphone-line"></i> Responsive</span>
+            <span class="marquee-item"><i class="ri-layout-right-line"></i> RTL</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== Features ==================== -->
+    <section id="features" class="py-16 sm:py-24">
+      <div class="container-app">
+
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="inline-flex items-center gap-2 rounded-full bg-accent/30 px-3 py-1 text-[10px] font-black text-ink">
+            <i class="ri-sparkling-2-line"></i> ویژگی‌های قالب
+          </span>
+          <h2 class="mt-5 text-[clamp(26px,4vw,42px)] font-black leading-[1.2] tracking-[-.05em]">
+            هر چیزی که برای ساخت یک فروشگاه کامل نیاز داری.
+          </h2>
+          <p class="mt-4 text-[13px] leading-[2] text-muted">
+            این قالب فقط یک سری صفحه‌ی HTML نیست؛ یک پکیج کامل با کدهای تمیز، مستندات و پشتیبانی واقعی است.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+          <article class="feat-card">
+            <div class="feat-icon" style="background:#dce8dc;color:#56735e"><i class="ri-window-line"></i></div>
+            <h3>۳۶ صفحه‌ی آماده</h3>
+            <p>از صفحه اصلی تا پنل مدیریت — همه‌چیز آماده و قابل استفاده در چند دقیقه.</p>
+          </article>
+
+          <article class="feat-card">
+            <div class="feat-icon" style="background:#e8d9cb;color:#88674d"><i class="ri-bar-chart-2-line"></i></div>
+            <h3>پنل مدیریت با Chart.js</h3>
+            <p>داشبورد آماری با نمودارهای خطی، میله‌ای، دونات، پای و رادیال.</p>
+          </article>
+
+          <article class="feat-card">
+            <div class="feat-icon" style="background:#d7dbea;color:#5d658a"><i class="ri-slideshow-line"></i></div>
+            <h3>اسلایدر با Swiper</h3>
+            <p>گالری محصول، پیشنهادها و بنرهای سایت با Swiper حرفه‌ای.</p>
+          </article>
+
+          <article class="feat-card">
+            <div class="feat-icon" style="background:#fdeee0;color:#a5622c"><i class="ri-smartphone-line"></i></div>
+            <h3>کاملاً ریسپانسیو</h3>
+            <p>از موبایل ۳۲۰ پیکسل تا مانیتور ۴K — همه‌جا بی‌نقص نمایش داده می‌شود.</p>
+          </article>
+
+          <article class="feat-card">
+            <div class="feat-icon" style="background:#e0f4e8;color:#2e7d55"><i class="ri-code-s-slash-line"></i></div>
+            <h3>کد تمیز و مستند</h3>
+            <p>بدون jQuery، بدون وابستگی اضافه. HTML5 سمانتیک + Tailwind v4.</p>
+          </article>
+
+          <article class="feat-card">
+            <div class="feat-icon" style="background:#e5dbe8;color:#6f4a75"><i class="ri-layout-right-line"></i></div>
+            <h3>راست‌چین و فارسی</h3>
+            <p>فونت Vazirmatn، اعداد فارسی، تاریخ شمسی و تمام اجزا RTL.</p>
+          </article>
+
+          <article class="feat-card">
+            <div class="feat-icon" style="background:#f5d5d0;color:#a33226"><i class="ri-shopping-bag-3-line"></i></div>
+            <h3>سبد خرید هوشمند</h3>
+            <p>State Management با localStorage بین همه صفحات خرید.</p>
+          </article>
+
+          <article class="feat-card">
+            <div class="feat-icon" style="background:#dce8dc;color:#56735e"><i class="ri-dashboard-3-line"></i></div>
+            <h3>پنل مدیریت کامل</h3>
+            <p>۵ صفحه‌ی مدیریت: داشبورد، محصولات، سفارش‌ها، کاربران، تنظیمات.</p>
+          </article>
+
+          <article class="feat-card">
+            <div class="feat-icon" style="background:#f0e4c8;color:#5a3f27"><i class="ri-palette-line"></i></div>
+            <h3>سفارشی‌سازی آسان</h3>
+            <p>تغییر رنگ، فونت و چیدمان فقط با ویرایش چند متغیر CSS.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Pages Grid (Live iframe thumbnails) ==================== -->
+    <section id="pages" class="py-16 sm:py-24" style="background:#fff">
+      <div class="container-app">
+
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="inline-flex items-center gap-2 rounded-full bg-accent/30 px-3 py-1 text-[10px] font-black text-ink">
+            <i class="ri-window-line"></i> نگاهی به صفحات
+          </span>
+          <h2 class="mt-5 text-[clamp(26px,4vw,42px)] font-black leading-[1.2] tracking-[-.05em]">
+            ۳۶ صفحه، همه آماده و حرفه‌ای.
+          </h2>
+          <p class="mt-4 text-[13px] leading-[2] text-muted">
+            روی هر صفحه کلیک کن تا در بخش پیش‌نمایش، به صورت زنده ببینی‌اش.
+          </p>
+        </div>
+
+        <div id="pagesGrid" class="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"></div>
+
+      </div>
+    </section>
+
+    <!-- ==================== Live Demo ==================== -->
+    <section id="demo" class="py-16 sm:py-24">
+      <div class="container-app">
+
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="inline-flex items-center gap-2 rounded-full bg-accent/30 px-3 py-1 text-[10px] font-black text-ink">
+            <i class="ri-play-circle-line"></i> پیش‌نمایش زنده
+          </span>
+          <h2 class="mt-5 text-[clamp(26px,4vw,42px)] font-black leading-[1.2] tracking-[-.05em]">
+            خودت صفحات را امتحان کن.
+          </h2>
+          <p class="mt-4 text-[13px] leading-[2] text-muted">
+            صفحات را در سه اندازه‌ی دسکتاپ، تبلت و موبایل ببین. همه چیز واقعی و قابل تعامل.
+          </p>
+        </div>
+
+        <!-- Demo Toolbar -->
+        <div class="mt-10 flex flex-wrap items-center justify-between gap-3">
+          <div class="demo-tabs !mb-0" id="demoTabs">
+            <button class="demo-tab is-active" data-demo="home">صفحه اصلی</button>
+            <button class="demo-tab" data-demo="shop">فروشگاه</button>
+            <button class="demo-tab" data-demo="product">محصول</button>
+            <button class="demo-tab" data-demo="cart">سبد خرید</button>
+            <button class="demo-tab" data-demo="checkout">تسویه</button>
+            <button class="demo-tab" data-demo="account">پنل کاربری</button>
+            <button class="demo-tab" data-demo="admin">پنل مدیریت</button>
+            <button class="demo-tab" data-demo="blog">مجله</button>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <div class="device-switcher">
+              <button class="device-btn is-active" data-device="desktop" aria-label="دسکتاپ">
+                <i class="ri-computer-line"></i>
+              </button>
+              <button class="device-btn" data-device="tablet" aria-label="تبلت">
+                <i class="ri-tablet-line"></i>
+              </button>
+              <button class="device-btn" data-device="mobile" aria-label="موبایل">
+                <i class="ri-smartphone-line"></i>
+              </button>
+            </div>
+            <a id="demoOpenLink" href="../index.html" target="_blank" class="icon-btn is-active" title="باز کردن در تب جدید">
+              <i class="ri-external-link-line"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Demo Frame -->
+        <div id="demoFrame" class="demo-frame mt-4">
+          <iframe id="demoIframe" src="../index.html" title="پیش‌نمایش صفحه"></iframe>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== What's inside ==================== -->
+    <section class="py-16 sm:py-24" style="background:#fff">
+      <div class="container-app">
+        <div class="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-16 lg:items-center">
+
+          <div>
+            <span class="inline-flex items-center gap-2 rounded-full bg-accent/30 px-3 py-1 text-[10px] font-black text-ink">
+              <i class="ri-box-3-line"></i> محتوای پکیج
+            </span>
+            <h2 class="mt-5 text-[clamp(24px,3.5vw,38px)] font-black leading-[1.2] tracking-[-.05em]">
+              وقتی قالب را می‌خری، چه چیزی دریافت می‌کنی؟
+            </h2>
+            <p class="mt-4 max-w-lg text-[13px] leading-[2] text-muted">
+              یک بسته‌ی کامل با فایل‌های سورس، مستندات و پشتیبانی — همه چیز برای شروع در چند دقیقه.
+            </p>
+
+            <div class="mt-8 grid gap-3 sm:grid-cols-2">
+              <div class="flex items-start gap-3 rounded-[16px] border border-border bg-bg p-4">
+                <i class="ri-file-code-line mt-0.5 text-[22px] text-accent-dark"></i>
+                <div>
+                  <b class="block text-[12px] font-black">فایل‌های HTML خام</b>
+                  <small class="mt-1 block text-[10px] text-muted">۳۶ صفحه بدون فشرده‌سازی</small>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 rounded-[16px] border border-border bg-bg p-4">
+                <i class="ri-palette-line mt-0.5 text-[22px] text-accent-dark"></i>
+                <div>
+                  <b class="block text-[12px] font-black">سورس Tailwind</b>
+                  <small class="mt-1 block text-[10px] text-muted">input.css قابل کامپایل</small>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 rounded-[16px] border border-border bg-bg p-4">
+                <i class="ri-javascript-line mt-0.5 text-[22px] text-accent-dark"></i>
+                <div>
+                  <b class="block text-[12px] font-black">فایل‌های JS</b>
+                  <small class="mt-1 block text-[10px] text-muted">کامنت‌گذاری شده و تمیز</small>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 rounded-[16px] border border-border bg-bg p-4">
+                <i class="ri-book-open-line mt-0.5 text-[22px] text-accent-dark"></i>
+                <div>
+                  <b class="block text-[12px] font-black">مستندات کامل</b>
+                  <small class="mt-1 block text-[10px] text-muted">نصب، تنظیم، شخصی‌سازی</small>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 rounded-[16px] border border-border bg-bg p-4">
+                <i class="ri-image-2-line mt-0.5 text-[22px] text-accent-dark"></i>
+                <div>
+                  <b class="block text-[12px] font-black">تصاویر و فونت</b>
+                  <small class="mt-1 block text-[10px] text-muted">آماده و بهینه</small>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 rounded-[16px] border border-border bg-bg p-4">
+                <i class="ri-customer-service-2-line mt-0.5 text-[22px] text-accent-dark"></i>
+                <div>
+                  <b class="block text-[12px] font-black">۶ ماه پشتیبانی</b>
+                  <small class="mt-1 block text-[10px] text-muted">پاسخ به سؤالات</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Folder tree visual -->
+          <div class="rounded-[22px] border border-border bg-ink p-6 shadow-soft">
+            <div class="flex items-center gap-2 pb-4 border-b border-white/10">
+              <span class="h-[10px] w-[10px] rounded-full" style="background:var(--color-danger)"></span>
+              <span class="h-[10px] w-[10px] rounded-full" style="background:#f0b429"></span>
+              <span class="h-[10px] w-[10px] rounded-full" style="background:var(--color-success)"></span>
+              <span class="mr-auto text-[10px] font-mono text-white/40">negar-template.zip</span>
+            </div>
+            <pre class="mt-4 text-[11px] leading-[1.9] text-white/70 font-mono overflow-x-auto" dir="ltr">
+<span class="text-accent">📦 negar-template</span>
+├── 📁 dist/
+│   └── css/style.css
+├── 📁 src/
+│   ├── input.css
+│   └── js/
+│       ├── main.js
+│       ├── shop.js
+│       ├── cart.js
+│       ├── checkout.js
+│       ├── account.js
+│       ├── admin.js
+│       ├── admin-charts.js
+│       └── ...
+├── 📁 pages/
+│   ├── shop.html
+│   ├── cart.html
+│   ├── checkout.html
+│   ├── account.html
+│   ├── product.html
+│   ├── admin/
+│   │   ├── index.html
+│   │   ├── products.html
+│   │   ├── orders.html
+│   │   ├── users.html
+│   │   └── settings.html
+│   └── ...
+├── 📁 assets/
+│   ├── fonts/
+│   └── images/
+├── 📁 docs/
+│   ├── README.md
+│   ├── installation.md
+│   ├── customization.md
+│   └── changelog.md
+├── 📄 package.json
+├── 📄 LICENSE.txt
+└── 📄 index.html
+            </pre>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Pricing ==================== -->
+    <section id="pricing" class="py-16 sm:py-24">
+      <div class="container-app">
+
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="inline-flex items-center gap-2 rounded-full bg-accent/30 px-3 py-1 text-[10px] font-black text-ink">
+            <i class="ri-price-tag-3-line"></i> پلن‌های خرید
+          </span>
+          <h2 class="mt-5 text-[clamp(26px,4vw,42px)] font-black leading-[1.2] tracking-[-.05em]">
+            یک قالب، سه روش خرید.
+          </h2>
+          <p class="mt-4 text-[13px] leading-[2] text-muted">
+            هر پلن رو انتخاب کن که با نیازت هم‌خوانی داره. همه‌ی پلن‌ها شامل سورس کامل هستند.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-3">
+
+          <!-- Basic -->
+          <div class="price-card">
+            <span class="inline-block rounded-full bg-bg px-3 py-1 text-[10px] font-black text-ink">پایه</span>
+            <h3 class="mt-4 text-[18px] font-black">Basic</h3>
+            <p class="price-desc mt-2 text-[11px] text-muted">برای شروع سریع و ارزیابی</p>
+            <div class="mt-6">
+              <span class="price-amount">۱,۲۰۰,۰۰۰ <small>تومان</small></span>
+            </div>
+
+            <ul class="price-features">
+              <li class="price-feature"><i class="ri-check-line"></i> فایل‌های HTML کامل (۳۶ صفحه)</li>
+              <li class="price-feature"><i class="ri-check-line"></i> سورس Tailwind و JS</li>
+              <li class="price-feature"><i class="ri-check-line"></i> مستندات نصب</li>
+              <li class="price-feature is-off"><i class="ri-close-line"></i> ۶ ماه پشتیبانی</li>
+              <li class="price-feature is-off"><i class="ri-close-line"></i> آپدیت‌های بعدی</li>
+              <li class="price-feature is-off"><i class="ri-close-line"></i> نصب رایگان</li>
+            </ul>
+
+            <a href="#" class="price-btn" data-buy="basic">
+              <i class="ri-shopping-cart-2-line"></i> خرید Basic
+            </a>
+          </div>
+
+          <!-- Pro -->
+          <div class="price-card is-featured">
+            <span class="price-badge">محبوب‌ترین</span>
+            <span class="inline-block rounded-full bg-white/10 px-3 py-1 text-[10px] font-black text-white">حرفه‌ای</span>
+            <h3 class="mt-4 text-[18px] font-black text-white">Pro</h3>
+            <p class="price-desc mt-2 text-[11px]">برای پروژه‌های جدی</p>
+            <div class="mt-6">
+              <span class="price-amount">۱,۹۰۰,۰۰۰ <small>تومان</small></span>
+              <span class="mr-3 inline-block rounded-full bg-accent/20 px-2 py-0.5 text-[10px] font-black text-accent">تخفیف ۳۰٪</span>
+            </div>
+
+            <ul class="price-features">
+              <li class="price-feature"><i class="ri-check-line"></i> همه چیز در پلن Basic</li>
+              <li class="price-feature"><i class="ri-check-line"></i> ۶ ماه پشتیبانی رایگان</li>
+              <li class="price-feature"><i class="ri-check-line"></i> آپدیت‌های ۱ ساله</li>
+              <li class="price-feature"><i class="ri-check-line"></i> مستندات کامل شخصی‌سازی</li>
+              <li class="price-feature"><i class="ri-check-line"></i> دسترسی به نمونه‌های بیشتر</li>
+              <li class="price-feature is-off"><i class="ri-close-line"></i> نصب رایگان</li>
+            </ul>
+
+            <a href="#" class="price-btn" data-buy="pro">
+              <i class="ri-shopping-cart-2-line"></i> خرید Pro
+            </a>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="price-card">
+            <span class="inline-block rounded-full bg-bg px-3 py-1 text-[10px] font-black text-ink">سازمانی</span>
+            <h3 class="mt-4 text-[18px] font-black">Enterprise</h3>
+            <p class="price-desc mt-2 text-[11px] text-muted">برای تیم‌ها و پروژه‌های بزرگ</p>
+            <div class="mt-6">
+              <span class="price-amount">۴,۵۰۰,۰۰۰ <small>تومان</small></span>
+            </div>
+
+            <ul class="price-features">
+              <li class="price-feature"><i class="ri-check-line"></i> همه چیز در پلن Pro</li>
+              <li class="price-feature"><i class="ri-check-line"></i> نصب و راه‌اندازی رایگان</li>
+              <li class="price-feature"><i class="ri-check-line"></i> ۱ سال پشتیبانی اختصاصی</li>
+              <li class="price-feature"><i class="ri-check-line"></i> امکان استفاده در چند پروژه</li>
+              <li class="price-feature"><i class="ri-check-line"></i> شخصی‌سازی اولیه رایگان</li>
+              <li class="price-feature"><i class="ri-check-line"></i> فاکتور رسمی</li>
+            </ul>
+
+            <a href="#" class="price-btn" data-buy="enterprise">
+              <i class="ri-shopping-cart-2-line"></i> خرید Enterprise
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Money-back -->
+        <div class="mt-10 mx-auto max-w-2xl rounded-[20px] border border-border bg-white p-6 text-center">
+          <i class="ri-shield-check-line text-[32px] text-success"></i>
+          <h3 class="mt-3 text-[14px] font-black">تضمین بازگشت وجه ۷ روزه</h3>
+          <p class="mt-2 text-[11px] leading-6 text-muted">
+            اگر ظرف ۷ روز از خرید خود راضی نبودی، مبلغ کامل بدون هیچ سؤالی بهت برگردونده می‌شه.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== Reviews ==================== -->
+    <section id="reviews" class="py-16 sm:py-24" style="background:#fff">
+      <div class="container-app">
+
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="inline-flex items-center gap-2 rounded-full bg-accent/30 px-3 py-1 text-[10px] font-black text-ink">
+            <i class="ri-star-line"></i> نظرات خریداران
+          </span>
+          <h2 class="mt-5 text-[clamp(26px,4vw,42px)] font-black leading-[1.2] tracking-[-.05em]">
+            خریداران درباره نِگار چه می‌گویند؟
+          </h2>
+          <p class="mt-4 text-[13px] leading-[2] text-muted">
+            میانگین امتیاز: <b class="text-ink">۴.۹</b> از ۵ — بر اساس <b class="text-ink">۱۲۴</b> نظر
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+          <article class="review-card">
+            <div class="review-stars">
+              <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            </div>
+            <p class="review-text">
+              کدها فوق‌العاده تمیز نوشته شدن. توی دو ساعت تونستم فروشگاه کتاب خودم رو راه‌اندازی کنم. پنل مدیریت هم حرف نداره.
+            </p>
+            <div class="review-author">
+              <div class="review-avatar" style="background:linear-gradient(135deg,#87927a,#3b4a3f)">م.ر</div>
+              <div>
+                <b class="block text-[11px] font-black">مریم رضایی</b>
+                <small class="mt-0.5 block text-[10px] text-muted">طراح وب · تهران</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars">
+              <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            </div>
+            <p class="review-text">
+              چیزهایی توی این قالب هست که توی قالب‌های گرون‌تر هم ندیدم. مقایسه محصول، کارت هدیه، پیگیری سفارش... واقعاً کامل.
+            </p>
+            <div class="review-author">
+              <div class="review-avatar" style="background:linear-gradient(135deg,#c0a17a,#5a3f27)">ع.ح</div>
+              <div>
+                <b class="block text-[11px] font-black">علی حکیمی</b>
+                <small class="mt-0.5 block text-[10px] text-muted">توسعه‌دهنده فرانت · اصفهان</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars">
+              <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+            </div>
+            <p class="review-text">
+              پشتیبانی خیلی سریع جواب داد. یه مشکل کوچیک داشتم، همون روز حل کردن. دستشون درد نکنه.
+            </p>
+            <div class="review-author">
+              <div class="review-avatar" style="background:linear-gradient(135deg,#8d98c5,#2f3656)">ن.ک</div>
+              <div>
+                <b class="block text-[11px] font-black">نگار کریمی</b>
+                <small class="mt-0.5 block text-[10px] text-muted">مدیر محصول · شیراز</small>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section id="faq" class="py-16 sm:py-24">
+      <div class="container-app">
+
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="inline-flex items-center gap-2 rounded-full bg-accent/30 px-3 py-1 text-[10px] font-black text-ink">
+            <i class="ri-question-line"></i> سوالات متداول
+          </span>
+          <h2 class="mt-5 text-[clamp(26px,4vw,42px)] font-black leading-[1.2] tracking-[-.05em]">
+            شاید این سؤالات رو داشته باشی.
+          </h2>
+        </div>
+
+        <div class="mx-auto mt-10 max-w-3xl">
+
+          <details class="faq-item" open>
+            <summary>آیا برای استفاده از قالب، به دانش برنامه‌نویسی نیاز دارم؟ <i class="ri-add-line"></i></summary>
+            <p>برای استفاده‌ی ساده و اجرای قالب، فقط کافیه فایل‌ها رو در هاست خودت آپلود کنی. برای شخصی‌سازی، آشنایی پایه با HTML و CSS کافیه. مستندات کامل هم همراهش هست.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>چطور می‌تونم قالب رو ویرایش یا سفارشی کنم؟ <i class="ri-add-line"></i></summary>
+            <p>همه‌ی رنگ‌ها و متغیرهای طراحی در فایل <code dir="ltr">input.css</code> به‌صورت متغیر CSS تعریف شدن. با تغییر چند خط، می‌تونی رنگ‌های برند خودت رو اعمال کنی. برای تغییرات بیشتر، فایل‌های HTML ساده و بدون فشرده‌سازی هستن.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>آیا پشتیبانی و آپدیت داره؟ <i class="ri-add-line"></i></summary>
+            <p>بله. پلن Basic بدون پشتیبانی، پلن Pro با ۶ ماه پشتیبانی و ۱ سال آپدیت رایگان، و پلن Enterprise با ۱ سال پشتیبانی اختصاصی ارائه می‌شه.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>امکان بازگشت وجه وجود داره؟ <i class="ri-add-line"></i></summary>
+            <p>بله. تا ۷ روز پس از خرید، اگر از قالب راضی نبودی، با تماس با پشتیبانی، مبلغ کامل بهت برگردونده می‌شه — بدون سؤال.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>قالب با چه مرورگرهایی سازگاره؟ <i class="ri-add-line"></i></summary>
+            <p>با همه‌ی مرورگرهای مدرن: Chrome، Firefox، Safari، Edge و حتی مرورگرهای موبایل. از Tailwind CSS v4 استفاده شده که سازگاری بالایی داره.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>آیا فایل‌های Figma هم داره؟ <i class="ri-add-line"></i></summary>
+            <p>در پلن Enterprise، فایل Figma طراحی هم ارائه می‌شه. برای پلن‌های Basic و Pro، فایل‌های HTML به‌عنوان مرجع اصلی طراحی هستن.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>می‌تونم روی چند پروژه استفاده کنم؟ <i class="ri-add-line"></i></summary>
+            <p>در پلن‌های Basic و Pro، هر لایسنس برای یک پروژه‌ی نهایی معتبره. برای استفاده در چند پروژه، پلن Enterprise (لایسنس چندپروژه‌ای) تهیه کن.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>چطور قالب رو دریافت می‌کنم؟ <i class="ri-add-line"></i></summary>
+            <p>بلافاصله پس از پرداخت موفق، لینک دانلود در ایمیل و پنل کاربری شما نمایش داده می‌شه. اگر به هر دلیلی لینک دریافت نکردی، با پشتیبانی تماس بگیر.</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Final CTA ==================== -->
+    <section class="py-16 sm:py-24">
+      <div class="container-app">
+        <div class="relative overflow-hidden rounded-[28px] bg-ink p-8 text-white sm:rounded-[34px] sm:p-14">
+          <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+            <div class="absolute -top-40 -left-40 h-[400px] w-[400px] rounded-full border border-accent/15"></div>
+            <div class="absolute -bottom-60 -right-40 h-[500px] w-[500px] rounded-full border border-accent/10"></div>
+            <div class="absolute right-[8%] top-[20%] text-accent/10" style="font-size:200px;line-height:1">
+              <i class="ri-book-3-line"></i>
+            </div>
+          </div>
+
+          <div class="relative z-10 mx-auto max-w-3xl text-center">
+            <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1.5 text-[10px] font-extrabold text-accent">
+              <i class="ri-rocket-line"></i> آماده‌ی شروع؟
+            </span>
+            <h2 class="mt-5 text-[clamp(26px,4.5vw,46px)] font-black leading-[1.15] tracking-[-.05em]">
+              همین امروز فروشگاهت رو راه بیانداز.
+            </h2>
+            <p class="mt-4 mx-auto max-w-xl text-[13px] leading-[2] text-white/60">
+              با پلن Pro، همه‌ی چیزی که برای یک فروشگاه حرفه‌ای نیاز داری رو داری — با ۳۰٪ تخفیف رونمایی.
+            </p>
+
+            <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a href="#pricing" class="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[14px] bg-accent px-7 text-[13px] font-extrabold text-ink hover:bg-[#e1fa87] transition sm:w-auto">
+                <i class="ri-shopping-cart-2-line"></i> خرید با ۳۰٪ تخفیف
+              </a>
+              <a href="#demo" class="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[14px] border border-white/20 px-7 text-[13px] font-extrabold text-white hover:bg-white/5 transition sm:w-auto">
+                <i class="ri-play-circle-line text-accent"></i> پیش‌نمایش
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="bg-ink text-white">
+    <div class="container-app grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div>
+        <a href="#home" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[18px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-white/55">قالب فروشگاهی HTML</small>
+          </span>
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-7 text-white/55">
+          قالب فروشگاهی نِگار، ساخته شده برای فروشگاه‌های کتاب، لوازم تحریر و محصولات فرهنگی.
+        </p>
+        <div class="mt-5 flex gap-[7px]">
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/10 text-white/60 hover:text-white transition"><i class="ri-instagram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/10 text-white/60 hover:text-white transition"><i class="ri-telegram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/10 text-white/60 hover:text-white transition"><i class="ri-twitter-x-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/10 text-white/60 hover:text-white transition"><i class="ri-github-line"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px] font-black">لینک‌های مفید</h3>
+        <a href="#features" class="my-2 block text-[10px] text-white/55 hover:text-white transition">ویژگی‌ها</a>
+        <a href="#pages" class="my-2 block text-[10px] text-white/55 hover:text-white transition">صفحات قالب</a>
+        <a href="#demo" class="my-2 block text-[10px] text-white/55 hover:text-white transition">پیش‌نمایش زنده</a>
+        <a href="#pricing" class="my-2 block text-[10px] text-white/55 hover:text-white transition">خرید قالب</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px] font-black">پشتیبانی</h3>
+        <a href="#faq" class="my-2 block text-[10px] text-white/55 hover:text-white transition">سوالات متداول</a>
+        <a href="#" class="my-2 block text-[10px] text-white/55 hover:text-white transition">مستندات</a>
+        <a href="#" class="my-2 block text-[10px] text-white/55 hover:text-white transition">چنج‌لاگ</a>
+        <a href="#" class="my-2 block text-[10px] text-white/55 hover:text-white transition">تماس با ما</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px] font-black">تماس</h3>
+        <p class="text-sm leading-7 text-white/55">تهران، خیابان کتاب، پلاک ۲۴</p>
+        <p class="mt-2 text-sm text-white/75" dir="ltr">۰۲۱-۱۲۳۴۵۶۷۸</p>
+        <p class="mt-1 text-[11px] text-white/55" dir="ltr">hello@negar.ir</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-app flex flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:justify-between">
+        <span>© ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.</span>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-white transition">قوانین</a>
+          <a href="#" class="hover:text-white transition">حریم خصوصی</a>
+          <a href="#" class="hover:text-white transition">لایسنس</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== Swiper JS ==================== -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    /* =========================================================
+       Landing Page — JavaScript
+       ========================================================= */
+
+    const $ = (s, root = document) => root.querySelector(s);
+    const $$ = (s, root = document) => [...root.querySelectorAll(s)];
+
+    const faNum = n => String(n).padStart(2, '0').replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+
+    /* ---------- Toast ---------- */
+    function showToast(msg, type = 'success') {
+      const t = document.createElement('div');
+      t.className = 'toast';
+      if (type === 'error') t.style.background = '#e66d5b';
+      t.textContent = msg;
+      document.body.appendChild(t);
+      setTimeout(() => t.remove(), 2600);
+    }
+
+    /* ---------- Mobile Drawer ---------- */
+    const drawer = $('#mobileDrawer');
+    const overlay = $('#mobileOverlay');
+
+    const openDrawer = () => {
+      drawer.classList.remove('translate-x-[105%]');
+      drawer.classList.add('translate-x-0');
+      overlay.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    };
+    const closeDrawer = () => {
+      drawer.classList.add('translate-x-[105%]');
+      drawer.classList.remove('translate-x-0');
+      overlay.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    };
+
+    $$('[data-mobile-open]').forEach(b => b.addEventListener('click', openDrawer));
+    $$('[data-mobile-close]').forEach(b => b.addEventListener('click', closeDrawer));
+
+    /* ---------- Banner Countdown (72h) ---------- */
+    const END = new Date(Date.now() + 3 * 24 * 3600 * 1000);
+    const bannerCd = $('#bannerCountdown');
+
+    const tickBanner = () => {
+      const diff = Math.max(0, END - Date.now());
+      const total = Math.floor(diff / 1000);
+      const d = Math.floor(total / 86400);
+      const h = Math.floor((total % 86400) / 3600);
+      const m = Math.floor((total % 3600) / 60);
+      const s = total % 60;
+      if (bannerCd) {
+        bannerCd.textContent = `${faNum(d)}:${faNum(h)}:${faNum(m)}:${faNum(s)}`;
+      }
+    };
+    tickBanner();
+    setInterval(tickBanner, 1000);
+
+    /* ---------- Active nav on scroll ---------- */
+    const navLinks = $$('.landing-nav-link');
+    const sections = ['home', 'features', 'pages', 'demo', 'pricing', 'reviews', 'faq']
+      .map(id => document.getElementById(id)).filter(Boolean);
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(l => {
+              l.classList.toggle('is-active', l.getAttribute('href') === '#' + entry.target.id);
+            });
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+      sections.forEach(s => io.observe(s));
+    }
+
+    /* ---------- Pages Grid (with live thumbnails) ---------- */
+    const PAGES = [
+      { id: 'home',        title: 'صفحه اصلی',      desc: 'Hero، اسلایدر، دسته‌ها', src: '../index.html' },
+      { id: 'shop',        title: 'فروشگاه',        desc: 'لیست محصولات',           src: '../pages/shop.html' },
+      { id: 'category',    title: 'دسته‌بندی',      desc: 'کشف موضوعی',             src: '../pages/category.html' },
+      { id: 'product',     title: 'محصول',          desc: 'جزئیات کامل',            src: '../pages/product.html' },
+      { id: 'cart',        title: 'سبد خرید',      desc: 'مدیریت کالاها',          src: '../pages/cart.html' },
+      { id: 'checkout',    title: 'تسویه حساب',    desc: 'فرم و پرداخت',           src: '../pages/checkout.html' },
+      { id: 'account',     title: 'پنل کاربری',    desc: 'داشبورد کاربر',          src: '../pages/account.html' },
+      { id: 'blog',        title: 'مجله',           desc: 'لیست مقالات',            src: '../pages/blog.html' },
+      { id: 'blog-single', title: 'مقاله',          desc: 'محتوای کامل',            src: '../pages/blog-single.html' },
+      { id: 'about',       title: 'درباره ما',     desc: 'داستان برند',            src: '../pages/about.html' },
+      { id: 'contact',     title: 'تماس با ما',    desc: 'فرم و نقشه',             src: '../pages/contact.html' },
+      { id: 'careers',     title: 'فرصت‌های شغلی', desc: 'موقعیت‌های باز',          src: '../pages/careers.html' },
+      { id: 'offers',      title: 'پیشنهادها',     desc: 'تخفیف‌های ویژه',         src: '../pages/offers.html' },
+      { id: 'compare',     title: 'مقایسه',         desc: 'جدول ویژگی‌ها',           src: '../pages/compare.html' },
+      { id: 'gift-card',   title: 'کارت هدیه',    desc: 'ساخت هدیه',              src: '../pages/gift-card.html' },
+      { id: 'newsletter',  title: 'خبرنامه',        desc: 'آرشیو شماره‌ها',         src: '../pages/newsletter.html' },
+      { id: 'author',      title: 'پروفایل نویسنده', desc: 'بیو و کتاب‌ها',        src: '../pages/author.html' },
+      { id: 'publisher',   title: 'پروفایل ناشر',  desc: 'ناشر و کتاب‌ها',        src: '../pages/publisher.html' },
+      { id: 'faq',         title: 'سوالات متداول', desc: 'آکاردئون سوالات',        src: '../pages/faq.html' },
+      { id: 'sitemap',     title: 'نقشه سایت',    desc: 'همه لینک‌ها',            src: '../pages/sitemap.html' },
+      { id: 'terms',       title: 'قوانین',         desc: 'شرایط استفاده',          src: '../pages/terms.html' },
+      { id: 'login',       title: 'ورود',           desc: 'ورود و ثبت‌نام',          src: '../pages/login.html' },
+      { id: 'wishlist',    title: 'علاقه‌مندی‌ها', desc: 'لیست شخصی',              src: '../pages/wishlist.html' },
+      { id: 'order-track', title: 'پیگیری سفارش', desc: 'Timeline سفارش',        src: '../pages/order-tracking.html' },
+      { id: 'order-suc',   title: 'موفقیت سفارش', desc: 'تأیید پرداخت',           src: '../pages/order-success.html' },
+      { id: 'notif',       title: 'اعلان‌ها',      desc: 'مرکز اطلاع‌رسانی',       src: '../pages/notifications.html' },
+      { id: 'search',      title: 'نتایج جست‌وجو', desc: 'فیلتر و صفحه‌بندی',      src: '../pages/search-result.html' },
+      { id: 'admin',       title: 'پنل مدیریت',   desc: 'داشبورد آماری',          src: '../pages/admin/index.html' },
+      { id: 'admin-prod',  title: 'مدیریت محصولات', desc: 'CRUD محصولات',          src: '../pages/admin/products.html' },
+      { id: 'admin-ord',   title: 'مدیریت سفارش‌ها', desc: 'جدول و فیلتر',          src: '../pages/admin/orders.html' },
+      { id: 'admin-user',  title: 'مدیریت کاربران', desc: 'CRUD کاربران',           src: '../pages/admin/users.html' },
+      { id: 'admin-set',   title: 'تنظیمات',       desc: 'پنل تنظیمات',            src: '../pages/admin/settings.html' },
+      { id: '400',         title: 'خطای ۴۰۰',    desc: 'درخواست نامعتبر',        src: '../pages/400.html' },
+      { id: '401',         title: 'خطای ۴۰۱',    desc: 'نیاز به ورود',           src: '../pages/401.html' },
+      { id: '500',         title: 'خطای ۵۰۰',    desc: 'خطای سرور',              src: '../pages/500.html' },
+      { id: 'maint',       title: 'در حال تعمیر',  desc: 'حالت maintenance',        src: '../pages/maintenance.html' },
+    ];
+
+    const pagesGrid = $('#pagesGrid');
+    pagesGrid.innerHTML = PAGES.map(p => `
+      <div class="page-card" data-page-src="${p.src}" data-page-title="${p.title}">
+        <div class="page-card-preview">
+          <iframe src="${p.src}" loading="lazy" title="${p.title}" tabindex="-1"></iframe>
+          <span class="page-card-badge">${p.title}</span>
+        </div>
+        <div>
+          <b class="page-card-title">${p.title}</b>
+          <small class="page-card-desc mt-0.5 block">${p.desc}</small>
+        </div>
+      </div>
+    `).join('');
+
+    /* کلیک روی کارت صفحه: رفتن به دمو و انتخاب همان صفحه */
+    pagesGrid.addEventListener('click', e => {
+      const card = e.target.closest('[data-page-src]');
+      if (!card) return;
+      const src = card.dataset.pageSrc;
+      const title = card.dataset.pageTitle;
+
+      // به روزرسانی iframe دمو
+      const iframe = $('#demoIframe');
+      const openLink = $('#demoOpenLink');
+      if (iframe) iframe.src = src;
+      if (openLink) openLink.href = src;
+
+      // حذف حالت انتخاب از تب‌ها
+      $$('.demo-tab').forEach(t => t.classList.remove('is-active'));
+      $$('.demo-tab').forEach(t => {
+        const btnTitle = t.textContent.trim();
+        if (title.includes(btnTitle) || btnTitle.includes(title)) t.classList.add('is-active');
+      });
+
+      // اسکرول به بخش دمو
+      document.getElementById('demo').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      showToast(`پیش‌نمایش «${title}» باز شد.`);
+    });
+
+    /* ---------- Demo Tabs ---------- */
+    const DEMO_MAP = {
+      home:     '../index.html',
+      shop:     '../pages/shop.html',
+      product:  '../pages/product.html',
+      cart:     '../pages/cart.html',
+      checkout: '../pages/checkout.html',
+      account:  '../pages/account.html',
+      admin:    '../pages/admin/index.html',
+      blog:     '../pages/blog.html',
+    };
+
+    const demoIframe = $('#demoIframe');
+    const demoOpenLink = $('#demoOpenLink');
+
+    $$('.demo-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const key = tab.dataset.demo;
+        const src = DEMO_MAP[key] || '../index.html';
+        if (demoIframe) demoIframe.src = src;
+        if (demoOpenLink) demoOpenLink.href = src;
+        $$('.demo-tab').forEach(t => t.classList.toggle('is-active', t === tab));
+      });
+    });
+
+    /* ---------- Device Switcher ---------- */
+    $$('.device-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const device = btn.dataset.device;
+        const frame = $('#demoFrame');
+        frame.classList.remove('is-mobile', 'is-tablet');
+        if (device === 'mobile') frame.classList.add('is-mobile');
+        if (device === 'tablet') frame.classList.add('is-tablet');
+        $$('.device-btn').forEach(b => b.classList.toggle('is-active', b === btn));
+      });
+    });
+
+    /* ---------- Buy buttons ---------- */
+    $$('[data-buy]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const plan = btn.dataset.buy;
+        const labels = { basic: 'پایه', pro: 'حرفه‌ای', enterprise: 'سازمانی' };
+        showToast(`پلن «${labels[plan]}» انتخاب شد. در حال انتقال به درگاه پرداخت...`);
+      });
+    });
+
+    /* ---------- Smooth scroll for all internal anchors ---------- */
+    $$('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id === '#') return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        const y = target.getBoundingClientRect().top + window.scrollY - 90;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        closeDrawer();
+      });
+    });
+
+    /* ---------- Lazy load iframes با IntersectionObserver ---------- */
+    if ('IntersectionObserver' in window) {
+      const iframes = document.querySelectorAll('iframe[loading="lazy"]');
+      const io2 = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const iframe = entry.target;
+            if (iframe.dataset.src) {
+              iframe.src = iframe.dataset.src;
+            }
+            obs.unobserve(iframe);
+          }
+        });
+      }, { rootMargin: '200px' });
+      iframes.forEach(f => io2.observe(f));
+    }
+
+    console.log('%cقالب نِگار', 'font-size:18px;font-weight:900;color:#d7f36b;background:#17211f;padding:6px 14px;border-radius:8px');
+    console.log('%cبرای اطلاعات بیشتر: hello@negar.ir', 'font-size:11px;color:#78817e');
+  </script>
+
+</body>
+</html>

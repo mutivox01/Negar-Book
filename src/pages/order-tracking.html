@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="پیگیری سفارش نِگار — وضعیت لحظه‌ای خریدهای شما">
+  <title>پیگیری سفارش | نِگار</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+</head>
+
+<body class="bg-bg text-text antialiased">
+
+  <!-- Announcement -->
+  <div class="bg-ink text-white">
+    <div class="container-app flex items-center justify-center gap-2 py-2 text-xs sm:text-sm">
+      <i class="ri-truck-line text-accent"></i>
+      <span>پیگیری لحظه‌ای سفارش — از انبار تا در خانه‌ی شما</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app">
+      <div class="flex h-20 items-center gap-4">
+        <button class="icon-btn lg:hidden" data-mobile-open aria-label="باز کردن منو">
+          <i class="ri-menu-4-line text-xl"></i>
+        </button>
+
+        <a href="../index.html" class="inline-flex shrink-0 items-center gap-2.5 text-ink" aria-label="صفحه اصلی">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+
+        <nav class="hidden items-center gap-1 xl:flex">
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./shop.html">فروشگاه</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./blog.html">مجله نِگار</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-ink" href="./order-tracking.html">پیگیری سفارش</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./faq.html">راهنما</a>
+        </nav>
+
+        <div class="mr-auto flex items-center gap-2">
+          <button class="icon-btn" aria-label="علاقه‌مندی‌ها">
+            <i class="ri-heart-3-line"></i>
+            <span class="counter">3</span>
+          </button>
+          <button class="icon-btn" aria-label="سبد خرید" data-cart-toggle>
+            <i class="ri-shopping-bag-3-line"></i>
+            <span class="counter">2</span>
+          </button>
+          <a href="./login.html" class="hidden h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold md:flex">
+            <i class="ri-user-3-line"></i>
+            <span>ورود / ثبت‌نام</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div id="mobileOverlay" class="fixed inset-0 z-[60] hidden bg-black/40 backdrop-blur-sm" data-mobile-close></div>
+  <aside id="mobileDrawer"
+    class="fixed top-0 right-0 bottom-0 z-[70] w-[min(340px,90vw)] translate-x-[105%]
+           bg-white shadow-[-20px_0_60px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <span class="font-black">منوی نِگار</span>
+      <button class="icon-btn" data-mobile-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="p-5">
+      <a class="drawer-link" href="./shop.html">فروشگاه <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./order-tracking.html">پیگیری سفارش <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./account.html#orders">سفارش‌های من <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./contact.html">پشتیبانی <i class="ri-arrow-left-s-line"></i></a>
+    </div>
+  </aside>
+
+  <main class="container-app pt-6 sm:pt-8">
+
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-[10px] text-muted">
+      <a href="../index.html" class="hover:text-ink">خانه</a>
+      <i class="ri-arrow-left-s-line"></i>
+      <a href="./account.html#orders" class="hover:text-ink">سفارش‌های من</a>
+      <i class="ri-arrow-left-s-line"></i>
+      <span class="text-ink font-bold">پیگیری سفارش</span>
+    </nav>
+
+    <!-- Page header -->
+    <div class="mt-4">
+      <span class="section-kicker">پیشخوان رهگیری</span>
+      <h1 class="text-[clamp(24px,3.5vw,34px)] font-black tracking-[-.05em]">پیگیری سفارش</h1>
+      <p class="mt-2 text-xs text-muted">کد سفارش یا کد رهگیری خود را وارد کنید تا وضعیت لحظه‌ای را ببینید.</p>
+    </div>
+
+    <!-- ==================== Search form ==================== -->
+    <section class="mt-6">
+      <div class="order-search-card">
+        <form id="trackingForm" class="grid gap-3 items-center sm:grid-cols-[1fr_auto]">
+          <div class="field">
+            <label for="trackingCode">کد سفارش یا کد رهگیری <span class="text-danger">*</span></label>
+            <div class="search-box h-[46px] bg-white">
+              <i class="ri-search-2-line"></i>
+              <input id="trackingCode" type="text" dir="ltr" placeholder="مثلاً NG-934821 یا IR-9384710294" required>
+            </div>
+            <small class="error"></small>
+          </div>
+          <button type="submit" class="inline-flex min-h-[46px] shrink-0 items-center justify-center gap-2 rounded-[13px] bg-ink px-6 text-[12px] font-extrabold text-white hover:bg-[#0f1817] transition self-end sm:h-[46px]">
+            <i class="ri-search-line"></i>
+            رهگیری سفارش
+          </button>
+        </form>
+
+        <div class="mt-4 flex flex-wrap items-center gap-3 text-[10px] text-muted">
+          <span class="inline-flex items-center gap-1.5">
+            <i class="ri-lightbulb-line text-accent-dark"></i> نمونه‌های قابل استفاده:
+          </span>
+          <button class="demo-chip" data-demo="NG-934821">NG-934821</button>
+          <button class="demo-chip" data-demo="NG-931244">NG-931244</button>
+          <button class="demo-chip" data-demo="NG-929881">NG-929881</button>
+          <button class="demo-chip" data-demo="NG-926110">NG-926110</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== نتیجه ==================== -->
+    <section id="trackingResult" class="mt-6 hidden">
+
+      <!-- Order header -->
+      <div class="tracking-header">
+        <div class="tracking-header-glow" aria-hidden="true"></div>
+
+        <div class="relative z-10 flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
+          <div class="flex items-center gap-4">
+            <div class="tracking-status-icon" id="trackingStatusIcon">
+              <i class="ri-truck-line"></i>
+            </div>
+            <div>
+              <span class="section-kicker !text-white/60">سفارش</span>
+              <b class="tracking-code" id="trackingCodeLabel">NG-934821</b>
+              <div class="mt-1.5 flex flex-wrap items-center gap-3 text-[10px] text-white/60">
+                <span><i class="ri-calendar-line"></i> <span id="trackingDate">۱۴۰۵/۰۵/۱۲</span></span>
+                <span class="mx-1 text-white/30">·</span>
+                <span><i class="ri-money-dollar-circle-line"></i> <span id="trackingTotal">۶۳۰,۰۰۰ تومان</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="tracking-status-badge" id="trackingStatusBadge">ارسال‌شده</span>
+            <button class="admin-btn admin-btn--primary !text-[11px]" id="trackingPrint">
+              <i class="ri-printer-line"></i> چاپ
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="tracking-timeline-wrap mt-6">
+        <span class="section-kicker">مسیر سفارش</span>
+        <h2 class="mb-6 text-[18px] font-black">سفارش شما در چه مرحله‌ای است؟</h2>
+
+        <ol id="trackingTimeline" class="tracking-timeline"></ol>
+      </div>
+
+      <!-- Detail grid -->
+      <div class="mt-6 grid gap-4 lg:grid-cols-[1.4fr_1fr]">
+
+        <!-- محصولات -->
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <div>
+              <span class="section-kicker">کالاها</span>
+              <h2 class="text-[14px] font-black">محصولات این سفارش</h2>
+            </div>
+            <span class="text-[11px] text-muted" id="trackingItemsCount">۲ قلم کالا</span>
+          </div>
+          <div id="trackingItems" class="space-y-3"></div>
+
+          <!-- Totals -->
+          <div class="mt-5 space-y-2 rounded-2xl bg-bg p-4 text-[11px]">
+            <div class="flex justify-between"><span class="text-muted">جمع کالاها</span><b id="trackingSubtotal">۵۹۵,۰۰۰ تومان</b></div>
+            <div class="flex justify-between"><span class="text-muted">هزینه ارسال</span><b id="trackingShipping">۳۵,۰۰۰ تومان</b></div>
+            <div class="flex justify-between border-t border-dashed border-border pt-2 text-[13px]">
+              <span class="font-black">مبلغ کل</span>
+              <b class="font-black" id="trackingGrandTotal">۶۳۰,۰۰۰ تومان</b>
+            </div>
+          </div>
+        </div>
+
+        <!-- اطلاعات ارسال -->
+        <div class="space-y-4">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <div>
+                <span class="section-kicker">ارسال</span>
+                <h2 class="text-[14px] font-black">اطلاعات مرسوله</h2>
+              </div>
+            </div>
+            <div class="space-y-3 text-[11px]">
+              <div class="flex items-center justify-between">
+                <span class="text-muted"><i class="ri-barcode-line"></i> کد رهگیری</span>
+                <b class="font-mono" dir="ltr" id="trackingRefCode">IR-9384710294</b>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-muted"><i class="ri-truck-line"></i> شرکت پست</span>
+                <b id="trackingCarrier">پست پیشتاز</b>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-muted"><i class="ri-calendar-check-line"></i> تحویل تخمینی</span>
+                <b id="trackingEta">۱۴۰۵/۰۵/۱۶</b>
+              </div>
+            </div>
+            <button class="mt-4 inline-flex min-h-[40px] w-full items-center justify-center gap-2 rounded-[11px] border border-border bg-white text-[11px] font-extrabold text-ink hover:bg-bg transition" id="trackingCopyRef">
+              <i class="ri-file-copy-line"></i> کپی کد رهگیری
+            </button>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <div>
+                <span class="section-kicker">تحویل</span>
+                <h2 class="text-[14px] font-black">آدرس دریافت</h2>
+              </div>
+            </div>
+            <p class="text-[11px] leading-7 text-[#4a5450]" id="trackingAddress">
+              تهران، خیابان ولیعصر، کوچه بهار، پلاک ۱۲، واحد ۳
+            </p>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <div>
+                <span class="section-kicker">پرداخت</span>
+                <h2 class="text-[14px] font-black">شیوه پرداخت</h2>
+              </div>
+            </div>
+            <p class="text-[11px] text-muted">
+              <i class="ri-bank-card-line"></i> پرداخت آنلاین — تأیید شده
+            </p>
+            <p class="mt-2 text-[10px] text-muted">شناسه تراکنش: <b class="font-mono" dir="ltr">TX-20250812-1432</b></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- اکشن‌ها -->
+      <div class="mt-6 flex flex-wrap gap-2">
+        <a href="./contact.html" class="admin-btn !text-[11px]">
+          <i class="ri-customer-service-2-line"></i> تماس با پشتیبانی
+        </a>
+        <button class="admin-btn !text-[11px]" id="trackingCancel">
+          <i class="ri-close-circle-line"></i> درخواست لغو سفارش
+        </button>
+        <button class="admin-btn !text-[11px]" id="trackingRefresh">
+          <i class="ri-refresh-line"></i> بروزرسانی وضعیت
+        </button>
+      </div>
+
+    </section>
+
+    <!-- ==================== راهنما ==================== -->
+    <section class="pt-10 sm:pt-14">
+      <div class="mb-6">
+        <span class="section-kicker">راهنما</span>
+        <h2 class="text-[clamp(20px,2.6vw,26px)] font-black tracking-[-.04em]">نکاتی برای پیگیری بهتر</h2>
+      </div>
+
+      <div class="grid gap-3 sm:grid-cols-3">
+        <div class="offer-tip">
+          <i class="ri-numbers-line"></i>
+          <div>
+            <b>کد سفارش یا رهگیری</b>
+            <p>کد سفارش (NG-XXXXXX) را از ایمیل تأیید سفارش بردارید یا کد رهگیری پست را از پیامک.</p>
+          </div>
+        </div>
+        <div class="offer-tip">
+          <i class="ri-time-line"></i>
+          <div>
+            <b>به‌روزرسانی خودکار</b>
+            <p>وضعیت‌ها هر ۱۲ ساعت به‌طور خودکار از سرور پست دریافت می‌شوند.</p>
+          </div>
+        </div>
+        <div class="offer-tip">
+          <i class="ri-customer-service-2-line"></i>
+          <div>
+            <b>مشکل در رهگیری؟</b>
+            <p>اگر کد رهگیری کار نمی‌کند، تا ۲۴ ساعت پس از ارسال، دوباره تلاش کنید یا با پشتیبانی تماس بگیرید.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-14 bg-ink text-white sm:mt-20">
+    <div class="container-app grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div>
+        <a href="../index.html" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-[#aeb8b3]">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-7 text-white/55">
+          فروشگاهی برای کسانی که کتاب را فقط یک محصول نمی‌دانند؛ یک تجربه می‌دانند.
+        </p>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">خرید</h3>
+        <a href="./shop.html" class="my-2 block text-[10px] text-[#aeb8b3]">همه کتاب‌ها</a>
+        <a href="./offers.html" class="my-2 block text-[10px] text-[#aeb8b3]">پیشنهادهای ویژه</a>
+        <a href="./gift-card.html" class="my-2 block text-[10px] text-[#aeb8b3]">کارت هدیه</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">راهنما</h3>
+        <a href="./order-tracking.html" class="my-2 block text-[10px] text-[#aeb8b3]">پیگیری سفارش</a>
+        <a href="./faq.html" class="my-2 block text-[10px] text-[#aeb8b3]">سوالات متداول</a>
+        <a href="./contact.html" class="my-2 block text-[10px] text-[#aeb8b3]">تماس با ما</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">ارتباط</h3>
+        <p class="text-sm text-white/75">۰۲۱-۱۲۳۴۵۶۷۸</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-app py-5 text-center text-xs text-white/40">
+        © ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div id="cartPanel" class="fixed top-0 right-0 bottom-0 z-[80] flex w-[min(390px,92vw)] translate-x-[105%] flex-col bg-white shadow-[-20px_0_70px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <div><b class="text-lg">سبد خرید</b><span class="mr-2 text-xs text-muted">۲ کالا</span></div>
+      <button class="icon-btn" data-cart-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="space-y-3 p-5">
+      <div class="flex items-center gap-3 rounded-2xl border border-border p-2">
+        <div class="mini-cover flex-[0_0_58px] !min-h-[78px] bg-[#657c71]">روایت<br>یک زندگی</div>
+        <div><b class="block text-[10px]">روایت یک زندگی</b><span class="mt-1.5 block text-[9px] text-[#909895]">۲۷۵,۰۰۰ تومان</span></div>
+      </div>
+    </div>
+    <div class="mt-auto border-t border-border p-5">
+      <div class="mb-4 flex justify-between"><span>جمع کل</span><b>۲۷۵,۰۰۰ تومان</b></div>
+      <a href="./cart.html" class="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink">
+        مشاهده سبد خرید
+      </a>
+    </div>
+  </div>
+  <div id="cartOverlay" class="fixed inset-0 z-[55] hidden bg-black/30" data-cart-close></div>
+
+  <!-- <script src="/src/js/main.js"></script> -->
+  <script src="/src/js/order-tracking.js"></script>
+</body>
+</html>

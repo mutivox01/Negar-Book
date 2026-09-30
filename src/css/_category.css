@@ -1,0 +1,138 @@
+/* ===== Category Page ===== */
+
+/* کارت دسته */
+.cat-card {
+  @apply flex flex-col gap-4 rounded-[26px] border border-border bg-white p-3
+         transition duration-300 hover:-translate-y-1 hover:shadow-soft hover:border-[#cbd0c9];
+}
+
+.cat-cover {
+  @apply relative flex min-h-[180px] flex-col justify-end overflow-hidden rounded-[20px] p-5 text-white
+         shadow-[0_15px_35px_rgba(0,0,0,.06)];
+}
+.cat-cover::after {
+  content: "";
+  @apply absolute inset-0 bg-gradient-to-b from-transparent from-40% to-black/40;
+}
+
+.cat-icon {
+  @apply absolute top-4 right-4 z-[2] grid h-[42px] w-[42px] place-items-center rounded-[13px]
+         bg-white/15 text-[19px] backdrop-blur-[10px];
+}
+
+.cat-count {
+  @apply absolute top-4 left-4 z-[2] rounded-full bg-white/15 px-2.5 py-1 text-[9px] font-bold
+         backdrop-blur-[10px];
+}
+
+.cat-title {
+  @apply relative z-[2];
+}
+.cat-title b {
+  @apply block text-[17px] font-black leading-snug sm:text-[19px];
+}
+.cat-title small {
+  @apply mt-1 block text-[10px] text-white/65;
+}
+
+.cat-arrow {
+  @apply absolute bottom-5 left-5 z-[2] text-[22px] transition-transform duration-300;
+}
+.cat-card:hover .cat-arrow {
+  transform: translate(-4px, -4px);
+}
+
+.cat-subs {
+  @apply flex flex-wrap gap-1.5 px-1;
+}
+.cat-sub {
+  @apply rounded-full border border-border px-2.5 py-1 text-[10px] font-bold text-muted
+         transition hover:border-ink hover:text-ink;
+}
+
+.cat-footer {
+  @apply flex items-center justify-between gap-2 border-t border-dashed border-border pt-4 px-1 pb-1;
+}
+.cat-cta {
+  @apply inline-flex items-center gap-2 text-[11px] font-extrabold text-ink;
+}
+.cat-cta i { @apply transition-transform; }
+.cat-cta:hover i { transform: translateX(-3px); }
+
+.cat-bookmark {
+  @apply grid h-[34px] w-[34px] place-items-center rounded-[11px] border border-border
+         bg-white text-muted transition hover:text-ink hover:border-[#cbd0c9];
+}
+.cat-bookmark.is-active {
+  @apply bg-ink text-white border-ink;
+}
+
+/* حالت لیستی */
+.cat-grid--list {
+  @apply grid-cols-1 sm:grid-cols-1 lg:grid-cols-2;
+}
+.cat-grid--list .cat-card {
+  @apply flex-row items-stretch gap-4 p-4;
+}
+.cat-grid--list .cat-cover {
+  @apply min-h-[150px] w-[220px] shrink-0;
+}
+.cat-grid--list .cat-subs { @apply flex-1 content-start; }
+.cat-grid--list .cat-footer {
+  @apply flex-col items-end justify-between border-t-0 border-r border-dashed border-border
+         pt-0 pr-4 pb-0 w-[140px];
+}
+
+/* کارت کوچک کتاب (در بخش دو ستونه) */
+.cat-mini-card {
+  @apply flex flex-col rounded-[20px] border border-border bg-white p-3 transition
+         hover:-translate-y-1 hover:shadow-soft;
+}
+.cat-mini-cover {
+  @apply grid min-h-[110px] place-items-center rounded-[14px] bg-gradient-to-br p-3
+         text-center text-[12px] font-black text-white leading-snug;
+}
+
+/* چیپ‌های نمایش */
+.view-chip {
+  @apply inline-flex items-center gap-1.5 rounded-[9px] px-2.5 py-1.5 font-bold text-[10px]
+         text-[#8a928f] transition;
+}
+.view-chip.is-active { @apply bg-ink text-white; }
+
+/* دسته‌های سریع */
+.quick-cat {
+  @apply flex flex-col items-start gap-2 rounded-[20px] border border-border bg-white p-4
+         transition hover:-translate-y-1 hover:border-ink hover:shadow-soft;
+}
+.quick-cat i {
+  @apply grid h-[38px] w-[38px] place-items-center rounded-[12px] bg-bg text-[17px];
+}
+.quick-cat b { @apply text-[12px] font-black; }
+.quick-cat small { @apply text-[9px] text-muted; }
+
+/* کارت نویسنده */
+.author-card {
+  @apply flex flex-col gap-1 rounded-[22px] border border-border bg-white p-5
+         transition hover:-translate-y-1 hover:shadow-soft;
+  min-height: 190px;
+}
+.author-avatar {
+  @apply grid h-[70px] w-[70px] place-items-center rounded-full text-[16px] font-black text-white
+         shadow-[0_10px_25px_rgba(0,0,0,.1)];
+}
+
+/* احترام به reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .cat-card,
+  .author-card,
+  .quick-cat {
+    transition: none !important;
+  }
+  .cat-card:hover,
+  .author-card:hover,
+  .quick-cat:hover {
+    transform: none !important;
+  }
+}
+

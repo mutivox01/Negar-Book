@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مقایسه کتاب‌ها — انتخاب آگاهانه در نِگار">
+  <title>مقایسه محصولات | نِگار</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+</head>
+
+<body class="bg-bg text-text antialiased">
+
+  <!-- Announcement -->
+  <div class="bg-ink text-white">
+    <div class="container-app flex items-center justify-center gap-2 py-2 text-xs sm:text-sm">
+      <i class="ri-scales-3-line text-accent"></i>
+      <span>مقایسه‌ی دقیق محصولات، پیش از خرید</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app">
+      <div class="flex h-20 items-center gap-4">
+        <button class="icon-btn lg:hidden" data-mobile-open aria-label="باز کردن منو">
+          <i class="ri-menu-4-line text-xl"></i>
+        </button>
+
+        <a href="../index.html" class="inline-flex shrink-0 items-center gap-2.5 text-ink" aria-label="صفحه اصلی">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+
+        <nav class="hidden items-center gap-1 xl:flex">
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./category.html">دسته‌بندی‌ها</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./shop.html">فروشگاه</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./blog.html">مجله نِگار</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-ink" href="./compare.html">مقایسه</a>
+        </nav>
+
+        <div class="mr-auto flex items-center gap-2">
+          <button class="icon-btn" aria-label="علاقه‌مندی‌ها">
+            <i class="ri-heart-3-line"></i>
+            <span class="counter">3</span>
+          </button>
+          <button class="icon-btn" aria-label="سبد خرید" data-cart-toggle>
+            <i class="ri-shopping-bag-3-line"></i>
+            <span class="counter">2</span>
+          </button>
+          <a href="./login.html" class="hidden h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold md:flex">
+            <i class="ri-user-3-line"></i>
+            <span>ورود / ثبت‌نام</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div id="mobileOverlay" class="fixed inset-0 z-[60] hidden bg-black/40 backdrop-blur-sm" data-mobile-close></div>
+  <aside id="mobileDrawer"
+    class="fixed top-0 right-0 bottom-0 z-[70] w-[min(340px,90vw)] translate-x-[105%]
+           bg-white shadow-[-20px_0_60px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <span class="font-black">منوی نِگار</span>
+      <button class="icon-btn" data-mobile-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="p-5">
+      <a class="drawer-link" href="./shop.html">فروشگاه <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./category.html">دسته‌بندی‌ها <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./blog.html">مجله نِگار <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./about.html">درباره ما <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./account.html">حساب کاربری <i class="ri-arrow-left-s-line"></i></a>
+    </div>
+  </aside>
+
+  <main class="container-app pt-6 sm:pt-8">
+
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-[10px] text-muted">
+      <a href="../index.html" class="hover:text-ink">خانه</a>
+      <i class="ri-arrow-left-s-line"></i>
+      <a href="./shop.html" class="hover:text-ink">فروشگاه</a>
+      <i class="ri-arrow-left-s-line"></i>
+      <span class="text-ink font-bold">مقایسه</span>
+    </nav>
+
+    <!-- Title -->
+    <div class="mt-4 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+      <div>
+        <span class="section-kicker">ابزار خرید</span>
+        <h1 class="text-[clamp(24px,3.5vw,34px)] font-black tracking-[-.05em]">مقایسه کتاب‌ها</h1>
+        <p class="mt-2 text-xs text-muted">
+          تا ۴ کتاب را انتخاب کن و کنار هم ببین کدام برای تو مناسب‌تر است.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button class="admin-btn !text-[11px]" id="clearCompare">
+          <i class="ri-delete-bin-6-line"></i> پاک کردن همه
+        </button>
+        <button class="admin-btn admin-btn--primary !text-[11px]" id="addCompare">
+          <i class="ri-add-line"></i> افزودن محصول
+        </button>
+      </div>
+    </div>
+
+    <!-- ==================== مقایسه ==================== -->
+    <section class="mt-6">
+      <div id="compareWrapper" class="compare-wrapper">
+        <!-- JS -->
+      </div>
+
+      <!-- Empty state -->
+      <div id="compareEmpty" class="hidden flex-col items-center gap-3 rounded-[22px] border border-dashed border-border bg-white py-16 text-center">
+        <i class="ri-scales-3-line text-[44px] text-muted"></i>
+        <b class="text-sm">هنوز محصولی برای مقایسه انتخاب نکردی</b>
+        <p class="text-[11px] text-muted">از دکمه‌ی «افزودن محصول» استفاده کن یا از فروشگاه کتاب اضافه کن.</p>
+        <button class="mt-2 inline-flex min-h-[42px] items-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink" id="addFromEmpty">
+          <i class="ri-add-line"></i> افزودن اولین محصول
+        </button>
+      </div>
+    </section>
+
+    <!-- ==================== راهنمای مقایسه ==================== -->
+    <section class="mt-8 grid gap-3 sm:grid-cols-3">
+      <div class="compare-tip">
+        <i class="ri-lightbulb-line"></i>
+        <div>
+          <b>مقایسه هوشمند</b>
+          <p>سیستم به‌طور خودکار بهترین محصول هر ویژگی را هایلایت می‌کند.</p>
+        </div>
+      </div>
+      <div class="compare-tip">
+        <i class="ri-shield-check-line"></i>
+        <div>
+          <b>اطلاعات دقیق</b>
+          <p>همه‌ی مشخصات کتاب‌ها از منبع ناشر اصلی به‌دست آمده است.</p>
+        </div>
+      </div>
+      <div class="compare-tip">
+        <i class="ri-shopping-bag-3-line"></i>
+        <div>
+          <b>افزودن سریع به سبد</b>
+          <p>هر کتاب را می‌توانی مستقیم از همین صفحه به سبد اضافه کنی.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== پیشنهادهای مرتبط ==================== -->
+    <section class="pt-14 sm:pt-20">
+      <div class="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <span class="section-kicker">بیشتر کشف کن</span>
+          <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">پیشنهادهای مشابه</h2>
+        </div>
+        <a href="./shop.html" class="inline-flex items-center gap-2 text-[11px] font-extrabold text-[#5f6965] hover:text-ink">
+          مشاهده همه <i class="ri-arrow-left-line"></i>
+        </a>
+      </div>
+
+      <div id="suggestGrid" class="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-[18px]">
+        <!-- JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-14 bg-ink text-white sm:mt-20">
+    <div class="container-app grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div>
+        <a href="../index.html" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-[#aeb8b3]">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-7 text-white/55">
+          فروشگاهی برای کسانی که کتاب را فقط یک محصول نمی‌دانند؛ یک تجربه می‌دانند.
+        </p>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">خرید</h3>
+        <a href="./shop.html" class="my-2 block text-[10px] text-[#aeb8b3]">همه کتاب‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تازه‌های نشر</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پرفروش‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تخفیف‌ها</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">راهنما</h3>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">شیوه ارسال</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پیگیری سفارش</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">سوالات متداول</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تماس با ما</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">با ما در ارتباط باش</h3>
+        <p class="text-sm leading-7 text-white/55">تهران، خیابان کتاب، پلاک ۲۴</p>
+        <p class="mt-2 text-sm text-white/75">۰۲۱-۱۲۳۴۵۶۷۸</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-app flex flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:justify-between">
+        <span>© ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.</span>
+        <span>طراحی شده برای تجربه‌ای ساده‌تر از خرید کتاب.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div id="cartPanel" class="fixed top-0 right-0 bottom-0 z-[80] flex w-[min(390px,92vw)] translate-x-[105%] flex-col bg-white shadow-[-20px_0_70px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <div><b class="text-lg">سبد خرید</b><span class="mr-2 text-xs text-muted">۲ کالا</span></div>
+      <button class="icon-btn" data-cart-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="space-y-3 p-5">
+      <div class="flex items-center gap-3 rounded-2xl border border-border p-2">
+        <div class="mini-cover flex-[0_0_58px] !min-h-[78px] bg-[#657c71]">روایت<br>یک زندگی</div>
+        <div><b class="block text-[10px]">روایت یک زندگی</b><span class="mt-1.5 block text-[9px] text-[#909895]">۲۷۵,۰۰۰ تومان</span></div>
+      </div>
+    </div>
+    <div class="mt-auto border-t border-border p-5">
+      <div class="mb-4 flex justify-between"><span>جمع کل</span><b>۲۷۵,۰۰۰ تومان</b></div>
+      <a href="./cart.html" class="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink">
+        مشاهده سبد خرید
+      </a>
+    </div>
+  </div>
+  <div id="cartOverlay" class="fixed inset-0 z-[55] hidden bg-black/30" data-cart-close></div>
+
+  <!-- Product picker modal -->
+  <div id="pickerModal" class="fixed inset-0 z-[110] hidden items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4">
+    <div class="admin-modal w-full max-w-[680px] max-h-[90vh] overflow-hidden rounded-t-[24px] bg-white shadow-2xl sm:rounded-[24px]">
+      <header class="flex items-center justify-between border-b border-border p-5">
+        <div>
+          <span class="section-kicker">افزودن به مقایسه</span>
+          <h3 class="mt-1 text-[16px] font-black">انتخاب محصول</h3>
+        </div>
+        <button class="icon-btn" data-picker-close><i class="ri-close-line"></i></button>
+      </header>
+
+      <div class="border-b border-border p-4">
+        <div class="search-box !h-[42px] !bg-bg">
+          <i class="ri-search-2-line"></i>
+          <input id="pickerSearch" type="search" placeholder="جست‌وجو در محصولات...">
+        </div>
+      </div>
+
+      <div id="pickerList" class="max-h-[calc(90vh-200px)] overflow-y-auto p-4 space-y-2"></div>
+    </div>
+  </div>
+
+  <!-- <script src="/src/js/main.js"></script> -->
+  <script src="/src/js/compare.js"></script>
+</body>
+</html>

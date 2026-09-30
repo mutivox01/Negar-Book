@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سفارش ثبت شد | نِگار</title>
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+
+</head>
+<body class="bg-bg text-text antialiased">
+
+  <header class="border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app flex h-20 items-center">
+      <a href="../index.html" class="inline-flex items-center gap-2.5 text-ink">
+        <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+        <span><strong class="block text-[19px] font-black leading-none">نِگار</strong></span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container-app py-12 sm:py-16">
+    <div class="mx-auto max-w-xl rounded-[28px] border border-border bg-white p-8 text-center sm:p-12">
+      <div class="mx-auto mb-5 grid h-20 w-20 place-items-center rounded-full bg-accent text-[36px] text-ink">
+        <i class="ri-checkbox-circle-line"></i>
+      </div>
+      <h1 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">سفارش شما با موفقیت ثبت شد!</h1>
+      <p class="mt-3 text-xs leading-7 text-muted">
+        کد پیگیری سفارش شما: <b class="font-black text-ink" id="orderCode">—</b>
+      </p>
+      <p class="mt-1 text-xs leading-7 text-muted">
+        جزئیات سفارش از طریق پیامک برای شما ارسال خواهد شد.
+      </p>
+
+      <div class="mt-6 grid gap-2.5 rounded-[18px] bg-bg p-4 text-right text-[11px]">
+        <div class="flex justify-between"><span class="text-muted">نام گیرنده</span><b id="buyerName">—</b></div>
+        <div class="flex justify-between"><span class="text-muted">شماره تماس</span><b id="buyerPhone" dir="ltr">—</b></div>
+        <div class="flex justify-between"><span class="text-muted">آدرس</span><b id="buyerAddress" class="max-w-[60%] text-left">—</b></div>
+        <div class="flex justify-between"><span class="text-muted">شیوه پرداخت</span><b id="payMethod">—</b></div>
+        <div class="flex justify-between border-t border-dashed border-border pt-2 mt-1">
+          <span class="font-black">مبلغ پرداخت‌شده</span>
+          <b id="totalPaid" class="font-black">—</b>
+        </div>
+      </div>
+
+      <div class="mt-7 flex flex-col gap-2.5 sm:flex-row">
+        <a href="./account.html" class="inline-flex min-h-[46px] flex-1 items-center justify-center gap-2 rounded-[13px] border border-border text-[12px] font-extrabold text-ink hover:bg-bg">
+          <i class="ri-user-3-line"></i> پیگیری سفارش
+        </a>
+        <a href="./shop.html" class="inline-flex min-h-[46px] flex-1 items-center justify-center gap-2 rounded-[13px] bg-accent text-[12px] font-extrabold text-ink hover:bg-[#e1fa87]">
+          <i class="ri-shopping-bag-3-line"></i> ادامه خرید
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const faNum = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+    const toman = n => faNum(Math.round(n).toLocaleString('en-US')) + ' تومان';
+    const data = JSON.parse(sessionStorage.getItem('negar_checkout') || 'null');
+    if (data) {
+      document.getElementById('orderCode').textContent = faNum('NG-' + Math.floor(100000 + Math.random() * 900000));
+      document.getElementById('buyerName').textContent = `${data.customer.firstName} ${data.customer.lastName}`;
+      document.getElementById('buyerPhone').textContent = faNum(data.customer.phone);
+      document.getElementById('buyerAddress').textContent = `${data.address.province}، ${data.address.city}، ${data.address.address}`;
+      const labels = { gateway: 'پرداخت آنلاین', wallet: 'کیف پول نِگار', cod: 'پرداخت در محل' };
+      document.getElementById('payMethod').textContent = labels[data.payment] || data.payment;
+      document.getElementById('totalPaid').textContent = toman(data.totals.total);
+    }
+  </script>
+</body>
+</html>

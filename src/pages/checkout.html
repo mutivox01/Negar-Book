@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="تسویه حساب سفارش در فروشگاه نِگار">
+  <title>تسویه حساب | نِگار</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+
+</head>
+
+<body class="bg-bg text-text antialiased">
+
+  <!-- Announcement -->
+  <div class="bg-ink text-white">
+    <div class="container-app flex items-center justify-center gap-2 py-2 text-xs sm:text-sm">
+      <i class="ri-lock-2-line text-accent"></i>
+      <span>پرداخت امن و رمزنگاری‌شده — اطلاعات شما نزد ما محفوظ است</span>
+    </div>
+  </div>
+
+  <!-- Header (ساده‌تر) -->
+  <header class="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app">
+      <div class="flex h-20 items-center gap-4">
+        <a href="../index.html" class="inline-flex shrink-0 items-center gap-2.5 text-ink" aria-label="صفحه اصلی">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+
+        <!-- Stepper -->
+        <nav class="mr-auto hidden items-center gap-2 text-[11px] md:flex">
+          <a href="./cart.html" class="step-done">
+            <span class="step-num"><i class="ri-check-line"></i></span>
+            <span>سبد خرید</span>
+          </a>
+          <i class="ri-arrow-left-s-line text-muted"></i>
+          <span class="step-active">
+            <span class="step-num">۲</span>
+            <span>تسویه حساب</span>
+          </span>
+          <i class="ri-arrow-left-s-line text-muted"></i>
+          <span class="step-todo">
+            <span class="step-num">۳</span>
+            <span>پرداخت</span>
+          </span>
+        </nav>
+
+        <div class="mr-auto flex items-center gap-2 md:mr-0">
+          <a href="./cart.html" class="icon-btn" aria-label="بازگشت به سبد">
+            <i class="ri-shopping-bag-3-line"></i>
+            <span class="counter">2</span>
+          </a>
+          <a href="./shop.html" class="hidden h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold md:flex">
+            <i class="ri-arrow-right-line"></i>
+            <span>ادامه خرید</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container-app py-8 sm:py-12">
+
+    <!-- Title -->
+    <div class="mb-8">
+      <span class="section-kicker">مرحله ۲ از ۳</span>
+      <h1 class="text-[clamp(24px,3.5vw,34px)] font-black tracking-[-.05em]">تسویه حساب</h1>
+      <p class="mt-2 text-xs text-muted">اطلاعات ارسال و شیوه پرداخت را تکمیل کنید.</p>
+    </div>
+
+    <form id="checkoutForm" novalidate>
+      <div class="grid gap-5 lg:grid-cols-[1fr_400px]">
+
+        <!-- ===================== ستون اصلی ===================== -->
+        <div class="space-y-5">
+
+          <!-- ۱. اطلاعات تماس -->
+          <section class="checkout-card">
+            <header class="checkout-card-head">
+              <div class="flex items-center gap-3">
+                <span class="checkout-icon bg-[#dce8dc] text-[#56735e]"><i class="ri-user-3-line"></i></span>
+                <div>
+                  <h2 class="text-sm font-black">اطلاعات تماس</h2>
+                  <p class="mt-1 text-[10px] text-muted">برای اطلاع‌رسانی وضعیت سفارش</p>
+                </div>
+              </div>
+            </header>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="field">
+                <label for="firstName">نام <span class="text-danger">*</span></label>
+                <input id="firstName" name="firstName" type="text" placeholder="مثلاً سارا" required>
+                <small class="error"></small>
+              </div>
+              <div class="field">
+                <label for="lastName">نام خانوادگی <span class="text-danger">*</span></label>
+                <input id="lastName" name="lastName" type="text" placeholder="مثلاً محمدی" required>
+                <small class="error"></small>
+              </div>
+              <div class="field sm:col-span-2">
+                <label for="phone">شماره موبایل <span class="text-danger">*</span></label>
+                <input id="phone" name="phone" type="tel" inputmode="numeric" placeholder="۰۹۱۲۳۴۵۶۷۸۹"
+                  dir="ltr" class="text-right" required>
+                <small class="error"></small>
+              </div>
+              <div class="field sm:col-span-2">
+                <label for="email">ایمیل <span class="text-[9px] font-medium text-muted">(اختیاری)</span></label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" dir="ltr" class="text-right">
+                <small class="error"></small>
+              </div>
+            </div>
+          </section>
+
+          <!-- ۲. آدرس ارسال -->
+          <section class="checkout-card">
+            <header class="checkout-card-head">
+              <div class="flex items-center gap-3">
+                <span class="checkout-icon bg-[#e8d9cb] text-[#88674d]"><i class="ri-map-pin-line"></i></span>
+                <div>
+                  <h2 class="text-sm font-black">آدرس ارسال</h2>
+                  <p class="mt-1 text-[10px] text-muted">سفارش به این آدرس ارسال می‌شود</p>
+                </div>
+              </div>
+            </header>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="field">
+                <label for="province">استان <span class="text-danger">*</span></label>
+                <select id="province" name="province" required>
+                  <option value="">انتخاب کنید</option>
+                  <option>تهران</option>
+                  <option>اصفهان</option>
+                  <option>فارس</option>
+                  <option>خراسان رضوی</option>
+                  <option>آذربایجان شرقی</option>
+                  <option>گیلان</option>
+                  <option>مازندران</option>
+                  <option>یزد</option>
+                </select>
+                <small class="error"></small>
+              </div>
+              <div class="field">
+                <label for="city">شهر <span class="text-danger">*</span></label>
+                <input id="city" name="city" type="text" placeholder="مثلاً تهران" required>
+                <small class="error"></small>
+              </div>
+              <div class="field sm:col-span-2">
+                <label for="address">نشانی کامل <span class="text-danger">*</span></label>
+                <textarea id="address" name="address" rows="3"
+                  placeholder="خیابان، کوچه، پلاک، واحد..." required></textarea>
+                <small class="error"></small>
+              </div>
+              <div class="field">
+                <label for="postalCode">کد پستی <span class="text-danger">*</span></label>
+                <input id="postalCode" name="postalCode" type="text" inputmode="numeric"
+                  placeholder="۱۰ رقم" dir="ltr" class="text-right" required>
+                <small class="error"></small>
+              </div>
+              <div class="field">
+                <label for="unit">پلاک / واحد</label>
+                <input id="unit" name="unit" type="text" placeholder="مثلاً واحد ۳">
+                <small class="error"></small>
+              </div>
+            </div>
+          </section>
+
+          <!-- ۳. شیوه ارسال -->
+          <section class="checkout-card">
+            <header class="checkout-card-head">
+              <div class="flex items-center gap-3">
+                <span class="checkout-icon bg-[#d7dbea] text-[#5d658a]"><i class="ri-truck-line"></i></span>
+                <div>
+                  <h2 class="text-sm font-black">شیوه ارسال</h2>
+                  <p class="mt-1 text-[10px] text-muted">زمان تحویل را انتخاب کنید</p>
+                </div>
+              </div>
+            </header>
+            <div class="space-y-2.5">
+              <label class="ship-option">
+                <input type="radio" name="shipping" value="standard" data-cost="35000" checked>
+                <span class="ship-radio"></span>
+                <span class="ship-body">
+                  <b>پست پیشتاز</b>
+                  <small>تحویل ۳ تا ۵ روز کاری</small>
+                </span>
+                <span class="ship-price">۳۵,۰۰۰ تومان</span>
+              </label>
+              <label class="ship-option">
+                <input type="radio" name="shipping" value="express" data-cost="75000">
+                <span class="ship-radio"></span>
+                <span class="ship-body">
+                  <b>پیک سریع</b>
+                  <small>تحویل ۲۴ ساعته (فقط تهران)</small>
+                </span>
+                <span class="ship-price">۷۵,۰۰۰ تومان</span>
+              </label>
+              <label class="ship-option">
+                <input type="radio" name="shipping" value="pickup" data-cost="0">
+                <span class="ship-radio"></span>
+                <span class="ship-body">
+                  <b>تحویل حضوری</b>
+                  <small>خیابان کتاب، پلاک ۲۴ — تهران</small>
+                </span>
+                <span class="ship-price text-accent-dark font-black">رایگان</span>
+              </label>
+            </div>
+          </section>
+
+          <!-- ۴. شیوه پرداخت -->
+          <section class="checkout-card">
+            <header class="checkout-card-head">
+              <div class="flex items-center gap-3">
+                <span class="checkout-icon bg-[#e5dbe8] text-[#6f4a75]"><i class="ri-bank-card-line"></i></span>
+                <div>
+                  <h2 class="text-sm font-black">شیوه پرداخت</h2>
+                  <p class="mt-1 text-[10px] text-muted">درگاه موردنظر را انتخاب کنید</p>
+                </div>
+              </div>
+            </header>
+            <div class="space-y-2.5">
+              <label class="pay-option">
+                <input type="radio" name="payment" value="gateway" checked>
+                <span class="pay-radio"></span>
+                <span class="pay-logo bg-[#e3f0ff] text-[#2c5aa0]"><i class="ri-secure-payment-line"></i></span>
+                <span class="pay-body">
+                  <b>پرداخت آنلاین</b>
+                  <small>انتقال به درگاه بانکی امن</small>
+                </span>
+                <span class="pay-tag">پیشنهادی</span>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="payment" value="wallet">
+                <span class="pay-radio"></span>
+                <span class="pay-logo bg-[#e0f4e8] text-[#2e7d55]"><i class="ri-wallet-3-line"></i></span>
+                <span class="pay-body">
+                  <b>کیف پول نِگار</b>
+                  <small>موجودی شما: ۱۲۵,۰۰۰ تومان</small>
+                </span>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="payment" value="cod">
+                <span class="pay-radio"></span>
+                <span class="pay-logo bg-[#fdeee0] text-[#a5622c]"><i class="ri-money-dollar-circle-line"></i></span>
+                <span class="pay-body">
+                  <b>پرداخت در محل</b>
+                  <small>فقط برای تهران</small>
+                </span>
+              </label>
+            </div>
+          </section>
+
+          <!-- ۵. یادداشت سفارش -->
+          <section class="checkout-card">
+            <header class="checkout-card-head">
+              <div class="flex items-center gap-3">
+                <span class="checkout-icon bg-bg text-ink"><i class="ri-sticky-note-line"></i></span>
+                <div>
+                  <h2 class="text-sm font-black">یادداشت سفارش</h2>
+                  <p class="mt-1 text-[10px] text-muted">توضیح اضافه برای فروشنده (اختیاری)</p>
+                </div>
+              </div>
+            </header>
+            <textarea id="note" name="note" rows="3"
+              class="field-textarea"
+              placeholder="مثلاً: بسته را کادو کنید یا بعد از ساعت ۱۸ تماس بگیرید."></textarea>
+          </section>
+
+        </div>
+
+        <!-- ===================== ستون خلاصه سفارش ===================== -->
+        <aside class="lg:sticky lg:top-[104px] lg:h-fit">
+          <div class="checkout-summary">
+            <header class="flex items-center justify-between border-b border-border p-5">
+              <h2 class="text-sm font-black">خلاصه سفارش</h2>
+              <span class="rounded-full bg-bg px-2.5 py-1 text-[10px] font-bold">۲ کالا</span>
+            </header>
+
+            <!-- محصولات -->
+            <div class="space-y-3 p-5">
+              <div class="summary-item">
+                <div class="mini-cover flex-[0_0_54px] !min-h-[72px] bg-[#657c71]">روایت<br>یک زندگی</div>
+                <div class="flex-1">
+                  <b class="block text-[11px]">روایت یک زندگی</b>
+                  <span class="mt-1 block text-[9px] text-muted">تعداد: ۱</span>
+                </div>
+                <span class="text-[11px] font-bold">۲۷۵,۰۰۰</span>
+              </div>
+              <div class="summary-item">
+                <div class="mini-cover flex-[0_0_54px] !min-h-[72px] bg-[#98785a]">فلسفه<br>برای زندگی</div>
+                <div class="flex-1">
+                  <b class="block text-[11px]">فلسفه برای زندگی</b>
+                  <span class="mt-1 block text-[9px] text-muted">تعداد: ۱</span>
+                </div>
+                <span class="text-[11px] font-bold">۳۲۰,۰۰۰</span>
+              </div>
+            </div>
+
+            <!-- کد تخفیف -->
+            <div class="border-t border-border p-5">
+              <label class="mb-2 block text-[11px] font-black">کد تخفیف</label>
+              <div class="flex gap-2">
+                <input id="couponInput" type="text" placeholder="مثلاً NEGAR20"
+                  class="filter-input flex-1" dir="ltr" class="text-right">
+                <button type="button" id="applyCoupon"
+                  class="shrink-0 rounded-[11px] bg-ink px-3.5 text-[11px] font-extrabold text-white hover:bg-[#0f1817] transition">
+                  اعمال
+                </button>
+              </div>
+              <p id="couponMsg" class="mt-2 hidden text-[10px] font-bold"></p>
+            </div>
+
+            <!-- مبالغ -->
+            <div class="space-y-2.5 border-t border-border p-5 text-[11px]">
+              <div class="flex justify-between">
+                <span class="text-muted">جمع کالاها</span>
+                <b id="sumItems">۵۹۵,۰۰۰ تومان</b>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-muted">هزینه ارسال</span>
+                <b id="sumShipping">۳۵,۰۰۰ تومان</b>
+              </div>
+              <div id="discountRow" class="hidden flex justify-between text-accent-dark">
+                <span>تخفیف</span>
+                <b id="sumDiscount">۰ تومان</b>
+              </div>
+              <div class="flex justify-between text-[13px] pt-2 border-t border-dashed border-border">
+                <span class="font-black">مبلغ قابل پرداخت</span>
+                <b id="sumTotal" class="font-black">۶۳۰,۰۰۰ تومان</b>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="border-t border-border p-5">
+              <button type="submit" id="submitBtn"
+                class="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-[13px] bg-accent px-4 text-[12px] font-extrabold text-ink hover:bg-[#e1fa87] transition disabled:opacity-60 disabled:cursor-not-allowed">
+                <i class="ri-lock-2-line"></i>
+                پرداخت و ثبت سفارش
+              </button>
+              <p class="mt-3 flex items-center justify-center gap-1.5 text-[10px] text-muted">
+                <i class="ri-shield-check-line"></i>
+                پرداخت شما با SSL محافظت می‌شود
+              </p>
+            </div>
+
+            <!-- Trust badges -->
+            <div class="grid grid-cols-3 gap-2 border-t border-border p-5 text-center">
+              <div class="trust-badge">
+                <i class="ri-truck-line"></i>
+                <small>ارسال سریع</small>
+              </div>
+              <div class="trust-badge">
+                <i class="ri-refresh-line"></i>
+                <small>۷ روز بازگشت</small>
+              </div>
+              <div class="trust-badge">
+                <i class="ri-customer-service-2-line"></i>
+                <small>پشتیبانی</small>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </form>
+
+  </main>
+
+  <!-- Footer ساده -->
+  <footer class="border-t border-border bg-white">
+    <div class="container-app flex flex-col items-center justify-between gap-3 py-6 text-[11px] text-muted sm:flex-row">
+      <span>© ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.</span>
+      <div class="flex items-center gap-4">
+        <a href="#" class="hover:text-ink">قوانین و مقررات</a>
+        <a href="#" class="hover:text-ink">حریم خصوصی</a>
+        <a href="#" class="hover:text-ink">تماس با ما</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/checkout.js"></script>
+</body>
+</html>

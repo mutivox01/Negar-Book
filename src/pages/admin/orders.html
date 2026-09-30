@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مدیریت سفارش‌ها — پنل مدیریت نِگار">
+  <title>سفارش‌ها | پنل مدیریت نِگار</title>
+
+  <link rel="stylesheet" href="../../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../../dist/css/style.css">
+</head>
+
+<body class="bg-bg text-text antialiased">
+
+  <div class="admin-layout">
+
+    <!-- ==================== سایدبار ==================== -->
+    <aside id="adminSidebar" class="admin-sidebar">
+      <div class="admin-sidebar-brand">
+        <a href="../../index.html" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[17px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-white/60">پنل مدیریت</small>
+          </span>
+        </a>
+        <button class="icon-btn !bg-white/5 !border-white/10 !text-white lg:hidden" data-admin-close>
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
+
+      <nav class="admin-nav">
+        <p class="admin-nav-title">اصلی</p>
+        <a href="./index.html" class="admin-nav-item"><i class="ri-dashboard-3-line"></i><span>داشبورد</span></a>
+        <a href="./products.html" class="admin-nav-item"><i class="ri-book-2-line"></i><span>محصولات</span><span class="admin-nav-badge">۲,۴۰۰</span></a>
+        <a href="./orders.html" class="admin-nav-item is-active"><i class="ri-shopping-bag-3-line"></i><span>سفارش‌ها</span><span class="admin-nav-badge admin-nav-badge--alert">۱۲</span></a>
+        <a href="./users.html" class="admin-nav-item"><i class="ri-user-3-line"></i><span>کاربران</span></a>
+
+        <p class="admin-nav-title">محتوا</p>
+        <a href="#" class="admin-nav-item"><i class="ri-article-line"></i><span>مجله</span></a>
+        <a href="#" class="admin-nav-item"><i class="ri-price-tag-3-line"></i><span>دسته‌بندی‌ها</span></a>
+        <a href="#" class="admin-nav-item"><i class="ri-chat-3-line"></i><span>نظرات</span><span class="admin-nav-badge admin-nav-badge--alert">۲۴</span></a>
+
+        <p class="admin-nav-title">سیستم</p>
+        <a href="./settings.html" class="admin-nav-item"><i class="ri-settings-3-line"></i><span>تنظیمات</span></a>
+        <a href="../../index.html" class="admin-nav-item"><i class="ri-logout-box-r-line"></i><span>خروج</span></a>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <div class="flex items-center gap-2.5">
+          <div class="grid h-[38px] w-[38px] place-items-center rounded-full bg-gradient-to-br from-[#87927a] to-[#3b4a3f] text-[12px] font-black text-white">م.ر</div>
+          <div class="min-w-0 flex-1">
+            <b class="block truncate text-[11px] font-black text-white">مریم رضایی</b>
+            <small class="mt-0.5 block text-[9px] text-white/50">مدیر سیستم</small>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div id="adminOverlay" class="fixed inset-0 z-[55] hidden bg-black/40 backdrop-blur-sm lg:hidden" data-admin-close></div>
+
+    <!-- ==================== محتوا ==================== -->
+    <div class="admin-main">
+
+      <header class="admin-topbar">
+        <button class="icon-btn lg:hidden" data-admin-open><i class="ri-menu-4-line"></i></button>
+        <div class="hidden flex-1 lg:block">
+          <div class="search-box !h-[40px] !max-w-[380px]">
+            <i class="ri-search-2-line"></i>
+            <input id="orderSearch" type="search" placeholder="جست‌وجوی سفارش، مشتری یا کد پیگیری...">
+            <kbd>⌘K</kbd>
+          </div>
+        </div>
+        <div class="mr-auto flex items-center gap-2">
+          <button class="admin-icon-btn"><i class="ri-notification-3-line"></i><span class="admin-dot"></span></button>
+          <a href="../../index.html" class="admin-icon-btn"><i class="ri-external-link-line"></i></a>
+        </div>
+      </header>
+
+      <main class="admin-content">
+
+        <!-- Page header -->
+        <div class="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+          <div>
+            <nav class="flex items-center gap-2 text-[10px] text-muted">
+              <span>پنل مدیریت</span>
+              <i class="ri-arrow-left-s-line"></i>
+              <span class="text-ink font-bold">سفارش‌ها</span>
+            </nav>
+            <h1 class="mt-2 text-[clamp(20px,3vw,26px)] font-black tracking-[-.03em]">مدیریت سفارش‌ها</h1>
+            <p class="mt-1 text-[11px] text-muted">
+              <b id="ordersCount">۱,۲۴۸</b> سفارش در کل — <b class="text-[#a5622c]">۱۲</b> در انتظار بررسی
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <button class="admin-btn" data-export-orders>
+              <i class="ri-download-2-line"></i> خروجی CSV
+            </button>
+            <button class="admin-btn admin-btn--primary" data-refresh-orders>
+              <i class="ri-refresh-line"></i> بروزرسانی
+            </button>
+          </div>
+        </div>
+
+        <!-- KPI mini -->
+        <section class="mb-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          <div class="kpi-card">
+            <div class="flex items-start justify-between">
+              <div class="kpi-icon bg-[#fdeee0] text-[#a5622c]"><i class="ri-time-line"></i></div>
+            </div>
+            <div class="mt-4">
+              <small class="text-[10px] text-muted">در انتظار بررسی</small>
+              <b class="mt-1 block text-[22px] font-black">۱۲</b>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="flex items-start justify-between">
+              <div class="kpi-icon bg-[#d7dbea] text-[#5d658a]"><i class="ri-truck-line"></i></div>
+            </div>
+            <div class="mt-4">
+              <small class="text-[10px] text-muted">در حال ارسال</small>
+              <b class="mt-1 block text-[22px] font-black">۳۴</b>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="flex items-start justify-between">
+              <div class="kpi-icon bg-[#e0f4e8] text-[#2e7d55]"><i class="ri-checkbox-circle-line"></i></div>
+            </div>
+            <div class="mt-4">
+              <small class="text-[10px] text-muted">تحویل‌شده</small>
+              <b class="mt-1 block text-[22px] font-black">۱,۱۸۴</b>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="flex items-start justify-between">
+              <div class="kpi-icon bg-danger/10 text-danger"><i class="ri-close-circle-line"></i></div>
+            </div>
+            <div class="mt-4">
+              <small class="text-[10px] text-muted">لغو‌شده</small>
+              <b class="mt-1 block text-[22px] font-black">۱۸</b>
+            </div>
+          </div>
+        </section>
+
+        <!-- Table -->
+        <div class="admin-card">
+
+          <!-- Tabs + filters -->
+          <div class="admin-card-head">
+            <div class="flex flex-wrap items-center gap-2">
+              <div class="admin-tabs">
+                <button class="admin-tab is-active" data-order-filter="all">همه</button>
+                <button class="admin-tab" data-order-filter="pending">در انتظار <span class="admin-tab-badge">۱۲</span></button>
+                <button class="admin-tab" data-order-filter="shipped">ارسال‌شده <span class="admin-tab-badge">۳۴</span></button>
+                <button class="admin-tab" data-order-filter="delivered">تحویل‌شده</button>
+                <button class="admin-tab" data-order-filter="cancelled">لغو‌شده</button>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2">
+              <select id="orderSortSelect" class="admin-select !h-[38px] !text-[10px]">
+                <option value="newest">جدیدترین</option>
+                <option value="oldest">قدیمی‌ترین</option>
+                <option value="highest">بیشترین مبلغ</option>
+                <option value="lowest">کمترین مبلغ</option>
+              </select>
+              <button class="admin-btn !py-2 !text-[10px]">
+                <i class="ri-filter-3-line"></i> فیلتر پیشرفته
+              </button>
+            </div>
+          </div>
+
+          <!-- Bulk actions -->
+          <div id="bulkActions" class="hidden items-center gap-2 border-b border-dashed border-border bg-bg px-5 py-3 -mx-5 sm:-mx-6 mb-4">
+            <span class="text-[11px] font-bold"><b id="selectedCount">۰</b> سفارش انتخاب شده</span>
+            <div class="mr-auto flex items-center gap-1.5">
+              <button class="admin-btn !py-1.5 !text-[10px]">
+                <i class="ri-check-line"></i> تأیید گروهی
+              </button>
+              <button class="admin-btn !py-1.5 !text-[10px]">
+                <i class="ri-file-download-line"></i> دانلود فاکتورها
+              </button>
+              <button class="admin-btn !py-1.5 !text-[10px] !text-danger">
+                <i class="ri-delete-bin-6-line"></i> حذف
+              </button>
+            </div>
+          </div>
+
+          <!-- Table -->
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th><input type="checkbox" class="admin-checkbox" id="selectAllOrders"></th>
+                  <th>کد سفارش</th>
+                  <th>مشتری</th>
+                  <th>مبلغ کل</th>
+                  <th>پرداخت</th>
+                  <th>وضعیت</th>
+                  <th>تاریخ</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody">
+                <!-- JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Empty -->
+          <div id="ordersTableEmpty" class="hidden flex-col items-center gap-2 py-12 text-center">
+            <i class="ri-inbox-line text-[42px] text-muted"></i>
+            <b class="text-sm">سفارشی در این وضعیت وجود ندارد</b>
+            <p class="text-[11px] text-muted">فیلتر را تغییر دهید یا بعداً دوباره تلاش کنید.</p>
+          </div>
+
+          <!-- Pagination -->
+          <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+            <span id="ordersResultInfo" class="text-[11px] text-muted">نمایش ۱ تا ۸ از ۱,۲۴۸</span>
+            <div id="ordersPagination" class="flex items-center gap-1"></div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Order Detail Modal -->
+  <div id="adminOrderModal" class="fixed inset-0 z-[110] hidden items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4">
+    <div class="admin-modal w-full max-w-[760px] max-h-[92vh] overflow-hidden rounded-t-[24px] bg-white shadow-2xl sm:rounded-[24px]">
+
+      <header class="flex items-center justify-between border-b border-border p-5">
+        <div>
+          <span class="section-kicker">جزئیات سفارش</span>
+          <h3 id="adminOrderTitle" class="mt-1 text-[16px] font-black"></h3>
+        </div>
+        <button class="icon-btn" data-order-modal-close><i class="ri-close-line"></i></button>
+      </header>
+
+      <div id="adminOrderBody" class="max-h-[calc(92vh-80px)] overflow-y-auto p-5"></div>
+    </div>
+  </div>
+
+  <script src="/src/js/admin.js"></script>
+  <script src="/src/js/admin-orders.js"></script>
+</body>
+</html>

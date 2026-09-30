@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="دسترسی محدود - نِگار">
+  <title>۴۰۱ | نیاز به ورود</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+
+</head>
+
+<body class="bg-bg text-text antialiased min-h-screen flex flex-col"
+      data-error-code="401">
+
+  <header class="border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app flex h-20 items-center justify-between">
+      <a href="../index.html" class="inline-flex items-center gap-2.5 text-ink">
+        <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+        <span>
+          <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+          <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+        </span>
+      </a>
+      <a href="./login.html" class="inline-flex h-[42px] items-center gap-2 rounded-[13px] bg-ink px-3.5 text-xs font-bold text-white hover:bg-[#0f1817] transition">
+        <i class="ri-user-3-line"></i>
+        <span>ورود به حساب</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container-app flex flex-1 items-center justify-center py-10">
+    <div class="error-wrap w-full max-w-2xl text-center">
+
+      <!-- Illustration -->
+      <div class="relative mx-auto mb-8 grid h-[220px] w-[220px] place-items-center sm:h-[260px] sm:w-[260px]">
+        <div class="error-ring"></div>
+        <div class="error-ring error-ring--2"></div>
+        <div class="error-orb error-orb--blue">
+          <i class="ri-lock-password-line"></i>
+        </div>
+        <span class="error-float error-float--1"><i class="ri-key-2-line text-[13px]"></i></span>
+        <span class="error-float error-float--2"><i class="ri-shield-keyhole-line text-[12px]"></i></span>
+        <span class="error-float error-float--3"><i class="ri-fingerprint-line text-[14px]"></i></span>
+      </div>
+
+      <div class="error-code" data-tone="blue">۴۰۱</div>
+
+      <h1 class="mt-3 text-[clamp(22px,3.5vw,32px)] font-black tracking-[-.05em]">
+        برای دیدن این صفحه باید وارد شوید
+      </h1>
+      <p class="mx-auto mt-3 max-w-md text-xs leading-[2] text-muted">
+        این بخش فقط برای کاربران عضو نِگار قابل دسترسی است.
+        با ورود به حساب، سفارش‌ها و علاقه‌مندی‌های خود را مدیریت کنید.
+      </p>
+
+      <!-- Actions -->
+      <div class="mt-7 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
+        <a href="./login.html?redirect=<?= urlencode($_SERVER['REQUEST_URI'] ?? '/') ?>"
+           class="btn-primary-error" data-tone="blue">
+          <i class="ri-login-box-line"></i> ورود به حساب کاربری
+        </a>
+        <a href="./login.html?tab=register" class="btn-secondary-error">
+          <i class="ri-user-add-line"></i> ساخت حساب جدید
+        </a>
+      </div>
+
+      <p class="mt-8 text-[11px] text-muted">
+        حساب ندارید؟
+        <a href="./login.html?tab=register" class="font-bold text-ink underline decoration-dotted underline-offset-4 hover:decoration-solid">همین حالا ثبت‌نام کنید</a>
+      </p>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-border bg-white">
+    <div class="container-app flex flex-col items-center justify-between gap-3 py-5 text-[11px] text-muted sm:flex-row">
+      <span>© ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.</span>
+      <span class="text-muted/80">کد خطا: <b class="text-ink">۴۰۱</b></span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/error.js"></script>
+</body>
+</html>

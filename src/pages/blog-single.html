@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="چطور یک عادت مطالعه ماندگار بسازیم؟ — مجله نِگار">
+  <title>چطور یک عادت مطالعه ماندگار بسازیم؟ | مجله نِگار</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+</head>
+
+<body class="bg-bg text-text antialiased">
+
+  <!-- Announcement -->
+  <div class="bg-ink text-white">
+    <div class="container-app flex items-center justify-center gap-2 py-2 text-xs sm:text-sm">
+      <i class="ri-time-line text-accent"></i>
+      <span>زمان مطالعه این مقاله: ۸ دقیقه</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app">
+      <div class="flex h-20 items-center gap-4">
+        <button class="icon-btn lg:hidden" data-mobile-open aria-label="باز کردن منو">
+          <i class="ri-menu-4-line text-xl"></i>
+        </button>
+
+        <a href="../index.html" class="inline-flex shrink-0 items-center gap-2.5 text-ink" aria-label="صفحه اصلی">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+
+        <div class="hidden flex-1 lg:block">
+          <div class="search-box">
+            <i class="ri-search-2-line"></i>
+            <input id="searchInput" type="search" autocomplete="off" placeholder="جست‌وجو در مقالات...">
+            <kbd>Ctrl K</kbd>
+            <div id="searchSuggestions" class="absolute top-[54px] right-0 left-0 z-20 border border-border rounded-[18px] bg-white p-2 shadow-soft hidden"></div>
+          </div>
+        </div>
+
+        <nav class="hidden items-center gap-1 xl:flex">
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./category.html">دسته‌بندی‌ها</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./shop.html">فروشگاه</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-ink" href="./blog.html">مجله نِگار</a>
+        </nav>
+
+        <div class="mr-auto flex items-center gap-2">
+          <button class="icon-btn" aria-label="علاقه‌مندی‌ها">
+            <i class="ri-heart-3-line"></i>
+            <span class="counter">3</span>
+          </button>
+          <button class="icon-btn" aria-label="سبد خرید" data-cart-toggle>
+            <i class="ri-shopping-bag-3-line"></i>
+            <span class="counter">2</span>
+          </button>
+          <a href="./login.html" class="hidden h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold md:flex">
+            <i class="ri-user-3-line"></i>
+            <span>ورود / ثبت‌نام</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div id="mobileOverlay" class="fixed inset-0 z-[60] hidden bg-black/40 backdrop-blur-sm" data-mobile-close></div>
+  <aside id="mobileDrawer"
+    class="fixed top-0 right-0 bottom-0 z-[70] w-[min(340px,90vw)] translate-x-[105%]
+           bg-white shadow-[-20px_0_60px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <span class="font-black">منوی نِگار</span>
+      <button class="icon-btn" data-mobile-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="p-5">
+      <a class="drawer-link" href="./shop.html">فروشگاه <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./category.html">دسته‌بندی‌ها <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./blog.html">مجله نِگار <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./about.html">درباره ما <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./account.html">حساب کاربری <i class="ri-arrow-left-s-line"></i></a>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- ==================== Breadcrumb ==================== -->
+    <section class="container-app pt-6">
+      <nav class="flex flex-wrap items-center gap-2 text-[10px] text-muted" aria-label="مسیر صفحه">
+        <a href="../index.html" class="hover:text-ink">خانه</a>
+        <i class="ri-arrow-left-s-line"></i>
+        <a href="./blog.html" class="hover:text-ink">مجله نِگار</a>
+        <i class="ri-arrow-left-s-line"></i>
+        <a href="./blog.html" class="hover:text-ink">راهنمای مطالعه</a>
+        <i class="ri-arrow-left-s-line"></i>
+        <span class="text-ink font-bold">چطور یک عادت مطالعه ماندگار بسازیم؟</span>
+      </nav>
+    </section>
+
+    <!-- ==================== Article Header ==================== -->
+    <section class="container-app pt-6">
+      <div class="article-header">
+        <div class="flex flex-wrap items-center gap-3 text-[10px]">
+          <span class="rounded-full bg-accent/40 px-3 py-1 font-black text-ink">راهنمای مطالعه</span>
+          <span class="text-muted"><i class="ri-time-line"></i> ۸ دقیقه مطالعه</span>
+          <span class="text-muted"><i class="ri-calendar-line"></i> ۲ روز پیش</span>
+          <span class="text-muted"><i class="ri-eye-line"></i> ۲,۴۵۰ بازدید</span>
+        </div>
+
+        <h1 class="mt-5 text-[clamp(26px,4.5vw,48px)] font-black leading-[1.2] tracking-[-.05em]">
+          چطور یک عادت مطالعه ماندگار بسازیم؟
+        </h1>
+
+        <p class="mt-5 max-w-3xl text-[14px] leading-[2.2] text-[#4a5450] sm:text-[15px]">
+          همه‌ی ما می‌دانیم کتاب خواندن خوب است؛ اما چرا این‌قدر سخت است که شروع کنیم و
+          ادامه دهیم؟ در این مقاله، هفت راهکار عملی را بررسی می‌کنیم که می‌توانند
+          عادت مطالعه را برای همیشه در زندگی‌تان تغییر دهند.
+        </p>
+
+        <!-- Author + Actions -->
+        <div class="mt-7 flex flex-col items-start justify-between gap-4 border-y border-dashed border-border py-5 sm:flex-row sm:items-center">
+          <div class="flex items-center gap-3">
+            <div class="author-mini-avatar bg-gradient-to-br from-[#87927a] to-[#3b4a3f] !h-[46px] !w-[46px] !text-[13px]">س.م</div>
+            <div>
+              <b class="block text-[12px] font-black">سارا محمدی</b>
+              <small class="mt-0.5 block text-[10px] text-muted">ویراستار مجله نِگار</small>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-1.5">
+            <button class="article-action" data-share aria-label="اشتراک‌گذاری">
+              <i class="ri-share-forward-line"></i> اشتراک
+            </button>
+            <button class="article-action" data-bookmark aria-label="ذخیره">
+              <i class="ri-bookmark-line"></i> ذخیره
+            </button>
+            <button class="article-action" id="copyLink" aria-label="کپی لینک">
+              <i class="ri-link"></i> کپی لینک
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Hero Cover ==================== -->
+    <section class="container-app pt-7">
+      <div class="article-cover">
+        <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+          <div class="absolute -top-20 -right-20 h-[280px] w-[280px] rounded-full border border-ink/10"></div>
+          <div class="absolute bottom-[-100px] left-[-40px] h-[220px] w-[220px] rounded-full border border-ink/10"></div>
+        </div>
+        <i class="ri-book-marked-line relative z-[2] text-[110px] text-[#56735e]/70"></i>
+        <p class="relative z-[2] mt-4 text-[12px] font-bold text-[#3d4a17]">
+          تصویر: کتاب و فنجان چای
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== Layout (article + sidebar) ==================== -->
+    <section class="container-app pt-10 sm:pt-12">
+      <div class="grid gap-8 lg:grid-cols-[1fr_280px] lg:gap-12">
+
+        <!-- ========== Article Content ========== -->
+        <article class="article-content">
+
+          <!-- Table of contents -->
+          <div class="toc">
+            <b class="mb-3 block text-[12px] font-black">
+              <i class="ri-list-check-2"></i> در این مقاله می‌خوانید
+            </b>
+            <ol id="tocList" class="space-y-1.5 text-[11px]"></ol>
+          </div>
+
+          <h2 id="sec-1">چرا عادت مطالعه این‌قدر سخت است؟</h2>
+          <p>
+            مغز ما به‌طور طبیعی به دنبال پاداش فوری است. وقتی بین «خواندن یک صفحه کتاب» و
+            «اسکرول کردن در شبکه‌های اجتماعی» قرار می‌گیرد، معمولاً گزینه دوم برنده می‌شود،
+            چون پاداش آن فوری و بی‌زحمت است. اما کتاب، پاداشی تأخیری دارد — لذتش را
+            بعد از چند دقیقه یا حتی چند روز می‌چشیم.
+          </p>
+          <p>
+            این یعنی مشکل از ما نیست؛ از ساختار مغزمان است. برای ساختن یک عادت
+            ماندگار، باید سیستمی بسازیم که به مغز کمک کند کتاب را به‌عنوان یک انتخاب
+            آسان‌تر ببیند.
+          </p>
+
+          <h2 id="sec-2">هفت راهکار عملی برای ساختن عادت مطالعه</h2>
+
+          <h3>۱. زمان و مکان مشخص</h3>
+          <p>
+            به جای اینکه بگویید «هر وقت وقت داشتم می‌خوانم»، یک زمان ثابت روزانه
+            انتخاب کنید — مثلاً هر شب ساعت ۱۰. مکان هم مهم است: یک صندلی مشخص، یک چراغ
+            مطالعه، یک میز کوچک. وقتی شرایط ثابت شوند، مغز کمتر مقاومت می‌کند.
+          </p>
+
+          <blockquote>
+            «ما آن‌قدر که فکر می‌کنیم به انگیزه نیاز نداریم؛ بیشتر به سیستم نیاز داریم.»
+          </blockquote>
+
+          <h3>۲. شروع کوچک</h3>
+          <p>
+            اگر هدف‌تان «یک کتاب در هفته» است، احتمالاً شکست می‌خورید. به جای این،
+            «۵ صفحه در روز» را هدف بگذارید. این عدد کوچک آن‌قدر کم‌هزینه است که
+            مغز مقاومت نمی‌کند. و بعد از یک ماه، خودتان بیشتر از ۵ صفحه می‌خوانید.
+          </p>
+
+          <h3>۳. حذف مزاحمت‌ها</h3>
+          <p>
+            گوشی را در اتاق دیگری بگذارید. حتی اگر در حالت سایلنت باشد، فقط دیدنش
+            کافیست تا ذهن شما را منحرف کند. اگر روی گوشی می‌خوانید، نوتیفیکیشن‌ها را
+            در زمان مطالعه خاموش کنید.
+          </p>
+
+          <h3>۴. کتاب مناسب انتخاب کنید</h3>
+          <p>
+            خیلی از ما با کتاب‌های سنگین شروع می‌کنیم و بعد از چند صفحه رهایش می‌کنیم.
+            برای شروع، کتاب‌هایی انتخاب کنید که روان و جذاب‌اند. می‌توانید از رمان‌های
+            کوتاه یا داستان‌های کوتاه شروع کنید.
+          </p>
+
+          <figure class="article-figure">
+            <div class="article-figure-cover">
+              <i class="ri-book-open-line"></i>
+            </div>
+            <figcaption>
+              یک صندلی مشخص، یک چراغ مطالعه، و یک کتاب همیشه روی میز.
+            </figcaption>
+          </figure>
+
+          <h3>۵. دفتر یادداشت مطالعه</h3>
+          <p>
+            یک دفترچه کوچک بردارید و بعد از هر جلسه مطالعه، یک جمله از کتاب یا
+            یک برداشت شخصی یادداشت کنید. این کار باعث می‌شود کتاب بیشتر در ذهن‌تان
+            بماند و انگیزه‌ی ادامه‌دادن را هم بالا می‌برد.
+          </p>
+
+          <h3>۶. با دیگران بخوانید</h3>
+          <p>
+            اگر عضو یک باشگاه کتاب شوید، یا با یک دوست قرار بگذارید که هر هفته درباره‌ی
+            یک کتاب صحبت کنید، احتمال ادامه‌دادن چند برابر می‌شود. ما انسان‌ها به
+            تعهد اجتماعی خیلی حساسیم.
+          </p>
+
+          <h3>۷. بخشش خودتان</h3>
+          <p>
+            اگر یک شب کتاب نخواندید، خودتان را سرزنش نکنید. مهم این است که شب بعد
+            دوباره برگردید. عادت‌ها در پیوستگی ساخته می‌شوند، نه در بی‌نقصی.
+          </p>
+
+          <h2 id="sec-3">جمع‌بندی</h2>
+          <p>
+            ساختن عادت مطالعه، به اندازه‌ی همان لحظه‌ای که کتاب را باز می‌کنید، ساده است.
+            راهکارها را با هم ترکیب نکنید؛ یکی را انتخاب کنید و دو هفته رویش کار کنید.
+            بعد از آن، خودتان به سراغ راهکار بعدی می‌روید.
+          </p>
+
+          <!-- Tags + Share -->
+          <div class="mt-10 flex flex-col gap-4 border-t border-dashed border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="blog-tag">#عادت‌ها</span>
+              <span class="blog-tag">#مطالعه</span>
+              <span class="blog-tag">#رشد فردی</span>
+              <span class="blog-tag">#کتاب‌خوانی</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] font-bold text-muted">اشتراک‌گذاری:</span>
+              <button class="article-share" aria-label="توییتر"><i class="ri-twitter-x-line"></i></button>
+              <button class="article-share" aria-label="تلگرام"><i class="ri-telegram-line"></i></button>
+              <button class="article-share" aria-label="واتساپ"><i class="ri-whatsapp-line"></i></button>
+              <button class="article-share" aria-label="لینکدین"><i class="ri-linkedin-line"></i></button>
+            </div>
+          </div>
+
+          <!-- Author box -->
+          <div class="author-box">
+            <div class="author-box-avatar bg-gradient-to-br from-[#87927a] to-[#3b4a3f]">س.م</div>
+            <div class="flex-1">
+              <span class="section-kicker">درباره نویسنده</span>
+              <b class="mt-1 block text-[13px] font-black">سارا محمدی</b>
+              <p class="mt-1.5 text-[11px] leading-6 text-muted">
+                ویراستار مجله نِگار، عاشق کتاب‌های داستانی و جستارهای ادبی. سارا از سال ۱۳۹۸
+                در نِگار می‌نویسد و تمرکز اصلی‌اش روی راهنمای مطالعه و معرفی کتاب است.
+              </p>
+              <div class="mt-3 flex items-center gap-2">
+                <a href="./author.html" class="admin-btn !text-[10px] !py-1.5">
+                  <i class="ri-article-line"></i> همه مقالات سارا
+                </a>
+                <button class="admin-btn !text-[10px] !py-1.5">
+                  <i class="ri-user-add-line"></i> دنبال کردن
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comments -->
+          <section id="comments" class="mt-10">
+            <div class="mb-5 flex items-center justify-between">
+              <h2 class="text-[16px] font-black">نظرات کاربران <span class="text-[12px] font-bold text-muted">(۲۴)</span></h2>
+            </div>
+
+            <!-- Comment form -->
+            <form id="commentForm" class="mb-6 rounded-[20px] border border-border bg-white p-5">
+              <b class="mb-3 block text-[12px] font-black">نظر شما</b>
+              <div class="grid gap-3 sm:grid-cols-2">
+                <div class="field">
+                  <input type="text" id="cmName" placeholder="نام شما" required>
+                  <small class="error"></small>
+                </div>
+                <div class="field">
+                  <input type="email" id="cmEmail" dir="ltr" class="text-right" placeholder="you@example.com (اختیاری)">
+                </div>
+              </div>
+              <div class="field mt-3">
+                <textarea id="cmText" rows="3" placeholder="نظر خود را بنویسید..." required></textarea>
+                <small class="error"></small>
+              </div>
+              <div class="mt-3 flex justify-end">
+                <button type="submit" class="inline-flex min-h-[44px] items-center gap-2 rounded-[13px] bg-ink px-5 text-[11px] font-extrabold text-white hover:bg-[#0f1817] transition">
+                  <i class="ri-send-plane-line"></i> ارسال نظر
+                </button>
+              </div>
+            </form>
+
+            <div id="commentsList" class="space-y-4"></div>
+
+            <button id="loadMoreComments" class="mt-4 inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[13px] border border-border bg-white text-[11px] font-extrabold text-ink hover:bg-bg transition">
+              مشاهده نظرات بیشتر <i class="ri-arrow-down-s-line"></i>
+            </button>
+          </section>
+
+        </article>
+
+        <!-- ========== Sidebar ========== -->
+        <aside class="space-y-5 lg:sticky lg:top-[104px] lg:h-fit">
+
+          <!-- Article stats -->
+          <div class="blog-sidebar-card">
+            <h3 class="mb-4 text-[13px] font-black">آمار مقاله</h3>
+            <div class="space-y-3 text-[11px]">
+              <div class="flex items-center justify-between">
+                <span class="text-muted"><i class="ri-eye-line"></i> بازدید</span>
+                <b>۲,۴۵۰</b>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-muted"><i class="ri-heart-3-line"></i> پسندیدن</span>
+                <b>۳۱۲</b>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-muted"><i class="ri-chat-3-line"></i> نظر</span>
+                <b>۲۴</b>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-muted"><i class="ri-share-forward-line"></i> اشتراک</span>
+                <b>۴۸</b>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related posts -->
+          <div class="blog-sidebar-card">
+            <h3 class="mb-4 text-[13px] font-black">
+              <i class="ri-bookmark-3-line"></i> مقالات مرتبط
+            </h3>
+            <ul class="space-y-3 text-[11px]">
+              <li><a href="./blog-single.html" class="blog-related-item">چند رمان کوتاه برای یک آخرهفته آرام</a></li>
+              <li><a href="./blog-single.html" class="blog-related-item">چگونه برای بچه‌ها کتاب انتخاب کنیم؟</a></li>
+              <li><a href="./blog-single.html" class="blog-related-item">چرا کتاب‌های کلاسیک را باید دوباره خواند؟</a></li>
+              <li><a href="./blog-single.html" class="blog-related-item">کتاب‌هایی که نگاهت به کار را تغییر می‌دهند</a></li>
+            </ul>
+          </div>
+
+          <!-- Suggested books -->
+          <div class="blog-sidebar-card">
+            <h3 class="mb-4 text-[13px] font-black">
+              <i class="ri-book-3-line"></i> کتاب‌های پیشنهادی
+            </h3>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2.5">
+                <div class="grid h-[48px] w-[36px] shrink-0 place-items-center rounded-[8px] bg-gradient-to-br from-[#aebca7] to-[#334c45] text-[7px] font-black text-white text-center p-1 leading-tight">
+                  درختی که روی ماه رشد کرد
+                </div>
+                <div class="min-w-0 flex-1">
+                  <b class="block truncate text-[10px] font-black">درختی که روی ماه رشد کرد</b>
+                  <small class="mt-1 block text-[9px] text-muted">۲۸۹,۰۰۰ تومان</small>
+                </div>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <div class="grid h-[48px] w-[36px] shrink-0 place-items-center rounded-[8px] bg-gradient-to-br from-[#c8a879] to-[#483b29] text-[7px] font-black text-white text-center p-1 leading-tight">
+                  هنر شفاف اندیشیدن
+                </div>
+                <div class="min-w-0 flex-1">
+                  <b class="block truncate text-[10px] font-black">هنر شفاف اندیشیدن</b>
+                  <small class="mt-1 block text-[9px] text-muted">۳۴۵,۰۰۰ تومان</small>
+                </div>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <div class="grid h-[48px] w-[36px] shrink-0 place-items-center rounded-[8px] bg-gradient-to-br from-[#7ea39a] to-[#254a41] text-[7px] font-black text-white text-center p-1 leading-tight">
+                  کار عمیق
+                </div>
+                <div class="min-w-0 flex-1">
+                  <b class="block truncate text-[10px] font-black">کار عمیق</b>
+                  <small class="mt-1 block text-[9px] text-muted">۳۱۰,۰۰۰ تومان</small>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="blog-sidebar-cta">
+            <i class="ri-mail-star-line text-[28px] text-accent"></i>
+            <h3 class="mt-2 text-[13px] font-black text-white">خبرنامه مجله</h3>
+            <p class="mt-1.5 text-[10px] leading-6 text-white/60">
+              هر هفته یک مقاله‌ی خواندنی برایتان می‌فرستیم.
+            </p>
+            <form id="singleNewsletter" class="mt-4 space-y-2">
+              <input type="email" placeholder="ایمیل شما"
+                class="w-full rounded-[11px] border border-white/10 bg-white/5 px-3 py-2.5 text-[11px] text-white placeholder:text-white/40 outline-none focus:border-white/30">
+              <button type="submit" class="inline-flex min-h-[40px] w-full items-center justify-center gap-2 rounded-[11px] bg-accent px-4 text-[11px] font-extrabold text-ink">
+                عضویت <i class="ri-arrow-left-line"></i>
+              </button>
+            </form>
+          </div>
+
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- ==================== Related Articles ==================== -->
+    <section class="container-app pt-14 sm:pt-20">
+      <div class="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <span class="section-kicker">بیشتر بخوانید</span>
+          <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">مقالات مرتبط</h2>
+        </div>
+        <a href="./blog.html" class="inline-flex items-center gap-2 text-[11px] font-extrabold text-[#5f6965] hover:text-ink">
+          همه مقالات <i class="ri-arrow-left-line"></i>
+        </a>
+      </div>
+
+      <div id="relatedArticles" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-14 bg-ink text-white sm:mt-20">
+    <div class="container-app grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div>
+        <a href="../index.html" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-[#aeb8b3]">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-7 text-white/55">
+          فروشگاهی برای کسانی که کتاب را فقط یک محصول نمی‌دانند؛ یک تجربه می‌دانند.
+        </p>
+        <div class="mt-5 flex gap-[7px]">
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-instagram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-telegram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-twitter-x-line"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">خرید</h3>
+        <a href="./shop.html" class="my-2 block text-[10px] text-[#aeb8b3]">همه کتاب‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تازه‌های نشر</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پرفروش‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تخفیف‌ها</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">راهنما</h3>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">شیوه ارسال</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پیگیری سفارش</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">سوالات متداول</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تماس با ما</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">با ما در ارتباط باش</h3>
+        <p class="text-sm leading-7 text-white/55">تهران، خیابان کتاب، پلاک ۲۴</p>
+        <p class="mt-2 text-sm text-white/75">۰۲۱-۱۲۳۴۵۶۷۸</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-app flex flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:justify-between">
+        <span>© ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.</span>
+        <span>طراحی شده برای تجربه‌ای ساده‌تر از خرید کتاب.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div id="cartPanel" class="fixed top-0 right-0 bottom-0 z-[80] flex w-[min(390px,92vw)] translate-x-[105%] flex-col bg-white shadow-[-20px_0_70px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <div><b class="text-lg">سبد خرید</b><span class="mr-2 text-xs text-muted">۲ کالا</span></div>
+      <button class="icon-btn" data-cart-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="space-y-3 p-5">
+      <div class="flex items-center gap-3 rounded-2xl border border-border p-2">
+        <div class="mini-cover flex-[0_0_58px] !min-h-[78px] bg-[#657c71]">روایت<br>یک زندگی</div>
+        <div><b class="block text-[10px]">روایت یک زندگی</b><span class="mt-1.5 block text-[9px] text-[#909895]">۲۷۵,۰۰۰ تومان</span></div>
+      </div>
+    </div>
+    <div class="mt-auto border-t border-border p-5">
+      <div class="mb-4 flex justify-between"><span>جمع کل</span><b>۲۷۵,۰۰۰ تومان</b></div>
+      <a href="./cart.html" class="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink">
+        مشاهده سبد خرید
+      </a>
+    </div>
+  </div>
+  <div id="cartOverlay" class="fixed inset-0 z-[55] hidden bg-black/30" data-cart-close></div>
+
+  <script src="../src/js/main.js"></script>
+  <script src="/src/js/blog-single.js"></script>
+</body>
+</html>

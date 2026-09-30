@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="کارت هدیه نِگار — یک انتخاب کوچک، یک خاطره بزرگ">
+  <title>کارت هدیه | نِگار</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+</head>
+
+<body class="bg-bg text-text antialiased">
+
+  <!-- Announcement -->
+  <div class="bg-ink text-white">
+    <div class="container-app flex items-center justify-center gap-2 py-2 text-xs sm:text-sm">
+      <i class="ri-gift-2-line text-accent"></i>
+      <span>کارت هدیه نِگار — بهترین هدیه برای کتاب‌خوان‌ها</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app">
+      <div class="flex h-20 items-center gap-4">
+        <button class="icon-btn lg:hidden" data-mobile-open aria-label="باز کردن منو">
+          <i class="ri-menu-4-line text-xl"></i>
+        </button>
+
+        <a href="../index.html" class="inline-flex shrink-0 items-center gap-2.5 text-ink" aria-label="صفحه اصلی">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+
+        <nav class="hidden items-center gap-1 xl:flex">
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./category.html">دسته‌بندی‌ها</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./shop.html">فروشگاه</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./blog.html">مجله نِگار</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-ink" href="./gift-card.html">کارت هدیه</a>
+        </nav>
+
+        <div class="mr-auto flex items-center gap-2">
+          <button class="icon-btn" aria-label="علاقه‌مندی‌ها">
+            <i class="ri-heart-3-line"></i>
+            <span class="counter">3</span>
+          </button>
+          <button class="icon-btn" aria-label="سبد خرید" data-cart-toggle>
+            <i class="ri-shopping-bag-3-line"></i>
+            <span class="counter">2</span>
+          </button>
+          <a href="./login.html" class="hidden h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold md:flex">
+            <i class="ri-user-3-line"></i>
+            <span>ورود / ثبت‌نام</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div id="mobileOverlay" class="fixed inset-0 z-[60] hidden bg-black/40 backdrop-blur-sm" data-mobile-close></div>
+  <aside id="mobileDrawer"
+    class="fixed top-0 right-0 bottom-0 z-[70] w-[min(340px,90vw)] translate-x-[105%]
+           bg-white shadow-[-20px_0_60px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <span class="font-black">منوی نِگار</span>
+      <button class="icon-btn" data-mobile-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="p-5">
+      <a class="drawer-link" href="./shop.html">فروشگاه <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./category.html">دسته‌بندی‌ها <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./gift-card.html">کارت هدیه <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./blog.html">مجله نِگار <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./contact.html">تماس با ما <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./account.html">حساب کاربری <i class="ri-arrow-left-s-line"></i></a>
+    </div>
+  </aside>
+
+  <main class="container-app pt-6 sm:pt-8">
+
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-[10px] text-muted">
+      <a href="../index.html" class="hover:text-ink">خانه</a>
+      <i class="ri-arrow-left-s-line"></i>
+      <span class="text-ink font-bold">کارت هدیه</span>
+    </nav>
+
+    <!-- Hero -->
+    <div class="relative mt-4 overflow-hidden rounded-[28px] bg-ink p-8 text-white sm:rounded-[34px] sm:p-[clamp(30px,5vw,56px)]">
+      <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div class="absolute -top-20 -left-20 h-[280px] w-[280px] rounded-full border border-accent/15"></div>
+        <div class="absolute bottom-[-100px] left-[40%] h-[260px] w-[260px] rounded-full border border-accent/10"></div>
+        <div class="absolute right-[8%] top-[15%] hidden text-accent/15 text-[150px] leading-none lg:block">
+          <i class="ri-gift-2-line"></i>
+        </div>
+      </div>
+
+      <div class="relative z-10 max-w-2xl">
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-[#dce7bd] bg-accent/10 px-3 py-1.5 text-[10px] font-extrabold text-accent">
+          <i class="ri-gift-2-line"></i> هدیه‌ای برای اهل کتاب
+        </span>
+        <h1 class="mt-4 text-[clamp(30px,5vw,54px)] font-black leading-[1.1] tracking-[-.06em]">
+          یک انتخاب کوچک،<br>
+          <span class="text-accent">یک خاطره بزرگ.</span>
+        </h1>
+        <p class="mt-5 max-w-xl text-[12px] leading-[2] text-white/60 sm:text-[14px]">
+          کارت هدیه‌ی نِگار را با مبلغ دلخواه و طرح موردعلاقه‌ات بساز، پیام شخصی‌ات را بنویس،
+          و برای دوست کتاب‌خوانت بفرست — بلافاصله یا در تاریخ مشخص.
+        </p>
+
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#builder" class="inline-flex min-h-[46px] items-center gap-2 rounded-[13px] bg-accent px-5 text-[12px] font-extrabold text-ink hover:bg-[#e1fa87] transition">
+            <i class="ri-magic-line"></i> ساخت کارت هدیه
+          </a>
+          <a href="#how" class="inline-flex min-h-[46px] items-center gap-2 rounded-[13px] border border-white/[.18] px-5 text-[12px] font-extrabold text-white hover:bg-white/5 transition">
+            <i class="ri-information-line"></i> چطور کار می‌کند؟
+          </a>
+        </div>
+
+        <div class="mt-7 flex flex-wrap gap-x-6 gap-y-3">
+          <div>
+            <b class="block text-[22px] font-black text-accent">۱۲</b>
+            <small class="text-[10px] text-white/50">طرح آماده</small>
+          </div>
+          <div class="border-r border-white/10 pr-6">
+            <b class="block text-[22px] font-black text-accent">۲۴/۷</b>
+            <small class="text-[10px] text-white/50">ارسال آنی</small>
+          </div>
+          <div class="border-r border-white/10 pr-6">
+            <b class="block text-[22px] font-black text-accent">۱ سال</b>
+            <small class="text-[10px] text-white/50">اعتبار کارت</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== چطور کار می‌کند ==================== -->
+    <section id="how" class="pt-10 sm:pt-14 scroll-mt-28">
+      <div class="mb-6 text-center">
+        <span class="section-kicker">فرآیند ساده</span>
+        <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">در سه قدم، هدیه‌ات آماده است</h2>
+      </div>
+
+      <div class="grid gap-3 sm:grid-cols-3">
+        <div class="gift-step">
+          <span class="gift-step-num">۰۱</span>
+          <div class="gift-step-icon"><i class="ri-palette-line"></i></div>
+          <h3>طرح و مبلغ</h3>
+          <p>یکی از ۱۲ طرح آماده را انتخاب کن و مبلغ دلخواه را وارد کن.</p>
+        </div>
+        <div class="gift-step">
+          <span class="gift-step-num">۰۲</span>
+          <div class="gift-step-icon"><i class="ri-edit-2-line"></i></div>
+          <h3>پیام شخصی</h3>
+          <p>یک پیام کوتاه بنویس و تاریخ ارسال را مشخص کن.</p>
+        </div>
+        <div class="gift-step">
+          <span class="gift-step-num">۰۳</span>
+          <div class="gift-step-icon"><i class="ri-send-plane-line"></i></div>
+          <h3>ارسال هدیه</h3>
+          <p>با ایمیل یا پیامک برای دوستت می‌فرستیم. آنی یا در تاریخ دلخواه.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Builder ==================== -->
+    <section id="builder" class="pt-10 sm:pt-14 scroll-mt-28">
+      <div class="grid gap-6 lg:grid-cols-[1.15fr_1fr] lg:gap-10">
+
+        <!-- ========== Form ========== -->
+        <div class="gift-form-card">
+          <div class="mb-6">
+            <span class="section-kicker">ساخت کارت هدیه</span>
+            <h2 class="text-[clamp(20px,3vw,26px)] font-black tracking-[-.04em]">هدیه‌ات را بساز</h2>
+          </div>
+
+          <form id="giftForm" class="space-y-6" novalidate>
+
+            <!-- طرح -->
+            <div>
+              <label class="gift-label">
+                طرح کارت <span class="text-danger">*</span>
+              </label>
+              <div id="designGrid" class="gift-design-grid"></div>
+            </div>
+
+            <!-- مبلغ -->
+            <div>
+              <label class="gift-label">
+                مبلغ هدیه (تومان) <span class="text-danger">*</span>
+              </label>
+              <div class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+                <button type="button" class="gift-amount" data-amount="100000">۱۰۰ هزار</button>
+                <button type="button" class="gift-amount" data-amount="200000">۲۰۰ هزار</button>
+                <button type="button" class="gift-amount is-active" data-amount="500000">۵۰۰ هزار</button>
+                <button type="button" class="gift-amount" data-amount="1000000">۱ میلیون</button>
+              </div>
+              <div class="field mt-3">
+                <div class="relative">
+                  <input id="giftAmount" type="tel" inputmode="numeric" dir="ltr" class="text-right pr-3"
+                    placeholder="مبلغ دلخواه (حداقل ۵۰,۰۰۰)" value="500000" required>
+                  <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[10px] font-bold text-muted">
+                    تومان
+                  </span>
+                </div>
+                <small class="error"></small>
+              </div>
+            </div>
+
+            <!-- اطلاعات گیرنده -->
+            <div>
+              <label class="gift-label">اطلاعات گیرنده</label>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div class="field">
+                  <label for="giftTo">نام گیرنده <span class="text-danger">*</span></label>
+                  <input id="giftTo" type="text" placeholder="مثلاً سارا" required>
+                  <small class="error"></small>
+                </div>
+                <div class="field">
+                  <label for="giftFrom">نام فرستنده</label>
+                  <input id="giftFrom" type="text" placeholder="نام شما (اختیاری)">
+                </div>
+                <div class="field">
+                  <label for="giftEmail">ایمیل گیرنده <span class="text-danger">*</span></label>
+                  <input id="giftEmail" type="email" dir="ltr" class="text-right"
+                    placeholder="friend@example.com" required>
+                  <small class="error"></small>
+                </div>
+                <div class="field">
+                  <label for="giftPhone">موبایل گیرنده (اختیاری)</label>
+                  <input id="giftPhone" type="tel" dir="ltr" class="text-right" placeholder="۰۹۱۲...">
+                </div>
+              </div>
+            </div>
+
+            <!-- پیام شخصی -->
+            <div class="field">
+              <label for="giftMessage">پیام شخصی <span class="text-danger">*</span></label>
+              <textarea id="giftMessage" rows="3" maxlength="140"
+                placeholder="یک پیام کوتاه و دوستانه بنویس..." required></textarea>
+              <div class="mt-1.5 flex items-center justify-between">
+                <small class="error"></small>
+                <small class="text-[10px] text-muted"><b id="msgCount">۰</b> / ۱۴۰</small>
+              </div>
+            </div>
+
+            <!-- تاریخ ارسال -->
+            <div>
+              <label class="gift-label">تاریخ ارسال</label>
+              <div class="gift-when">
+                <label class="gift-when-option is-active">
+                  <input type="radio" name="giftWhen" value="now" checked>
+                  <span class="gift-when-radio"></span>
+                  <span>
+                    <b>ارسال آنی</b>
+                    <small>همین حالا برای گیرنده ارسال شود</small>
+                  </span>
+                </label>
+                <label class="gift-when-option">
+                  <input type="radio" name="giftWhen" value="scheduled">
+                  <span class="gift-when-radio"></span>
+                  <span>
+                    <b>تاریخ مشخص</b>
+                    <small>در تاریخ دلخواه شما ارسال شود</small>
+                  </span>
+                </label>
+              </div>
+              <div id="scheduleWrap" class="hidden mt-3">
+                <div class="field">
+                  <label for="giftDate">تاریخ ارسال</label>
+                  <input id="giftDate" type="date" dir="ltr" min="">
+                </div>
+              </div>
+            </div>
+
+            <!-- چک‌باکس‌ها -->
+            <div class="space-y-2">
+              <label class="checkbox-row">
+                <input type="checkbox" id="giftNotifySelf" checked>
+                <span class="checkbox-box"></span>
+                <span>به من هم یک نسخه از تأیید ارسال ایمیل شود</span>
+              </label>
+              <label class="checkbox-row">
+                <input type="checkbox" id="giftTerms">
+                <span class="checkbox-box"></span>
+                <span>
+                  <a href="#" class="font-bold text-ink underline decoration-dotted">قوانین کارت هدیه</a>
+                  را می‌پذیرم
+                </span>
+              </label>
+            </div>
+
+            <!-- Submit -->
+            <div class="pt-2">
+              <button type="submit" class="gift-submit">
+                <i class="ri-shopping-bag-3-line"></i>
+                <span>افزودن به سبد و پرداخت</span>
+                <i class="ri-arrow-left-line"></i>
+              </button>
+              <p class="mt-3 flex items-center justify-center gap-1.5 text-[10px] text-muted">
+                <i class="ri-shield-check-line text-[#2e7d55]"></i>
+                پرداخت امن — کارت بلافاصله پس از تأیید صادر می‌شود
+              </p>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- ========== Preview ========== -->
+        <aside class="lg:sticky lg:top-[104px] lg:h-fit">
+          <div class="gift-preview-label">
+            <i class="ri-eye-line"></i> پیش‌نمایش زنده کارت
+          </div>
+
+          <div class="gift-card" id="giftCardPreview">
+            <div class="gift-card-ornament" aria-hidden="true"></div>
+            <div class="gift-card-content">
+              <div class="flex items-start justify-between">
+                <div class="flex items-center gap-2 text-white/90">
+                  <span class="grid h-8 w-8 place-items-center rounded-[10px] bg-white/15 text-[14px]">
+                    <i class="ri-book-3-line"></i>
+                  </span>
+                  <b class="text-[12px] font-black">نِگار</b>
+                </div>
+                <span class="gift-card-label" id="giftCardLabel">کارت هدیه</span>
+              </div>
+
+              <div class="gift-card-center">
+                <small class="gift-card-to">برای</small>
+                <b class="gift-card-to-name" id="giftCardTo">—</b>
+                <p class="gift-card-message" id="giftCardMessage">
+                  یک پیام قشنگ برای کسی که دوستش داری...
+                </p>
+              </div>
+
+              <div class="gift-card-foot">
+                <div>
+                  <small class="gift-card-amount-label">مبلغ هدیه</small>
+                  <b class="gift-card-amount" id="giftCardAmount">۵۰۰,۰۰۰ تومان</b>
+                </div>
+                <div class="text-left">
+                  <small class="gift-card-code-label">کد کارت</small>
+                  <b class="gift-card-code" id="giftCardCode">NG-XXXX-XXXX</b>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="gift-preview-tips">
+            <div class="gift-preview-tip">
+              <i class="ri-information-line"></i>
+              <span>کارت هدیه یک سال اعتبار دارد و در همه محصولات فروشگاه قابل استفاده است.</span>
+            </div>
+            <div class="gift-preview-tip">
+              <i class="ri-wallet-3-line"></i>
+              <span>مبلغ دقیقاً به کیف پول گیرنده اضافه می‌شود.</span>
+            </div>
+            <div class="gift-preview-tip">
+              <i class="ri-refresh-line"></i>
+              <span>در صورت استفاده‌نشدن، امکان بازگشت وجه تا ۷ روز وجود دارد.</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- ==================== طرح‌های محبوب ==================== -->
+    <section class="pt-14 sm:pt-20">
+      <div class="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <span class="section-kicker">انتخاب سریع</span>
+          <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">طرح‌های محبوب</h2>
+        </div>
+      </div>
+
+      <div id="popularDesigns" class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"></div>
+    </section>
+
+    <!-- ==================== مناسبت‌ها ==================== -->
+    <section class="pt-14 sm:pt-20">
+      <div class="mb-6">
+        <span class="section-kicker">بهترین مناسبت‌ها</span>
+        <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">برای چه مناسبت‌هایی؟</h2>
+      </div>
+
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="occasion-card">
+          <div class="occasion-icon bg-[#fdeee0] text-[#a5622c]"><i class="ri-cake-3-line"></i></div>
+          <h3>تولد</h3>
+          <p>یک هدیه‌ی ماندگار برای روز خاصش.</p>
+        </div>
+        <div class="occasion-card">
+          <div class="occasion-icon bg-[#e0f4e8] text-[#2e7d55]"><i class="ri-graduation-cap-line"></i></div>
+          <h3>فارغ‌التحصیلی</h3>
+          <p>شروعی تازه با یک کتاب خوب.</p>
+        </div>
+        <div class="occasion-card">
+          <div class="occasion-icon bg-[#f5d5d0] text-[#a33226]"><i class="ri-heart-3-line"></i></div>
+          <h3>سالگرد</h3>
+          <p>برای آن آدمی که دوستش داری.</p>
+        </div>
+        <div class="occasion-card">
+          <div class="occasion-icon bg-[#f0e4c8] text-[#8a6d1a]"><i class="ri-award-line"></i></div>
+          <h3>تشکر</h3>
+          <p>از کسی که کنارت بوده، تشکر کن.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FAQ کوتاه ==================== -->
+    <section class="pt-14 sm:pt-20">
+      <div class="mb-6">
+        <span class="section-kicker">سوالات پرتکرار</span>
+        <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">درباره کارت هدیه</h2>
+      </div>
+
+      <div class="gift-faq">
+        <details class="gift-faq-item">
+          <summary>
+            <span>کارت هدیه چقدر اعتبار دارد؟</span>
+            <i class="ri-add-line"></i>
+          </summary>
+          <p>کارت هدیه‌ی نِگار از تاریخ صدور، یک سال اعتبار دارد. اگر تا آن زمان استفاده نشود، مبلغ به کیف پول فرستنده برمی‌گردد.</p>
+        </details>
+        <details class="gift-faq-item">
+          <summary>
+            <span>آیا می‌توانم تاریخ ارسال را مشخص کنم؟</span>
+            <i class="ri-add-line"></i>
+          </summary>
+          <p>بله. هنگام ساخت کارت، گزینه «تاریخ مشخص» را انتخاب کنید و تاریخ دلخواه (حداکثر تا ۶ ماه آینده) را وارد کنید.</p>
+        </details>
+        <details class="gift-faq-item">
+          <summary>
+            <span>اگر گیرنده ایمیل نداشته باشد، چه کار کنم؟</span>
+            <i class="ri-add-line"></i>
+          </summary>
+          <p>می‌توانید شماره موبایل گیرنده را وارد کنید تا کارت از طریق پیامک ارسال شود. یا کد کارت را دستی برایش بفرستید.</p>
+        </details>
+        <details class="gift-faq-item">
+          <summary>
+            <span>آیا می‌توانم کارت را پس بگیرم؟</span>
+            <i class="ri-add-line"></i>
+          </summary>
+          <p>تا پیش از استفاده‌ی گیرنده، می‌توانید با پشتیبانی تماس بگیرید و درخواست لغو کنید. مبلغ حداکثر تا ۴۸ ساعت به کیف پول شما برمی‌گردد.</p>
+        </details>
+        <details class="gift-faq-item">
+          <summary>
+            <span>کارت هدیه برای خرید چه چیزهایی قابل استفاده است؟</span>
+            <i class="ri-add-line"></i>
+          </summary>
+          <p>برای همه‌ی محصولات نِگار — کتاب‌ها، کارت‌های هدیه دیگر، و محصولات فرهنگی فروشگاه.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="pt-14 sm:pt-20">
+      <div class="relative overflow-hidden rounded-[28px] bg-accent p-8 sm:p-12">
+        <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+          <div class="absolute -top-16 -right-16 h-[220px] w-[220px] rounded-full border border-ink/10"></div>
+          <div class="absolute bottom-[-80px] left-[25%] h-[200px] w-[200px] rounded-full border border-ink/10"></div>
+        </div>
+
+        <div class="relative z-10 flex flex-col items-start gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div class="max-w-xl">
+            <span class="section-kicker !text-ink/60">هدیه‌ای برای همه</span>
+            <h2 class="mt-2 text-[clamp(22px,3.5vw,34px)] font-black leading-[1.3] tracking-[-.05em] text-ink">
+              یک کتاب، یک خاطره،<br>یک هدیه‌ی ماندگار.
+            </h2>
+            <p class="mt-3 max-w-md text-[12px] leading-[2] text-ink/70">
+              کارت هدیه نِگار را برای هر مناسبتی بفرست — با مبلغ دلخواه و پیام شخصی خودت.
+            </p>
+          </div>
+          <a href="#builder" class="inline-flex min-h-[48px] shrink-0 items-center gap-2 rounded-[13px] bg-ink px-5 text-[12px] font-extrabold text-white hover:bg-[#0f1817] transition">
+            <i class="ri-magic-line"></i> شروع کن
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-14 bg-ink text-white sm:mt-20">
+    <div class="container-app grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div>
+        <a href="../index.html" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-[#aeb8b3]">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-7 text-white/55">
+          فروشگاهی برای کسانی که کتاب را فقط یک محصول نمی‌دانند؛ یک تجربه می‌دانند.
+        </p>
+        <div class="mt-5 flex gap-[7px]">
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-instagram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-telegram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-twitter-x-line"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">خرید</h3>
+        <a href="./shop.html" class="my-2 block text-[10px] text-[#aeb8b3]">همه کتاب‌ها</a>
+        <a href="./gift-card.html" class="my-2 block text-[10px] text-[#aeb8b3]">کارت هدیه</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پرفروش‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تخفیف‌ها</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">راهنما</h3>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">شیوه ارسال</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پیگیری سفارش</a>
+        <a href="./faq.html" class="my-2 block text-[10px] text-[#aeb8b3]">سوالات متداول</a>
+        <a href="./contact.html" class="my-2 block text-[10px] text-[#aeb8b3]">تماس با ما</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">با ما در ارتباط باش</h3>
+        <p class="text-sm leading-7 text-white/55">تهران، خیابان کتاب، پلاک ۲۴</p>
+        <p class="mt-2 text-sm text-white/75">۰۲۱-۱۲۳۴۵۶۷۸</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-app flex flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:justify-between">
+        <span>© ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.</span>
+        <span>طراحی شده برای تجربه‌ای ساده‌تر از خرید کتاب.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div id="cartPanel" class="fixed top-0 right-0 bottom-0 z-[80] flex w-[min(390px,92vw)] translate-x-[105%] flex-col bg-white shadow-[-20px_0_70px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <div><b class="text-lg">سبد خرید</b><span class="mr-2 text-xs text-muted">۲ کالا</span></div>
+      <button class="icon-btn" data-cart-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="space-y-3 p-5">
+      <div class="flex items-center gap-3 rounded-2xl border border-border p-2">
+        <div class="mini-cover flex-[0_0_58px] !min-h-[78px] bg-[#657c71]">روایت<br>یک زندگی</div>
+        <div><b class="block text-[10px]">روایت یک زندگی</b><span class="mt-1.5 block text-[9px] text-[#909895]">۲۷۵,۰۰۰ تومان</span></div>
+      </div>
+    </div>
+    <div class="mt-auto border-t border-border p-5">
+      <div class="mb-4 flex justify-between"><span>جمع کل</span><b>۲۷۵,۰۰۰ تومان</b></div>
+      <a href="./cart.html" class="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink">
+        مشاهده سبد خرید
+      </a>
+    </div>
+  </div>
+  <div id="cartOverlay" class="fixed inset-0 z-[55] hidden bg-black/30" data-cart-close></div>
+
+  <!-- Success modal -->
+  <div id="giftSuccessModal" class="fixed inset-0 z-[110] hidden items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4">
+    <div class="w-full max-w-[480px] overflow-hidden rounded-t-[24px] bg-white shadow-2xl sm:rounded-[24px]">
+      <div class="p-6 text-center">
+        <div class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-accent text-ink">
+          <i class="ri-gift-2-line text-3xl"></i>
+        </div>
+        <h3 class="mt-4 text-[17px] font-black">کارت هدیه به سبد اضافه شد</h3>
+        <p class="mt-2 text-[11px] leading-7 text-muted">
+          برای تکمیل خرید، به سبد خرید بروید و مرحله‌ی پرداخت را کامل کنید.
+        </p>
+
+        <div class="mt-5 grid gap-2">
+          <a href="./cart.html" class="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-[13px] bg-accent px-4 text-[12px] font-extrabold text-ink">
+            <i class="ri-shopping-bag-3-line"></i> رفتن به سبد خرید
+          </a>
+          <button type="button" class="pdp-ghost-btn justify-center" data-gift-close>
+            ساخت کارت دیگر
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <script src="/src/js/main.js"></script> -->
+  <script src="/src/js/gift-card.js"></script>
+</body>
+</html>

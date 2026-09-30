@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="درخواست نامعتبر - نِگار">
+  <title>۴۰۰ | درخواست نامعتبر</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+
+</head>
+
+<body class="bg-bg text-text antialiased min-h-screen flex flex-col"
+      data-error-code="400" data-auto-redirect="../index.html">
+
+  <!-- Header ساده -->
+  <header class="border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app flex h-20 items-center justify-between">
+      <a href="../index.html" class="inline-flex items-center gap-2.5 text-ink">
+        <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+        <span>
+          <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+          <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+        </span>
+      </a>
+      <a href="../index.html" class="inline-flex h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold hover:bg-bg transition">
+        <i class="ri-arrow-right-line"></i>
+        <span>صفحه اصلی</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container-app flex flex-1 items-center justify-center py-10">
+
+    <div class="error-wrap w-full max-w-2xl text-center">
+
+      <!-- Illustration -->
+      <div class="relative mx-auto mb-8 grid h-[220px] w-[220px] place-items-center sm:h-[260px] sm:w-[260px]">
+        <div class="error-ring"></div>
+        <div class="error-ring error-ring--2"></div>
+        <div class="error-orb error-orb--amber">
+          <i class="ri-error-warning-line"></i>
+        </div>
+
+        <!-- Floating code -->
+        <span class="error-float error-float--1 text-[15px] sm:text-[18px]">؟</span>
+        <span class="error-float error-float--2 text-[13px] sm:text-[16px]">!</span>
+        <span class="error-float error-float--3"><i class="ri-question-mark"></i></span>
+      </div>
+
+      <!-- Code -->
+      <div class="error-code" data-tone="amber">۴۰۰</div>
+
+      <!-- Text -->
+      <h1 class="mt-3 text-[clamp(22px,3.5vw,32px)] font-black tracking-[-.05em]">
+        درخواست شما معتبر نیست
+      </h1>
+      <p class="mx-auto mt-3 max-w-md text-xs leading-[2] text-muted">
+        به نظر می‌رسد آدرس یا اطلاعات ارسال‌شده اشتباه است.
+        می‌توانید به صفحه اصلی بازگردید یا در فروشگاه گشتی بزنید.
+      </p>
+
+      <!-- Timer -->
+      <p class="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[11px] font-bold text-muted border border-border">
+        <i class="ri-timer-line text-ink"></i>
+        تا <b id="countdown" class="text-ink mx-1">۱۰</b> ثانیه دیگر به صفحه اصلی می‌روید
+      </p>
+
+      <!-- Actions -->
+      <div class="mt-7 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
+        <a href="../index.html" class="btn-primary-error">
+          <i class="ri-home-4-line"></i> بازگشت به خانه
+        </a>
+        <a href="./shop.html" class="btn-secondary-error">
+          <i class="ri-store-2-line"></i> مشاهده فروشگاه
+        </a>
+        <button type="button" id="cancelRedirect" class="btn-ghost-error">
+          <i class="ri-close-line"></i> لغو بازگشت خودکار
+        </button>
+      </div>
+
+      <!-- Support -->
+      <p class="mt-8 text-[11px] text-muted">
+        نیاز به کمک دارید؟
+        <a href="#" class="font-bold text-ink underline decoration-dotted underline-offset-4 hover:decoration-solid">تماس با پشتیبانی</a>
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Footer ساده -->
+  <footer class="border-t border-border bg-white">
+    <div class="container-app flex flex-col items-center justify-between gap-3 py-5 text-[11px] text-muted sm:flex-row">
+      <span>© ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.</span>
+      <span class="text-muted/80">کد خطا: <b class="text-ink">۴۰۰</b></span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/error.js"></script>
+</body>
+</html>

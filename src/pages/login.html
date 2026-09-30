@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ورود و ثبت‌نام در نِگار">
+  <title>ورود / ثبت‌نام | نِگار</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+</head>
+
+<body class="bg-bg text-text antialiased min-h-screen">
+
+  <!-- ==================== Layout دو ستونه ==================== -->
+  <div class="auth-layout">
+
+    <!-- ========== ستون چپ: فرم ========== -->
+    <div class="auth-panel">
+
+      <!-- Header کوچک -->
+      <header class="flex items-center justify-between">
+        <a href="../index.html" class="inline-flex items-center gap-2.5 text-ink">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+
+        <a href="../index.html" class="inline-flex items-center gap-1.5 rounded-[11px] border border-border bg-white px-3 py-2 text-[10px] font-bold text-muted transition hover:text-ink">
+          <i class="ri-arrow-right-line"></i> بازگشت
+        </a>
+      </header>
+
+      <!-- فرم -->
+      <div class="auth-form-wrap">
+
+        <div class="auth-head">
+          <span class="section-kicker">خوش آمدی 👋</span>
+          <h1 class="auth-title" id="authTitle">ورود به حساب</h1>
+          <p class="auth-desc" id="authDesc">برای ادامه، شماره موبایلت را وارد کن.</p>
+        </div>
+
+        <!-- Tabs: ورود / ثبت‌نام -->
+        <div class="auth-tabs" id="authTabs">
+          <button class="auth-tab is-active" data-auth-tab="login">ورود</button>
+          <button class="auth-tab" data-auth-tab="register">ثبت‌نام</button>
+          <span class="auth-tab-indicator" id="authTabIndicator"></span>
+        </div>
+
+        <!-- ---------- Step 1: شماره موبایل ---------- -->
+        <section class="auth-step is-active" data-step="phone">
+          <form id="phoneForm" class="auth-form" novalidate>
+            <div class="field">
+              <label for="authPhone">شماره موبایل <span class="text-danger">*</span></label>
+              <div class="phone-input">
+                <span class="phone-prefix" dir="ltr">+۹۸</span>
+                <input id="authPhone" type="tel" inputmode="numeric" dir="ltr"
+                  placeholder="۹۱۲ ۳۴۵ ۶۷۸۹" maxlength="13" autocomplete="tel" required autofocus>
+              </div>
+              <small class="error"></small>
+            </div>
+
+            <button type="submit" class="auth-submit">
+              <span id="phoneSubmitText">ارسال کد ورود</span>
+              <i class="ri-arrow-left-line"></i>
+            </button>
+
+            <div class="auth-sep"><span>یا</span></div>
+
+            <div class="auth-socials">
+              <button type="button" class="auth-social">
+                <i class="ri-google-fill text-[#db4437]"></i> گوگل
+              </button>
+              <button type="button" class="auth-social">
+                <i class="ri-apple-fill text-ink"></i> اپل
+              </button>
+            </div>
+
+            <p class="auth-terms">
+              با ورود یا ثبت‌نام،
+              <a href="#" class="font-bold text-ink underline decoration-dotted">قوانین و شرایط</a>
+              نِگار را می‌پذیری.
+            </p>
+          </form>
+        </section>
+
+        <!-- ---------- Step 2: OTP ---------- -->
+        <section class="auth-step" data-step="otp">
+          <form id="otpForm" class="auth-form" novalidate>
+            <div class="auth-phone-badge">
+              <i class="ri-smartphone-line"></i>
+              <span>کد ۶ رقمی به شماره <b id="otpPhoneDisplay">۰۹۱۲***۶۷۸۹</b> ارسال شد</span>
+              <button type="button" class="auth-edit-phone" data-back="phone" aria-label="ویرایش شماره">
+                <i class="ri-edit-line"></i>
+              </button>
+            </div>
+
+            <div class="otp-wrap" id="authOtpInputs">
+              <input type="tel" inputmode="numeric" maxlength="1" class="otp-input" autocomplete="one-time-code">
+              <input type="tel" inputmode="numeric" maxlength="1" class="otp-input">
+              <input type="tel" inputmode="numeric" maxlength="1" class="otp-input">
+              <input type="tel" inputmode="numeric" maxlength="1" class="otp-input">
+              <input type="tel" inputmode="numeric" maxlength="1" class="otp-input">
+              <input type="tel" inputmode="numeric" maxlength="1" class="otp-input">
+            </div>
+            <small class="error block text-center" id="authOtpError"></small>
+
+            <div class="otp-timer">
+              <span id="authOtpTimer">ارسال مجدد کد تا <b>۰۲:۰۰</b></span>
+              <button type="button" id="authResendOtp" class="otp-resend hidden">
+                <i class="ri-refresh-line"></i> ارسال مجدد
+              </button>
+            </div>
+
+            <button type="submit" class="auth-submit">
+              <span>تأیید و ورود</span>
+              <i class="ri-arrow-left-line"></i>
+            </button>
+
+            <button type="button" class="auth-back" data-back="phone">
+              <i class="ri-arrow-right-line"></i> تغییر شماره موبایل
+            </button>
+          </form>
+        </section>
+
+        <!-- ---------- Step 3: تکمیل ثبت‌نام ---------- -->
+        <section class="auth-step" data-step="complete">
+          <form id="completeForm" class="auth-form" novalidate>
+            <div class="auth-success-badge">
+              <i class="ri-checkbox-circle-line"></i>
+              <span>شماره‌ات تأیید شد</span>
+            </div>
+
+            <p class="text-center text-[11px] leading-6 text-muted">
+              چند لحظه برای تکمیل اطلاعاتت وقت بگذار.
+            </p>
+
+            <div class="field">
+              <label for="authName">نام و نام خانوادگی <span class="text-danger">*</span></label>
+              <input id="authName" type="text" placeholder="مثلاً سارا محمدی" required>
+              <small class="error"></small>
+            </div>
+
+            <div class="field">
+              <label for="authEmail">ایمیل <span class="text-[9px] font-medium text-muted">(اختیاری)</span></label>
+              <input id="authEmail" type="email" dir="ltr" class="text-right" placeholder="you@example.com">
+              <small class="error"></small>
+            </div>
+
+            <label class="checkbox-row">
+              <input type="checkbox" id="authNewsletter" checked>
+              <span class="checkbox-box"></span>
+              <span>می‌خواهم از تخفیف‌ها و کتاب‌های تازه باخبر شوم</span>
+            </label>
+
+            <button type="submit" class="auth-submit">
+              <span>تکمیل ثبت‌نام</span>
+              <i class="ri-check-line"></i>
+            </button>
+          </form>
+        </section>
+
+        <!-- ---------- Step 4: موفقیت ---------- -->
+        <section class="auth-step" data-step="success">
+          <div class="auth-success">
+            <div class="auth-success-icon">
+              <i class="ri-check-line"></i>
+              <span class="auth-success-pulse"></span>
+            </div>
+            <h2 class="auth-title">خوش آمدی به نِگار!</h2>
+            <p class="auth-desc">
+              حسابت با موفقیت آماده شد. حالا می‌توانی خرید کنی، علاقه‌مندی‌ها را ذخیره کنی
+              و سفارش‌هایت را پیگیری کنی.
+            </p>
+
+            <div class="grid gap-2 mt-6">
+              <a href="../index.html" class="auth-submit">
+                <span>شروع خرید</span>
+                <i class="ri-shopping-bag-3-line"></i>
+              </a>
+              <a href="./account.html" class="auth-back">
+                <i class="ri-user-3-line"></i> رفتن به پنل کاربری
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Footer کوچک -->
+      <footer class="mt-8 flex flex-wrap items-center justify-between gap-3 text-[10px] text-muted">
+        <span>© ۱۴۰۵ نِگار</span>
+        <div class="flex items-center gap-3">
+          <a href="./faq.html" class="hover:text-ink">راهنما</a>
+          <a href="./contact.html" class="hover:text-ink">پشتیبانی</a>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- ========== ستون راست: تصویر / برند ========== -->
+    <aside class="auth-showcase">
+
+      <!-- Decorative -->
+      <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div class="absolute -top-24 -right-24 h-[320px] w-[320px] rounded-full border border-accent/15"></div>
+        <div class="absolute bottom-[-140px] left-[10%] h-[300px] w-[300px] rounded-full border border-accent/10"></div>
+        <div class="absolute right-[10%] top-[15%] text-accent/10 text-[200px] leading-none">
+          <i class="ri-double-quotes-l"></i>
+        </div>
+      </div>
+
+      <div class="auth-showcase-inner">
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[10px] font-extrabold text-accent backdrop-blur-sm">
+          <i class="ri-sparkling-2-line"></i> باشگاه کتاب‌خوانان نِگار
+        </span>
+
+        <h2 class="mt-5 text-[clamp(26px,3.5vw,40px)] font-black leading-[1.3] tracking-[-.05em] text-white">
+          هر کتاب،<br>
+          <span class="text-accent">یک مسیر تازه.</span>
+        </h2>
+
+        <p class="mt-5 max-w-md text-[12px] leading-[2] text-white/60">
+          به باشگاه کتاب‌خوانان نِگار بپیوند و از پیشنهادهای شخصی‌سازی‌شده،
+          تخفیف‌های ویژه اعضا و دسترسی زودتر به کتاب‌های تازه بهره‌مند شو.
+        </p>
+
+        <!-- مزایای عضویت -->
+        <ul class="mt-7 space-y-3">
+          <li class="auth-feature">
+            <span class="auth-feature-icon"><i class="ri-gift-2-line"></i></span>
+            <div>
+              <b>هدیه‌ی عضویت</b>
+              <small>۱۵٪ تخفیف روی اولین خرید</small>
+            </div>
+          </li>
+          <li class="auth-feature">
+            <span class="auth-feature-icon"><i class="ri-bookmark-3-line"></i></span>
+            <div>
+              <b>لیست علاقه‌مندی‌ها</b>
+              <small>کتاب‌های موردعلاقه‌ات را ذخیره کن</small>
+            </div>
+          </li>
+          <li class="auth-feature">
+            <span class="auth-feature-icon"><i class="ri-truck-line"></i></span>
+            <div>
+              <b>ارسال رایگان</b>
+              <small>برای سفارش‌های بالای ۹۰۰ هزار تومان</small>
+            </div>
+          </li>
+        </ul>
+
+        <!-- اعتماد -->
+        <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-[10px] text-white/50">
+          <span class="inline-flex items-center gap-1.5">
+            <i class="ri-shield-check-line text-accent"></i> پرداخت امن
+          </span>
+          <span class="inline-flex items-center gap-1.5">
+            <i class="ri-user-3-line text-accent"></i> بیش از ۴۸,۰۰۰ عضو
+          </span>
+          <span class="inline-flex items-center gap-1.5">
+            <i class="ri-star-fill text-accent"></i> امتیاز ۴.۸ از ۵
+          </span>
+        </div>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="auth-showcase-quote">
+        <i class="ri-double-quotes-l text-[22px] text-accent"></i>
+        <p>
+          «نِگار فقط یک فروشگاه کتاب نیست. حس می‌کنم یک دوست کتاب‌خوان دارم که هر هفته
+          پیشنهادهای خوب برایم می‌فرستد.»
+        </p>
+        <footer>
+          <div class="auth-quote-avatar">س.م</div>
+          <div>
+            <b>سارا محمدی</b>
+            <small>عضو باشگاه از ۱۴۰۳</small>
+          </div>
+        </footer>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- <script src="/src/js/main.js"></script> -->
+  <script src="/src/js/login.js"></script>
+</body>
+</html>

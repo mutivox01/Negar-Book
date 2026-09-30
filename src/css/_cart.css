@@ -1,0 +1,23 @@
+
+/* ===== Cart Page ===== */
+.cart-item {
+  @apply rounded-[24px] border border-border bg-white p-4 sm:p-5 transition;
+}
+.cart-item:hover {
+  @apply border-[#cbd0c9];
+}
+
+/* Qty stepper */
+.qty-stepper {
+  @apply inline-flex h-[38px] items-center overflow-hidden rounded-[11px] border border-border bg-white;
+}
+.qty-stepper button {
+  @apply grid h-full w-[36px] place-items-center text-ink transition
+         hover:bg-bg disabled:opacity-40 disabled:cursor-not-allowed;
+}
+.qty-stepper button i { @apply text-[15px]; }
+.qty-value {
+  @apply grid h-full w-[38px] place-items-center border-x border-border text-[11px] font-black;
+}
+
+

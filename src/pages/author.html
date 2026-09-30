@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مریم رستگار — نویسنده رمان و داستان | نِگار">
+  <title>مریم رستگار | نِگار</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+</head>
+
+<body class="bg-bg text-text antialiased">
+
+  <!-- Announcement -->
+  <div class="bg-ink text-white">
+    <div class="container-app flex items-center justify-center gap-2 py-2 text-xs sm:text-sm">
+      <i class="ri-quill-pen-line text-accent"></i>
+      <span>معرفی نویسندگان نِگار — قلم‌هایی که زندگی‌ها را تغییر می‌دهند</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app">
+      <div class="flex h-20 items-center gap-4">
+        <button class="icon-btn lg:hidden" data-mobile-open aria-label="باز کردن منو">
+          <i class="ri-menu-4-line text-xl"></i>
+        </button>
+
+        <a href="../index.html" class="inline-flex shrink-0 items-center gap-2.5 text-ink" aria-label="صفحه اصلی">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+
+        <div class="hidden flex-1 lg:block">
+          <div class="search-box">
+            <i class="ri-search-2-line"></i>
+            <input id="searchInput" type="search" autocomplete="off"
+              placeholder="نام کتاب، نویسنده یا موضوع را جست‌وجو کنید">
+            <kbd>Ctrl K</kbd>
+            <div id="searchSuggestions" class="absolute top-[54px] right-0 left-0 z-20 border border-border rounded-[18px] bg-white p-2 shadow-soft hidden"></div>
+          </div>
+        </div>
+
+        <nav class="hidden items-center gap-1 xl:flex">
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./category.html">دسته‌بندی‌ها</a>
+          <button class="flex items-center gap-1 px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" data-mega-toggle>
+            فروشگاه <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="../index.html#offers">پیشنهادهای ویژه</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="../index.html#blog">مجله نِگار</a>
+        </nav>
+
+        <div class="mr-auto flex items-center gap-2">
+          <button class="icon-btn hidden sm:grid" aria-label="جست‌وجو" data-search-focus>
+            <i class="ri-search-line"></i>
+          </button>
+          <button class="icon-btn" aria-label="علاقه‌مندی‌ها">
+            <i class="ri-heart-3-line"></i>
+            <span class="counter">3</span>
+          </button>
+          <button class="icon-btn" aria-label="سبد خرید" data-cart-toggle>
+            <i class="ri-shopping-bag-3-line"></i>
+            <span class="counter">2</span>
+          </button>
+          <a href="./login.html" class="hidden h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold md:flex">
+            <i class="ri-user-3-line"></i>
+            <span>ورود / ثبت‌نام</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mega menu -->
+      <div id="megaMenu" class="hidden border-t border-border py-6 pb-8">
+        <div class="grid gap-8 md:grid-cols-4">
+          <div>
+            <p class="mb-2.5 text-xs font-black">کتاب و ادبیات</p>
+            <a href="./category.html#fiction" class="menu-item">رمان و داستان</a>
+            <a href="./category.html#poetry" class="menu-item">شعر</a>
+            <a href="#" class="menu-item">کلاسیک</a>
+            <a href="#" class="menu-item">نمایشنامه</a>
+          </div>
+          <div>
+            <p class="mb-2.5 text-xs font-black">دانش و توسعه</p>
+            <a href="./category.html#psychology" class="menu-item">روان‌شناسی</a>
+            <a href="./category.html#business" class="menu-item">کسب‌وکار</a>
+            <a href="#" class="menu-item">فلسفه</a>
+            <a href="#" class="menu-item">تاریخ و جامعه</a>
+          </div>
+          <div>
+            <p class="mb-2.5 text-xs font-black">کودک و نوجوان</p>
+            <a href="./category.html#kids" class="menu-item">داستان کودک</a>
+            <a href="#" class="menu-item">نوجوان</a>
+            <a href="#" class="menu-item">کمیک</a>
+            <a href="#" class="menu-item">آموزشی</a>
+          </div>
+          <div class="rounded-3xl bg-ink p-6 text-white">
+            <span class="mb-3 inline-flex rounded-full bg-white/10 px-3 py-1 text-xs">منتخب هفته</span>
+            <h3 class="text-xl font-black leading-8">کتاب‌هایی برای شروع یک فصل تازه</h3>
+            <p class="mt-2 text-sm leading-6 text-white/60">انتخاب سردبیر نِگار از میان تازه‌های نشر.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div id="mobileOverlay" class="fixed inset-0 z-[60] hidden bg-black/40 backdrop-blur-sm" data-mobile-close></div>
+  <aside id="mobileDrawer"
+    class="fixed top-0 right-0 bottom-0 z-[70] w-[min(340px,90vw)] translate-x-[105%]
+           bg-white shadow-[-20px_0_60px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <span class="font-black">منوی نِگار</span>
+      <button class="icon-btn" data-mobile-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="p-5">
+      <div class="search-box mb-6">
+        <i class="ri-search-2-line"></i>
+        <input type="search" placeholder="جست‌وجو در نِگار">
+      </div>
+      <a class="drawer-link" href="./shop.html">فروشگاه <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./category.html">دسته‌بندی‌ها <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="../index.html#offers">پیشنهادهای ویژه <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="../index.html#blog">مجله نِگار <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./account.html">حساب کاربری <i class="ri-arrow-left-s-line"></i></a>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- ==================== Breadcrumb ==================== -->
+    <section class="container-app pt-6">
+      <nav class="flex flex-wrap items-center gap-2 text-[10px] text-muted" aria-label="مسیر صفحه">
+        <a href="../index.html" class="hover:text-ink">خانه</a>
+        <i class="ri-arrow-left-s-line"></i>
+        <a href="./category.html" class="hover:text-ink">نویسندگان</a>
+        <i class="ri-arrow-left-s-line"></i>
+        <span class="text-ink font-bold">مریم رستگار</span>
+      </nav>
+    </section>
+
+    <!-- ==================== Hero نویسنده ==================== -->
+    <section class="container-app pt-4">
+      <div class="author-hero">
+
+        <!-- Decorative -->
+        <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div class="absolute -top-24 -left-24 h-[320px] w-[320px] rounded-full border border-accent/15"></div>
+          <div class="absolute bottom-[-140px] left-[30%] h-[300px] w-[300px] rounded-full border border-accent/10"></div>
+          <div class="absolute left-[6%] top-[18%] hidden text-accent/15 text-[180px] leading-none lg:block">
+            <i class="ri-double-quotes-l"></i>
+          </div>
+        </div>
+
+        <div class="author-hero-inner">
+
+          <!-- Avatar + Info -->
+          <div class="flex flex-col items-center gap-6 text-center sm:flex-row sm:items-end sm:text-right">
+            <div class="author-avatar-lg">
+              <span>م.ر</span>
+              <button class="author-avatar-edit" aria-label="تغییر تصویر">
+                <i class="ri-camera-line"></i>
+              </button>
+            </div>
+
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center justify-center gap-2 sm:justify-start">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-accent/15 px-3 py-1 text-[10px] font-extrabold text-accent">
+                  <i class="ri-verified-badge-line"></i> نویسنده تأییدشده
+                </span>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-[10px] font-bold text-white/80">
+                  <i class="ri-map-pin-line"></i> تهران، ایران
+                </span>
+              </div>
+
+              <h1 class="mt-3 text-[clamp(28px,4.5vw,46px)] font-black leading-[1.15] tracking-[-.05em] text-white">
+                مریم رستگار
+              </h1>
+
+              <p class="mt-2 text-[12px] text-white/60">
+                نویسنده‌ی رمان و داستان کوتاه — از ۱۳۹۰ تا امروز
+              </p>
+
+              <!-- Stats داخل hero -->
+              <div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                <div class="author-stat">
+                  <b>۸</b>
+                  <small>کتاب منتشرشده</small>
+                </div>
+                <div class="author-stat">
+                  <b>۱۲</b>
+                  <small>جایزه ادبی</small>
+                </div>
+                <div class="author-stat">
+                  <b>۲.۴K</b>
+                  <small>فروش کل</small>
+                </div>
+                <div class="author-stat">
+                  <b>۴.۸</b>
+                  <small>میانگین امتیاز</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="mt-7 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
+            <button type="button" id="followAuthor" class="author-follow-btn">
+              <i class="ri-user-add-line"></i>
+              <span>دنبال کردن</span>
+            </button>
+            <button type="button" class="author-ghost-btn" id="shareAuthor">
+              <i class="ri-share-forward-line"></i> اشتراک‌گذاری
+            </button>
+            <button type="button" class="author-ghost-btn" id="messageAuthor">
+              <i class="ri-mail-send-line"></i> پیام به نویسنده
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Nav tab داخلی ==================== -->
+    <section class="container-app pt-6">
+      <div class="author-tabbar">
+        <a href="#about" class="author-tab is-active" data-scroll>
+          <i class="ri-information-line"></i> درباره
+        </a>
+        <a href="#books" class="author-tab" data-scroll>
+          <i class="ri-book-3-line"></i> کتاب‌ها
+        </a>
+        <a href="#quotes" class="author-tab" data-scroll>
+          <i class="ri-double-quotes-l"></i> نقل‌قول‌ها
+        </a>
+        <a href="#events" class="author-tab" data-scroll>
+          <i class="ri-calendar-event-line"></i> رویدادها
+        </a>
+        <a href="#reviews" class="author-tab" data-scroll>
+          <i class="ri-chat-3-line"></i> نظر خوانندگان
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== درباره ==================== -->
+    <section id="about" class="container-app pt-10 scroll-mt-28">
+      <div class="grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:gap-10">
+
+        <!-- Bio -->
+        <div>
+          <span class="section-kicker">درباره نویسنده</span>
+          <h2 class="text-[clamp(20px,3vw,28px)] font-black tracking-[-.04em]">
+            روایت‌هایی از تنهایی، رشد و دوباره شروع کردن
+          </h2>
+
+          <div class="prose-app mt-5">
+            <p>
+              مریم رستگار متولد ۱۳۶۰ در تهران است. او کار خود را با نوشتن داستان‌های کوتاه
+              برای مجلات ادبی آغاز کرد و پس از چند سال، اولین رمان خود را با عنوان
+              «روزهای بی‌تقویم» منتشر کرد. زبانی که او در نوشتن دارد، شاعرانه است و در عین حال
+              ساده؛ گویی در حال گفت‌وگو با یک دوست قدیمی است.
+            </p>
+            <p>
+              کتاب‌های او بارها به عنوان پرفروش‌ترین‌های ماه انتخاب شده‌اند و در بیش از ۱۰ جشنواره‌ی
+              ادبی داخلی مورد تقدیر قرار گرفته‌اند. او در حال حاضر در تهران زندگی می‌کند و
+              مشغول نوشتن رمان هفتم خود است.
+            </p>
+            <blockquote>
+              «من داستان‌ها را از سکوت آدم‌ها می‌نویسم؛ از چیزهایی که هیچ‌کس به زبان نمی‌آورد.»
+            </blockquote>
+          </div>
+
+          <!-- Tags / موضوعات -->
+          <div class="mt-6">
+            <p class="mb-2.5 text-[11px] font-black">موضوعات فعالیت</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="author-tag">رمان ادبی</span>
+              <span class="author-tag">داستان کوتاه</span>
+              <span class="author-tag">ادبیات زنان</span>
+              <span class="author-tag">روایت اول‌شخص</span>
+              <span class="author-tag">واقع‌گرایی جادویی</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Side info -->
+        <aside class="space-y-4">
+
+          <div class="author-info-card">
+            <h3 class="mb-4 text-[12px] font-black">اطلاعات مختصر</h3>
+            <div class="space-y-3 text-[11px]">
+              <div class="flex items-center justify-between">
+                <span class="text-muted"><i class="ri-calendar-line"></i> متولد</span>
+                <b>۱۳۶۰، تهران</b>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-muted"><i class="ri-book-2-line"></i> اولین کتاب</span>
+                <b>۱۳۹۰</b>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-muted"><i class="ri-award-line"></i> جایزه اصلی</span>
+                <b>جایزه جلال — ۱۳۹۸</b>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-muted"><i class="ri-global-line"></i> زبان‌های ترجمه</span>
+                <b>انگلیسی، فرانسه، آلمانی</b>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-muted"><i class="ri-building-2-line"></i> ناشر اصلی</span>
+                <b>نشر چشمه</b>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div class="author-info-card">
+            <h3 class="mb-4 text-[12px] font-black">شبکه‌های اجتماعی</h3>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="#" class="social-link">
+                <i class="ri-instagram-line"></i>
+                <span>اینستاگرام</span>
+              </a>
+              <a href="#" class="social-link">
+                <i class="ri-telegram-line"></i>
+                <span>تلگرام</span>
+              </a>
+              <a href="#" class="social-link">
+                <i class="ri-twitter-x-line"></i>
+                <span>توییتر</span>
+              </a>
+              <a href="#" class="social-link">
+                <i class="ri-global-line"></i>
+                <span>وب‌سایت</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="author-cta-card">
+            <i class="ri-mail-star-line text-[24px] text-accent"></i>
+            <h3 class="mt-2 text-[12px] font-black text-white">خبرنامه نویسنده</h3>
+            <p class="mt-1 text-[10px] leading-6 text-white/60">
+              از تازه‌های این نویسنده باخبر شوید
+            </p>
+            <form id="authorNewsletter" class="mt-3 flex gap-1.5">
+              <input type="email" placeholder="ایمیل شما"
+                class="min-w-0 flex-1 rounded-[11px] border border-white/10 bg-white/5 px-3 text-[11px] text-white placeholder:text-white/40 outline-none focus:border-white/30">
+              <button type="submit" class="inline-flex min-h-[38px] items-center gap-1.5 rounded-[11px] bg-accent px-3 text-[10px] font-extrabold text-ink">
+                عضویت
+              </button>
+            </form>
+          </div>
+
+        </aside>
+      </div>
+    </section>
+
+    <!-- ==================== کتاب‌ها ==================== -->
+    <section id="books" class="container-app pt-14 sm:pt-20 scroll-mt-28">
+      <div class="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <span class="section-kicker">کتاب‌شناسی</span>
+          <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">کتاب‌های منتشرشده</h2>
+          <p class="mt-2 text-xs text-muted">۸ کتاب در ۱۵ سال نویسندگی</p>
+        </div>
+
+        <div class="flex items-center gap-1.5 rounded-[13px] border border-border bg-white p-1 text-[10px]">
+          <button class="view-chip is-active" data-books-filter="all">همه (۸)</button>
+          <button class="view-chip" data-books-filter="novel">رمان (۵)</button>
+          <button class="view-chip" data-books-filter="story">داستان کوتاه (۳)</button>
+        </div>
+      </div>
+
+      <div id="booksGrid" class="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-[18px]">
+        <!-- JS -->
+      </div>
+    </section>
+
+    <!-- ==================== نقل‌قول‌ها ==================== -->
+    <section id="quotes" class="container-app pt-14 sm:pt-20 scroll-mt-28">
+      <div class="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <span class="section-kicker">از میان کتاب‌ها</span>
+          <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">نقل‌قول‌های ماندگار</h2>
+        </div>
+      </div>
+
+      <div class="grid gap-4 lg:grid-cols-3">
+        <blockquote class="quote-card">
+          <i class="ri-double-quotes-l quote-icon"></i>
+          <p class="quote-text">
+            «مادرم می‌گفت درخت‌ها وقتی تنها می‌مانند، ریشه‌هایشان را به سمت ماه می‌فرستند.»
+          </p>
+          <footer>
+            <b>درختی که روی ماه رشد کرد</b>
+            <small>صفحه ۴۲</small>
+          </footer>
+        </blockquote>
+
+        <blockquote class="quote-card quote-card--accent">
+          <i class="ri-double-quotes-l quote-icon"></i>
+          <p class="quote-text">
+            «زندگی، آن لحظه‌ای است که بین دو خاطره می‌ایستی و نفس می‌کشی.»
+          </p>
+          <footer>
+            <b>روزهای بی‌تقویم</b>
+            <small>صفحه ۸۹</small>
+          </footer>
+        </blockquote>
+
+        <blockquote class="quote-card">
+          <i class="ri-double-quotes-l quote-icon"></i>
+          <p class="quote-text">
+            «او رفت. ولی بوی چای‌اش هنوز در خانه می‌پیچد.»
+          </p>
+          <footer>
+            <b>سمفونی خاموش</b>
+            <small>صفحه ۱۲۱</small>
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ==================== رویدادها ==================== -->
+    <section id="events" class="container-app pt-14 sm:pt-20 scroll-mt-28">
+      <div class="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <span class="section-kicker">برنامه‌ها</span>
+          <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">رویدادهای پیش‌رو</h2>
+        </div>
+        <a href="#" class="inline-flex items-center gap-2 text-[11px] font-extrabold text-[#5f6965] hover:text-ink">
+          تقویم کامل <i class="ri-arrow-left-line"></i>
+        </a>
+      </div>
+
+      <div class="space-y-3">
+        <article class="event-card">
+          <div class="event-date">
+            <b>۲۸</b>
+            <small>مرداد ۱۴۰۵</small>
+          </div>
+          <div class="event-body">
+            <span class="event-tag">
+              <i class="ri-book-open-line"></i> نشست امضا
+            </span>
+            <h3>نشست امضای کتاب «درختی که روی ماه رشد کرد»</h3>
+            <p>کتاب‌فروشی چشمه — خیابان کریم‌خان، تهران</p>
+            <div class="mt-2 flex items-center gap-3 text-[10px] text-muted">
+              <span><i class="ri-time-line"></i> ۱۸:۰۰ تا ۲۱:۰۰</span>
+              <span>·</span>
+              <span><i class="ri-user-line"></i> ظرفیت ۱۰۰ نفر</span>
+            </div>
+          </div>
+          <button class="event-action">
+            ثبت‌نام <i class="ri-arrow-left-line"></i>
+          </button>
+        </article>
+
+        <article class="event-card">
+          <div class="event-date event-date--accent">
+            <b>۰۵</b>
+            <small>شهریور ۱۴۰۵</small>
+          </div>
+          <div class="event-body">
+            <span class="event-tag event-tag--accent">
+              <i class="ri-mic-line"></i> گفت‌وگو
+            </span>
+            <h3>گفت‌وگو با مریم رستگار درباره‌ی رمان هفتم</h3>
+            <p>پخش زنده در اینستاگرام نِگار</p>
+            <div class="mt-2 flex items-center gap-3 text-[10px] text-muted">
+              <span><i class="ri-time-line"></i> ۲۱:۰۰</span>
+              <span>·</span>
+              <span><i class="ri-global-line"></i> آنلاین</span>
+            </div>
+          </div>
+          <button class="event-action">
+            یادآوری <i class="ri-notification-3-line"></i>
+          </button>
+        </article>
+
+        <article class="event-card">
+          <div class="event-date">
+            <b>۱۹</b>
+            <small>مهر ۱۴۰۵</small>
+          </div>
+          <div class="event-body">
+            <span class="event-tag">
+              <i class="ri-award-line"></i> کارگاه
+            </span>
+            <h3>کارگاه داستان‌نویسی برای مبتدیان</h3>
+            <p>خانه‌ی ادبیات ایران — تهران</p>
+            <div class="mt-2 flex items-center gap-3 text-[10px] text-muted">
+              <span><i class="ri-time-line"></i> ۱۰:۰۰ تا ۱۴:۰۰</span>
+              <span>·</span>
+              <span><i class="ri-user-line"></i> ظرفیت ۲۰ نفر</span>
+            </div>
+          </div>
+          <button class="event-action">
+            ثبت‌نام <i class="ri-arrow-left-line"></i>
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== نظرات خوانندگان ==================== -->
+    <section id="reviews" class="container-app pt-14 sm:pt-20 scroll-mt-28">
+      <div class="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <span class="section-kicker">خوانندگان درباره او</span>
+          <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">نظر خوانندگان</h2>
+          <p class="mt-2 text-xs text-muted">۱۲۴ نظر ثبت‌شده · میانگین امتیاز ۴.۸ از ۵</p>
+        </div>
+        <button type="button" class="admin-btn !text-[11px]" id="writeAuthorReview">
+          <i class="ri-edit-line"></i> نوشتن نظر
+        </button>
+      </div>
+
+      <div class="grid gap-4 lg:grid-cols-3">
+
+        <article class="author-review">
+          <header class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="author-review-avatar bg-gradient-to-br from-[#87927a] to-[#3b4a3f]">س.م</div>
+              <div>
+                <b class="text-[11px]">سارا محمدی</b>
+                <div class="mt-1 flex items-center gap-2 text-[9px] text-muted">
+                  <span class="pdp-stars pdp-stars--sm">
+                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                  </span>
+                  <span>· خرید تأییدشده</span>
+                </div>
+              </div>
+            </div>
+            <small class="text-[9px] text-muted">۲ روز پیش</small>
+          </header>
+          <p class="mt-3 text-[11px] leading-[2] text-[#4a5450]">
+            یکی از قشنگ‌ترین نویسنده‌های امروز ایرانه. زبانش شاعرانه است و
+            آدم رو تا آخرین صفحه نگه می‌داره.
+          </p>
+          <div class="mt-3 flex items-center gap-4 text-[10px] text-muted">
+            <button class="pdp-helpful"><i class="ri-thumb-up-line"></i> مفید (۱۲)</button>
+            <button class="pdp-helpful"><i class="ri-chat-3-line"></i> پاسخ</button>
+          </div>
+        </article>
+
+        <article class="author-review">
+          <header class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="author-review-avatar bg-gradient-to-br from-[#c0a17a] to-[#5a3f27]">ا.ر</div>
+              <div>
+                <b class="text-[11px]">امیر رضایی</b>
+                <div class="mt-1 flex items-center gap-2 text-[9px] text-muted">
+                  <span class="pdp-stars pdp-stars--sm">
+                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </span>
+                  <span>· خرید تأییدشده</span>
+                </div>
+              </div>
+            </div>
+            <small class="text-[9px] text-muted">۱ هفته پیش</small>
+          </header>
+          <p class="mt-3 text-[11px] leading-[2] text-[#4a5450]">
+            «روزهای بی‌تقویم» رو دو بار خوندم. بار دوم بیشتر لذت بردم.
+            منتظر رمان بعدی هستم.
+          </p>
+          <div class="mt-3 flex items-center gap-4 text-[10px] text-muted">
+            <button class="pdp-helpful"><i class="ri-thumb-up-line"></i> مفید (۸)</button>
+            <button class="pdp-helpful"><i class="ri-chat-3-line"></i> پاسخ</button>
+          </div>
+        </article>
+
+        <article class="author-review">
+          <header class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="author-review-avatar bg-gradient-to-br from-[#8d98c5] to-[#2f3656]">ن.ک</div>
+              <div>
+                <b class="text-[11px]">نگار کریمی</b>
+                <div class="mt-1 flex items-center gap-2 text-[9px] text-muted">
+                  <span class="pdp-stars pdp-stars--sm">
+                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                  </span>
+                  <span>· خرید تأییدشده</span>
+                </div>
+              </div>
+            </div>
+            <small class="text-[9px] text-muted">۲ هفته پیش</small>
+          </header>
+          <p class="mt-3 text-[11px] leading-[2] text-[#4a5450]">
+            کتاب‌هاش همیشه حال خوبی به آدم می‌ده. ممنون که می‌نویسی و
+            ما رو با خودت همراه می‌کنی.
+          </p>
+          <div class="mt-3 flex items-center gap-4 text-[10px] text-muted">
+            <button class="pdp-helpful"><i class="ri-thumb-up-line"></i> مفید (۵)</button>
+            <button class="pdp-helpful"><i class="ri-chat-3-line"></i> پاسخ</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== نویسندگان مشابه ==================== -->
+    <section class="container-app pt-14 sm:pt-20">
+      <div class="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <span class="section-kicker">بیشتر کشف کن</span>
+          <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">نویسندگان مشابه</h2>
+        </div>
+        <a href="#" class="inline-flex items-center gap-2 text-[11px] font-extrabold text-[#5f6965] hover:text-ink">
+          مشاهده همه <i class="ri-arrow-left-line"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        <a href="./author.html" class="author-mini-card">
+          <div class="author-mini-avatar bg-gradient-to-br from-[#c0a17a] to-[#5a3f27]">ر.د</div>
+          <b class="mt-3 block text-[12px] font-black">رولف دوبلی</b>
+          <small class="mt-1 block text-[10px] text-muted">۴ عنوان · ۲ پرفروش</small>
+        </a>
+        <a href="./author.html" class="author-mini-card">
+          <div class="author-mini-avatar bg-gradient-to-br from-[#8d98c5] to-[#2f3656]">د.پ</div>
+          <b class="mt-3 block text-[12px] font-black">دانیل پنک</b>
+          <small class="mt-1 block text-[10px] text-muted">۳ عنوان</small>
+        </a>
+        <a href="./author.html" class="author-mini-card">
+          <div class="author-mini-avatar bg-gradient-to-br from-[#c58a80] to-[#4a221f]">ا.ش</div>
+          <b class="mt-3 block text-[12px] font-black">الیف شافاک</b>
+          <small class="mt-1 block text-[10px] text-muted">۶ عنوان · ۳ پرفروش</small>
+        </a>
+        <a href="./author.html" class="author-mini-card">
+          <div class="author-mini-avatar bg-gradient-to-br from-[#7ea39a] to-[#254a41]">ک.ن</div>
+          <b class="mt-3 block text-[12px] font-black">کال نیوپورت</b>
+          <small class="mt-1 block text-[10px] text-muted">۴ عنوان</small>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-14 bg-ink text-white sm:mt-20">
+    <div class="container-app grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div>
+        <a href="../index.html" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-[#aeb8b3]">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-7 text-white/55">
+          فروشگاهی برای کسانی که کتاب را فقط یک محصول نمی‌دانند؛ یک تجربه می‌دانند.
+        </p>
+        <div class="mt-5 flex gap-[7px]">
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-instagram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-telegram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-twitter-x-line"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">خرید</h3>
+        <a href="./shop.html" class="my-2 block text-[10px] text-[#aeb8b3]">همه کتاب‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تازه‌های نشر</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پرفروش‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تخفیف‌ها</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">راهنما</h3>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">شیوه ارسال</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پیگیری سفارش</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">سوالات متداول</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تماس با ما</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">با ما در ارتباط باش</h3>
+        <p class="text-sm leading-7 text-white/55">تهران، خیابان کتاب، پلاک ۲۴</p>
+        <p class="mt-2 text-sm text-white/75">۰۲۱-۱۲۳۴۵۶۷۸</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-app flex flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:justify-between">
+        <span>© ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.</span>
+        <span>طراحی شده برای تجربه‌ای ساده‌تر از خرید کتاب.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div id="cartPanel" class="fixed top-0 right-0 bottom-0 z-[80] flex w-[min(390px,92vw)] translate-x-[105%] flex-col bg-white shadow-[-20px_0_70px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <div><b class="text-lg">سبد خرید</b><span class="mr-2 text-xs text-muted">۲ کالا</span></div>
+      <button class="icon-btn" data-cart-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="space-y-3 p-5">
+      <div class="flex items-center gap-3 rounded-2xl border border-border p-2">
+        <div class="mini-cover flex-[0_0_58px] !min-h-[78px] bg-[#657c71]">روایت<br>یک زندگی</div>
+        <div><b class="block text-[10px]">روایت یک زندگی</b><span class="mt-1.5 block text-[9px] text-[#909895]">۲۷۵,۰۰۰ تومان</span></div>
+      </div>
+      <div class="flex items-center gap-3 rounded-2xl border border-border p-2">
+        <div class="mini-cover flex-[0_0_58px] !min-h-[78px] bg-[#98785a]">فلسفه<br>برای زندگی</div>
+        <div><b class="block text-[10px]">فلسفه برای زندگی</b><span class="mt-1.5 block text-[9px] text-[#909895]">۳۲۰,۰۰۰ تومان</span></div>
+      </div>
+    </div>
+    <div class="mt-auto border-t border-border p-5">
+      <div class="mb-4 flex justify-between"><span>جمع کل</span><b>۵۹۵,۰۰۰ تومان</b></div>
+      <a href="./cart.html" class="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink">
+        مشاهده سبد خرید
+      </a>
+    </div>
+  </div>
+  <div id="cartOverlay" class="fixed inset-0 z-[55] hidden bg-black/30" data-cart-close></div>
+
+  <!-- Modal نوشتن نظر -->
+  <div id="authorReviewModal" class="fixed inset-0 z-[90] hidden items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4">
+    <div class="review-modal">
+      <header class="flex items-center justify-between border-b border-border p-5">
+        <b class="text-sm font-black">نظر شما درباره‌ی مریم رستگار</b>
+        <button class="icon-btn" data-author-review-close><i class="ri-close-line"></i></button>
+      </header>
+
+      <form id="authorReviewForm" class="space-y-4 p-5">
+        <div>
+          <label class="mb-2 block text-[11px] font-black">امتیاز شما</label>
+          <div class="review-stars" id="authorReviewStars">
+            <button type="button" data-star="1"><i class="ri-star-line"></i></button>
+            <button type="button" data-star="2"><i class="ri-star-line"></i></button>
+            <button type="button" data-star="3"><i class="ri-star-line"></i></button>
+            <button type="button" data-star="4"><i class="ri-star-line"></i></button>
+            <button type="button" data-star="5"><i class="ri-star-line"></i></button>
+          </div>
+          <input type="hidden" name="rating" id="authorRatingValue" value="0">
+        </div>
+
+        <div class="field">
+          <label for="authorReviewText">نظر شما <span class="text-danger">*</span></label>
+          <textarea id="authorReviewText" rows="4" placeholder="تجربه‌تان از خواندن کتاب‌های این نویسنده..." required></textarea>
+          <small class="error"></small>
+        </div>
+
+        <div class="grid gap-3 sm:grid-cols-2">
+          <div class="field">
+            <label for="authorReviewName">نام <span class="text-danger">*</span></label>
+            <input id="authorReviewName" type="text" placeholder="مثلاً سارا" required>
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label for="authorReviewEmail">ایمیل <span class="text-[9px] font-medium text-muted">(اختیاری)</span></label>
+            <input id="authorReviewEmail" type="email" dir="ltr" class="text-right" placeholder="you@example.com">
+          </div>
+        </div>
+
+        <div class="flex gap-2 pt-2">
+          <button type="button" class="pdp-ghost-btn flex-1 justify-center" data-author-review-close>انصراف</button>
+          <button type="submit" class="inline-flex min-h-[46px] flex-1 items-center justify-center gap-2 rounded-[13px] bg-ink px-4 text-[12px] font-extrabold text-white hover:bg-[#0f1817] transition">
+            <i class="ri-send-plane-line"></i> ثبت نظر
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- <script src="src/js/main.js"></script> -->
+  <script src="/src/js/author.js"></script>
+</body>
+</html>

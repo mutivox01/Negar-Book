@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تنظیمات | پنل مدیریت نِگار</title>
+  <link rel="stylesheet" href="../../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../../dist/css/style.css">
+</head>
+
+<body class="bg-bg text-text antialiased">
+
+  <div class="admin-layout">
+
+    <aside id="adminSidebar" class="admin-sidebar">
+      <div class="admin-sidebar-brand">
+        <a href="../../index.html" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[17px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-white/60">پنل مدیریت</small>
+          </span>
+        </a>
+        <button class="icon-btn !bg-white/5 !border-white/10 !text-white lg:hidden" data-admin-close>
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
+
+      <nav class="admin-nav">
+        <p class="admin-nav-title">اصلی</p>
+        <a href="./index.html" class="admin-nav-item"><i class="ri-dashboard-3-line"></i><span>داشبورد</span></a>
+        <a href="./products.html" class="admin-nav-item"><i class="ri-book-2-line"></i><span>محصولات</span><span class="admin-nav-badge">۲,۴۰۰</span></a>
+        <a href="./orders.html" class="admin-nav-item"><i class="ri-shopping-bag-3-line"></i><span>سفارش‌ها</span><span class="admin-nav-badge admin-nav-badge--alert">۱۲</span></a>
+        <a href="./users.html" class="admin-nav-item"><i class="ri-user-3-line"></i><span>کاربران</span></a>
+
+        <p class="admin-nav-title">محتوا</p>
+        <a href="#" class="admin-nav-item"><i class="ri-article-line"></i><span>مجله</span></a>
+        <a href="#" class="admin-nav-item"><i class="ri-price-tag-3-line"></i><span>دسته‌بندی‌ها</span></a>
+        <a href="#" class="admin-nav-item"><i class="ri-chat-3-line"></i><span>نظرات</span><span class="admin-nav-badge admin-nav-badge--alert">۲۴</span></a>
+
+        <p class="admin-nav-title">سیستم</p>
+        <a href="./settings.html" class="admin-nav-item is-active"><i class="ri-settings-3-line"></i><span>تنظیمات</span></a>
+        <a href="../../index.html" class="admin-nav-item"><i class="ri-logout-box-r-line"></i><span>خروج</span></a>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <div class="flex items-center gap-2.5">
+          <div class="grid h-[38px] w-[38px] place-items-center rounded-full bg-gradient-to-br from-[#87927a] to-[#3b4a3f] text-[12px] font-black text-white">م.ر</div>
+          <div class="min-w-0 flex-1">
+            <b class="block truncate text-[11px] font-black text-white">مریم رضایی</b>
+            <small class="mt-0.5 block text-[9px] text-white/50">مدیر سیستم</small>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div id="adminOverlay" class="fixed inset-0 z-[55] hidden bg-black/40 backdrop-blur-sm lg:hidden" data-admin-close></div>
+
+    <div class="admin-main">
+
+      <header class="admin-topbar">
+        <button class="icon-btn lg:hidden" data-admin-open><i class="ri-menu-4-line"></i></button>
+        <div class="mr-auto flex items-center gap-2">
+          <button class="admin-icon-btn"><i class="ri-notification-3-line"></i><span class="admin-dot"></span></button>
+          <a href="../../index.html" class="admin-icon-btn"><i class="ri-external-link-line"></i></a>
+        </div>
+      </header>
+
+      <main class="admin-content">
+
+        <div class="mb-6">
+          <nav class="flex items-center gap-2 text-[10px] text-muted">
+            <span>پنل مدیریت</span>
+            <i class="ri-arrow-left-s-line"></i>
+            <span class="text-ink font-bold">تنظیمات</span>
+          </nav>
+          <h1 class="mt-2 text-[clamp(20px,3vw,26px)] font-black tracking-[-.03em]">تنظیمات سیستم</h1>
+          <p class="mt-1 text-[11px] text-muted">تنظیمات کلی فروشگاه، حساب کاربری و اعلان‌ها</p>
+        </div>
+
+        <div class="grid gap-5 lg:grid-cols-[220px_1fr]">
+
+          <!-- Settings sidebar tabs -->
+          <aside class="lg:sticky lg:top-[88px] lg:h-fit">
+            <nav class="admin-settings-nav">
+              <button class="settings-tab is-active" data-settings-tab="general">
+                <i class="ri-equalizer-line"></i> عمومی
+              </button>
+              <button class="settings-tab" data-settings-tab="profile">
+                <i class="ri-user-3-line"></i> حساب کاربری
+              </button>
+              <button class="settings-tab" data-settings-tab="notifications">
+                <i class="ri-notification-3-line"></i> اعلان‌ها
+              </button>
+              <button class="settings-tab" data-settings-tab="payment">
+                <i class="ri-bank-card-line"></i> پرداخت
+              </button>
+              <button class="settings-tab" data-settings-tab="shipping">
+                <i class="ri-truck-line"></i> ارسال
+              </button>
+              <button class="settings-tab" data-settings-tab="security">
+                <i class="ri-shield-check-line"></i> امنیت
+              </button>
+              <button class="settings-tab is-danger" data-settings-tab="danger">
+                <i class="ri-alert-line"></i> منطقه حساس
+              </button>
+            </nav>
+          </aside>
+
+          <!-- Content -->
+          <div>
+
+            <!-- ========== General ========== -->
+            <section class="settings-panel is-active" data-settings-panel="general">
+              <div class="admin-card">
+                <div class="admin-card-head">
+                  <div>
+                    <span class="section-kicker">پیکربندی اصلی</span>
+                    <h2 class="text-[15px] font-black">تنظیمات عمومی</h2>
+                  </div>
+                </div>
+
+                <form id="generalForm" class="grid gap-4 sm:grid-cols-2">
+                  <div class="field">
+                    <label for="sShopName">نام فروشگاه</label>
+                    <input id="sShopName" type="text" value="نِگار">
+                  </div>
+                  <div class="field">
+                    <label for="sShopTagline">شعار</label>
+                    <input id="sShopTagline" type="text" value="کتاب، ایده، زندگی">
+                  </div>
+                  <div class="field">
+                    <label for="sShopEmail">ایمیل رسمی</label>
+                    <input id="sShopEmail" type="email" dir="ltr" class="text-right" value="hello@negar.ir">
+                  </div>
+                  <div class="field">
+                    <label for="sShopPhone">تلفن پشتیبانی</label>
+                    <input id="sShopPhone" type="tel" dir="ltr" class="text-right" value="02112345678">
+                  </div>
+                  <div class="field sm:col-span-2">
+                    <label for="sShopAddress">آدرس</label>
+                    <input id="sShopAddress" type="text" value="تهران، خیابان کتاب، پلاک ۲۴">
+                  </div>
+                  <div class="field">
+                    <label for="sCurrency">واحد پول</label>
+                    <select id="sCurrency">
+                      <option value="toman" selected>تومان</option>
+                      <option value="rial">ریال</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="sLanguage">زبان پیش‌فرض</label>
+                    <select id="sLanguage">
+                      <option value="fa" selected>فارسی</option>
+                      <option value="en">English</option>
+                    </select>
+                  </div>
+                  <div class="field sm:col-span-2">
+                    <label for="sDescription">توضیح کوتاه فروشگاه</label>
+                    <textarea id="sDescription" rows="3">فروشگاهی برای کسانی که کتاب را فقط یک محصول نمی‌دانند؛ یک تجربه می‌دانند.</textarea>
+                  </div>
+                  <div class="flex justify-end sm:col-span-2">
+                    <button type="submit" class="admin-btn admin-btn--primary">
+                      <i class="ri-save-line"></i> ذخیره تغییرات
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <div class="admin-card mt-5">
+                <div class="admin-card-head">
+                  <div>
+                    <span class="section-kicker">برندینگ</span>
+                    <h2 class="text-[15px] font-black">لوگو و هویت بصری</h2>
+                  </div>
+                </div>
+
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <div class="upload-box">
+                    <i class="ri-image-2-line"></i>
+                    <b class="mt-2 block text-[11px]">لوگوی اصلی</b>
+                    <small class="mt-1 block text-[9px] text-muted">PNG، SVG — حداکثر ۵۰۰KB</small>
+                    <button type="button" class="admin-btn admin-btn--ghost mt-3 !text-[10px]">
+                      <i class="ri-upload-2-line"></i> انتخاب فایل
+                    </button>
+                  </div>
+                  <div class="upload-box">
+                    <i class="ri-image-circle-line"></i>
+                    <b class="mt-2 block text-[11px]">فاوآیکون</b>
+                    <small class="mt-1 block text-[9px] text-muted">ICO، PNG — ۳۲×۳۲</small>
+                    <button type="button" class="admin-btn admin-btn--ghost mt-3 !text-[10px]">
+                      <i class="ri-upload-2-line"></i> انتخاب فایل
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- ========== Profile ========== -->
+            <section class="settings-panel" data-settings-panel="profile">
+              <div class="admin-card">
+                <div class="admin-card-head">
+                  <div>
+                    <span class="section-kicker">حساب شما</span>
+                    <h2 class="text-[15px] font-black">اطلاعات کاربری مدیر</h2>
+                  </div>
+                </div>
+
+                <div class="mb-5 flex items-center gap-4">
+                  <div class="grid h-[72px] w-[72px] place-items-center rounded-full bg-gradient-to-br from-[#87927a] to-[#3b4a3f] text-[22px] font-black text-white">
+                    م.ر
+                  </div>
+                  <div>
+                    <b class="block text-[13px] font-black">مریم رضایی</b>
+                    <small class="mt-1 block text-[10px] text-muted">مدیر سیستم — از ۱۴۰۲/۰۵/۱۲</small>
+                    <button type="button" class="mt-2 text-[10px] font-bold text-ink underline decoration-dotted">
+                      تغییر تصویر پروفایل
+                    </button>
+                  </div>
+                </div>
+
+                <form id="adminProfileForm" class="grid gap-4 sm:grid-cols-2">
+                  <div class="field">
+                    <label for="aFirstName">نام</label>
+                    <input id="aFirstName" type="text" value="مریم">
+                  </div>
+                  <div class="field">
+                    <label for="aLastName">نام خانوادگی</label>
+                    <input id="aLastName" type="text" value="رضایی">
+                  </div>
+                  <div class="field">
+                    <label for="aEmail">ایمیل</label>
+                    <input id="aEmail" type="email" dir="ltr" class="text-right" value="maryam@negar.ir">
+                  </div>
+                  <div class="field">
+                    <label for="aPhone">شماره موبایل</label>
+                    <input id="aPhone" type="tel" dir="ltr" class="text-right" value="09123456789">
+                  </div>
+                  <div class="flex justify-end sm:col-span-2">
+                    <button type="submit" class="admin-btn admin-btn--primary">
+                      <i class="ri-save-line"></i> ذخیره
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <div class="admin-card mt-5">
+                <div class="admin-card-head">
+                  <div>
+                    <span class="section-kicker">امنیت حساب</span>
+                    <h2 class="text-[15px] font-black">تغییر رمز عبور</h2>
+                  </div>
+                </div>
+
+                <form id="adminPasswordForm" class="grid gap-4 sm:grid-cols-3">
+                  <div class="field">
+                    <label for="aOldP">رمز فعلی</label>
+                    <input id="aOldP" type="password" placeholder="••••••••">
+                  </div>
+                  <div class="field">
+                    <label for="aNewP">رمز جدید</label>
+                    <input id="aNewP" type="password" placeholder="••••••••">
+                  </div>
+                  <div class="field">
+                    <label for="aConfirmP">تکرار رمز جدید</label>
+                    <input id="aConfirmP" type="password" placeholder="••••••••">
+                  </div>
+                  <div class="flex justify-end sm:col-span-3">
+                    <button type="submit" class="admin-btn admin-btn--primary">
+                      <i class="ri-lock-password-line"></i> بروزرسانی رمز
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </section>
+
+            <!-- ========== Notifications ========== -->
+            <section class="settings-panel" data-settings-panel="notifications">
+              <div class="admin-card">
+                <div class="admin-card-head">
+                  <div>
+                    <span class="section-kicker">اطلاع‌رسانی</span>
+                    <h2 class="text-[15px] font-black">ترجیحات اعلان</h2>
+                  </div>
+                </div>
+
+                <div class="space-y-2">
+                  <label class="toggle-row">
+                    <span><b>سفارش جدید</b><small>اعلان در لحظه ثبت سفارش</small></span>
+                    <input type="checkbox" checked><span class="toggle"></span>
+                  </label>
+                  <label class="toggle-row">
+                    <span><b>تغییر وضعیت سفارش</b><small>هنگام ارسال یا تحویل</small></span>
+                    <input type="checkbox" checked><span class="toggle"></span>
+                  </label>
+                  <label class="toggle-row">
+                    <span><b>موجودی کم محصولات</b><small>هنگام رسیدن به کمتر از ۱۰</small></span>
+                    <input type="checkbox" checked><span class="toggle"></span>
+                  </label>
+                  <label class="toggle-row">
+                    <span><b>نظر جدید</b><small>هنگام ثبت نظر روی محصولات</small></span>
+                    <input type="checkbox"><span class="toggle"></span>
+                  </label>
+                  <label class="toggle-row">
+                    <span><b>گزارش روزانه ایمیل</b><small>هر روز ساعت ۹ صبح</small></span>
+                    <input type="checkbox" checked><span class="toggle"></span>
+                  </label>
+                  <label class="toggle-row">
+                    <span><b>پیامک هشدار امنیتی</b><small>ورود از دستگاه جدید</small></span>
+                    <input type="checkbox" checked><span class="toggle"></span>
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <!-- ========== Payment ========== -->
+            <section class="settings-panel" data-settings-panel="payment">
+              <div class="admin-card">
+                <div class="admin-card-head">
+                  <div>
+                    <span class="section-kicker">درگاه‌ها</span>
+                    <h2 class="text-[15px] font-black">تنظیمات پرداخت</h2>
+                  </div>
+                </div>
+
+                <div class="space-y-4">
+                  <div class="payment-gateway">
+                    <div class="flex items-center gap-3">
+                      <div class="pay-logo bg-[#e3f0ff] text-[#2c5aa0]"><i class="ri-secure-payment-line"></i></div>
+                      <div>
+                        <b class="block text-[12px] font-black">درگاه زرین‌پال</b>
+                        <small class="mt-0.5 block text-[10px] text-muted">فعال — مرجوعی ۴۸ ساعته</small>
+                      </div>
+                    </div>
+                    <label class="switch">
+                      <input type="checkbox" checked><span></span>
+                    </label>
+                  </div>
+
+                  <div class="payment-gateway">
+                    <div class="flex items-center gap-3">
+                      <div class="pay-logo bg-[#fdeee0] text-[#a5622c]"><i class="ri-bank-card-line"></i></div>
+                      <div>
+                        <b class="block text-[12px] font-black">درگاه سامان</b>
+                        <small class="mt-0.5 block text-[10px] text-muted">غیرفعال</small>
+                      </div>
+                    </div>
+                    <label class="switch">
+                      <input type="checkbox"><span></span>
+                    </label>
+                  </div>
+
+                  <div class="payment-gateway">
+                    <div class="flex items-center gap-3">
+                      <div class="pay-logo bg-[#e0f4e8] text-[#2e7d55]"><i class="ri-wallet-3-line"></i></div>
+                      <div>
+                        <b class="block text-[12px] font-black">کیف پول نِگار</b>
+                        <small class="mt-0.5 block text-[10px] text-muted">فعال — بدون کارمزد</small>
+                      </div>
+                    </div>
+                    <label class="switch">
+                      <input type="checkbox" checked><span></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="mt-5 grid gap-3 sm:grid-cols-2">
+                  <div class="field">
+                    <label for="pMinOrder">حداقل مبلغ سفارش (تومان)</label>
+                    <input id="pMinOrder" type="number" value="100000">
+                  </div>
+                  <div class="field">
+                    <label for="pFreeShip">سقف ارسال رایگان (تومان)</label>
+                    <input id="pFreeShip" type="number" value="900000">
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- ========== Shipping ========== -->
+            <section class="settings-panel" data-settings-panel="shipping">
+              <div class="admin-card">
+                <div class="admin-card-head">
+                  <div>
+                    <span class="section-kicker">روش‌های ارسال</span>
+                    <h2 class="text-[15px] font-black">تنظیمات ارسال</h2>
+                  </div>
+                </div>
+
+                <div class="space-y-3">
+                  <div class="shipping-row">
+                    <div class="flex items-center gap-3">
+                      <div class="pay-logo bg-[#d7dbea] text-[#5d658a]"><i class="ri-truck-line"></i></div>
+                      <div class="flex-1">
+                        <b class="block text-[12px] font-black">پست پیشتاز</b>
+                        <small class="mt-0.5 block text-[10px] text-muted">۳ تا ۵ روز کاری</small>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <input type="number" class="admin-input-sm" value="35000">
+                      <label class="switch"><input type="checkbox" checked><span></span></label>
+                    </div>
+                  </div>
+
+                  <div class="shipping-row">
+                    <div class="flex items-center gap-3">
+                      <div class="pay-logo bg-[#fdeee0] text-[#a5622c]"><i class="ri-rocket-line"></i></div>
+                      <div class="flex-1">
+                        <b class="block text-[12px] font-black">پیک سریع (تهران)</b>
+                        <small class="mt-0.5 block text-[10px] text-muted">تحویل ۲۴ ساعته</small>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <input type="number" class="admin-input-sm" value="75000">
+                      <label class="switch"><input type="checkbox" checked><span></span></label>
+                    </div>
+                  </div>
+
+                  <div class="shipping-row">
+                    <div class="flex items-center gap-3">
+                      <div class="pay-logo bg-[#e0f4e8] text-[#2e7d55]"><i class="ri-store-2-line"></i></div>
+                      <div class="flex-1">
+                        <b class="block text-[12px] font-black">تحویل حضوری</b>
+                        <small class="mt-0.5 block text-[10px] text-muted">خیابان کتاب، پلاک ۲۴</small>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <input type="number" class="admin-input-sm" value="0">
+                      <label class="switch"><input type="checkbox" checked><span></span></label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-5 flex justify-end">
+                  <button type="button" class="admin-btn admin-btn--primary" data-save-shipping>
+                    <i class="ri-save-line"></i> ذخیره تغییرات
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <!-- ========== Security ========== -->
+            <section class="settings-panel" data-settings-panel="security">
+              <div class="admin-card">
+                <div class="admin-card-head">
+                  <div>
+                    <span class="section-kicker">احراز هویت</span>
+                    <h2 class="text-[15px] font-black">امنیت حساب</h2>
+                  </div>
+                </div>
+
+                <div class="space-y-2">
+                  <label class="toggle-row">
+                    <span><b>ورود دو مرحله‌ای (2FA)</b><small>تأیید با پیامک هنگام ورود</small></span>
+                    <input type="checkbox" checked><span class="toggle"></span>
+                  </label>
+                  <label class="toggle-row">
+                    <span><b>ورود از IP مشخص</b><small>فقط از دفتر مرکزی</small></span>
+                    <input type="checkbox"><span class="toggle"></span>
+                  </label>
+                  <label class="toggle-row">
+                    <span><b>خروج خودکار پس از ۳۰ دقیقه</b><small>در صورت عدم فعالیت</small></span>
+                    <input type="checkbox" checked><span class="toggle"></span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="admin-card mt-5">
+                <div class="admin-card-head">
+                  <div>
+                    <span class="section-kicker">تاریخچه</span>
+                    <h2 class="text-[15px] font-black">دستگاه‌های فعال</h2>
+                  </div>
+                </div>
+
+                <div class="space-y-3">
+                  <div class="device-row">
+                    <div class="pay-logo bg-[#e0f4e8] text-[#2e7d55]"><i class="ri-computer-line"></i></div>
+                    <div class="flex-1">
+                      <b class="block text-[11px] font-black">مرورگر Chrome — Windows</b>
+                      <small class="mt-0.5 block text-[10px] text-muted">تهران، ایران — همین حالا (فعال)</small>
+                    </div>
+                    <span class="admin-status admin-status--delivered">فعلی</span>
+                  </div>
+                  <div class="device-row">
+                    <div class="pay-logo bg-[#f5e5d5] text-[#8a5a2c]"><i class="ri-smartphone-line"></i></div>
+                    <div class="flex-1">
+                      <b class="block text-[11px] font-black">مرورگر Safari — iPhone 15</b>
+                      <small class="mt-0.5 block text-[10px] text-muted">تهران، ایران — ۲ روز پیش</small>
+                    </div>
+                    <button class="admin-btn admin-btn--ghost !py-1 !text-[10px] !text-danger">
+                      <i class="ri-logout-circle-line"></i> خروج
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- ========== Danger ========== -->
+            <section class="settings-panel" data-settings-panel="danger">
+              <div class="admin-card border-danger/30 bg-danger/[.03]">
+                <div class="admin-card-head !border-danger/20">
+                  <div>
+                    <span class="section-kicker !text-danger">منطقه حساس</span>
+                    <h2 class="text-[15px] font-black">عملیات خطرناک</h2>
+                  </div>
+                </div>
+
+                <div class="space-y-4">
+                  <div class="danger-row">
+                    <div class="flex-1">
+                      <b class="block text-[12px] font-black">پاک کردن حافظه کش</b>
+                      <small class="mt-1 block text-[10px] text-muted">حذف کش سایت و پایگاه داده موقت</small>
+                    </div>
+                    <button class="admin-btn !text-[10px]">
+                      <i class="ri-refresh-line"></i> پاک کردن
+                    </button>
+                  </div>
+
+                  <div class="danger-row">
+                    <div class="flex-1">
+                      <b class="block text-[12px] font-black">بازنشانی تنظیمات به حالت اولیه</b>
+                      <small class="mt-1 block text-[10px] text-muted">همه‌ی تنظیمات به مقادیر پیش‌فرض برمی‌گردد</small>
+                    </div>
+                    <button class="admin-btn !text-[10px] !text-danger" data-reset-settings>
+                      <i class="ri-restart-line"></i> بازنشانی
+                    </button>
+                  </div>
+
+                  <div class="danger-row">
+                    <div class="flex-1">
+                      <b class="block text-[12px] font-black text-danger">حذف کامل فروشگاه</b>
+                      <small class="mt-1 block text-[10px] text-muted">همه اطلاعات برای همیشه پاک می‌شود — غیرقابل بازگشت</small>
+                    </div>
+                    <button class="admin-btn admin-btn--danger" data-delete-store>
+                      <i class="ri-delete-bin-6-line"></i> حذف فروشگاه
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="/src/js/admin.js"></script>
+  <script src="/src/js/admin-settings.js"></script>
+</body>
+</html>

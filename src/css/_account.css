@@ -1,0 +1,154 @@
+
+/* ===== Account Page ===== */
+
+/* Profile header */
+.profile-header {
+  @apply relative overflow-hidden rounded-[28px] bg-ink p-6 text-white sm:p-8;
+}
+.profile-glow {
+  @apply pointer-events-none absolute -top-24 -left-24 h-[280px] w-[280px] rounded-full bg-accent/10 blur-3xl;
+}
+.profile-avatar {
+  @apply grid h-[72px] w-[72px] place-items-center rounded-full bg-gradient-to-br from-[#87927a] to-[#3b4a3f]
+         text-[22px] font-black text-white shadow-[0_10px_30px_rgba(0,0,0,.3)];
+}
+.acc-stat {
+  @apply flex flex-col items-center gap-1 rounded-[16px] border border-white/[.08] bg-white/[.03] p-3 text-center;
+}
+.acc-stat i { @apply text-[18px] text-accent; }
+.acc-stat b { @apply text-[13px] font-black; }
+.acc-stat small { @apply text-[9px] text-white/60; }
+
+/* Sidebar */
+.acc-sidebar {
+  @apply fixed top-0 right-0 bottom-0 z-[75] w-[min(300px,86vw)] translate-x-[105%]
+         overflow-y-auto bg-white p-5 shadow-[-20px_0_60px_rgba(0,0,0,.12)] transition-transform duration-300
+         lg:sticky lg:top-[96px] lg:z-auto lg:h-fit lg:w-auto lg:translate-x-0 lg:rounded-[22px]
+         lg:border lg:border-border lg:bg-white lg:p-4 lg:shadow-none;
+}
+.acc-sidebar.is-open { @apply translate-x-0; }
+
+.acc-nav { @apply flex flex-col gap-1; }
+.acc-nav-item {
+  @apply flex items-center gap-3 rounded-[13px] px-3.5 py-3 text-[12px] font-bold text-[#4a5450]
+         transition hover:bg-bg hover:text-ink;
+}
+.acc-nav-item i { @apply text-[18px]; }
+.acc-nav-item.is-active { @apply bg-ink text-white; }
+.acc-nav-item.is-active i { @apply text-accent; }
+.acc-nav-item.is-danger { @apply text-danger; }
+.acc-nav-item.is-danger:hover { @apply bg-danger/5; }
+.acc-nav-badge {
+  @apply mr-auto rounded-full bg-bg px-2 py-0.5 text-[9px] font-black text-ink;
+}
+.acc-nav-item.is-active .acc-nav-badge { @apply bg-accent text-ink; }
+
+/* Panels */
+.acc-panel { @apply hidden; }
+.acc-panel.is-active { @apply block; }
+
+.acc-card {
+  @apply rounded-[24px] border border-border bg-white p-5 sm:p-6;
+}
+.acc-card--danger { @apply border-danger/30 bg-danger/[.03]; }
+.acc-card-head {
+  @apply mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-dashed border-border pb-4;
+}
+
+/* Timeline in dashboard */
+.acc-timeline { @apply space-y-4; }
+.acc-timeline > li {
+  @apply flex items-start gap-3;
+}
+.acc-timeline-dot {
+  @apply mt-1 grid h-[12px] w-[12px] shrink-0 place-items-center rounded-full;
+}
+.acc-timeline b { @apply block text-[11px] font-bold text-ink; }
+.acc-timeline small { @apply mt-1 block text-[9px] text-muted; }
+
+/* Orders */
+.order-card {
+  @apply rounded-[20px] border border-border bg-white p-4 transition hover:border-[#cbd0c9];
+}
+.order-code {
+  @apply rounded-full bg-bg px-2.5 py-1 text-[10px] font-black text-ink font-mono;
+}
+.order-status {
+  @apply rounded-full px-2.5 py-1 text-[10px] font-black;
+}
+.order-status--pending   { @apply bg-[#fdeee0] text-[#a5622c]; }
+.order-status--shipped   { @apply bg-[#d7dbea] text-[#5d658a]; }
+.order-status--delivered { @apply bg-[#e0f4e8] text-[#2e7d55]; }
+.order-status--cancelled { @apply bg-danger/10 text-danger; }
+
+.order-mini {
+  @apply grid h-[52px] w-[38px] place-items-center rounded-[8px] text-[7px] font-black text-white text-center leading-tight p-1;
+}
+
+.order-action {
+  @apply inline-flex items-center gap-1.5 rounded-[10px] px-2.5 py-1.5 text-[10px] font-bold
+         text-ink transition hover:bg-bg;
+}
+.order-action--ghost { @apply text-muted; }
+.order-action--accent { @apply bg-accent text-ink; }
+
+/* Addresses */
+.address-card {
+  @apply rounded-[20px] border border-border bg-white p-5 transition hover:border-[#cbd0c9];
+}
+.address-tag {
+  @apply inline-flex items-center gap-1 rounded-full bg-bg px-2.5 py-1 text-[10px] font-black text-ink;
+}
+.address-default {
+  @apply rounded-full bg-accent px-2 py-0.5 text-[9px] font-black text-ink;
+}
+
+/* Wallet */
+.wallet-card {
+  @apply relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#17211f] via-[#17211f] to-[#2f4b43] p-6 sm:p-8;
+}
+.wallet-ornament {
+  @apply pointer-events-none absolute -bottom-10 -left-4 text-[160px] leading-none text-accent/10;
+}
+.wallet-tx { @apply divide-y divide-dashed divide-border; }
+.wallet-tx-item {
+  @apply flex items-center gap-3 py-3;
+}
+.wallet-tx-icon {
+  @apply grid h-[40px] w-[40px] shrink-0 place-items-center rounded-[12px] text-[18px];
+}
+.wallet-tx-icon.is-plus { @apply bg-[#e0f4e8] text-[#2e7d55]; }
+.wallet-tx-icon.is-minus { @apply bg-danger/10 text-danger; }
+.wallet-tx-amount {
+  @apply text-[11px] font-black;
+}
+.wallet-tx-amount.is-plus { @apply text-[#2e7d55]; }
+.wallet-tx-amount.is-minus { @apply text-danger; }
+
+/* Toggle rows */
+.toggle-row {
+  @apply flex cursor-pointer items-center justify-between gap-3 rounded-[14px] border border-border
+         bg-white p-3.5 transition hover:border-[#cbd0c9];
+}
+.toggle-row b { @apply block text-[12px] font-black; }
+.toggle-row small { @apply mt-1 block text-[10px] text-muted; }
+.toggle-row input { @apply sr-only; }
+.toggle {
+  @apply relative h-[24px] w-[44px] shrink-0 rounded-full bg-border transition;
+}
+.toggle::after {
+  content: "";
+  @apply absolute top-[3px] right-[3px] h-[18px] w-[18px] rounded-full bg-white shadow transition;
+}
+.toggle-row input:checked + .toggle { @apply bg-accent; }
+.toggle-row input:checked + .toggle::after { transform: translateX(-20px); }
+
+/* احترام به reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .stat-card, .value-card, .team-card, .order-card, .address-card, .toggle-row {
+    transition: none !important;
+  }
+  .stat-card:hover, .value-card:hover, .team-card:hover {
+    transform: none !important;
+  }
+}

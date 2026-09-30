@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="تماس با نِگار — پشتیبانی، پیشنهاد و انتقاد">
+  <title>تماس با ما | نِگار</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+</head>
+
+<body class="bg-bg text-text antialiased">
+
+  <!-- Announcement -->
+  <div class="bg-ink text-white">
+    <div class="container-app flex items-center justify-center gap-2 py-2 text-xs sm:text-sm">
+      <i class="ri-customer-service-2-line text-accent"></i>
+      <span>پشتیبانی نِگار هر روز از ۹ صبح تا ۹ شب پاسخگوی شماست</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app">
+      <div class="flex h-20 items-center gap-4">
+        <button class="icon-btn lg:hidden" data-mobile-open aria-label="باز کردن منو">
+          <i class="ri-menu-4-line text-xl"></i>
+        </button>
+
+        <a href="../index.html" class="inline-flex shrink-0 items-center gap-2.5 text-ink" aria-label="صفحه اصلی">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+
+        <nav class="hidden items-center gap-1 xl:flex">
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./category.html">دسته‌بندی‌ها</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./shop.html">فروشگاه</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./blog.html">مجله نِگار</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./about.html">درباره ما</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-ink" href="./contact.html">تماس با ما</a>
+        </nav>
+
+        <div class="mr-auto flex items-center gap-2">
+          <button class="icon-btn" aria-label="علاقه‌مندی‌ها">
+            <i class="ri-heart-3-line"></i>
+            <span class="counter">3</span>
+          </button>
+          <button class="icon-btn" aria-label="سبد خرید" data-cart-toggle>
+            <i class="ri-shopping-bag-3-line"></i>
+            <span class="counter">2</span>
+          </button>
+          <a href="./login.html" class="hidden h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold md:flex">
+            <i class="ri-user-3-line"></i>
+            <span>ورود / ثبت‌نام</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div id="mobileOverlay" class="fixed inset-0 z-[60] hidden bg-black/40 backdrop-blur-sm" data-mobile-close></div>
+  <aside id="mobileDrawer"
+    class="fixed top-0 right-0 bottom-0 z-[70] w-[min(340px,90vw)] translate-x-[105%]
+           bg-white shadow-[-20px_0_60px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <span class="font-black">منوی نِگار</span>
+      <button class="icon-btn" data-mobile-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="p-5">
+      <a class="drawer-link" href="./shop.html">فروشگاه <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./category.html">دسته‌بندی‌ها <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./blog.html">مجله نِگار <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./about.html">درباره ما <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./contact.html">تماس با ما <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./faq.html">سوالات متداول <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./account.html">حساب کاربری <i class="ri-arrow-left-s-line"></i></a>
+    </div>
+  </aside>
+
+  <main class="container-app pt-6 sm:pt-8">
+
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-[10px] text-muted">
+      <a href="../index.html" class="hover:text-ink">خانه</a>
+      <i class="ri-arrow-left-s-line"></i>
+      <span class="text-ink font-bold">تماس با ما</span>
+    </nav>
+
+    <!-- Hero -->
+    <div class="relative mt-4 overflow-hidden rounded-[28px] bg-ink p-8 text-white sm:rounded-[34px] sm:p-[clamp(30px,5vw,56px)]">
+      <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div class="absolute -top-20 -left-20 h-[280px] w-[280px] rounded-full border border-accent/15"></div>
+        <div class="absolute bottom-[-100px] left-[35%] h-[260px] w-[260px] rounded-full border border-accent/10"></div>
+        <div class="absolute right-[8%] top-[20%] hidden text-accent/15 text-[150px] leading-none lg:block">
+          <i class="ri-customer-service-2-line"></i>
+        </div>
+      </div>
+
+      <div class="relative z-10 max-w-2xl">
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-[#dce7bd] bg-accent/10 px-3 py-1.5 text-[10px] font-extrabold text-accent">
+          <i class="ri-customer-service-2-line"></i> پشتیبانی نِگار
+        </span>
+        <h1 class="mt-4 text-[clamp(30px,5vw,54px)] font-black leading-[1.1] tracking-[-.06em]">
+          صدای شما،<br>
+          <span class="text-accent">شنیدنی است.</span>
+        </h1>
+        <p class="mt-5 max-w-xl text-[12px] leading-[2] text-white/60 sm:text-[14px]">
+          سوال، پیشنهاد، انتقاد یا حتی یک سلام ساده — هر پیامی برای ما ارزشمند است.
+          تیم پشتیبانی نِگار در سریع‌ترین زمان به شما پاسخ می‌دهد.
+        </p>
+
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#contact-form" class="inline-flex min-h-[46px] items-center gap-2 rounded-[13px] bg-accent px-5 text-[12px] font-extrabold text-ink hover:bg-[#e1fa87] transition">
+            <i class="ri-mail-send-line"></i> ارسال پیام
+          </a>
+          <a href="./faq.html" class="inline-flex min-h-[46px] items-center gap-2 rounded-[13px] border border-white/[.18] px-5 text-[12px] font-extrabold text-white hover:bg-white/5 transition">
+            <i class="ri-question-line"></i> سوالات متداول
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== کارت‌های تماس ==================== -->
+    <section class="pt-10 sm:pt-14">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+        <a href="tel:02112345678" class="contact-card">
+          <div class="contact-icon bg-[#dce8dc] text-[#56735e]"><i class="ri-phone-line"></i></div>
+          <h3>تماس تلفنی</h3>
+          <p dir="ltr">۰۲۱-۱۲۳۴۵۶۷۸</p>
+          <small>پاسخ در کمتر از ۲ دقیقه</small>
+        </a>
+
+        <a href="mailto:hello@negar.ir" class="contact-card">
+          <div class="contact-icon bg-[#e8d9cb] text-[#88674d]"><i class="ri-mail-line"></i></div>
+          <h3>ایمیل</h3>
+          <p dir="ltr">hello@negar.ir</p>
+          <small>پاسخ تا ۲۴ ساعت</small>
+        </a>
+
+        <a href="#map" class="contact-card">
+          <div class="contact-icon bg-[#d7dbea] text-[#5d658a]"><i class="ri-map-pin-line"></i></div>
+          <h3>آدرس</h3>
+          <p>تهران، خیابان کتاب، پلاک ۲۴</p>
+          <small>مراجعه با تعیین وقت قبلی</small>
+        </a>
+
+        <div class="contact-card">
+          <div class="contact-icon bg-accent/40 text-ink"><i class="ri-time-line"></i></div>
+          <h3>ساعات کاری</h3>
+          <p>هر روز، ۹ تا ۲۱</p>
+          <small>جمعه‌ها ۱۰ تا ۱۸</small>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== فرم تماس ==================== -->
+    <section id="contact-form" class="pt-10 sm:pt-14 scroll-mt-28">
+      <div class="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:gap-10">
+
+        <!-- Form -->
+        <div class="contact-form-card">
+          <div class="mb-6">
+            <span class="section-kicker">پیام مستقیم</span>
+            <h2 class="text-[clamp(22px,3vw,28px)] font-black tracking-[-.04em]">با ما حرف بزنید</h2>
+            <p class="mt-2 text-[11px] text-muted">در کمتر از ۲۴ ساعت پاسخ می‌دهیم.</p>
+          </div>
+
+          <form id="contactForm" class="space-y-4" novalidate>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="field">
+                <label for="cName">نام و نام خانوادگی <span class="text-danger">*</span></label>
+                <input id="cName" type="text" placeholder="مثلاً سارا محمدی" required>
+                <small class="error"></small>
+              </div>
+              <div class="field">
+                <label for="cPhone">شماره تماس <span class="text-danger">*</span></label>
+                <input id="cPhone" type="tel" dir="ltr" class="text-right" placeholder="۰۹۱۲..." required>
+                <small class="error"></small>
+              </div>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="field">
+                <label for="cEmail">ایمیل <span class="text-danger">*</span></label>
+                <input id="cEmail" type="email" dir="ltr" class="text-right" placeholder="you@example.com" required>
+                <small class="error"></small>
+              </div>
+              <div class="field">
+                <label for="cSubject">موضوع</label>
+                <select id="cSubject">
+                  <option value="general">سوال عمومی</option>
+                  <option value="order">درباره سفارش</option>
+                  <option value="return">بازگشت یا مرجوعی</option>
+                  <option value="suggest">پیشنهاد کتاب</option>
+                  <option value="feedback">انتقاد و پیشنهاد</option>
+                  <option value="collab">همکاری</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="cMessage">پیام شما <span class="text-danger">*</span></label>
+              <textarea id="cMessage" rows="6"
+                placeholder="لطفاً موضوع را کامل توضیح دهید..."
+                required></textarea>
+              <small class="error"></small>
+            </div>
+
+            <label class="checkbox-row">
+              <input type="checkbox" id="cSave">
+              <span class="checkbox-box"></span>
+              <span>می‌خواهم از اخبار و پیشنهادهای نِگار باخبر شوم</span>
+            </label>
+
+            <div class="flex flex-col-reverse gap-2 pt-2 sm:flex-row sm:items-center sm:justify-between">
+              <p class="text-[10px] text-muted">
+                <i class="ri-shield-check-line text-[#2e7d55]"></i>
+                اطلاعات شما نزد ما محفوظ می‌ماند.
+              </p>
+              <button type="submit" class="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-[13px] bg-ink px-6 text-[12px] font-extrabold text-white transition hover:bg-[#0f1817]">
+                <i class="ri-send-plane-line"></i> ارسال پیام
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Side info -->
+        <aside class="space-y-4">
+
+          <!-- راه‌های سریع -->
+          <div class="contact-info-card">
+            <h3 class="mb-4 text-[13px] font-black">
+              <i class="ri-flashlight-line text-accent-dark"></i> راه‌های سریع
+            </h3>
+            <ul class="space-y-3">
+              <li class="contact-quick-item">
+                <i class="ri-shopping-bag-3-line"></i>
+                <div>
+                  <b>پیگیری سفارش</b>
+                  <small>با کد سفارش، وضعیت ارسال را ببینید</small>
+                </div>
+                <i class="ri-arrow-left-line text-muted"></i>
+              </li>
+              <li class="contact-quick-item">
+                <i class="ri-refresh-line"></i>
+                <div>
+                  <b>درخواست بازگشت</b>
+                  <small>تا ۷ روز پس از تحویل</small>
+                </div>
+                <i class="ri-arrow-left-line text-muted"></i>
+              </li>
+              <li class="contact-quick-item">
+                <i class="ri-question-line"></i>
+                <div>
+                  <b>سوالات متداول</b>
+                  <small>پاسخ سریع به پرتکرارها</small>
+                </div>
+                <i class="ri-arrow-left-line text-muted"></i>
+              </li>
+            </ul>
+          </div>
+
+          <!-- شبکه‌های اجتماعی -->
+          <div class="contact-info-card">
+            <h3 class="mb-4 text-[13px] font-black">
+              <i class="ri-share-forward-line"></i> ما را در شبکه‌ها دنبال کنید
+            </h3>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="#" class="social-btn"><i class="ri-instagram-line"></i><span>اینستاگرام</span></a>
+              <a href="#" class="social-btn"><i class="ri-telegram-line"></i><span>تلگرام</span></a>
+              <a href="#" class="social-btn"><i class="ri-twitter-x-line"></i><span>توییتر</span></a>
+              <a href="#" class="social-btn"><i class="ri-whatsapp-line"></i><span>واتساپ</span></a>
+            </div>
+          </div>
+
+          <!-- Suggestion -->
+          <div class="contact-suggest">
+            <i class="ri-lightbulb-line text-[24px] text-accent"></i>
+            <h3 class="mt-2 text-[12px] font-black text-white">پیشنهاد کتاب داری؟</h3>
+            <p class="mt-1.5 text-[10px] leading-6 text-white/60">
+              اگر کتابی را دوست داری که در نِگار نیست، برایمان بنویس.
+            </p>
+            <button class="mt-3 inline-flex min-h-[38px] w-full items-center justify-center gap-2 rounded-[11px] bg-accent px-4 text-[11px] font-extrabold text-ink" data-suggest-book>
+              <i class="ri-book-add-line"></i> پیشنهاد کتاب
+            </button>
+          </div>
+
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- ==================== نقشه ==================== -->
+    <section id="map" class="pt-10 sm:pt-14 scroll-mt-28">
+      <div class="mb-5">
+        <span class="section-kicker">ما را پیدا کنید</span>
+        <h2 class="text-[clamp(22px,3vw,28px)] font-black tracking-[-.04em]">آدرس دفتر مرکزی</h2>
+      </div>
+
+      <div class="map-wrap">
+        <!-- Placeholder نقشه -->
+        <div class="map-placeholder" aria-hidden="true">
+          <div class="map-grid"></div>
+          <div class="map-marker">
+            <span class="map-marker-pulse"></span>
+            <i class="ri-map-pin-2-fill"></i>
+          </div>
+          <div class="map-label">دفتر مرکزی نِگار</div>
+        </div>
+
+        <!-- Info overlay -->
+        <div class="map-info">
+          <div class="map-info-item">
+            <i class="ri-building-2-line"></i>
+            <div>
+              <small>آدرس</small>
+              <b>تهران، خیابان کتاب، پلاک ۲۴، طبقه ۳</b>
+            </div>
+          </div>
+          <div class="map-info-item">
+            <i class="ri-phone-line"></i>
+            <div>
+              <small>تلفن</small>
+              <b dir="ltr">۰۲۱-۱۲۳۴۵۶۷۸</b>
+            </div>
+          </div>
+          <div class="map-info-item">
+            <i class="ri-time-line"></i>
+            <div>
+              <small>ساعات کاری</small>
+              <b>شنبه تا پنج‌شنبه، ۹ تا ۱۸</b>
+            </div>
+          </div>
+
+          <button class="map-cta">
+            <i class="ri-navigation-line"></i> مسیریابی در نقشه
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="pt-10 sm:pt-14">
+      <div class="relative overflow-hidden rounded-[28px] bg-accent p-8 sm:p-12">
+        <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+          <div class="absolute -top-16 -right-16 h-[220px] w-[220px] rounded-full border border-ink/10"></div>
+          <div class="absolute bottom-[-80px] left-[25%] h-[200px] w-[200px] rounded-full border border-ink/10"></div>
+        </div>
+
+        <div class="relative z-10 flex flex-col items-start gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div class="max-w-xl">
+            <span class="section-kicker !text-ink/60">کمک فوری</span>
+            <h2 class="mt-2 text-[clamp(22px,3.5vw,34px)] font-black leading-[1.3] tracking-[-.05em] text-ink">
+              اگر پاسخ سوالت را پیدا نکردی،
+            </h2>
+            <p class="mt-3 max-w-md text-[12px] leading-[2] text-ink/70">
+              تیم پشتیبانی ما آماده‌ی کمک است. کافیست تماس بگیری یا پیام بگذاری.
+            </p>
+          </div>
+          <a href="#contact-form" class="inline-flex min-h-[48px] shrink-0 items-center gap-2 rounded-[13px] bg-ink px-5 text-[12px] font-extrabold text-white hover:bg-[#0f1817] transition">
+            <i class="ri-chat-3-line"></i> گفت‌وگو با پشتیبانی
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-14 bg-ink text-white sm:mt-20">
+    <div class="container-app grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div>
+        <a href="../index.html" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-[#aeb8b3]">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-7 text-white/55">
+          فروشگاهی برای کسانی که کتاب را فقط یک محصول نمی‌دانند؛ یک تجربه می‌دانند.
+        </p>
+        <div class="mt-5 flex gap-[7px]">
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-instagram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-telegram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-twitter-x-line"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">خرید</h3>
+        <a href="./shop.html" class="my-2 block text-[10px] text-[#aeb8b3]">همه کتاب‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تازه‌های نشر</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پرفروش‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تخفیف‌ها</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">راهنما</h3>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">شیوه ارسال</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پیگیری سفارش</a>
+        <a href="./faq.html" class="my-2 block text-[10px] text-[#aeb8b3]">سوالات متداول</a>
+        <a href="./contact.html" class="my-2 block text-[10px] text-[#aeb8b3]">تماس با ما</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">با ما در ارتباط باش</h3>
+        <p class="text-sm leading-7 text-white/55">تهران، خیابان کتاب، پلاک ۲۴</p>
+        <p class="mt-2 text-sm text-white/75">۰۲۱-۱۲۳۴۵۶۷۸</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-app flex flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:justify-between">
+        <span>© ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.</span>
+        <span>طراحی شده برای تجربه‌ای ساده‌تر از خرید کتاب.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div id="cartPanel" class="fixed top-0 right-0 bottom-0 z-[80] flex w-[min(390px,92vw)] translate-x-[105%] flex-col bg-white shadow-[-20px_0_70px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <div><b class="text-lg">سبد خرید</b><span class="mr-2 text-xs text-muted">۲ کالا</span></div>
+      <button class="icon-btn" data-cart-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="space-y-3 p-5">
+      <div class="flex items-center gap-3 rounded-2xl border border-border p-2">
+        <div class="mini-cover flex-[0_0_58px] !min-h-[78px] bg-[#657c71]">روایت<br>یک زندگی</div>
+        <div><b class="block text-[10px]">روایت یک زندگی</b><span class="mt-1.5 block text-[9px] text-[#909895]">۲۷۵,۰۰۰ تومان</span></div>
+      </div>
+    </div>
+    <div class="mt-auto border-t border-border p-5">
+      <div class="mb-4 flex justify-between"><span>جمع کل</span><b>۲۷۵,۰۰۰ تومان</b></div>
+      <a href="./cart.html" class="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink">
+        مشاهده سبد خرید
+      </a>
+    </div>
+  </div>
+  <div id="cartOverlay" class="fixed inset-0 z-[55] hidden bg-black/30" data-cart-close></div>
+
+  <!-- Modal پیشنهاد کتاب -->
+  <div id="suggestModal" class="fixed inset-0 z-[110] hidden items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4">
+    <div class="admin-modal w-full max-w-[520px] max-h-[90vh] overflow-hidden rounded-t-[24px] bg-white shadow-2xl sm:rounded-[24px]">
+      <header class="flex items-center justify-between border-b border-border p-5">
+        <div>
+          <span class="section-kicker">پیشنهاد شما</span>
+          <h3 class="mt-1 text-[16px] font-black">معرفی کتاب</h3>
+        </div>
+        <button class="icon-btn" data-suggest-close><i class="ri-close-line"></i></button>
+      </header>
+
+      <form id="suggestForm" class="p-5 space-y-4">
+        <div class="field">
+          <label for="sTitle">نام کتاب <span class="text-danger">*</span></label>
+          <input id="sTitle" type="text" placeholder="نام کتاب موردنظر" required>
+          <small class="error"></small>
+        </div>
+        <div class="field">
+          <label for="sAuthor">نویسنده</label>
+          <input id="sAuthor" type="text" placeholder="نام نویسنده (اختیاری)">
+        </div>
+        <div class="field">
+          <label for="sWhy">چرا این کتاب؟</label>
+          <textarea id="sWhy" rows="3" placeholder="چند خطی درباره کتاب و دلیل پیشنهادتان..."></textarea>
+        </div>
+        <div class="field">
+          <label for="sContact">راه تماس (اختیاری)</label>
+          <input id="sContact" type="text" dir="ltr" class="text-right" placeholder="ایمیل یا شماره تماس">
+        </div>
+
+        <div class="flex gap-2 pt-2">
+          <button type="button" class="pdp-ghost-btn flex-1 justify-center" data-suggest-close>انصراف</button>
+          <button type="submit" class="inline-flex min-h-[46px] flex-1 items-center justify-center gap-2 rounded-[13px] bg-ink px-4 text-[12px] font-extrabold text-white hover:bg-[#0f1817] transition">
+            <i class="ri-send-plane-line"></i> ارسال پیشنهاد
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- <script src="/src/js/main.js"></script> -->
+  <script src="/src/js/contact.js"></script>
+</body>
+</html>

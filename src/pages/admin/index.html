@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="پنل مدیریت نِگار">
+  <title>داشبورد | پنل مدیریت نِگار</title>
+
+  <link rel="stylesheet" href="../../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../../dist/css/style.css">
+</head>
+
+<body class="bg-bg text-text antialiased">
+
+  <div class="admin-layout">
+
+    <!-- ==================== سایدبار ==================== -->
+    <aside id="adminSidebar" class="admin-sidebar">
+      <div class="admin-sidebar-brand">
+        <a href="../../index.html" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink">
+            <i class="ri-book-3-line"></i>
+          </span>
+          <span>
+            <strong class="block text-[17px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-white/60">پنل مدیریت</small>
+          </span>
+        </a>
+        <button class="icon-btn !bg-white/5 !border-white/10 !text-white lg:hidden" data-admin-close>
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
+
+      <nav class="admin-nav">
+        <p class="admin-nav-title">اصلی</p>
+        <a href="./index.html" class="admin-nav-item is-active">
+          <i class="ri-dashboard-3-line"></i>
+          <span>داشبورد</span>
+        </a>
+        <a href="./products.html" class="admin-nav-item">
+          <i class="ri-book-2-line"></i>
+          <span>محصولات</span>
+          <span class="admin-nav-badge">۲,۴۰۰</span>
+        </a>
+        <a href="./orders.html" class="admin-nav-item">
+          <i class="ri-shopping-bag-3-line"></i>
+          <span>سفارش‌ها</span>
+          <span class="admin-nav-badge admin-nav-badge--alert">۱۲</span>
+        </a>
+        <a href="./users.html" class="admin-nav-item">
+          <i class="ri-user-3-line"></i>
+          <span>کاربران</span>
+        </a>
+
+        <p class="admin-nav-title">محتوا</p>
+        <a href="#" class="admin-nav-item">
+          <i class="ri-article-line"></i>
+          <span>مجله</span>
+        </a>
+        <a href="#" class="admin-nav-item">
+          <i class="ri-price-tag-3-line"></i>
+          <span>دسته‌بندی‌ها</span>
+        </a>
+        <a href="#" class="admin-nav-item">
+          <i class="ri-chat-3-line"></i>
+          <span>نظرات</span>
+          <span class="admin-nav-badge admin-nav-badge--alert">۲۴</span>
+        </a>
+
+        <p class="admin-nav-title">سیستم</p>
+        <a href="./settings.html" class="admin-nav-item">
+          <i class="ri-settings-3-line"></i>
+          <span>تنظیمات</span>
+        </a>
+        <a href="../../index.html" class="admin-nav-item">
+          <i class="ri-logout-box-r-line"></i>
+          <span>خروج</span>
+        </a>
+      </nav>
+
+      <!-- پروفایل کوچک -->
+      <div class="admin-sidebar-footer">
+        <div class="flex items-center gap-2.5">
+          <div class="grid h-[38px] w-[38px] place-items-center rounded-full bg-gradient-to-br from-[#87927a] to-[#3b4a3f] text-[12px] font-black text-white">
+            م.ر
+          </div>
+          <div class="min-w-0 flex-1">
+            <b class="block truncate text-[11px] font-black text-white">مریم رضایی</b>
+            <small class="mt-0.5 block text-[9px] text-white/50">مدیر سیستم</small>
+          </div>
+          <i class="ri-more-2-line text-white/40"></i>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Overlay موبایل -->
+    <div id="adminOverlay" class="fixed inset-0 z-[55] hidden bg-black/40 backdrop-blur-sm lg:hidden" data-admin-close></div>
+
+    <!-- ==================== محتوا ==================== -->
+    <div class="admin-main">
+
+      <!-- Topbar -->
+      <header class="admin-topbar">
+        <button class="icon-btn lg:hidden" data-admin-open aria-label="باز کردن منو">
+          <i class="ri-menu-4-line"></i>
+        </button>
+
+        <div class="hidden flex-1 lg:block">
+          <div class="search-box !h-[40px] !max-w-[380px]">
+            <i class="ri-search-2-line"></i>
+            <input type="search" placeholder="جست‌وجو در پنل...">
+            <kbd>⌘K</kbd>
+          </div>
+        </div>
+
+        <div class="mr-auto flex items-center gap-2">
+          <button class="admin-icon-btn" aria-label="اعلان‌ها">
+            <i class="ri-notification-3-line"></i>
+            <span class="admin-dot"></span>
+          </button>
+          <button class="admin-icon-btn" aria-label="پیام‌ها">
+            <i class="ri-chat-3-line"></i>
+          </button>
+          <a href="../../index.html" class="admin-icon-btn" aria-label="مشاهده سایت">
+            <i class="ri-external-link-line"></i>
+          </a>
+        </div>
+      </header>
+
+      <!-- Page content -->
+      <main class="admin-content">
+
+        <!-- Page header -->
+        <div class="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+          <div>
+            <nav class="flex items-center gap-2 text-[10px] text-muted">
+              <span>پنل مدیریت</span>
+              <i class="ri-arrow-left-s-line"></i>
+              <span class="text-ink font-bold">داشبورد</span>
+            </nav>
+            <h1 class="mt-2 text-[clamp(20px,3vw,26px)] font-black tracking-[-.03em]">
+              سلام مریم 👋
+            </h1>
+            <p class="mt-1 text-[11px] text-muted">خلاصه‌ای از عملکرد فروشگاه در ۳۰ روز گذشته</p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <select id="dateRange" class="admin-select">
+              <option value="7">۷ روز اخیر</option>
+              <option value="30" selected>۳۰ روز اخیر</option>
+              <option value="90">۳ ماه اخیر</option>
+              <option value="365">یک سال اخیر</option>
+            </select>
+            <button class="admin-btn admin-btn--primary">
+              <i class="ri-download-2-line"></i>
+              گزارش
+            </button>
+          </div>
+        </div>
+
+        <!-- ==================== KPI Cards ==================== -->
+        <section class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+
+          <article class="kpi-card">
+            <div class="flex items-start justify-between">
+              <div class="kpi-icon bg-[#dce8dc] text-[#56735e]"><i class="ri-shopping-bag-3-line"></i></div>
+              <span class="kpi-trend is-up"><i class="ri-arrow-up-line"></i> ۱۲.۵٪</span>
+            </div>
+            <div class="mt-4">
+              <small class="text-[10px] text-muted">فروش کل (تومان)</small>
+              <b class="mt-1 block text-[24px] font-black tracking-[-.03em]">۸۴۷,۲۰۰,۰۰۰</b>
+            </div>
+            <div class="mt-3 flex items-center gap-1.5 text-[10px] text-muted">
+              <i class="ri-checkbox-circle-line text-[#2e7d55]"></i>
+              <span>در مقایسه با ماه گذشته: <b class="text-ink">۷۵۳,۰۰۰,۰۰۰</b></span>
+            </div>
+          </article>
+
+          <article class="kpi-card">
+            <div class="flex items-start justify-between">
+              <div class="kpi-icon bg-[#e8d9cb] text-[#88674d]"><i class="ri-file-list-3-line"></i></div>
+              <span class="kpi-trend is-up"><i class="ri-arrow-up-line"></i> ۸.۲٪</span>
+            </div>
+            <div class="mt-4">
+              <small class="text-[10px] text-muted">سفارش‌ها</small>
+              <b class="mt-1 block text-[24px] font-black tracking-[-.03em]">۱,۲۴۸</b>
+            </div>
+            <div class="mt-3 flex items-center gap-1.5 text-[10px] text-muted">
+              <i class="ri-time-line text-[#a5622c]"></i>
+              <span><b class="text-ink">۱۲</b> سفارش در انتظار بررسی</span>
+            </div>
+          </article>
+
+          <article class="kpi-card">
+            <div class="flex items-start justify-between">
+              <div class="kpi-icon bg-[#d7dbea] text-[#5d658a]"><i class="ri-user-3-line"></i></div>
+              <span class="kpi-trend is-up"><i class="ri-arrow-up-line"></i> ۴.۷٪</span>
+            </div>
+            <div class="mt-4">
+              <small class="text-[10px] text-muted">مشتریان جدید</small>
+              <b class="mt-1 block text-[24px] font-black tracking-[-.03em]">۳۸۲</b>
+            </div>
+            <div class="mt-3 flex items-center gap-1.5 text-[10px] text-muted">
+              <i class="ri-user-add-line text-[#2e7d55]"></i>
+              <span>نرخ تبدیل: <b class="text-ink">۳.۸٪</b></span>
+            </div>
+          </article>
+
+          <article class="kpi-card">
+            <div class="flex items-start justify-between">
+              <div class="kpi-icon bg-[#fdeee0] text-[#a5622c]"><i class="ri-eye-line"></i></div>
+              <span class="kpi-trend is-down"><i class="ri-arrow-down-line"></i> ۲.۱٪</span>
+            </div>
+            <div class="mt-4">
+              <small class="text-[10px] text-muted">بازدیدکنندگان</small>
+              <b class="mt-1 block text-[24px] font-black tracking-[-.03em]">۲۴,۸۹۰</b>
+            </div>
+            <div class="mt-3 flex items-center gap-1.5 text-[10px] text-muted">
+              <i class="ri-timer-line text-[#5d658a]"></i>
+              <span>میانگین زمان: <b class="text-ink">۳:۴۲</b></span>
+            </div>
+          </article>
+
+        </section>
+
+        <!-- ==================== نمودار فروش ==================== -->
+        <section class="mt-5 grid gap-4 xl:grid-cols-[1.6fr_1fr]">
+
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <div>
+                <span class="section-kicker">تحلیل عملکرد</span>
+                <h2 class="text-[14px] font-black">روند فروش</h2>
+              </div>
+              <div class="flex items-center gap-1.5 rounded-[11px] border border-border bg-white p-1 text-[10px]">
+                <button class="chart-tab is-active" data-chart="line">خطی</button>
+                <button class="chart-tab" data-chart="bar">میله‌ای</button>
+                <button class="chart-tab" data-chart="area">سطح</button>
+              </div>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="salesChart"></canvas>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <div>
+                <span class="section-kicker">سهم بازار</span>
+                <h2 class="text-[14px] font-black">فروش بر اساس دسته</h2>
+              </div>
+            </div>
+            <div class="chart-wrap chart-wrap--donut">
+              <canvas id="categoryChart"></canvas>
+            </div>
+            <div id="categoryLegend" class="mt-4 space-y-2 text-[11px]"></div>
+          </div>
+
+        </section>
+
+        <!-- ==================== دو نمودار + ترافیک ==================== -->
+        <section class="mt-5 grid gap-4 xl:grid-cols-3">
+
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <div>
+                <span class="section-kicker">مقایسه</span>
+                <h2 class="text-[14px] font-black">فروشگاه vs مجله</h2>
+              </div>
+            </div>
+            <div class="chart-wrap chart-wrap--sm">
+              <canvas id="compareChart"></canvas>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <div>
+                <span class="section-kicker">منابع بازدید</span>
+                <h2 class="text-[14px] font-black">کانال‌های ورودی</h2>
+              </div>
+            </div>
+            <div class="chart-wrap chart-wrap--sm">
+              <canvas id="trafficChart"></canvas>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <div>
+                <span class="section-kicker">هدف‌گذاری</span>
+                <h2 class="text-[14px] font-black">پیشرفت ماهانه</h2>
+              </div>
+            </div>
+            <div class="chart-wrap chart-wrap--sm">
+              <canvas id="goalChart"></canvas>
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-2 text-[10px]">
+              <div class="rounded-xl bg-bg p-3">
+                <small class="block text-muted">هدف فروش</small>
+                <b class="mt-1 block text-[12px]">۸۵۰ میلیون</b>
+              </div>
+              <div class="rounded-xl bg-bg p-3">
+                <small class="block text-muted">تحقق</small>
+                <b class="mt-1 block text-[12px] text-[#2e7d55]">۹۹.۶٪</b>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ==================== جدول سفارش‌های اخیر ==================== -->
+        <section class="mt-5 grid gap-4 xl:grid-cols-[1.6fr_1fr]">
+
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <div>
+                <span class="section-kicker">آخرین فعالیت‌ها</span>
+                <h2 class="text-[14px] font-black">سفارش‌های اخیر</h2>
+              </div>
+              <a href="./orders.html" class="text-[11px] font-bold text-muted hover:text-ink">
+                مشاهده همه <i class="ri-arrow-left-line"></i>
+              </a>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>کد سفارش</th>
+                    <th>مشتری</th>
+                    <th>مبلغ</th>
+                    <th>وضعیت</th>
+                    <th>تاریخ</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="recentOrdersBody">
+                  <!-- JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <div>
+                <span class="section-kicker">محبوب‌ترین‌ها</span>
+                <h2 class="text-[14px] font-black">پرفروش‌ترین کتاب‌ها</h2>
+              </div>
+            </div>
+
+            <ul id="topProducts" class="admin-product-list">
+              <!-- JS -->
+            </ul>
+          </div>
+
+        </section>
+
+        <!-- ==================== فعالیت‌های اخیر ==================== -->
+        <section class="mt-5 grid gap-4 xl:grid-cols-3">
+
+          <div class="admin-card xl:col-span-2">
+            <div class="admin-card-head">
+              <div>
+                <span class="section-kicker">لاگ سیستم</span>
+                <h2 class="text-[14px] font-black">فعالیت‌های اخیر تیم</h2>
+              </div>
+            </div>
+
+            <ul class="admin-activity">
+              <li>
+                <span class="admin-activity-avatar bg-gradient-to-br from-[#87927a] to-[#3b4a3f]">م.ر</span>
+                <div class="flex-1">
+                  <b class="text-[12px]">مریم رضایی</b>
+                  <span class="text-[11px] text-muted"> محصول «ملت عشق» را ویرایش کرد</span>
+                  <small class="mt-1 block text-[10px] text-muted">۳ دقیقه پیش</small>
+                </div>
+                <span class="admin-activity-badge bg-[#dce8dc] text-[#56735e]">
+                  <i class="ri-edit-line"></i> ویرایش
+                </span>
+              </li>
+              <li>
+                <span class="admin-activity-avatar bg-gradient-to-br from-[#c0a17a] to-[#5a3f27]">ع.ح</span>
+                <div class="flex-1">
+                  <b class="text-[12px]">علی حکیمی</b>
+                  <span class="text-[11px] text-muted"> سفارش <b class="font-mono">NG-934821</b> را تأیید کرد</span>
+                  <small class="mt-1 block text-[10px] text-muted">۲۲ دقیقه پیش</small>
+                </div>
+                <span class="admin-activity-badge bg-[#e0f4e8] text-[#2e7d55]">
+                  <i class="ri-check-line"></i> تأیید
+                </span>
+              </li>
+              <li>
+                <span class="admin-activity-avatar bg-gradient-to-br from-[#8d98c5] to-[#2f3656]">س.م</span>
+                <div class="flex-1">
+                  <b class="text-[12px]">سارا محمدی</b>
+                  <span class="text-[11px] text-muted"> ۳ محصول جدید اضافه کرد</span>
+                  <small class="mt-1 block text-[10px] text-muted">۱ ساعت پیش</small>
+                </div>
+                <span class="admin-activity-badge bg-[#d7dbea] text-[#5d658a]">
+                  <i class="ri-add-line"></i> افزودن
+                </span>
+              </li>
+              <li>
+                <span class="admin-activity-avatar bg-gradient-to-br from-[#c58a80] to-[#4a221f]">ر.ک</span>
+                <div class="flex-1">
+                  <b class="text-[12px]">رضا کریمی</b>
+                  <span class="text-[11px] text-muted"> نظر نامناسب کاربر را حذف کرد</span>
+                  <small class="mt-1 block text-[10px] text-muted">۲ ساعت پیش</small>
+                </div>
+                <span class="admin-activity-badge bg-danger/10 text-danger">
+                  <i class="ri-delete-bin-line"></i> حذف
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <div>
+                <span class="section-kicker">وضعیت لحظه‌ای</span>
+                <h2 class="text-[14px] font-black">سلامت فروشگاه</h2>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="health-item">
+                <div class="flex items-center gap-2">
+                  <span class="health-dot bg-[#2e7d55]"></span>
+                  <b class="text-[11px]">سرور اصلی</b>
+                </div>
+                <span class="text-[10px] text-[#2e7d55] font-bold">سالم</span>
+              </div>
+              <div class="health-item">
+                <div class="flex items-center gap-2">
+                  <span class="health-dot bg-[#2e7d55]"></span>
+                  <b class="text-[11px]">درگاه پرداخت</b>
+                </div>
+                <span class="text-[10px] text-[#2e7d55] font-bold">فعال</span>
+              </div>
+              <div class="health-item">
+                <div class="flex items-center gap-2">
+                  <span class="health-dot bg-[#f0b429]"></span>
+                  <b class="text-[11px]">سرویس پیامک</b>
+                </div>
+                <span class="text-[10px] text-[#a5622c] font-bold">کند</span>
+              </div>
+              <div class="health-item">
+                <div class="flex items-center gap-2">
+                  <span class="health-dot bg-[#2e7d55]"></span>
+                  <b class="text-[11px]">پایگاه داده</b>
+                </div>
+                <span class="text-[10px] text-[#2e7d55] font-bold">پایدار</span>
+              </div>
+              <div class="health-item">
+                <div class="flex items-center gap-2">
+                  <span class="health-dot bg-[#2e7d55]"></span>
+                  <b class="text-[11px]">CDN</b>
+                </div>
+                <span class="text-[10px] text-[#2e7d55] font-bold">۹۹.۹٪</span>
+              </div>
+            </div>
+
+            <button class="admin-btn admin-btn--ghost mt-5 w-full justify-center">
+              <i class="ri-refresh-line"></i>
+              بررسی مجدد
+            </button>
+          </div>
+
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Chart.js از node_modules -->
+  <script src="/node_modules/chart.js/dist/chart.umd.js"></script>
+  <script src="/src/js/admin.js"></script>
+  <script src="/src/js/admin-charts.js"></script>
+</body>
+</html>

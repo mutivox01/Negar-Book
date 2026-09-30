@@ -1,0 +1,207 @@
+/* ===== Newsletter Page ===== */
+
+.newsletter-input {
+  @apply flex h-[54px] items-center gap-2 overflow-hidden rounded-[16px] border border-white/[.15]
+         bg-white/[.06] px-4 backdrop-blur-xl transition
+         focus-within:border-accent/60 focus-within:bg-white/[.08];
+}
+.newsletter-input > i { @apply text-[20px] text-accent shrink-0; }
+.newsletter-input input {
+  @apply w-full flex-1 border-0 bg-transparent text-[13px] text-white placeholder:text-white/40 outline-none;
+}
+.newsletter-input button {
+  @apply inline-flex h-[42px] shrink-0 items-center gap-1.5 rounded-[12px] bg-accent px-4
+         text-[11px] font-extrabold text-ink transition hover:bg-[#e1fa87];
+}
+
+.newsletter-stat {
+  @apply flex flex-col items-center gap-1 rounded-[18px] border border-white/[.08]
+         bg-white/[.03] p-4 text-center;
+}
+.newsletter-stat b { @apply text-[22px] font-black text-accent; }
+.newsletter-stat small { @apply text-[9px] text-white/55; }
+
+.nl-perk {
+  @apply flex flex-col gap-2 rounded-[22px] border border-border bg-white p-5 transition
+         hover:-translate-y-1 hover:shadow-soft;
+}
+.nl-perk-icon {
+  @apply grid h-[46px] w-[46px] place-items-center rounded-[14px] text-[20px];
+}
+.nl-perk h3 { @apply text-[13px] font-black; }
+.nl-perk p { @apply text-[11px] leading-6 text-muted; }
+
+/* Archive card */
+.nl-card {
+  @apply grid gap-4 rounded-[22px] border border-border bg-white p-4 transition
+         hover:border-[#cbd0c9] hover:shadow-soft sm:grid-cols-[160px_1fr] sm:p-5;
+}
+.nl-card-cover {
+  @apply relative grid h-[140px] place-items-center overflow-hidden rounded-[16px] text-white
+         sm:h-full sm:min-h-[160px];
+}
+.nl-card-num {
+  @apply absolute bottom-3 left-3 z-[2] rounded-full bg-white/15 px-2.5 py-1 text-[9px]
+         font-black backdrop-blur-sm;
+}
+.nl-card-body { @apply flex flex-col; }
+
+.nl-inside-card {
+  @apply flex flex-col gap-2 rounded-[22px] p-6;
+}
+.nl-inside-card > i { @apply text-[36px]; }
+.nl-inside-card b { @apply text-[14px] font-black text-ink; }
+.nl-inside-card p { @apply text-[11px] leading-6 text-[#4a5450]; }
+
+/* ===== Notifications Page ===== */
+
+.notif-card {
+  @apply relative flex gap-3 rounded-[20px] border border-border bg-white p-4 transition
+         hover:border-[#cbd0c9];
+}
+.notif-card.is-unread {
+  @apply border-r-4 border-r-accent bg-accent/[.03];
+}
+
+.notif-icon {
+  @apply grid h-[44px] w-[44px] shrink-0 place-items-center rounded-[13px] text-[19px];
+}
+
+.notif-body { @apply min-w-0 flex-1; }
+.notif-title { @apply text-[12px] font-black text-ink; }
+.notif-date { @apply text-[10px] text-muted whitespace-nowrap; }
+
+.notif-dot {
+  @apply inline-block h-[8px] w-[8px] rounded-full bg-danger;
+  box-shadow: 0 0 0 3px rgba(230,109,91,.18);
+}
+
+.notif-badge {
+  @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[9px] font-black;
+}
+.notif-badge--important { @apply bg-danger/10 text-danger; }
+
+.notif-text {
+  @apply mt-1.5 text-[11px] leading-[2] text-[#4a5450];
+}
+
+.notif-actions {
+  @apply mt-3 flex flex-wrap items-center gap-2 border-t border-dashed border-border pt-3;
+}
+.notif-action {
+  @apply inline-flex items-center gap-1.5 rounded-[10px] bg-ink px-3 py-1.5 text-[10px]
+         font-extrabold text-white transition hover:bg-[#0f1817];
+}
+.notif-icon-btn {
+  @apply grid h-[30px] w-[30px] place-items-center rounded-[9px] border border-border
+         bg-white text-muted transition hover:border-ink hover:text-ink;
+}
+.notif-icon-btn i { @apply text-[14px]; }
+.notif-icon-btn.is-danger { @apply hover:border-danger hover:text-danger; }
+
+/* ===== Offers Page ===== */
+
+.countdown-hero {
+  @apply rounded-[22px] border border-white/[.08] bg-white/[.03] p-5 backdrop-blur-sm;
+}
+.countdown-grid {
+  @apply flex items-center justify-center gap-1.5 sm:gap-2;
+}
+.countdown-box {
+  @apply flex min-w-[56px] flex-col items-center gap-1 rounded-[14px] bg-white/[.06] p-2
+         sm:min-w-[70px] sm:p-3;
+}
+.countdown-box b {
+  @apply text-[22px] font-black tabular-nums text-accent sm:text-[28px];
+}
+.countdown-box small { @apply text-[8px] font-bold text-white/55; }
+.countdown-sep {
+  @apply text-[18px] font-black text-white/40 sm:text-[22px];
+}
+
+/* Coupon banner */
+.coupon-banner {
+  @apply flex flex-col items-start gap-4 rounded-[22px] border border-accent bg-accent/10 p-5
+         sm:flex-row sm:items-center;
+}
+.coupon-icon {
+  @apply grid h-[52px] w-[52px] shrink-0 place-items-center rounded-[15px] bg-accent text-[24px] text-ink;
+}
+.coupon-copy {
+  @apply inline-flex min-h-[44px] shrink-0 items-center gap-2 rounded-[12px] bg-ink px-4
+         text-[11px] font-extrabold text-white transition hover:bg-[#0f1817];
+}
+
+/* Offer card overlay badges */
+.offer-discount {
+  @apply absolute top-3 left-3 z-[3] rounded-full bg-danger px-2.5 py-1.5 text-[10px]
+         font-black text-white shadow-lg;
+}
+.offer-badge {
+  @apply absolute top-3 right-3 z-[2] rounded-full bg-white/20 px-2.5 py-1.5 text-[8px]
+         font-black text-white backdrop-blur-[10px];
+}
+
+.offer-timer {
+  @apply inline-flex items-center gap-1 rounded-full bg-bg px-2 py-0.5 text-[9px] font-bold
+         text-muted;
+}
+.offer-timer i { @apply text-[10px]; }
+.offer-timer.is-urgent {
+  @apply bg-danger/10 text-danger;
+}
+
+/* Daily deal */
+.daily-deal {
+  @apply grid gap-0 overflow-hidden rounded-[28px] border border-border bg-white
+         lg:grid-cols-[1.05fr_1fr];
+}
+.daily-deal-cover {
+  @apply relative grid min-h-[280px] place-items-center overflow-hidden
+         bg-gradient-to-br from-[#c58a80] via-[#a33226] to-[#4a221f] p-8 text-white
+         lg:min-h-[420px];
+}
+.daily-deal-badge {
+  @apply absolute top-5 right-5 z-[2] rounded-full bg-accent px-3 py-1.5 text-[11px]
+         font-black text-ink shadow-lg;
+}
+.daily-deal-book {
+  @apply relative z-[2] text-center text-[36px] font-black leading-tight tracking-[-.04em] sm:text-[52px];
+}
+.daily-deal-body { @apply flex flex-col justify-center p-6 sm:p-9 lg:p-11; }
+
+/* Bundle cards */
+.bundle-card {
+  @apply flex flex-col gap-3 rounded-[22px] border border-border bg-white p-5 transition
+         hover:-translate-y-1 hover:shadow-soft hover:border-[#cbd0c9];
+}
+.bundle-icon {
+  @apply grid h-[48px] w-[48px] place-items-center rounded-[14px] text-[22px];
+}
+.bundle-card h3 { @apply text-[14px] font-black; }
+.bundle-card p { @apply text-[11px] leading-6 text-muted; }
+.bundle-foot {
+  @apply mt-auto flex items-end gap-2 border-t border-dashed border-border pt-3;
+}
+.bundle-foot b { @apply text-[14px] font-black text-ink; }
+.bundle-foot del { @apply mb-0.5 text-[10px] text-muted; }
+
+/* Offer tips */
+.offer-tip {
+  @apply flex items-start gap-3 rounded-[18px] border border-border bg-white p-4;
+}
+.offer-tip > i {
+  @apply text-[22px] shrink-0 text-accent-dark;
+}
+.offer-tip b { @apply block text-[12px] font-black; }
+.offer-tip p { @apply mt-1 text-[10px] leading-6 text-muted; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .nl-card, .nl-perk, .bundle-card, .offer-card {
+    transition: none !important;
+  }
+  .nl-perk:hover, .bundle-card:hover {
+    transform: none !important;
+  }
+}

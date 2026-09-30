@@ -1,0 +1,105 @@
+
+/* ===== Checkout Page ===== */
+.checkout-card {
+  @apply rounded-[24px] border border-border bg-white p-5 sm:p-6;
+}
+.checkout-card-head {
+  @apply mb-5 flex items-center justify-between pb-4 border-b border-border;
+}
+.checkout-icon {
+  @apply grid h-11 w-11 shrink-0 place-items-center rounded-[14px] text-[19px];
+}
+
+/* Stepper */
+.step-done,
+.step-active,
+.step-todo {
+  @apply inline-flex items-center gap-2 font-bold;
+}
+.step-done  { @apply text-muted; }
+.step-active { @apply text-ink; }
+.step-todo   { @apply text-muted/70; }
+.step-num {
+  @apply grid h-[22px] w-[22px] place-items-center rounded-full text-[10px] font-black;
+}
+.step-done .step-num  { @apply bg-accent text-ink; }
+.step-active .step-num { @apply bg-ink text-white; }
+.step-todo .step-num   { @apply bg-bg text-muted border border-border; }
+
+/* Fields */
+.field label {
+  @apply mb-2 block text-[11px] font-black text-ink;
+}
+.field input,
+.field select,
+.field textarea,
+.field-textarea {
+  @apply w-full rounded-[13px] border border-border bg-white px-3.5 text-[12px]
+         text-ink outline-none transition focus:border-ink/50 focus:ring-2 focus:ring-ink/5;
+}
+.field input,
+.field select { @apply h-[46px]; }
+.field textarea { @apply py-3 leading-6 resize-none; }
+.field-textarea { @apply min-h-[92px] py-3 leading-6 resize-none; }
+
+.field.has-error input,
+.field.has-error select,
+.field.has-error textarea {
+  @apply border-danger ring-2 ring-danger/10;
+}
+.field .error {
+  @apply mt-1.5 block text-[10px] font-bold text-danger min-h-[12px];
+}
+
+/* Ship options */
+.ship-option,
+.pay-option {
+  @apply flex cursor-pointer items-center gap-3.5 rounded-[16px] border border-border bg-white p-3.5
+         transition hover:border-[#cbd0c9];
+}
+.ship-option input,
+.pay-option input { @apply sr-only; }
+.ship-option.is-selected,
+.pay-option.is-selected {
+  @apply border-ink bg-bg;
+}
+.ship-radio,
+.pay-radio {
+  @apply grid h-[20px] w-[20px] shrink-0 place-items-center rounded-full border-2 border-border bg-white transition;
+}
+.ship-option.is-selected .ship-radio,
+.pay-option.is-selected .pay-radio {
+  @apply border-ink bg-ink;
+}
+.ship-option.is-selected .ship-radio::after,
+.pay-option.is-selected .pay-radio::after {
+  content: "";
+  @apply block h-[6px] w-[6px] rounded-full bg-white;
+}
+.ship-body { @apply flex-1; }
+.ship-body b { @apply block text-[12px] font-black; }
+.ship-body small { @apply mt-1 block text-[10px] text-muted; }
+.ship-price { @apply text-[11px] font-bold whitespace-nowrap; }
+
+.pay-logo {
+  @apply grid h-[38px] w-[38px] shrink-0 place-items-center rounded-[12px] text-[17px];
+}
+.pay-body { @apply flex-1; }
+.pay-body b { @apply block text-[12px] font-black; }
+.pay-body small { @apply mt-1 block text-[10px] text-muted; }
+.pay-tag {
+  @apply rounded-full bg-accent/30 px-2 py-1 text-[9px] font-black text-ink;
+}
+
+/* Summary */
+.checkout-summary {
+  @apply overflow-hidden rounded-[24px] border border-border bg-white;
+}
+.summary-item { @apply flex items-center gap-3; }
+.summary-item + .summary-item { @apply pt-3 border-t border-dashed border-border; }
+
+.trust-badge {
+  @apply flex flex-col items-center gap-1.5 rounded-[12px] bg-bg py-3 text-muted;
+}
+.trust-badge i { @apply text-[17px] text-ink; }
+.trust-badge small { @apply text-[9px] font-bold; }

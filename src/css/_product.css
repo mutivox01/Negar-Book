@@ -1,0 +1,189 @@
+/* ===== Product Detail Page ===== */
+
+/* گالری */
+.pdp-gallery { @apply flex flex-col gap-3; }
+
+.pdp-main {
+  @apply relative flex min-h-[420px] flex-col justify-end overflow-hidden rounded-[28px]
+         p-[34px] text-white shadow-[0_20px_50px_rgba(0,0,0,.12)]
+         transition-[background-image] duration-500 sm:min-h-[520px];
+}
+.pdp-main::after {
+  content: "";
+  @apply absolute inset-0 bg-gradient-to-b from-transparent from-40% to-black/40;
+}
+
+.pdp-wish,
+.pdp-zoom {
+  @apply absolute top-4 left-4 z-[3] grid h-[40px] w-[40px] place-items-center rounded-[13px]
+         bg-white/15 text-white backdrop-blur-[10px] transition hover:bg-white/25;
+}
+.pdp-zoom { @apply top-4 left-[60px]; }
+.pdp-wish.is-active { @apply bg-danger/90; }
+
+.pdp-cover-content { @apply relative z-[2]; }
+.pdp-title-lines {
+  @apply text-[clamp(24px,4vw,40px)] font-black leading-[1.15] tracking-[-.04em];
+}
+.pdp-author-lines {
+  @apply mt-3 text-[13px] text-white/70;
+}
+
+.pdp-thumbs { @apply grid grid-cols-4 gap-2.5; }
+.pdp-thumb {
+  @apply relative grid h-[88px] place-items-center overflow-hidden rounded-[14px]
+         text-[10px] font-black text-white transition hover:-translate-y-px
+         ring-0 hover:ring-2 hover:ring-ink/20;
+}
+.pdp-thumb.is-active { @apply ring-2 ring-ink; }
+.pdp-thumb span { @apply rounded-full bg-black/30 px-2 py-0.5 backdrop-blur-sm; }
+
+.pdp-trust {
+  @apply flex flex-col items-center gap-1 rounded-[14px] border border-border bg-white py-3
+         text-center text-muted transition hover:border-[#cbd0c9];
+}
+.pdp-trust i { @apply text-[17px] text-ink; }
+.pdp-trust small { @apply text-[9px] font-bold; }
+
+/* اطلاعات */
+.pdp-stars {
+  @apply inline-flex items-center gap-0.5 text-[#f0b429];
+}
+.pdp-stars i { @apply text-[14px]; }
+.pdp-stars--sm i { @apply text-[11px]; }
+
+.pdp-spec {
+  @apply flex flex-col items-start gap-1 rounded-[14px] border border-border bg-white p-3;
+}
+.pdp-spec small { @apply text-[9px] text-muted; }
+.pdp-spec b { @apply text-[11px] font-black; }
+
+/* باکس خرید */
+.pdp-buy {
+  @apply mt-6 rounded-[22px] border border-border bg-white p-5;
+}
+
+/* دکمه ghost */
+.pdp-ghost-btn {
+  @apply inline-flex items-center gap-2 rounded-[11px] border border-border bg-white
+         px-3.5 py-2 text-[11px] font-bold text-muted transition
+         hover:border-[#cbd0c9] hover:text-ink;
+}
+.pdp-ghost-btn.is-active { @apply bg-accent/30 text-ink border-ink; }
+
+/* تب‌ها */
+.pdp-tabs { @apply overflow-hidden rounded-[24px] border border-border bg-white; }
+.pdp-tablist {
+  @apply flex flex-wrap gap-0 border-b border-border bg-white overflow-x-auto;
+}
+.pdp-tab {
+  @apply relative whitespace-nowrap px-5 py-4 text-[12px] font-extrabold text-muted
+         transition hover:text-ink;
+}
+.pdp-tab.is-active { @apply text-ink; }
+.pdp-tab.is-active::after {
+  content: "";
+  @apply absolute bottom-0 right-3 left-3 h-[3px] rounded-t-full bg-ink;
+}
+.pdp-badge {
+  @apply mr-1.5 inline-flex items-center rounded-full bg-bg px-2 py-0.5 text-[9px] font-black text-ink;
+}
+
+.pdp-panel { @apply hidden p-6 sm:p-8; }
+.pdp-panel.is-active { @apply block; }
+
+/* Prose */
+.prose-app { @apply max-w-3xl; }
+.prose-app p {
+  @apply mb-4 text-[12px] leading-[2.2] text-[#4a5450];
+}
+.prose-app blockquote {
+  @apply my-6 rounded-2xl border-r-4 border-accent bg-bg px-5 py-4 text-[12px]
+         leading-[2] text-ink italic;
+}
+
+/* Spec rows */
+.spec-row {
+  @apply flex items-center justify-between gap-3 rounded-[14px] border border-border
+         bg-white px-4 py-3 text-[11px];
+}
+.spec-row span { @apply text-muted; }
+.spec-row b { @apply font-black; }
+
+/* Reviews */
+.pdp-rating-box {
+  @apply rounded-[22px] border border-border bg-bg p-6 text-center;
+}
+.rating-bar {
+  @apply grid items-center gap-2 text-[10px];
+  grid-template-columns: 60px 1fr 30px;
+}
+.rating-bar > div {
+  @apply h-[6px] overflow-hidden rounded-full bg-border;
+}
+.rating-bar > div > i {
+  @apply block h-full rounded-full bg-[#f0b429];
+}
+.rating-bar b { @apply text-left text-ink; }
+
+.pdp-review {
+  @apply rounded-[20px] border border-border bg-white p-5;
+}
+.pdp-avatar {
+  @apply grid h-[42px] w-[42px] place-items-center rounded-full text-[12px] font-black text-white;
+}
+.pdp-helpful {
+  @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-bold
+         text-muted transition hover:bg-bg hover:text-ink;
+}
+.pdp-helpful.is-active { @apply bg-ink text-white hover:bg-ink hover:text-white; }
+
+/* Info cards */
+.pdp-info-card {
+  @apply rounded-[20px] border border-border bg-bg p-5;
+}
+.pdp-info-card i { @apply text-[24px] text-ink; }
+.pdp-info-card h3 { @apply mt-3 text-[13px] font-black; }
+.pdp-info-card ul { @apply mt-3 space-y-2 text-[11px] leading-6 text-[#4a5450]; }
+.pdp-info-card li { @apply flex items-start gap-2; }
+.pdp-info-card li::before {
+  content: "";
+  @apply mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ink;
+}
+
+/* Recent */
+.recent-card {
+  @apply flex flex-col rounded-[18px] border border-border bg-white p-2.5 transition
+         hover:-translate-y-1 hover:shadow-soft hover:border-[#cbd0c9];
+}
+.recent-cover {
+  @apply grid min-h-[100px] place-items-center rounded-[12px] bg-gradient-to-br p-2
+         text-center text-[10px] font-black text-white leading-snug;
+}
+
+/* Modal نظردهی */
+.review-modal {
+  @apply w-full max-w-lg rounded-t-[24px] bg-white shadow-soft
+         sm:rounded-[24px] max-h-[92vh] overflow-y-auto;
+}
+.review-stars {
+  @apply flex items-center gap-1;
+}
+.review-stars button {
+  @apply grid h-[36px] w-[36px] place-items-center rounded-[10px] text-[22px]
+         text-muted transition hover:text-[#f0b429];
+}
+.review-stars button i { @apply transition; }
+.review-stars button i.ri-star-fill { @apply text-[#f0b429]; }
+
+/* احترام به reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pdp-main,
+  .pdp-thumb,
+  .recent-card,
+  .pdp-review {
+    transition: none !important;
+  }
+  .pdp-thumb:hover,
+  .recent-card:hover { transform: none !important; }
+}

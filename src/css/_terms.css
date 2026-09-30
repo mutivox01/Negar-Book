@@ -1,0 +1,125 @@
+/* ===== Terms Page ===== */
+
+.terms-sidebar {
+  @apply space-y-4 lg:sticky lg:top-[104px] lg:h-fit;
+}
+
+.terms-toc {
+  @apply rounded-[18px] border border-border bg-white p-4;
+}
+.terms-toc-title {
+  @apply mb-3 text-[10px] font-black uppercase tracking-wider text-muted;
+}
+.terms-toc-item {
+  @apply flex items-center gap-2 rounded-[10px] px-2.5 py-2 text-[11px] font-bold
+         text-muted transition hover:bg-bg hover:text-ink;
+}
+.terms-toc-item i {
+  @apply text-[13px] text-muted/60 transition;
+}
+.terms-toc-item.is-active {
+  @apply bg-ink text-white;
+}
+.terms-toc-item.is-active i { @apply text-accent; }
+
+.terms-actions {
+  @apply grid grid-cols-2 gap-2;
+}
+.terms-action {
+  @apply inline-flex items-center justify-center gap-2 rounded-[11px] border border-border
+         bg-white px-3 py-2.5 text-[10px] font-bold text-muted transition
+         hover:border-ink hover:text-ink;
+}
+.terms-action i { @apply text-[14px]; }
+
+.terms-help {
+  @apply rounded-[18px] bg-ink p-5 text-white;
+}
+
+/* Block */
+.terms-block {
+  @apply mb-4 rounded-[22px] border border-border bg-white p-5 sm:p-7
+         transition scroll-mt-28;
+}
+.terms-block:hover {
+  @apply border-[#cbd0c9];
+}
+.terms-block.hidden { @apply hidden; }
+
+.terms-block-head {
+  @apply mb-4 flex items-center gap-3 border-b border-dashed border-border pb-4;
+}
+.terms-block-icon {
+  @apply grid h-[42px] w-[42px] shrink-0 place-items-center rounded-[13px]
+         bg-bg text-[19px] text-ink;
+}
+.terms-block-head h2 {
+  @apply text-[clamp(15px,1.8vw,17px)] font-black tracking-[-.02em];
+}
+
+.terms-block-body > * + * { @apply mt-3; }
+
+.terms-p {
+  @apply text-[12px] leading-[2.2] text-[#4a5450];
+}
+
+.terms-list {
+  @apply space-y-2.5;
+}
+.terms-list li {
+  @apply flex items-start gap-2.5 text-[12px] leading-[2] text-[#4a5450];
+}
+.terms-list li i {
+  @apply mt-1 text-[13px] text-[#2e7d55] shrink-0;
+}
+.terms-list li span { @apply flex-1; }
+
+/* Versions */
+.terms-version {
+  @apply rounded-[20px] border border-border bg-white p-5 transition
+         hover:border-ink;
+}
+.terms-version-badge {
+  @apply rounded-full bg-bg px-2.5 py-1 text-[10px] font-black text-ink;
+}
+.terms-version-current {
+  @apply rounded-full bg-accent px-2.5 py-1 text-[9px] font-black text-ink;
+}
+
+/* ===== Wishlist Page ===== */
+
+.wish-card {
+  @apply relative rounded-[22px] transition;
+}
+.wish-card.is-selected {
+  @apply ring-2 ring-ink ring-offset-2 ring-offset-bg;
+}
+
+/* Checkbox در کارت */
+.wish-check {
+  @apply absolute top-3 left-3 z-[3] cursor-pointer;
+}
+.wish-checkbox { @apply sr-only; }
+.wish-checkmark {
+  @apply grid h-[26px] w-[26px] place-items-center rounded-full border-2 border-white/70
+         bg-white/20 text-white backdrop-blur-sm transition;
+}
+.wish-checkmark i {
+  @apply text-[14px] opacity-0 transition;
+}
+.wish-checkbox:checked + .wish-checkmark {
+  @apply bg-ink border-ink;
+}
+.wish-checkbox:checked + .wish-checkmark i {
+  @apply opacity-100 text-accent;
+}
+
+/* اگر با sr-only مشکل داشت */
+.wish-checkbox { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .terms-toc-item, .terms-block, .terms-version, .wish-card {
+    transition: none !important;
+  }
+}

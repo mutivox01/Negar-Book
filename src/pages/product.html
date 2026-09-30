@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="درختی که روی ماه رشد کرد — اثر مریم رستگار | فروشگاه نِگار">
+  <title>درختی که روی ماه رشد کرد | نِگار</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+
+</head>
+
+<body class="bg-bg text-text antialiased">
+
+  <!-- Announcement -->
+  <div class="bg-ink text-white">
+    <div class="container-app flex items-center justify-center gap-2 py-2 text-xs sm:text-sm">
+      <i class="ri-truck-line text-accent"></i>
+      <span>ارسال رایگان برای سفارش‌های بالای ۹۰۰ هزار تومان</span>
+    </div>
+  </div>
+
+  <!-- Header (کپی از index) -->
+  <header class="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app">
+      <div class="flex h-20 items-center gap-4">
+        <button class="icon-btn lg:hidden" data-mobile-open aria-label="باز کردن منو">
+          <i class="ri-menu-4-line text-xl"></i>
+        </button>
+
+        <a href="../index.html" class="inline-flex shrink-0 items-center gap-2.5 text-ink" aria-label="صفحه اصلی">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+
+        <div class="hidden flex-1 lg:block">
+          <div class="search-box">
+            <i class="ri-search-2-line"></i>
+            <input id="searchInput" type="search" autocomplete="off"
+              placeholder="نام کتاب، نویسنده یا موضوع را جست‌وجو کنید">
+            <kbd>Ctrl K</kbd>
+            <div id="searchSuggestions" class="absolute top-[54px] right-0 left-0 z-20 border border-border rounded-[18px] bg-white p-2 shadow-soft hidden"></div>
+          </div>
+        </div>
+
+        <nav class="hidden items-center gap-1 xl:flex">
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./category.html">دسته‌بندی‌ها</a>
+          <button class="flex items-center gap-1 px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" data-mega-toggle>
+            فروشگاه <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="../index.html#offers">پیشنهادهای ویژه</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="../index.html#blog">مجله نِگار</a>
+        </nav>
+
+        <div class="mr-auto flex items-center gap-2">
+          <button class="icon-btn hidden sm:grid" aria-label="جست‌وجو" data-search-focus>
+            <i class="ri-search-line"></i>
+          </button>
+          <button class="icon-btn" aria-label="علاقه‌مندی‌ها">
+            <i class="ri-heart-3-line"></i>
+            <span class="counter">3</span>
+          </button>
+          <button class="icon-btn" aria-label="سبد خرید" data-cart-toggle>
+            <i class="ri-shopping-bag-3-line"></i>
+            <span class="counter">2</span>
+          </button>
+          <a href="./login.html" class="hidden h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold md:flex">
+            <i class="ri-user-3-line"></i>
+            <span>ورود / ثبت‌نام</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mega menu -->
+      <div id="megaMenu" class="hidden border-t border-border py-6 pb-8">
+        <div class="grid gap-8 md:grid-cols-4">
+          <div>
+            <p class="mb-2.5 text-xs font-black">کتاب و ادبیات</p>
+            <a href="./category.html#fiction" class="menu-item">رمان و داستان</a>
+            <a href="./category.html#poetry" class="menu-item">شعر</a>
+            <a href="#" class="menu-item">کلاسیک</a>
+            <a href="#" class="menu-item">نمایشنامه</a>
+          </div>
+          <div>
+            <p class="mb-2.5 text-xs font-black">دانش و توسعه</p>
+            <a href="./category.html#psychology" class="menu-item">روان‌شناسی</a>
+            <a href="./category.html#business" class="menu-item">کسب‌وکار</a>
+            <a href="#" class="menu-item">فلسفه</a>
+            <a href="#" class="menu-item">تاریخ و جامعه</a>
+          </div>
+          <div>
+            <p class="mb-2.5 text-xs font-black">کودک و نوجوان</p>
+            <a href="./category.html#kids" class="menu-item">داستان کودک</a>
+            <a href="#" class="menu-item">نوجوان</a>
+            <a href="#" class="menu-item">کمیک</a>
+            <a href="#" class="menu-item">آموزشی</a>
+          </div>
+          <div class="rounded-3xl bg-ink p-6 text-white">
+            <span class="mb-3 inline-flex rounded-full bg-white/10 px-3 py-1 text-xs">منتخب هفته</span>
+            <h3 class="text-xl font-black leading-8">کتاب‌هایی برای شروع یک فصل تازه</h3>
+            <p class="mt-2 text-sm leading-6 text-white/60">انتخاب سردبیر نِگار از میان تازه‌های نشر.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div id="mobileOverlay" class="fixed inset-0 z-[60] hidden bg-black/40 backdrop-blur-sm" data-mobile-close></div>
+  <aside id="mobileDrawer"
+    class="fixed top-0 right-0 bottom-0 z-[70] w-[min(340px,90vw)] translate-x-[105%]
+           bg-white shadow-[-20px_0_60px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <span class="font-black">منوی نِگار</span>
+      <button class="icon-btn" data-mobile-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="p-5">
+      <div class="search-box mb-6">
+        <i class="ri-search-2-line"></i>
+        <input type="search" placeholder="جست‌وجو در نِگار">
+      </div>
+      <a class="drawer-link" href="./shop.html">فروشگاه <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./category.html">دسته‌بندی‌ها <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="../index.html#offers">پیشنهادهای ویژه <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="../index.html#blog">مجله نِگار <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./account.html">حساب کاربری <i class="ri-arrow-left-s-line"></i></a>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- ==================== Breadcrumb ==================== -->
+    <section class="container-app pt-6">
+      <nav class="flex flex-wrap items-center gap-2 text-[10px] text-muted" aria-label="مسیر صفحه">
+        <a href="../index.html" class="hover:text-ink">خانه</a>
+        <i class="ri-arrow-left-s-line"></i>
+        <a href="./category.html" class="hover:text-ink">دسته‌بندی‌ها</a>
+        <i class="ri-arrow-left-s-line"></i>
+        <a href="./category.html#fiction" class="hover:text-ink">رمان و داستان</a>
+        <i class="ri-arrow-left-s-line"></i>
+        <span class="text-ink font-bold">درختی که روی ماه رشد کرد</span>
+      </nav>
+    </section>
+
+    <!-- ==================== محصول اصلی ==================== -->
+    <section class="container-app pt-6">
+      <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-10">
+
+        <!-- ========== گالری ========== -->
+        <div class="lg:sticky lg:top-[104px] lg:h-fit">
+          <div class="pdp-gallery">
+
+            <!-- تصویر بزرگ -->
+            <div id="pdpMain" class="pdp-main bg-gradient-to-br from-[#aebca7] to-[#334c45]">
+              <span class="absolute top-4 right-4 z-[2] rounded-full bg-white/15 px-3 py-1.5 text-[10px] font-bold backdrop-blur-[10px]">
+                <i class="ri-flashlight-line"></i> تازه
+              </span>
+              <button class="pdp-wish" aria-label="افزودن به علاقه‌مندی">
+                <i class="ri-heart-3-line"></i>
+              </button>
+              <button class="pdp-zoom" aria-label="بزرگنمایی">
+                <i class="ri-zoom-in-line"></i>
+              </button>
+
+              <div class="pdp-cover-content">
+                <div class="pdp-title-lines">درختی که<br>روی ماه رشد کرد</div>
+                <div class="pdp-author-lines">مریم رستگار</div>
+              </div>
+
+              <!-- Decorative -->
+              <div class="pointer-events-none absolute -bottom-12 -left-12 h-[220px] w-[220px] rounded-full border border-white/10" aria-hidden="true"></div>
+            </div>
+
+            <!-- تصاویر کوچک -->
+            <div class="pdp-thumbs">
+              <button class="pdp-thumb is-active bg-gradient-to-br from-[#aebca7] to-[#334c45]" data-thumb="0" aria-label="نمای ۱">
+                <span>جلد</span>
+              </button>
+              <button class="pdp-thumb bg-gradient-to-br from-[#8d98c5] to-[#2f3656]" data-thumb="1" aria-label="نمای ۲">
+                <span>پشت</span>
+              </button>
+              <button class="pdp-thumb bg-gradient-to-br from-[#c9827b] to-[#4a2828]" data-thumb="2" aria-label="نمای ۳">
+                <span>صفحه</span>
+              </button>
+              <button class="pdp-thumb bg-gradient-to-br from-[#e5b57c] to-[#8a5a20]" data-thumb="3" aria-label="نمای ۴">
+                <span>نویسنده</span>
+              </button>
+            </div>
+
+            <!-- Trust badges زیر گالری -->
+            <div class="mt-4 grid grid-cols-3 gap-2">
+              <div class="pdp-trust">
+                <i class="ri-shield-check-line"></i>
+                <small>اصالت کالا</small>
+              </div>
+              <div class="pdp-trust">
+                <i class="ri-truck-line"></i>
+                <small>ارسال سریع</small>
+              </div>
+              <div class="pdp-trust">
+                <i class="ri-refresh-line"></i>
+                <small>۷ روز بازگشت</small>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ========== اطلاعات ========== -->
+        <div class="pdp-info">
+
+          <!-- برند و عنوان -->
+          <div class="flex items-center gap-2 text-[10px]">
+            <a href="#" class="rounded-full bg-bg px-2.5 py-1 font-bold text-muted hover:text-ink">نشر چشمه</a>
+            <span class="rounded-full bg-accent/40 px-2.5 py-1 font-black text-ink">پرفروش</span>
+          </div>
+
+          <h1 class="mt-3 text-[clamp(22px,3.5vw,34px)] font-black leading-[1.3] tracking-[-.05em]">
+            درختی که روی ماه رشد کرد
+          </h1>
+
+          <p class="mt-2 text-[11px] text-muted">
+            نوشته <a href="#" class="font-bold text-ink underline decoration-dotted underline-offset-4">مریم رستگار</a>
+            · ترجمه‌ی <span class="text-ink">—</span>
+          </p>
+
+          <!-- امتیاز + نظرات -->
+          <div class="mt-4 flex flex-wrap items-center gap-4 text-[11px]">
+            <div class="flex items-center gap-1.5">
+              <div class="pdp-stars" aria-label="امتیاز ۴.۷ از ۵">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-fill"></i>
+              </div>
+              <b class="text-ink">۴.۷</b>
+              <span class="text-muted">(۱۲۴ نظر)</span>
+            </div>
+            <span class="hidden h-4 w-px bg-border sm:block"></span>
+            <span class="text-muted"><b class="text-ink">۲,۴۵۰</b> فروش موفق</span>
+          </div>
+
+          <!-- توضیح کوتاه -->
+          <p class="mt-5 text-[12px] leading-[2.1] text-[#4a5450]">
+            درختی که روی ماه رشد کرد، روایت شاعرانه‌ی زنی است که در میانه‌ی جدایی و آغاز،
+            ریشه‌هایش را در جایی می‌کاود که هیچ‌کس انتظار ندارد. رمانی درباره‌ی رشد، پذیرش و پیدا کردن نور
+            در تاریک‌ترین شب‌ها.
+          </p>
+
+          <!-- مشخصات کلیدی -->
+          <div class="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <div class="pdp-spec"><small>نوع جلد</small><b>شمیز</b></div>
+            <div class="pdp-spec"><small>تعداد صفحه</small><b>۲۸۸</b></div>
+            <div class="pdp-spec"><small>سال چاپ</small><b>۱۴۰۵</b></div>
+            <div class="pdp-spec"><small>زبان</small><b>فارسی</b></div>
+          </div>
+
+          <!-- باکس خرید -->
+          <div class="pdp-buy">
+            <div class="flex items-end justify-between gap-4">
+              <div>
+                <small class="block text-[10px] text-muted">قیمت</small>
+                <div class="mt-1 flex items-end gap-2">
+                  <b class="text-[26px] font-black text-ink">۲۸۹,۰۰۰</b>
+                  <small class="text-[10px] font-bold text-muted mb-1.5">تومان</small>
+                  <del class="mb-1.5 text-[11px] text-[#b0b5b2]">۳۲۰,۰۰۰</del>
+                  <span class="mb-1.5 rounded-full bg-danger/10 px-2 py-0.5 text-[10px] font-black text-danger">۱۰٪</span>
+                </div>
+              </div>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-accent/30 px-3 py-1.5 text-[10px] font-black text-ink">
+                <i class="ri-checkbox-circle-line"></i> موجود در انبار
+              </span>
+            </div>
+
+            <!-- Stepper + افزودن -->
+            <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div class="qty-stepper" id="pdpQty">
+                <button type="button" data-step="dec" aria-label="کاهش"><i class="ri-subtract-line"></i></button>
+                <span class="qty-value" id="pdpQtyValue">۱</span>
+                <button type="button" data-step="inc" aria-label="افزایش"><i class="ri-add-line"></i></button>
+              </div>
+              <button type="button" id="pdpAddCart"
+                class="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 rounded-[13px] bg-ink px-5 text-[12px] font-extrabold text-white hover:bg-[#0f1817] transition">
+                <i class="ri-shopping-bag-3-line"></i>
+                افزودن به سبد خرید
+              </button>
+            </div>
+
+            <!-- لینک علاقه‌مندی و اشتراک -->
+            <div class="mt-3 flex items-center gap-3 text-[11px]">
+              <button type="button" class="pdp-ghost-btn" id="pdpWishlist">
+                <i class="ri-heart-3-line"></i> افزودن به علاقه‌مندی
+              </button>
+              <button type="button" class="pdp-ghost-btn" id="pdpShare">
+                <i class="ri-share-forward-line"></i> اشتراک‌گذاری
+              </button>
+            </div>
+          </div>
+
+          <!-- مزیت‌ها -->
+          <ul class="mt-6 space-y-2.5 text-[11px] text-[#4a5450]">
+            <li class="flex items-start gap-2.5">
+              <i class="ri-truck-line mt-0.5 text-[15px] text-ink"></i>
+              <span>ارسال با پست پیشتاز — تحویل ۳ تا ۵ روز کاری</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="ri-gift-2-line mt-0.5 text-[15px] text-ink"></i>
+              <span>امکان کادوپیچ رایگان هنگام ارسال</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="ri-bookmark-3-line mt-0.5 text-[15px] text-ink"></i>
+              <span>۷ روز مهلت بازگشت در صورت عدم رضایت</span>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== تب‌ها ==================== -->
+    <section class="container-app pt-14 sm:pt-20">
+      <div class="pdp-tabs">
+        <div class="pdp-tablist" role="tablist">
+          <button class="pdp-tab is-active" role="tab" data-tab="desc">معرفی کتاب</button>
+          <button class="pdp-tab" role="tab" data-tab="specs">مشخصات</button>
+          <button class="pdp-tab" role="tab" data-tab="reviews">نظرات کاربران <span class="pdp-badge">۱۲۴</span></button>
+          <button class="pdp-tab" role="tab" data-tab="shipping">ارسال و بازگشت</button>
+        </div>
+
+        <!-- معرفی -->
+        <div class="pdp-panel is-active" data-panel="desc">
+          <div class="prose-app">
+            <p>
+              «درختی که روی ماه رشد کرد» رمانی است درباره‌ی جست‌وجویی طولانی، درباره‌ی زنی که پس از
+              یک فروپاشی عاطفی، به روستایی دورافتاده پناه می‌برد و در آنجا کشف می‌کند که ریشه‌ها همیشه
+              در خاک نیستند. گاهی در سکوت شب، گاهی در خاطره‌ی یک بوی آشنا، و گاهی در رویاهای یک کودک
+              شکل می‌گیرند.
+            </p>
+            <p>
+              مریم رستگار با زبانی شاعرانه و تصویرساز، جهانی می‌سازد که در آن تنهایی، سوگ و
+              دوباره‌شروع‌کردن، در هم می‌آمیزند. اگر «کیمیاگر» و «ملت عشق» را دوست داشتید،
+              این کتاب شما را در همان مسیر نگه می‌دارد، با لحنی تازه و ایرانی.
+            </p>
+            <blockquote>
+              «مادرم می‌گفت درخت‌ها وقتی تنها می‌مانند، ریشه‌هایشان را به سمت ماه می‌فرستند.»
+            </blockquote>
+            <p>
+              کتاب در ۲۸۸ صفحه و با کاغذ بالکی، در قطع رقعی و جلد شمیز منتشر شده است.
+            </p>
+          </div>
+        </div>
+
+        <!-- مشخصات -->
+        <div class="pdp-panel" data-panel="specs">
+          <div class="grid gap-2 sm:grid-cols-2">
+            <div class="spec-row"><span>عنوان</span><b>درختی که روی ماه رشد کرد</b></div>
+            <div class="spec-row"><span>نویسنده</span><b>مریم رستگار</b></div>
+            <div class="spec-row"><span>ناشر</span><b>نشر چشمه</b></div>
+            <div class="spec-row"><span>دسته‌بندی</span><b>رمان و داستان</b></div>
+            <div class="spec-row"><span>سال انتشار</span><b>۱۴۰۵</b></div>
+            <div class="spec-row"><span>نوبت چاپ</span><b>۳</b></div>
+            <div class="spec-row"><span>تعداد صفحه</span><b>۲۸۸</b></div>
+            <div class="spec-row"><span>قطع</span><b>رقعی</b></div>
+            <div class="spec-row"><span>نوع جلد</span><b>شمیز</b></div>
+            <div class="spec-row"><span>زبان</span><b>فارسی</b></div>
+            <div class="spec-row"><span>شابک</span><b dir="ltr">978-600-1234-56-7</b></div>
+            <div class="spec-row"><span>وزن</span><b>۳۲۰ گرم</b></div>
+          </div>
+        </div>
+
+        <!-- نظرات -->
+        <div class="pdp-panel" data-panel="reviews">
+          <div class="grid gap-6 lg:grid-cols-[320px_1fr]">
+
+            <!-- خلاصه امتیاز -->
+            <div class="pdp-rating-box">
+              <b class="text-[44px] font-black leading-none">۴.۷</b>
+              <div class="pdp-stars mt-2">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-fill"></i>
+              </div>
+              <small class="mt-2 block text-[10px] text-muted">از ۱۲۴ نظر ثبت‌شده</small>
+
+              <div class="mt-5 space-y-1.5 text-[10px]">
+                <div class="rating-bar"><span>۵ ستاره</span><div><i style="width:72%"></i></div><b>۸۹</b></div>
+                <div class="rating-bar"><span>۴ ستاره</span><div><i style="width:18%"></i></div><b>۲۲</b></div>
+                <div class="rating-bar"><span>۳ ستاره</span><div><i style="width:6%"></i></div><b>۸</b></div>
+                <div class="rating-bar"><span>۲ ستاره</span><div><i style="width:2%"></i></div><b>۳</b></div>
+                <div class="rating-bar"><span>۱ ستاره</span><div><i style="width:1%"></i></div><b>۲</b></div>
+              </div>
+
+              <button type="button" id="openReviewForm" class="mt-6 inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink hover:bg-[#e1fa87] transition">
+                <i class="ri-edit-line"></i> نوشتن نظر
+              </button>
+            </div>
+
+            <!-- لیست نظرات -->
+            <div class="space-y-4">
+              <article class="pdp-review">
+                <header class="flex items-start justify-between gap-3">
+                  <div class="flex items-center gap-3">
+                    <div class="pdp-avatar bg-gradient-to-br from-[#87927a] to-[#3b4a3f]">س.م</div>
+                    <div>
+                      <b class="text-[11px]">سارا محمدی</b>
+                      <div class="mt-1 flex items-center gap-2 text-[9px] text-muted">
+                        <span class="pdp-stars pdp-stars--sm">
+                          <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                          <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </span>
+                        <span>· خرید تأییدشده</span>
+                      </div>
+                    </div>
+                  </div>
+                  <small class="text-[9px] text-muted">۲ روز پیش</small>
+                </header>
+                <p class="mt-3 text-[11px] leading-[2] text-[#4a5450]">
+                  یکی از قشنگ‌ترین رمان‌هایی که امسال خوندم. زبان نویسنده خیلی شاعرانه است
+                  و آدم رو تا آخرین صفحه نگه می‌داره. بخش‌های مربوط به خاطرات مادر،
+                  واقعاً منو تحت تأثیر گذاشت.
+                </p>
+                <div class="mt-3 flex items-center gap-4 text-[10px] text-muted">
+                  <button class="pdp-helpful"><i class="ri-thumb-up-line"></i> مفید بود (۱۲)</button>
+                  <button class="pdp-helpful"><i class="ri-chat-3-line"></i> پاسخ</button>
+                </div>
+              </article>
+
+              <article class="pdp-review">
+                <header class="flex items-start justify-between gap-3">
+                  <div class="flex items-center gap-3">
+                    <div class="pdp-avatar bg-gradient-to-br from-[#c0a17a] to-[#5a3f27]">ا.ر</div>
+                    <div>
+                      <b class="text-[11px]">امیر رضایی</b>
+                      <div class="mt-1 flex items-center gap-2 text-[9px] text-muted">
+                        <span class="pdp-stars pdp-stars--sm">
+                          <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                          <i class="ri-star-fill"></i><i class="ri-star-line"></i>
+                        </span>
+                        <span>· خرید تأییدشده</span>
+                      </div>
+                    </div>
+                  </div>
+                  <small class="text-[9px] text-muted">۱ هفته پیش</small>
+                </header>
+                <p class="mt-3 text-[11px] leading-[2] text-[#4a5450]">
+                  کیفیت چاپ و کاغذ خیلی خوبه. داستان هم روان و جذاب. فقط به نظرم
+                  می‌تونست یک مقدار کوتاه‌تر باشه. با این حال ارزش خوندن داره.
+                </p>
+                <div class="mt-3 flex items-center gap-4 text-[10px] text-muted">
+                  <button class="pdp-helpful"><i class="ri-thumb-up-line"></i> مفید بود (۶)</button>
+                  <button class="pdp-helpful"><i class="ri-chat-3-line"></i> پاسخ</button>
+                </div>
+              </article>
+
+              <button type="button" id="loadMoreReviews" class="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[13px] border border-border bg-white text-[11px] font-extrabold text-ink hover:bg-bg transition">
+                مشاهده همه نظرات (۱۲۴)
+                <i class="ri-arrow-down-s-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ارسال و بازگشت -->
+        <div class="pdp-panel" data-panel="shipping">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="pdp-info-card">
+              <i class="ri-truck-line"></i>
+              <h3>روش‌های ارسال</h3>
+              <ul>
+                <li>پست پیشتاز — تحویل ۳ تا ۵ روز کاری (۳۵,۰۰۰ تومان)</li>
+                <li>پیک سریع — تحویل ۲۴ ساعته (فقط تهران، ۷۵,۰۰۰ تومان)</li>
+                <li>تحویل حضوری — از خیابان کتاب، پلاک ۲۴ (رایگان)</li>
+                <li>ارسال رایگان برای سفارش‌های بالای ۹۰۰,۰۰۰ تومان</li>
+              </ul>
+            </div>
+            <div class="pdp-info-card">
+              <i class="ri-refresh-line"></i>
+              <h3>شرایط بازگشت</h3>
+              <ul>
+                <li>۷ روز مهلت بازگشت از تاریخ تحویل</li>
+                <li>کتاب باید در بسته‌بندی اصلی و سالم باشد</li>
+                <li>هزینه ارسال بازگشت به عهده‌ی خریدار است</li>
+                <li>مبلغ حداکثر تا ۴۸ ساعت پس از تأیید بازگشت واریز می‌شود</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== محصولات مشابه ==================== -->
+    <section class="container-app pt-14 sm:pt-20">
+      <div class="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <span class="section-kicker">شاید بپسندید</span>
+          <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">کتاب‌های مشابه</h2>
+        </div>
+        <a href="./shop.html" class="inline-flex items-center gap-2 text-[11px] font-extrabold text-[#5f6965] hover:text-ink">
+          مشاهده همه <i class="ri-arrow-left-line"></i>
+        </a>
+      </div>
+
+      <div id="relatedGrid" class="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-[18px]">
+        <!-- JS -->
+      </div>
+    </section>
+
+    <!-- ==================== اخیراً دیده‌شده‌ها ==================== -->
+    <section class="container-app pt-14 sm:pt-20">
+      <div class="rounded-[28px] border border-border bg-white p-6 sm:p-8">
+        <div class="mb-5 flex items-center justify-between">
+          <h2 class="text-[15px] font-black">اخیراً دیده‌اید</h2>
+          <button type="button" class="text-[11px] font-bold text-muted hover:text-ink">پاک کردن</button>
+        </div>
+        <div id="recentGrid" class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          <!-- JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-14 bg-ink text-white sm:mt-20">
+    <div class="container-app grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div>
+        <a href="../index.html" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-[#aeb8b3]">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-7 text-white/55">
+          فروشگاهی برای کسانی که کتاب را فقط یک محصول نمی‌دانند؛ یک تجربه می‌دانند.
+        </p>
+        <div class="mt-5 flex gap-[7px]">
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-instagram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-telegram-line"></i></a>
+          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-twitter-x-line"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">خرید</h3>
+        <a href="./shop.html" class="my-2 block text-[10px] text-[#aeb8b3]">همه کتاب‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تازه‌های نشر</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پرفروش‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تخفیف‌ها</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">راهنما</h3>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">شیوه ارسال</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پیگیری سفارش</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">سوالات متداول</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تماس با ما</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">با ما در ارتباط باش</h3>
+        <p class="text-sm leading-7 text-white/55">تهران، خیابان کتاب، پلاک ۲۴</p>
+        <p class="mt-2 text-sm text-white/75">۰۲۱-۱۲۳۴۵۶۷۸</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-app flex flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:justify-between">
+        <span>© ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.</span>
+        <span>طراحی شده برای تجربه‌ای ساده‌تر از خرید کتاب.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div id="cartPanel" class="fixed top-0 right-0 bottom-0 z-[80] flex w-[min(390px,92vw)] translate-x-[105%] flex-col bg-white shadow-[-20px_0_70px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <div><b class="text-lg">سبد خرید</b><span class="mr-2 text-xs text-muted">۲ کالا</span></div>
+      <button class="icon-btn" data-cart-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="space-y-3 p-5">
+      <div class="flex items-center gap-3 rounded-2xl border border-border p-2">
+        <div class="mini-cover flex-[0_0_58px] !min-h-[78px] bg-[#657c71]">روایت<br>یک زندگی</div>
+        <div><b class="block text-[10px]">روایت یک زندگی</b><span class="mt-1.5 block text-[9px] text-[#909895]">۲۷۵,۰۰۰ تومان</span></div>
+      </div>
+      <div class="flex items-center gap-3 rounded-2xl border border-border p-2">
+        <div class="mini-cover flex-[0_0_58px] !min-h-[78px] bg-[#98785a]">فلسفه<br>برای زندگی</div>
+        <div><b class="block text-[10px]">فلسفه برای زندگی</b><span class="mt-1.5 block text-[9px] text-[#909895]">۳۲۰,۰۰۰ تومان</span></div>
+      </div>
+    </div>
+    <div class="mt-auto border-t border-border p-5">
+      <div class="mb-4 flex justify-between"><span>جمع کل</span><b>۵۹۵,۰۰۰ تومان</b></div>
+      <a href="./cart.html" class="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink">
+        مشاهده سبد خرید
+      </a>
+    </div>
+  </div>
+  <div id="cartOverlay" class="fixed inset-0 z-[55] hidden bg-black/30" data-cart-close></div>
+
+  <!-- Modal نظردهی -->
+  <div id="reviewModal" class="fixed inset-0 z-[90] hidden items-end justify-center bg-black/40 p-0 backdrop-blur-sm sm:items-center sm:p-4">
+    <div class="review-modal">
+      <header class="flex items-center justify-between border-b border-border p-5">
+        <b class="text-sm font-black">نوشتن نظر</b>
+        <button class="icon-btn" data-review-close><i class="ri-close-line"></i></button>
+      </header>
+      <form id="reviewForm" class="space-y-4 p-5">
+        <div>
+          <label class="mb-2 block text-[11px] font-black">امتیاز شما</label>
+          <div class="review-stars" id="reviewStars">
+            <button type="button" data-star="1" aria-label="۱ ستاره"><i class="ri-star-line"></i></button>
+            <button type="button" data-star="2" aria-label="۲ ستاره"><i class="ri-star-line"></i></button>
+            <button type="button" data-star="3" aria-label="۳ ستاره"><i class="ri-star-line"></i></button>
+            <button type="button" data-star="4" aria-label="۴ ستاره"><i class="ri-star-line"></i></button>
+            <button type="button" data-star="5" aria-label="۵ ستاره"><i class="ri-star-line"></i></button>
+          </div>
+          <input type="hidden" name="rating" id="ratingValue" value="0">
+        </div>
+        <div class="field">
+          <label for="reviewText">نظر شما <span class="text-danger">*</span></label>
+          <textarea id="reviewText" rows="4" placeholder="تجربه‌تان از خواندن این کتاب را بنویسید..." required></textarea>
+          <small class="error"></small>
+        </div>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <div class="field">
+            <label for="reviewName">نام <span class="text-danger">*</span></label>
+            <input id="reviewName" type="text" placeholder="مثلاً سارا" required>
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label for="reviewEmail">ایمیل <span class="text-[9px] font-medium text-muted">(اختیاری)</span></label>
+            <input id="reviewEmail" type="email" placeholder="you@example.com" dir="ltr" class="text-right">
+            <small class="error"></small>
+          </div>
+        </div>
+        <div class="flex gap-2 pt-2">
+          <button type="button" class="pdp-ghost-btn flex-1 justify-center" data-review-close>انصراف</button>
+          <button type="submit" class="inline-flex min-h-[46px] flex-1 items-center justify-center gap-2 rounded-[13px] bg-ink px-4 text-[12px] font-extrabold text-white hover:bg-[#0f1817] transition">
+            <i class="ri-send-plane-line"></i> ثبت نظر
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<script src="../js/product.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="سفارش شما با موفقیت ثبت شد — نِگار">
+  <title>سفارش ثبت شد | نِگار</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+</head>
+
+<body class="bg-bg text-text antialiased min-h-screen flex flex-col">
+
+  <!-- Header ساده -->
+  <header class="border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app flex h-20 items-center justify-between">
+      <a href="../index.html" class="inline-flex items-center gap-2.5 text-ink">
+        <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+        <span>
+          <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+          <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+        </span>
+      </a>
+
+      <a href="./shop.html" class="inline-flex h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold hover:bg-bg transition">
+        <i class="ri-store-2-line"></i>
+        <span>ادامه خرید</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container-app flex-1 py-8 sm:py-12">
+
+    <!-- ==================== Success Hero ==================== -->
+    <section class="success-wrap">
+
+      <!-- انیمیشن موفقیت -->
+      <div class="success-illustration">
+        <div class="success-ring success-ring--1"></div>
+        <div class="success-ring success-ring--2"></div>
+        <div class="success-check">
+          <i class="ri-check-line"></i>
+          <span class="success-pulse"></span>
+        </div>
+        <span class="success-confetti success-confetti--1"><i class="ri-gift-2-line"></i></span>
+        <span class="success-confetti success-confetti--2"><i class="ri-book-3-line"></i></span>
+        <span class="success-confetti success-confetti--3"><i class="ri-sparkling-2-line"></i></span>
+      </div>
+
+      <h1 class="success-title">سفارش شما با موفقیت ثبت شد!</h1>
+      <p class="success-desc">
+        ممنون از اعتمادت. یک ایمیل تأیید برای تو ارسال شد. می‌توانی سفارشت را از پنل کاربری پیگیری کنی.
+      </p>
+
+      <!-- Order code -->
+      <div class="success-code">
+        <span class="section-kicker">کد سفارش</span>
+        <b id="successCode" dir="ltr">NG-XXXXXX</b>
+        <button type="button" class="success-copy" id="copyCode" aria-label="کپی کد سفارش">
+          <i class="ri-file-copy-line"></i>
+        </button>
+      </div>
+
+      <!-- آمار -->
+      <div class="success-stats">
+        <div class="success-stat">
+          <i class="ri-money-dollar-circle-line"></i>
+          <small>مبلغ کل</small>
+          <b id="successTotal">۶۳۰,۰۰۰ تومان</b>
+        </div>
+        <div class="success-stat">
+          <i class="ri-bank-card-line"></i>
+          <small>شیوه پرداخت</small>
+          <b id="successPayment">پرداخت آنلاین</b>
+        </div>
+        <div class="success-stat">
+          <i class="ri-calendar-check-line"></i>
+          <small>تحویل تخمینی</small>
+          <b id="successEta">۱۴۰۵/۰۵/۱۶</b>
+        </div>
+        <div class="success-stat">
+          <i class="ri-truck-line"></i>
+          <small>شیوه ارسال</small>
+          <b id="successShipping">پست پیشتاز</b>
+        </div>
+      </div>
+
+      <!-- اکشن‌ها -->
+      <div class="success-actions">
+        <a href="./order-tracking.html" class="success-btn success-btn--primary">
+          <i class="ri-roadster-line"></i> پیگیری سفارش
+        </a>
+        <a href="./account.html#orders" class="success-btn success-btn--ghost">
+          <i class="ri-file-list-3-line"></i> سفارش‌های من
+        </a>
+        <a href="./shop.html" class="success-btn success-btn--ghost">
+          <i class="ri-store-2-line"></i> ادامه خرید
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== خلاصه سفارش ==================== -->
+    <section class="mt-10">
+      <div class="mb-5 flex items-center justify-between">
+        <div>
+          <span class="section-kicker">جزئیات</span>
+          <h2 class="text-[16px] font-black">خلاصه سفارش</h2>
+        </div>
+      </div>
+
+      <div class="grid gap-5 lg:grid-cols-[1.4fr_1fr]">
+
+        <!-- محصولات -->
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <div>
+              <span class="section-kicker">کالاها</span>
+              <h2 class="text-[14px] font-black">محصولات سفارش</h2>
+            </div>
+            <span class="text-[11px] text-muted" id="successItemsCount">۲ قلم</span>
+          </div>
+          <div id="successItems" class="space-y-3"></div>
+
+          <div class="mt-5 space-y-2 rounded-2xl bg-bg p-4 text-[11px]">
+            <div class="flex justify-between"><span class="text-muted">جمع کالاها</span><b id="successSubtotal">۵۹۵,۰۰۰ تومان</b></div>
+            <div class="flex justify-between"><span class="text-muted">هزینه ارسال</span><b id="successShippingCost">۳۵,۰۰۰ تومان</b></div>
+            <div class="flex justify-between border-t border-dashed border-border pt-2 text-[13px]">
+              <span class="font-black">مبلغ کل</span>
+              <b class="font-black" id="successGrandTotal">۶۳۰,۰۰۰ تومان</b>
+            </div>
+          </div>
+        </div>
+
+        <!-- اطلاعات -->
+        <div class="space-y-4">
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <div>
+                <span class="section-kicker">ارسال به</span>
+                <h2 class="text-[14px] font-black">آدرس تحویل</h2>
+              </div>
+            </div>
+            <p class="text-[11px] leading-7 text-[#4a5450]" id="successAddress">
+              تهران، خیابان ولیعصر، کوچه بهار، پلاک ۱۲، واحد ۳
+            </p>
+            <p class="mt-2 text-[10px] text-muted" id="successRecipient">
+              گیرنده: سارا محمدی — ۰۹۱۲۳۴۵۶۷۸۹
+            </p>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-head">
+              <div>
+                <span class="section-kicker">پشتیبانی</span>
+                <h2 class="text-[14px] font-black">کمکی لازم داری؟</h2>
+              </div>
+            </div>
+            <p class="text-[11px] leading-7 text-muted">
+              اگر سؤالی درباره سفارش داری، با پشتیبانی تماس بگیر. هر روز از ۹ تا ۲۱ آماده‌ی کمک هستیم.
+            </p>
+            <a href="./contact.html" class="mt-4 inline-flex min-h-[42px] w-full items-center justify-center gap-2 rounded-[12px] bg-ink px-4 text-[11px] font-extrabold text-white hover:bg-[#0f1817] transition">
+              <i class="ri-customer-service-2-line"></i> تماس با پشتیبانی
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== گام بعدی ==================== -->
+    <section class="mt-10">
+      <div class="rounded-[24px] bg-ink p-7 text-white sm:p-9">
+        <div class="grid gap-6 sm:grid-cols-3">
+          <div class="flex items-start gap-3">
+            <span class="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-[13px] bg-accent text-[18px] text-ink">
+              <i class="ri-mail-check-line"></i>
+            </span>
+            <div>
+              <b class="block text-[12px] font-black">ایمیل تأیید</b>
+              <p class="mt-1 text-[10px] leading-6 text-white/60">جزئیات سفارش به ایمیلت ارسال شد.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-[13px] bg-accent text-[18px] text-ink">
+              <i class="ri-box-3-line"></i>
+            </span>
+            <div>
+              <b class="block text-[12px] font-black">آماده‌سازی</b>
+              <p class="mt-1 text-[10px] leading-6 text-white/60">سفارش تا ۲۴ ساعت آینده بسته‌بندی می‌شود.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-[13px] bg-accent text-[18px] text-ink">
+              <i class="ri-truck-line"></i>
+            </span>
+            <div>
+              <b class="block text-[12px] font-black">ارسال</b>
+              <p class="mt-1 text-[10px] leading-6 text-white/60">کد رهگیری برایت پیامک می‌شود.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== پیشنهاد مکمل ==================== -->
+    <section class="mt-10">
+      <div class="mb-5 flex items-center justify-between">
+        <div>
+          <span class="section-kicker">شاید بپسندی</span>
+          <h2 class="text-[16px] font-black">پیشنهادهای مرتبط</h2>
+        </div>
+        <a href="./shop.html" class="text-[11px] font-extrabold text-muted hover:text-ink">
+          مشاهده همه <i class="ri-arrow-left-line"></i>
+        </a>
+      </div>
+
+      <div id="successSuggest" class="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-[18px]"></div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-14 bg-ink text-white sm:mt-20">
+    <div class="container-app grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div>
+        <a href="../index.html" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-[#aeb8b3]">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-7 text-white/55">
+          فروشگاهی برای کسانی که کتاب را فقط یک محصول نمی‌دانند؛ یک تجربه می‌دانند.
+        </p>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">خرید</h3>
+        <a href="./shop.html" class="my-2 block text-[10px] text-[#aeb8b3]">همه کتاب‌ها</a>
+        <a href="./offers.html" class="my-2 block text-[10px] text-[#aeb8b3]">پیشنهادهای ویژه</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">راهنما</h3>
+        <a href="./order-tracking.html" class="my-2 block text-[10px] text-[#aeb8b3]">پیگیری سفارش</a>
+        <a href="./faq.html" class="my-2 block text-[10px] text-[#aeb8b3]">سوالات متداول</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">ارتباط</h3>
+        <p class="text-sm text-white/75">۰۲۱-۱۲۳۴۵۶۷۸</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-app py-5 text-center text-xs text-white/40">
+        © ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.
+      </div>
+    </div>
+  </footer>
+
+  <!-- <script src="/src/js/main.js"></script> -->
+  <script src="/src/js/order-success.js"></script>
+</body>
+</html>

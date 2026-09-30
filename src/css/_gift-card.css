@@ -1,0 +1,228 @@
+/* ===== Gift Card Page ===== */
+
+/* Step cards */
+.gift-step {
+  @apply relative rounded-[22px] border border-border bg-white p-5 transition
+         hover:-translate-y-1 hover:shadow-soft;
+}
+.gift-step-num {
+  @apply absolute top-4 left-4 text-[28px] font-black leading-none text-accent/60;
+}
+.gift-step-icon {
+  @apply grid h-[48px] w-[48px] place-items-center rounded-[14px] bg-bg text-[22px] text-ink;
+}
+.gift-step h3 { @apply mt-3 text-[13px] font-black; }
+.gift-step p { @apply mt-1.5 text-[11px] leading-6 text-muted; }
+
+/* Form card */
+.gift-form-card {
+  @apply rounded-[26px] border border-border bg-white p-6 sm:p-8;
+}
+
+.gift-label {
+  @apply mb-3 block text-[11px] font-black;
+}
+
+/* Design grid */
+.gift-design-grid {
+  @apply grid grid-cols-4 gap-2 sm:grid-cols-6;
+}
+.gift-design {
+  @apply flex flex-col items-center gap-1.5 rounded-[14px] border-2 border-transparent p-2
+         transition hover:border-border;
+}
+.gift-design-swatch {
+  @apply relative grid h-[52px] w-full place-items-center overflow-hidden rounded-[10px];
+}
+.gift-design-emoji { @apply text-[18px]; }
+.gift-design small {
+  @apply text-[9px] font-bold text-muted;
+}
+.gift-design.is-active { @apply border-ink bg-bg; }
+.gift-design.is-active small { @apply text-ink; }
+
+/* Amount buttons */
+.gift-amount {
+  @apply rounded-[11px] border border-border bg-white px-3 py-2.5 text-[11px] font-bold
+         text-muted transition hover:border-ink hover:text-ink;
+}
+.gift-amount.is-active {
+  @apply bg-ink text-white border-ink;
+}
+
+/* When options */
+.gift-when { @apply space-y-2; }
+.gift-when-option {
+  @apply flex cursor-pointer items-center gap-3 rounded-[14px] border border-border bg-white
+         p-3.5 transition hover:border-[#cbd0c9];
+}
+.gift-when-option input { @apply sr-only; }
+.gift-when-radio {
+  @apply grid h-[20px] w-[20px] shrink-0 place-items-center rounded-full border-2 border-border
+         bg-white transition;
+}
+.gift-when-option.is-active { @apply border-ink bg-bg; }
+.gift-when-option.is-active .gift-when-radio { @apply border-ink bg-ink; }
+.gift-when-option.is-active .gift-when-radio::after {
+  content: "";
+  @apply block h-[6px] w-[6px] rounded-full bg-white;
+}
+.gift-when-option b { @apply block text-[12px] font-black; }
+.gift-when-option small { @apply mt-0.5 block text-[10px] text-muted; }
+
+/* Submit */
+.gift-submit {
+  @apply inline-flex min-h-[50px] w-full items-center justify-center gap-2 rounded-[13px]
+         bg-accent px-5 text-[12px] font-extrabold text-ink transition hover:bg-[#e1fa87];
+}
+
+/* Preview card */
+.gift-preview-label {
+  @apply mb-3 inline-flex items-center gap-1.5 rounded-full border border-border bg-white
+         px-3 py-1.5 text-[10px] font-black text-muted;
+}
+.gift-preview-label i { @apply text-[13px] text-accent-dark; }
+
+.gift-card {
+  @apply relative overflow-hidden rounded-[24px] p-6 text-white
+         shadow-[0_20px_50px_rgba(0,0,0,.15)] transition-[background-image] duration-500;
+  aspect-ratio: 1.6 / 1;
+}
+.gift-card-ornament {
+  @apply pointer-events-none absolute inset-0;
+}
+.gift-card-ornament::before {
+  content: "";
+  @apply absolute -top-16 -right-16 h-[200px] w-[200px] rounded-full border border-white/15;
+}
+.gift-card-ornament::after {
+  content: "";
+  @apply absolute -bottom-20 -left-10 h-[180px] w-[180px] rounded-full border border-white/10;
+}
+
+.gift-card-content {
+  @apply relative z-[2] flex h-full flex-col justify-between;
+}
+
+.gift-card-label {
+  @apply rounded-full border px-2.5 py-1 text-[9px] font-black;
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.2);
+  color: var(--gift-accent, #d7f36b);
+}
+
+.gift-card-center {
+  @apply my-3;
+}
+.gift-card-to {
+  @apply text-[9px] font-bold text-white/60;
+}
+.gift-card-to-name {
+  @apply mt-1 block text-[15px] font-black text-white;
+  color: var(--gift-accent, #d7f36b);
+}
+.gift-card-message {
+  @apply mt-2 line-clamp-3 text-[11px] leading-6 text-white/85 italic;
+}
+.gift-card-message.is-placeholder { @apply not-italic text-white/45; }
+
+.gift-card-foot {
+  @apply flex items-end justify-between gap-3 border-t border-white/15 pt-3;
+}
+.gift-card-amount-label,
+.gift-card-code-label {
+  @apply block text-[8px] font-bold text-white/55;
+}
+.gift-card-amount {
+  @apply mt-1 block text-[12px] font-black text-white;
+}
+.gift-card-code {
+  @apply mt-1 block font-mono text-[10px] font-black tracking-wider text-white/90;
+}
+
+/* Preview tips */
+.gift-preview-tips {
+  @apply mt-4 space-y-2;
+}
+.gift-preview-tip {
+  @apply flex items-start gap-2 rounded-[12px] border border-border bg-white p-3 text-[10px]
+         leading-6 text-muted;
+}
+.gift-preview-tip i { @apply mt-0.5 text-[13px] text-accent-dark shrink-0; }
+
+/* Popular design cards */
+.popular-card {
+  @apply relative overflow-hidden rounded-[20px] p-5 text-left text-white transition
+         hover:-translate-y-1 hover:shadow-soft;
+  aspect-ratio: 1 / 1.1;
+}
+.popular-card-emoji {
+  @apply text-[38px] leading-none;
+}
+.popular-card-info {
+  @apply absolute right-5 bottom-5 left-5;
+}
+.popular-card-info b {
+  @apply block text-[14px] font-black;
+  color: var(--color-accent);
+}
+.popular-card-info small {
+  @apply mt-1 block text-[10px] text-white/70;
+}
+
+/* Occasion cards */
+.occasion-card {
+  @apply flex flex-col gap-2 rounded-[22px] border border-border bg-white p-5 transition
+         hover:-translate-y-1 hover:shadow-soft;
+}
+.occasion-icon {
+  @apply grid h-[46px] w-[46px] place-items-center rounded-[14px] text-[20px];
+}
+.occasion-card h3 { @apply text-[13px] font-black; }
+.occasion-card p { @apply text-[11px] leading-6 text-muted; }
+
+/* Gift FAQ (details/summary) */
+.gift-faq { @apply space-y-2; }
+.gift-faq-item {
+  @apply overflow-hidden rounded-[18px] border border-border bg-white transition;
+}
+.gift-faq-item[open] { @apply border-ink shadow-soft; }
+.gift-faq-item summary {
+  @apply flex cursor-pointer items-center justify-between gap-3 p-4 text-[12px] font-bold
+         text-ink sm:p-5;
+  list-style: none;
+}
+.gift-faq-item summary::-webkit-details-marker { display: none; }
+.gift-faq-item summary i {
+  @apply grid h-[26px] w-[26px] shrink-0 place-items-center rounded-full border border-border
+         text-[14px] text-muted transition;
+}
+.gift-faq-item[open] summary i {
+  @apply bg-ink text-white border-ink;
+  transform: rotate(45deg);
+}
+.gift-faq-item p {
+  @apply border-t border-dashed border-border px-4 pb-5 pt-4 text-[11px] leading-[2]
+         text-[#4a5450] sm:px-5;
+}
+
+/* Line clamp */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .forgot-ring, .forgot-orb::after, .forgot-float, .forgot-success-pulse {
+    animation: none !important;
+  }
+  .gift-card, .gift-step, .occasion-card, .popular-card {
+    transition: none !important;
+  }
+  .gift-step:hover, .occasion-card:hover, .popular-card:hover {
+    transform: none !important;
+  }
+}

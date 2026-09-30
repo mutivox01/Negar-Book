@@ -1,0 +1,157 @@
+/* ===== Author Page ===== */
+
+/* Hero */
+.author-hero {
+  @apply relative overflow-hidden rounded-[28px] bg-ink p-6 text-white sm:rounded-[34px] sm:p-10;
+}
+.author-hero-inner {
+  @apply relative z-10;
+}
+
+.author-avatar-lg {
+  @apply relative grid h-[140px] w-[140px] shrink-0 place-items-center overflow-hidden
+         rounded-full bg-gradient-to-br from-[#87927a] to-[#3b4a3f]
+         text-[40px] font-black text-white shadow-[0_20px_50px_rgba(0,0,0,.35)]
+         ring-4 ring-white/10 sm:h-[160px] sm:w-[160px] sm:text-[46px];
+}
+.author-avatar-edit {
+  @apply absolute bottom-2 left-2 grid h-[34px] w-[34px] place-items-center rounded-full
+         bg-accent text-ink transition hover:bg-[#e1fa87];
+}
+
+.author-stat {
+  @apply flex flex-col items-center gap-1 rounded-[14px] border border-white/[.08] bg-white/[.03] p-3 text-center;
+}
+.author-stat b { @apply text-[15px] font-black text-accent; }
+.author-stat small { @apply text-[9px] text-white/60; }
+
+.author-follow-btn {
+  @apply inline-flex min-h-[46px] items-center gap-2 rounded-[13px] bg-accent px-5
+         text-[12px] font-extrabold text-ink transition hover:bg-[#e1fa87];
+}
+.author-follow-btn.is-active { @apply bg-ink text-white border border-white/20 hover:bg-[#0f1817]; }
+.author-follow-btn.is-active i { @apply text-accent; }
+
+.author-ghost-btn {
+  @apply inline-flex min-h-[46px] items-center gap-2 rounded-[13px] border border-white/20 px-5
+         text-[12px] font-extrabold text-white transition hover:bg-white/5;
+}
+
+/* Tabbar */
+.author-tabbar {
+  @apply flex items-center gap-1 overflow-x-auto rounded-[16px] border border-border bg-white p-2;
+}
+.author-tab {
+  @apply inline-flex items-center gap-2 whitespace-nowrap rounded-[12px] px-4 py-2.5 text-[11px]
+         font-extrabold text-muted transition hover:bg-bg hover:text-ink;
+}
+.author-tab i { @apply text-[15px]; }
+.author-tab.is-active { @apply bg-ink text-white; }
+.author-tab.is-active i { @apply text-accent; }
+
+/* Tag */
+.author-tag {
+  @apply inline-flex items-center rounded-full border border-border bg-white px-3 py-1.5
+         text-[10px] font-bold text-muted transition hover:border-ink hover:text-ink;
+}
+
+/* Info card */
+.author-info-card {
+  @apply rounded-[22px] border border-border bg-white p-5;
+}
+
+/* Social link */
+.social-link {
+  @apply flex items-center gap-2.5 rounded-[12px] border border-border bg-white p-3
+         text-[11px] font-bold text-ink transition hover:border-ink;
+}
+.social-link i { @apply text-[17px] text-muted; }
+.social-link:hover i { @apply text-ink; }
+
+/* CTA card */
+.author-cta-card {
+  @apply rounded-[22px] bg-ink p-5 text-white;
+}
+
+/* Quote cards */
+.quote-card {
+  @apply relative rounded-[22px] border border-border bg-white p-6 transition
+         hover:-translate-y-1 hover:shadow-soft;
+}
+.quote-card--accent { @apply bg-accent border-accent; }
+.quote-icon {
+  @apply text-[28px] text-accent/40;
+}
+.quote-card--accent .quote-icon { @apply text-ink/30; }
+.quote-text {
+  @apply mt-3 text-[13px] leading-[2.1] text-ink italic;
+}
+.quote-card footer {
+  @apply mt-4 flex items-center justify-between border-t border-dashed border-border pt-3 text-[10px];
+}
+.quote-card--accent footer { @apply border-ink/20; }
+.quote-card footer b { @apply font-black; }
+.quote-card footer small { @apply text-muted; }
+.quote-card--accent footer small { @apply text-ink/60; }
+
+/* Event card */
+.event-card {
+  @apply flex flex-col gap-4 rounded-[22px] border border-border bg-white p-5
+         transition hover:border-[#cbd0c9] sm:flex-row sm:items-center;
+}
+.event-date {
+  @apply flex flex-col items-center justify-center gap-0.5 rounded-[16px] bg-bg px-5 py-3 text-center sm:shrink-0;
+}
+.event-date b { @apply text-[22px] font-black text-ink; }
+.event-date small { @apply text-[9px] text-muted; }
+.event-date--accent { @apply bg-accent; }
+.event-date--accent b { @apply text-ink; }
+
+.event-body { @apply min-w-0 flex-1; }
+.event-body h3 { @apply mt-2 text-[13px] font-black leading-6; }
+.event-body p { @apply mt-1 text-[11px] text-muted; }
+
+.event-tag {
+  @apply inline-flex items-center gap-1.5 rounded-full bg-bg px-2.5 py-1 text-[10px] font-bold text-ink;
+}
+.event-tag i { @apply text-[13px]; }
+.event-tag--accent { @apply bg-accent/30; }
+
+.event-action {
+  @apply inline-flex min-h-[42px] shrink-0 items-center gap-2 rounded-[12px] bg-ink px-4
+         text-[11px] font-extrabold text-white transition hover:bg-[#0f1817] sm:self-center;
+}
+
+/* Review card */
+.author-review {
+  @apply rounded-[20px] border border-border bg-white p-5 transition hover:border-[#cbd0c9];
+}
+.author-review-avatar {
+  @apply grid h-[42px] w-[42px] shrink-0 place-items-center rounded-full text-[12px] font-black text-white;
+}
+
+/* Author mini card */
+.author-mini-card {
+  @apply flex flex-col items-center rounded-[22px] border border-border bg-white p-5 text-center
+         transition hover:-translate-y-1 hover:shadow-soft;
+}
+.author-mini-avatar {
+  @apply grid h-[70px] w-[70px] place-items-center rounded-full text-[18px] font-black text-white
+         shadow-[0_10px_25px_rgba(0,0,0,.1)];
+}
+
+/* Line clamp for excerpt */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .quote-card, .author-mini-card, .event-card {
+    transition: none !important;
+  }
+  .quote-card:hover, .author-mini-card:hover { transform: none !important; }
+}

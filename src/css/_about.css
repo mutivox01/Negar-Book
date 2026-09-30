@@ -1,0 +1,63 @@
+/* ===== About Page ===== */
+
+/* Stat cards */
+.stat-card {
+  @apply flex flex-col items-center gap-2 rounded-[20px] border border-border bg-white p-5 text-center
+         transition hover:-translate-y-1 hover:shadow-soft;
+}
+.stat-card i { @apply text-[24px] text-ink; }
+.stat-num {
+  @apply text-[clamp(20px,3vw,26px)] font-black tracking-[-.03em];
+}
+.stat-card small { @apply text-[10px] text-muted; }
+
+/* Timeline */
+.timeline {
+  @apply relative space-y-4 pr-7;
+}
+.timeline::before {
+  content: "";
+  @apply absolute top-2 bottom-2 right-[10px] w-px bg-border;
+}
+.timeline-item {
+  @apply relative;
+}
+.timeline-dot {
+  @apply absolute -right-[26px] top-1.5 grid h-[16px] w-[16px] place-items-center rounded-full
+         border-2 border-white bg-border shadow-[0_0_0_2px_var(--color-border)];
+}
+.timeline-item--active .timeline-dot {
+  @apply bg-accent border-accent shadow-[0_0_0_4px_rgba(215,243,107,.35)];
+}
+.timeline-body {
+  @apply rounded-[16px] border border-border bg-white p-4;
+}
+.timeline-year {
+  @apply inline-flex rounded-full bg-bg px-2.5 py-0.5 text-[10px] font-black text-ink;
+}
+.timeline-text {
+  @apply mt-2 text-[11px] leading-6 text-[#4a5450];
+}
+
+/* Value cards */
+.value-card {
+  @apply flex flex-col gap-3 rounded-[22px] border border-border bg-white p-5
+         transition hover:-translate-y-1 hover:shadow-soft;
+}
+.value-icon {
+  @apply grid h-[48px] w-[48px] place-items-center rounded-[15px] text-[22px];
+}
+.value-card h3 { @apply text-[13px] font-black; }
+.value-card p { @apply text-[11px] leading-6 text-muted; }
+
+/* Team */
+.team-card {
+  @apply flex flex-col items-center gap-2 rounded-[22px] border border-border bg-white p-5 text-center
+         transition hover:-translate-y-1 hover:shadow-soft;
+}
+.team-avatar {
+  @apply grid h-[78px] w-[78px] place-items-center rounded-full text-[22px] font-black text-white
+         shadow-[0_10px_25px_rgba(0,0,0,.1)];
+}
+.team-card b { @apply text-[12px] font-black; }
+.team-card small { @apply text-[10px] text-muted; }

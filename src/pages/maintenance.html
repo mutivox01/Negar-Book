@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="نِگار در حال بروزرسانی — چند دقیقه دیگر برمی‌گردیم">
+  <meta name="robots" content="noindex">
+  <title>در حال بروزرسانی | نِگار</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+</head>
+
+<body class="bg-bg text-text antialiased min-h-screen flex flex-col"
+      data-maintenance-end="2026-10-05T18:00:00">
+
+  <!-- Header ساده -->
+  <header class="border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app flex h-20 items-center justify-between">
+      <a href="../index.html" class="inline-flex items-center gap-2.5 text-ink">
+        <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+        <span>
+          <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+          <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+        </span>
+      </a>
+
+      <span class="inline-flex items-center gap-1.5 rounded-full bg-[#fdeee0] px-3 py-1.5 text-[10px] font-black text-[#a5622c]">
+        <span class="h-[7px] w-[7px] animate-pulse rounded-full bg-[#f0b429]"></span>
+        در حال تعمیر
+      </span>
+    </div>
+  </header>
+
+  <main class="container-app flex flex-1 items-center justify-center py-10">
+
+    <div class="maint-wrap">
+
+      <!-- ==================== Illustration ==================== -->
+      <div class="maint-illustration">
+        <div class="maint-ring"></div>
+        <div class="maint-ring maint-ring--2"></div>
+
+        <div class="maint-orb">
+          <i class="ri-tools-line"></i>
+          <span class="maint-orb-pulse"></span>
+        </div>
+
+        <span class="maint-float maint-float--1"><i class="ri-flashlight-line"></i></span>
+        <span class="maint-float maint-float--2"><i class="ri-settings-3-line"></i></span>
+        <span class="maint-float maint-float--3"><i class="ri-code-s-slash-line"></i></span>
+      </div>
+
+      <!-- ==================== متن ==================== -->
+      <div class="maint-head">
+        <span class="section-kicker">بروزرسانی بزرگ</span>
+        <h1 class="maint-title">
+          چند لحظه صبر کن،<br>
+          <span class="text-accent-dark">داریم بهتر می‌شویم.</span>
+        </h1>
+        <p class="maint-desc">
+          تیم فنی نِگار در حال ارتقای سیستم است تا تجربه‌ی خرید ساده‌تر و سریع‌تر شود.
+          به‌زودی برمی‌گردیم — با کلی قابلیت جدید.
+        </p>
+      </div>
+
+      <!-- ==================== شمارش معکوس ==================== -->
+      <div class="maint-countdown" id="countdown">
+        <div class="maint-count-box">
+          <b id="cdDays">۰۰</b>
+          <small>روز</small>
+        </div>
+        <span class="maint-count-sep">:</span>
+        <div class="maint-count-box">
+          <b id="cdHours">۰۰</b>
+          <small>ساعت</small>
+        </div>
+        <span class="maint-count-sep">:</span>
+        <div class="maint-count-box">
+          <b id="cdMinutes">۰۰</b>
+          <small>دقیقه</small>
+        </div>
+        <span class="maint-count-sep">:</span>
+        <div class="maint-count-box">
+          <b id="cdSeconds">۰۰</b>
+          <small>ثانیه</small>
+        </div>
+      </div>
+
+      <!-- ==================== پیشرفت ==================== -->
+      <div class="maint-progress-wrap">
+        <div class="flex items-center justify-between text-[10px] font-bold">
+          <span class="text-muted">
+            <i class="ri-loader-4-line inline-block animate-spin"></i>
+            در حال انجام: بهینه‌سازی پایگاه داده
+          </span>
+          <b id="progressLabel">۶۸٪</b>
+        </div>
+        <div class="maint-progress">
+          <div class="maint-progress-bar" id="progressBar" style="width: 68%"></div>
+        </div>
+      </div>
+
+      <!-- ==================== خبرنامه ==================== -->
+      <div class="maint-newsletter">
+        <h3 class="maint-newsletter-title">
+          <i class="ri-notification-3-line text-accent-dark"></i>
+          بهت خبر بدهیم وقتی برگشتیم؟
+        </h3>
+        <p class="maint-newsletter-desc">
+          ایمیلت را وارد کن تا به‌محض فعال شدن سایت، یک ایمیل برایت بفرستیم.
+        </p>
+        <form id="maintNewsletter" class="maint-newsletter-form">
+          <input type="email" placeholder="ایمیل شما" required>
+          <button type="submit">
+            <i class="ri-send-plane-line"></i>
+            خبرم کن
+          </button>
+        </form>
+        <p class="maint-newsletter-note">
+          <i class="ri-shield-check-line"></i>
+          ایمیلت امن است و هرگز اسپم نمی‌فرستیم.
+        </p>
+      </div>
+
+      <!-- ==================== راه‌های ارتباطی ==================== -->
+      <div class="maint-contact">
+        <a href="tel:02112345678" class="maint-contact-card">
+          <i class="ri-phone-line"></i>
+          <div>
+            <b>تماس تلفنی</b>
+            <small dir="ltr">۰۲۱-۱۲۳۴۵۶۷۸</small>
+          </div>
+        </a>
+        <a href="mailto:hello@negar.ir" class="maint-contact-card">
+          <i class="ri-mail-line"></i>
+          <div>
+            <b>ایمیل</b>
+            <small dir="ltr">hello@negar.ir</small>
+          </div>
+        </a>
+        <a href="#" class="maint-contact-card">
+          <i class="ri-telegram-line"></i>
+          <div>
+            <b>تلگرام</b>
+            <small>@negar_support</small>
+          </div>
+        </a>
+      </div>
+
+      <!-- ==================== آخرین وضعیت ==================== -->
+      <div class="maint-status">
+        <div class="maint-status-item is-done">
+          <i class="ri-check-line"></i>
+          <span>افزودن سیستم جدید پرداخت</span>
+        </div>
+        <div class="maint-status-item is-done">
+          <i class="ri-check-line"></i>
+          <span>به‌روزرسانی صفحه محصولات</span>
+        </div>
+        <div class="maint-status-item is-active">
+          <i class="ri-loader-4-line animate-spin"></i>
+          <span>بهینه‌سازی پایگاه داده</span>
+        </div>
+        <div class="maint-status-item">
+          <i class="ri-time-line"></i>
+          <span>افزودن قابلیت مقایسه پیشرفته</span>
+        </div>
+      </div>
+
+      <!-- ==================== شبکه‌های اجتماعی ==================== -->
+      <div class="maint-socials">
+        <span class="text-[10px] font-bold text-muted">ما را دنبال کنید:</span>
+        <a href="#" aria-label="اینستاگرام"><i class="ri-instagram-line"></i></a>
+        <a href="#" aria-label="تلگرام"><i class="ri-telegram-line"></i></a>
+        <a href="#" aria-label="توییتر"><i class="ri-twitter-x-line"></i></a>
+        <a href="#" aria-label="لینکدین"><i class="ri-linkedin-line"></i></a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="border-t border-border bg-white">
+    <div class="container-app flex flex-col items-center justify-between gap-3 py-5 text-[11px] text-muted sm:flex-row">
+      <span>© ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.</span>
+      <div class="flex items-center gap-4">
+        <a href="#" class="hover:text-ink">قوانین</a>
+        <a href="./faq.html" class="hover:text-ink">سوالات متداول</a>
+        <a href="./contact.html" class="hover:text-ink">تماس با ما</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- <script src="/src/js/main.js"></script> -->
+  <script src="/src/js/maintenance.js"></script>
+</body>
+</html>

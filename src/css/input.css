@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+@import "./_shop.css";
+@import "./_product.css";
+@import "./_errorPages.css";
+@import "./_checkout.css";
+@import "./_category.css";
+@import "./_cart.css";
+@import "./_about.css";
+@import "./_account.css";
+@import "./_admin.css";
+@import "./_author.css";
+@import "./_blog.css";
+@import "./_careers.css";
+@import "./_compare.css";
+@import "./_contact.css";
+@import "./_faq.css";
+@import "./_gift-card.css";
+@import "./_forget-password.css";
+ @import "./_login.css";
+ @import "./_newsletter.css";
+ @import "./_order-tracking.css";
+ @import "./_terms.css";
+
+@theme {
+  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #17211f;
+  --color-bg: #f7f7f3;
+  --color-surface: #ffffff;
+  --color-accent: #d7f36b;
+  --color-accent-dark: #a9c63d;
+  --color-text: #1c2724;
+  --color-muted: #78817e;
+  --color-border: #e7e9e4;
+  --color-danger: #e66d5b;
+
+  --radius-xl2: 28px;
+  --radius-lg2: 22px;
+  --radius-md2: 16px;
+
+  --shadow-soft: 0 16px 50px rgba(24, 36, 31, .07);
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-sans); }
+  button, input { font: inherit; }
+  button { cursor: pointer; }
+}
+
+@layer components {
+  /* فقط کلاس‌هایی که واقعاً به دلیل تکرار بالا، در @apply خلاصه شده‌اند */
+  .container-app { @apply w-[min(1180px,calc(100%-32px))] mx-auto; }
+  .icon-btn {
+    @apply relative grid place-items-center w-[42px] h-[42px] rounded-[13px]
+           bg-white border border-border text-ink transition
+           hover:-translate-y-px hover:border-[#cbd0c9];
+  }
+  .counter {
+    @apply absolute -top-1 -left-1 grid place-items-center min-w-[17px] h-[17px] px-1
+           rounded-full bg-ink text-white text-[9px];
+  }
+  .search-box {
+    @apply relative flex items-center h-[46px] rounded-[15px] bg-[#f8f9f6]
+           border border-border px-3.5 text-muted;
+  }
+  .search-box input {
+    @apply w-full outline-none border-0 bg-transparent px-2.5 text-text text-xs;
+  }
+  .search-box kbd {
+    @apply border border-border rounded-[7px] px-1.5 py-0.5 text-[9px] text-[#9aa09d];
+  }
+  .suggestion {
+    @apply flex justify-between px-3 py-2.5 rounded-xl text-xs hover:bg-bg;
+  }
+  .section-kicker {
+    @apply block mb-1.5 text-[#8d9793] text-[10px] font-extrabold tracking-[.08em];
+  }
+  .menu-item { @apply block py-1.5 text-muted text-[11px] hover:text-ink; }
+  .drawer-link {
+    @apply flex justify-between px-1 py-4 border-b border-border text-[13px] font-bold;
+  }
+  .product-cover {
+    @apply relative flex min-h-[330px] flex-col justify-end overflow-hidden
+           rounded-[22px] p-[23px] text-white shadow-[0_15px_35px_rgba(0,0,0,.08)];
+  }
+  .product-cover::after {
+    content: ""; @apply absolute inset-0 bg-gradient-to-b from-transparent from-45% to-black/35;
+  }
+  .wish {
+    @apply absolute top-3 left-3 z-[2] grid place-items-center w-[34px] h-[34px]
+           rounded-[11px] bg-white/15 text-white backdrop-blur-[10px];
+  }
+  .add-cart {
+    @apply mr-auto grid place-items-center w-[35px] h-[35px] rounded-[11px] bg-ink text-white;
+  }
+  .mini-cover {
+    @apply flex-[0_0_78px] grid place-items-center min-h-[105px] rounded-xl
+           text-white text-center text-[10px] font-black leading-relaxed;
+  }
+}
+
+/* Media queries کوچک که Tailwind به‌سختی پوشش می‌دهد و ارزش نگه‌داشتن دارد */
+@media (max-width: 700px) {
+  .container-app { width: min(100% - 22px, 1180px); }
+}
+
+
+
+
+
+
+
+
+
+

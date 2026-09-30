@@ -1,0 +1,96 @@
+/* ===== Compare Page ===== */
+
+.compare-wrapper { @apply rounded-[24px] border border-border bg-white overflow-hidden; }
+.compare-scroll { @apply overflow-x-auto; }
+
+.compare-grid {
+  @apply grid min-w-[720px] gap-0;
+  grid-template-columns: 140px repeat(calc(var(--cols) - 1), minmax(180px, 1fr));
+}
+
+.compare-cell {
+  @apply border-b border-border p-3 text-[11px];
+}
+.compare-cell--label {
+  @apply flex items-center bg-bg font-black text-muted;
+  border-left: 1px solid var(--color-border);
+}
+.compare-cell--value {
+  @apply relative flex items-center justify-center text-center font-bold;
+}
+.compare-cell--head {
+  @apply border-b border-border bg-white py-5;
+}
+
+.compare-head-label {
+  @apply flex flex-col items-center gap-1 text-[11px] font-black text-muted text-center w-full;
+}
+
+.compare-head { @apply flex flex-col items-center px-2 text-center relative; }
+
+.compare-remove {
+  @apply absolute top-0 left-0 grid h-[26px] w-[26px] place-items-center rounded-full
+         border border-border bg-white text-muted transition hover:border-danger hover:text-danger;
+}
+.compare-remove i { @apply text-[13px]; }
+
+.compare-cover {
+  @apply relative grid h-[110px] w-[80px] place-items-end overflow-hidden rounded-[12px] p-2 text-white;
+}
+.compare-cover-badge {
+  @apply absolute top-1.5 right-1.5 z-[2] rounded-full bg-white/20 px-1.5 py-0.5 text-[7px] font-black backdrop-blur-sm;
+}
+
+.compare-add-cart {
+  @apply inline-flex min-h-[34px] items-center gap-1.5 rounded-[10px] bg-ink px-3 text-[10px]
+         font-extrabold text-white transition hover:bg-[#0f1817];
+}
+
+.compare-cell--value.is-best {
+  @apply bg-accent/15 font-black text-ink;
+}
+
+.compare-best-badge {
+  @apply absolute top-2 left-2 text-[14px] text-accent-dark;
+}
+
+.compare-stock {
+  @apply inline-flex items-center gap-1 rounded-full bg-[#e0f4e8] px-2 py-0.5 text-[9px] font-black text-[#2e7d55];
+}
+.compare-stock::before {
+  content: "";
+  @apply h-[6px] w-[6px] rounded-full bg-[#2e7d55];
+}
+
+/* Compare tips */
+.compare-tip {
+  @apply flex items-start gap-3 rounded-[18px] border border-border bg-white p-4;
+}
+.compare-tip i { @apply text-[24px] text-accent-dark shrink-0; }
+.compare-tip b { @apply block text-[12px] font-black; }
+.compare-tip p { @apply mt-1 text-[10px] leading-6 text-muted; }
+
+/* Picker item */
+.picker-item {
+  @apply flex items-center gap-3 w-full rounded-[14px] border border-border bg-white p-3
+         transition hover:border-ink cursor-pointer;
+}
+.picker-item:hover { @apply shadow-soft; }
+
+/* Line clamp helper (اگر نبود) */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .perk-card, .job-card, .process-step, .compare-tip {
+    transition: none !important;
+  }
+  .perk-card:hover, .job-card:hover, .process-step:hover {
+    transform: none !important;
+  }
+}

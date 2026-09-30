@@ -1,0 +1,115 @@
+/* ===== Contact Page ===== */
+
+/* Contact cards (top) */
+.contact-card {
+  @apply flex flex-col gap-2 rounded-[22px] border border-border bg-white p-5 transition
+         hover:-translate-y-1 hover:shadow-soft hover:border-[#cbd0c9];
+}
+.contact-icon {
+  @apply grid h-[48px] w-[48px] place-items-center rounded-[14px] text-[22px];
+}
+.contact-card h3 { @apply text-[12px] font-black text-muted; }
+.contact-card p { @apply text-[13px] font-black text-ink break-words; }
+.contact-card small { @apply text-[10px] text-muted; }
+
+/* Contact form card */
+.contact-form-card {
+  @apply rounded-[26px] border border-border bg-white p-6 sm:p-8;
+}
+
+/* Checkbox */
+.checkbox-row {
+  @apply flex cursor-pointer select-none items-center gap-3 rounded-[12px] bg-bg p-3
+         text-[11px] font-bold text-[#4a5450] transition hover:bg-[#f0f2ec];
+}
+.checkbox-row input { @apply sr-only; }
+.checkbox-box {
+  @apply relative grid h-[18px] w-[18px] shrink-0 place-items-center rounded-[5px]
+         border-2 border-border bg-white transition;
+}
+.checkbox-row input:checked + .checkbox-box {
+  @apply bg-ink border-ink;
+}
+.checkbox-row input:checked + .checkbox-box::after {
+  content: "";
+  @apply h-[5px] w-[9px] border-b-2 border-l-2 border-white;
+  transform: rotate(-45deg) translate(1px, -2px);
+}
+
+/* Contact quick item (sidebar) */
+.contact-quick-item {
+  @apply flex items-center gap-3 rounded-[12px] border border-border bg-white p-3
+         transition hover:border-ink hover:bg-bg;
+}
+.contact-quick-item > i:first-child {
+  @apply grid h-[34px] w-[34px] shrink-0 place-items-center rounded-[10px] bg-bg text-[16px] text-ink;
+}
+.contact-quick-item b { @apply block text-[11px] font-black; }
+.contact-quick-item small { @apply mt-0.5 block text-[9px] text-muted; }
+
+/* Contact info card */
+.contact-info-card {
+  @apply rounded-[22px] border border-border bg-white p-5;
+}
+
+/* Social buttons */
+.social-btn {
+  @apply flex items-center justify-center gap-2 rounded-[12px] border border-border bg-white
+         px-3 py-2.5 text-[11px] font-bold text-muted transition hover:border-ink hover:text-ink;
+}
+.social-btn i { @apply text-[15px]; }
+
+/* Contact suggest */
+.contact-suggest {
+  @apply rounded-[22px] bg-ink p-5 text-white;
+}
+
+/* Map */
+.map-wrap {
+  @apply relative overflow-hidden rounded-[28px] border border-border bg-white;
+}
+.map-placeholder {
+  @apply relative grid min-h-[380px] place-items-center overflow-hidden
+         bg-gradient-to-br from-[#e7eae3] to-[#d4ddd2];
+}
+.map-grid {
+  @apply pointer-events-none absolute inset-0;
+  background-image:
+    linear-gradient(rgba(23,33,31,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23,33,31,.06) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+.map-marker {
+  @apply relative z-[2] grid h-[54px] w-[54px] place-items-center rounded-full
+         bg-danger text-[26px] text-white shadow-[0_15px_35px_rgba(230,109,91,.4)];
+}
+.map-marker-pulse {
+  @apply absolute inset-[-10px] rounded-full border-2 border-danger/40;
+  animation: mapPulse 2s ease-out infinite;
+}
+@keyframes mapPulse {
+  0% { transform: scale(.9); opacity: .9; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+.map-label {
+  @apply absolute bottom-4 left-1/2 z-[2] -translate-x-1/2 rounded-full bg-white px-3 py-1.5
+         text-[10px] font-black text-ink shadow-soft;
+}
+
+.map-info {
+  @apply grid gap-3 border-t border-border bg-white p-5 sm:grid-cols-3 sm:gap-4;
+}
+.map-info-item {
+  @apply flex items-start gap-3;
+}
+.map-info-item i {
+  @apply grid h-[36px] w-[36px] shrink-0 place-items-center rounded-[11px] bg-bg text-[17px] text-ink;
+}
+.map-info-item small { @apply block text-[10px] text-muted; }
+.map-info-item b { @apply mt-0.5 block text-[11px] font-black; }
+
+.map-cta {
+  @apply inline-flex items-center justify-center gap-2 rounded-[12px] bg-ink px-4 py-2.5
+         text-[11px] font-extrabold text-white transition hover:bg-[#0f1817] sm:col-span-3;
+}
+

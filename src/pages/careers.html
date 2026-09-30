@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="فرصت‌های شغلی نِگار — به تیم ما بپیوندید">
+  <title>فرصت‌های شغلی | نِگار</title>
+
+  <link rel="stylesheet" href="../../node_modules/remixicon/fonts/remixicon.css">
+  <link rel="stylesheet" href="../../dist/css/style.css">
+</head>
+
+<body class="bg-bg text-text antialiased">
+
+  <!-- Announcement -->
+  <div class="bg-ink text-white">
+    <div class="container-app flex items-center justify-center gap-2 py-2 text-xs sm:text-sm">
+      <i class="ri-briefcase-4-line text-accent"></i>
+      <span>ما در حال رشدیم — ۷ موقعیت شغلی باز در تیم نِگار</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl">
+    <div class="container-app">
+      <div class="flex h-20 items-center gap-4">
+        <button class="icon-btn lg:hidden" data-mobile-open aria-label="باز کردن منو">
+          <i class="ri-menu-4-line text-xl"></i>
+        </button>
+
+        <a href="../index.html" class="inline-flex shrink-0 items-center gap-2.5 text-ink" aria-label="صفحه اصلی">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+
+        <nav class="hidden items-center gap-1 xl:flex">
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./category.html">دسته‌بندی‌ها</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./shop.html">فروشگاه</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./blog.html">مجله نِگار</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./about.html">درباره ما</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-ink" href="./careers.html">فرصت‌های شغلی</a>
+        </nav>
+
+        <div class="mr-auto flex items-center gap-2">
+          <button class="icon-btn" aria-label="علاقه‌مندی‌ها">
+            <i class="ri-heart-3-line"></i>
+            <span class="counter">3</span>
+          </button>
+          <button class="icon-btn" aria-label="سبد خرید" data-cart-toggle>
+            <i class="ri-shopping-bag-3-line"></i>
+            <span class="counter">2</span>
+          </button>
+          <a href="./login.html" class="hidden h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold md:flex">
+            <i class="ri-user-3-line"></i>
+            <span>ورود / ثبت‌نام</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div id="mobileOverlay" class="fixed inset-0 z-[60] hidden bg-black/40 backdrop-blur-sm" data-mobile-close></div>
+  <aside id="mobileDrawer"
+    class="fixed top-0 right-0 bottom-0 z-[70] w-[min(340px,90vw)] translate-x-[105%]
+           bg-white shadow-[-20px_0_60px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <span class="font-black">منوی نِگار</span>
+      <button class="icon-btn" data-mobile-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="p-5">
+      <a class="drawer-link" href="./shop.html">فروشگاه <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./category.html">دسته‌بندی‌ها <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./blog.html">مجله نِگار <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./about.html">درباره ما <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./careers.html">فرصت‌های شغلی <i class="ri-arrow-left-s-line"></i></a>
+      <a class="drawer-link" href="./account.html">حساب کاربری <i class="ri-arrow-left-s-line"></i></a>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- ==================== Breadcrumb ==================== -->
+    <section class="container-app pt-6">
+      <nav class="flex items-center gap-2 text-[10px] text-muted" aria-label="مسیر صفحه">
+        <a href="../index.html" class="hover:text-ink">خانه</a>
+        <i class="ri-arrow-left-s-line"></i>
+        <a href="./about.html" class="hover:text-ink">درباره ما</a>
+        <i class="ri-arrow-left-s-line"></i>
+        <span class="text-ink font-bold">فرصت‌های شغلی</span>
+      </nav>
+    </section>
+
+    <!-- ==================== Hero ==================== -->
+    <section class="container-app pt-4">
+      <div class="relative overflow-hidden rounded-[28px] bg-ink p-8 text-white sm:rounded-[34px] sm:p-[clamp(30px,5vw,60px)]">
+        <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+          <div class="absolute -top-20 -left-20 h-[280px] w-[280px] rounded-full border border-accent/15"></div>
+          <div class="absolute bottom-[-100px] left-[40%] h-[260px] w-[260px] rounded-full border border-accent/10"></div>
+          <div class="absolute right-[8%] top-[20%] hidden text-accent/15 text-[140px] leading-none lg:block">
+            <i class="ri-team-line"></i>
+          </div>
+        </div>
+
+        <div class="relative z-10 max-w-2xl">
+          <span class="inline-flex items-center gap-1.5 rounded-full border border-[#dce7bd] bg-accent/10 px-3 py-1.5 text-[10px] font-extrabold text-accent">
+            <i class="ri-briefcase-4-line"></i> فرصت‌های شغلی
+          </span>
+          <h1 class="mt-4 text-[clamp(32px,5.5vw,62px)] font-black leading-[1.1] tracking-[-.06em]">
+            بیا با ما<br>
+            <span class="text-accent">کتاب‌خوان‌ها را خوشحال کنیم.</span>
+          </h1>
+          <p class="mt-5 max-w-xl text-[12px] leading-[2] text-white/60 sm:text-[14px]">
+            در نِگار به دنبال آدم‌هایی هستیم که به کتاب، به آدم‌ها و به ساختن چیزهای خوب
+            باور دارند. اگر تو هم جزو آن‌هایی، جای تو اینجاست.
+          </p>
+
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="#openings" class="inline-flex min-h-[46px] items-center gap-2 rounded-[13px] bg-accent px-5 text-[12px] font-extrabold text-ink hover:bg-[#e1fa87] transition">
+              <i class="ri-arrow-down-line"></i> مشاهده موقعیت‌های باز
+            </a>
+            <a href="#culture" class="inline-flex min-h-[46px] items-center gap-2 rounded-[13px] border border-white/[.18] px-5 text-[12px] font-extrabold text-white hover:bg-white/5 transition">
+              <i class="ri-heart-3-line"></i> فرهنگ کار در نِگار
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== مزایا ==================== -->
+    <section class="container-app pt-12 sm:pt-16">
+      <div class="mb-6 text-center">
+        <span class="section-kicker">چرا نِگار؟</span>
+        <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">مزایایی که برایت داریم</h2>
+      </div>
+
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="perk-card">
+          <div class="perk-icon bg-[#dce8dc] text-[#56735e]"><i class="ri-book-2-line"></i></div>
+          <h3>کتاب رایگان</h3>
+          <p>هر ماه یک کتاب دلخواه، مهمانِ نِگار.</p>
+        </article>
+        <article class="perk-card">
+          <div class="perk-icon bg-[#e8d9cb] text-[#88674d]"><i class="ri-heart-pulse-line"></i></div>
+          <h3>بیمه تکمیلی</h3>
+          <p>بیمه تکمیلی خودت و خانواده‌ات.</p>
+        </article>
+        <article class="perk-card">
+          <div class="perk-icon bg-[#d7dbea] text-[#5d658a]"><i class="ri-home-office-line"></i></div>
+          <h3>دورکاری</h3>
+          <p>۳ روز در هفته از خانه کار کن.</p>
+        </article>
+        <article class="perk-card">
+          <div class="perk-icon bg-[#fdeee0] text-[#a5622c]"><i class="ri-graduation-cap-line"></i></div>
+          <h3>بودجه یادگیری</h3>
+          <p>سالانه ۱۰ میلیون تومان برای دوره‌ها.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== فرهنگ ==================== -->
+    <section id="culture" class="container-app pt-14 sm:pt-20 scroll-mt-28">
+      <div class="grid gap-6 lg:grid-cols-[1fr_1.1fr] lg:gap-10">
+        <div class="culture-illustration">
+          <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+            <div class="absolute -top-12 -right-12 h-[200px] w-[200px] rounded-full border border-ink/10"></div>
+            <div class="absolute bottom-[-80px] left-[-40px] h-[220px] w-[220px] rounded-full border border-ink/10"></div>
+          </div>
+          <i class="ri-team-line relative z-[2] text-[100px] text-[#56735e]/70"></i>
+        </div>
+
+        <div>
+          <span class="section-kicker">فرهنگ کاری</span>
+          <h2 class="text-[clamp(22px,3vw,32px)] font-black leading-[1.3] tracking-[-.05em]">
+            سه اصل ساده،<br> که همه‌چیز را می‌سازد.
+          </h2>
+
+          <ul class="mt-6 space-y-5">
+            <li class="culture-item">
+              <span class="culture-num">۰۱</span>
+              <div>
+                <b>انسان‌محوری</b>
+                <p>ما اول آدم‌ها را می‌بینیم، بعد نقش‌ها را. به هم اعتماد می‌کنیم، اشتباه‌ها را می‌پذیریم و در کنار هم رشد می‌کنیم.</p>
+              </div>
+            </li>
+            <li class="culture-item">
+              <span class="culture-num">۰۲</span>
+              <div>
+                <b>یادگیری مداوم</b>
+                <p>هر کسی در نِگار، هر ماه چیزی تازه یاد می‌گیرد. از کتابی که خوانده، از پروژه‌ای که ساخته، از هم‌تیمی‌ای که پرسیده.</p>
+              </div>
+            </li>
+            <li class="culture-item">
+              <span class="culture-num">۰۳</span>
+              <div>
+                <b>شفافیت</b>
+                <p>جلسات هفتگی، اهداف روشن و بازخورد صریح. کسی لازم نیست حدس بزند «الان چه خبره؟».</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== موقعیت‌های شغلی ==================== -->
+    <section id="openings" class="container-app pt-14 sm:pt-20 scroll-mt-28">
+      <div class="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <span class="section-kicker">جای تو خالیه</span>
+          <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">موقعیت‌های باز</h2>
+          <p class="mt-2 text-xs text-muted">
+            <b id="jobCount">۷</b> موقعیت در <b>۵</b> دپارتمان
+          </p>
+        </div>
+
+        <div class="flex w-full items-center gap-2 sm:w-auto">
+          <div class="search-box !h-[42px] flex-1 !bg-white sm:!w-[240px]">
+            <i class="ri-search-2-line"></i>
+            <input id="jobSearch" type="search" placeholder="جست‌وجو در موقعیت‌ها...">
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div id="jobFilters" class="mb-6 flex flex-wrap gap-2"></div>
+
+      <!-- Job list -->
+      <div id="jobsList" class="space-y-3"></div>
+
+      <!-- Empty -->
+      <div id="jobsEmpty" class="hidden flex-col items-center gap-3 rounded-[22px] border border-dashed border-border bg-white py-16 text-center">
+        <i class="ri-briefcase-line text-[44px] text-muted"></i>
+        <b class="text-sm">موقعیتی با این فیلتر پیدا نشد</b>
+        <p class="text-[11px] text-muted">می‌توانی فیلترها را تغییر دهی یا از پایین با ما تماس بگیری.</p>
+      </div>
+    </section>
+
+    <!-- ==================== فرآیند استخدام ==================== -->
+    <section class="container-app pt-14 sm:pt-20">
+      <div class="mb-8 text-center">
+        <span class="section-kicker">از ارسال تا استخدام</span>
+        <h2 class="text-[clamp(22px,3vw,30px)] font-black tracking-[-.04em]">فرآیند استخدام ما</h2>
+      </div>
+
+      <div class="grid gap-4 lg:grid-cols-4">
+        <div class="process-step">
+          <span class="process-num">۱</span>
+          <div class="process-icon"><i class="ri-send-plane-line"></i></div>
+          <h3>ارسال درخواست</h3>
+          <p>رزومه و یک معرفی کوتاه از خودت را برای ما بفرست.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num">۲</span>
+          <div class="process-icon"><i class="ri-chat-3-line"></i></div>
+          <h3>گفت‌وگوی اولیه</h3>
+          <p>یک جلسه‌ی ۳۰ دقیقه‌ای برای آشنایی بیشتر با تو.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num">۳</span>
+          <div class="process-icon"><i class="ri-code-box-line"></i></div>
+          <h3>ارزیابی تخصصی</h3>
+          <p>یک پروژه‌ی کوچک یا جلسه‌ی فنی متناسب با نقش.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num">۴</span>
+          <div class="process-icon"><i class="ri-hand-heart-line"></i></div>
+          <h3>پیشنهاد نهایی</h3>
+          <p>در صورت توافق، قرارداد و شروع مسیر تازه با هم.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="container-app pt-14 sm:pt-20">
+      <div class="relative overflow-hidden rounded-[28px] bg-accent p-8 sm:p-12">
+        <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+          <div class="absolute -top-16 -right-16 h-[220px] w-[220px] rounded-full border border-ink/10"></div>
+          <div class="absolute bottom-[-80px] left-[25%] h-[200px] w-[200px] rounded-full border border-ink/10"></div>
+        </div>
+
+        <div class="relative z-10 flex flex-col items-start gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div class="max-w-xl">
+            <span class="section-kicker !text-ink/60">جای تو خالیه</span>
+            <h2 class="mt-2 text-[clamp(22px,3.5vw,34px)] font-black leading-[1.3] tracking-[-.05em] text-ink">
+              موقعیت مناسب را پیدا نکردی؟
+            </h2>
+            <p class="mt-3 max-w-md text-[12px] leading-[2] text-ink/70">
+              رزومه‌ات را برای ما بفرست. اگر با فرهنگ‌مان هم‌خوان باشی، حتی بدون
+              موقعیت باز هم با تو تماس می‌گیریم.
+            </p>
+          </div>
+          <a href="#apply" class="inline-flex min-h-[48px] shrink-0 items-center gap-2 rounded-[13px] bg-ink px-5 text-[12px] font-extrabold text-white hover:bg-[#0f1817] transition">
+            <i class="ri-mail-send-line"></i> ارسال رزومه
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-14 bg-ink text-white sm:mt-20">
+    <div class="container-app grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div>
+        <a href="../index.html" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i class="ri-book-3-line"></i></span>
+          <span>
+            <strong class="block text-[19px] font-black leading-none">نِگار</strong>
+            <small class="mt-1 block text-[8px] font-semibold text-[#aeb8b3]">کتاب، ایده، زندگی</small>
+          </span>
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-7 text-white/55">
+          فروشگاهی برای کسانی که کتاب را فقط یک محصول نمی‌دانند؛ یک تجربه می‌دانند.
+        </p>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">خرید</h3>
+        <a href="./shop.html" class="my-2 block text-[10px] text-[#aeb8b3]">همه کتاب‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تازه‌های نشر</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پرفروش‌ها</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تخفیف‌ها</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">راهنما</h3>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">شیوه ارسال</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پیگیری سفارش</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">سوالات متداول</a>
+        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تماس با ما</a>
+      </div>
+      <div>
+        <h3 class="mb-3.5 text-[11px]">با ما در ارتباط باش</h3>
+        <p class="text-sm leading-7 text-white/55">تهران، خیابان کتاب، پلاک ۲۴</p>
+        <p class="mt-2 text-sm text-white/75">۰۲۱-۱۲۳۴۵۶۷۸</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-app flex flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:justify-between">
+        <span>© ۱۴۰۵ نِگار — تمامی حقوق محفوظ است.</span>
+        <span>طراحی شده برای تجربه‌ای ساده‌تر از خرید کتاب.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div id="cartPanel" class="fixed top-0 right-0 bottom-0 z-[80] flex w-[min(390px,92vw)] translate-x-[105%] flex-col bg-white shadow-[-20px_0_70px_rgba(0,0,0,.12)] transition-transform duration-300">
+    <div class="flex items-center justify-between border-b border-border p-5">
+      <div><b class="text-lg">سبد خرید</b><span class="mr-2 text-xs text-muted">۲ کالا</span></div>
+      <button class="icon-btn" data-cart-close><i class="ri-close-line"></i></button>
+    </div>
+    <div class="space-y-3 p-5">
+      <div class="flex items-center gap-3 rounded-2xl border border-border p-2">
+        <div class="mini-cover flex-[0_0_58px] !min-h-[78px] bg-[#657c71]">روایت<br>یک زندگی</div>
+        <div><b class="block text-[10px]">روایت یک زندگی</b><span class="mt-1.5 block text-[9px] text-[#909895]">۲۷۵,۰۰۰ تومان</span></div>
+      </div>
+    </div>
+    <div class="mt-auto border-t border-border p-5">
+      <div class="mb-4 flex justify-between"><span>جمع کل</span><b>۲۷۵,۰۰۰ تومان</b></div>
+      <a href="./cart.html" class="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[13px] bg-accent px-4 text-[11px] font-extrabold text-ink">
+        مشاهده سبد خرید
+      </a>
+    </div>
+  </div>
+  <div id="cartOverlay" class="fixed inset-0 z-[55] hidden bg-black/30" data-cart-close></div>
+
+  <!-- Job detail modal -->
+  <div id="jobModal" class="fixed inset-0 z-[110] hidden items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4">
+    <div class="admin-modal w-full max-w-[760px] max-h-[92vh] overflow-hidden rounded-t-[24px] bg-white shadow-2xl sm:rounded-[24px]">
+      <header class="flex items-center justify-between border-b border-border p-5">
+        <div>
+          <span class="section-kicker">جزئیات موقعیت</span>
+          <h3 id="jobModalTitle" class="mt-1 text-[16px] font-black"></h3>
+        </div>
+        <button class="icon-btn" data-job-close><i class="ri-close-line"></i></button>
+      </header>
+      <div id="jobModalBody" class="max-h-[calc(92vh-80px)] overflow-y-auto p-5"></div>
+    </div>
+  </div>
+
+  <!-- Apply form modal -->
+  <div id="applyModal" class="fixed inset-0 z-[120] hidden items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4">
+    <div class="admin-modal w-full max-w-[600px] max-h-[92vh] overflow-hidden rounded-t-[24px] bg-white shadow-2xl sm:rounded-[24px]">
+      <header class="flex items-center justify-between border-b border-border p-5">
+        <div>
+          <span class="section-kicker">ارسال درخواست</span>
+          <h3 id="applyModalTitle" class="mt-1 text-[16px] font-black"></h3>
+        </div>
+        <button class="icon-btn" data-apply-close><i class="ri-close-line"></i></button>
+      </header>
+      <form id="applyForm" class="max-h-[calc(92vh-80px)] overflow-y-auto p-5 space-y-4">
+        <div class="field">
+          <label for="afName">نام و نام خانوادگی <span class="text-danger">*</span></label>
+          <input id="afName" type="text" placeholder="مثلاً سارا محمدی" required>
+          <small class="error"></small>
+        </div>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <div class="field">
+            <label for="afEmail">ایمیل <span class="text-danger">*</span></label>
+            <input id="afEmail" type="email" dir="ltr" class="text-right" placeholder="you@example.com" required>
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label for="afPhone">شماره تماس <span class="text-danger">*</span></label>
+            <input id="afPhone" type="tel" dir="ltr" class="text-right" placeholder="۰۹۱۲..." required>
+            <small class="error"></small>
+          </div>
+        </div>
+        <div class="field">
+          <label for="afLinkedin">لینکدین یا وب‌سایت</label>
+          <input id="afLinkedin" type="text" dir="ltr" class="text-right" placeholder="linkedin.com/in/...">
+        </div>
+        <div class="field">
+          <label for="afResume">لینک رزومه <span class="text-danger">*</span></label>
+          <input id="afResume" type="text" dir="ltr" class="text-right" placeholder="لینک فایل PDF رزومه" required>
+          <small class="error"></small>
+        </div>
+        <div class="field">
+          <label for="afCover">چند خط درباره‌ی خودت <span class="text-danger">*</span></label>
+          <textarea id="afCover" rows="4" placeholder="چرا نِگار؟ و چرا این نقش؟" required></textarea>
+          <small class="error"></small>
+        </div>
+        <div class="flex gap-2 pt-2">
+          <button type="button" class="pdp-ghost-btn flex-1 justify-center" data-apply-close>انصراف</button>
+          <button type="submit" class="inline-flex min-h-[46px] flex-1 items-center justify-center gap-2 rounded-[13px] bg-ink px-4 text-[12px] font-extrabold text-white hover:bg-[#0f1817] transition">
+            <i class="ri-send-plane-line"></i> ارسال درخواست
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- <script src="/src/js/main.js"></script> -->
+  <script src="/src/js/careers.js"></script>
+</body>
+</html>
