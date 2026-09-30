@@ -23,85 +23,107 @@
   <!-- Header -->
   <header class="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl">
     <div class="container-app">
+
+      <!-- container  -->
       <div class="flex h-20 items-center gap-4">
+
+        <!-- menu mobile  -->
         <button class="icon-btn lg:hidden" data-mobile-open aria-label="باز کردن منو">
           <i class="ri-menu-4-line text-xl"></i>
         </button>
 
-        <a href="../index.html" class="inline-flex shrink-0 items-center gap-2.5 text-ink" aria-label="صفحه اصلی">
-          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i class="ri-book-3-line"></i></span>
+        <!-- logo  -->
+        <a href="/index.html" class="inline-flex shrink-0 items-center gap-2.5 text-ink" aria-label="صفحه اصلی">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl"><i
+              class="ri-book-3-line"></i></span>
           <span>
             <strong class="block text-[19px] font-black leading-none">نِگار</strong>
             <small class="mt-1 block text-[8px] font-semibold text-muted">کتاب، ایده، زندگی</small>
           </span>
         </a>
 
+        <!-- search box  -->
         <div class="hidden flex-1 lg:block">
           <div class="search-box">
             <i class="ri-search-2-line"></i>
             <input id="searchInput" type="search" autocomplete="off"
-              placeholder="نام کتاب، نویسنده یا موضوع را جست‌وجو کنید">
+              placeholder="نام کتاب، نویسنده یا موضوع را جست‌وجو کنید" />
             <kbd>Ctrl K</kbd>
-            <div id="searchSuggestions" class="absolute top-[54px] right-0 left-0 z-20 border border-border rounded-[18px] bg-white p-2 shadow-soft hidden"></div>
+            <div id="searchSuggestions"
+              class="absolute top-[54px] right-0 left-0 z-20 border border-border rounded-[18px] bg-white p-2 shadowso hidden">
+            </div>
           </div>
         </div>
 
+        <!-- menu -->
         <nav class="hidden items-center gap-1 xl:flex">
-          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="./category.html">دسته‌بندی‌ها</a>
-          <button class="flex items-center gap-1 px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" data-mega-toggle>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink"
+            href="#categories">دسته‌بندی‌ها</a>
+          <button class="flex items-center gap-1 px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink"
+            data-mega-toggle>
             فروشگاه <i class="ri-arrow-down-s-line"></i>
           </button>
-          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="../index.html#offers">پیشنهادهای ویژه</a>
-          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="../index.html#blog">مجله نِگار</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="#offers">پیشنهادهای
+            ویژه</a>
+          <a class="px-2.5 py-2.5 text-[11px] font-bold text-[#53605c] hover:text-ink" href="#blog">مجله نِگار</a>
         </nav>
 
+        <!-- actions -->
         <div class="mr-auto flex items-center gap-2">
           <button class="icon-btn hidden sm:grid" aria-label="جست‌وجو" data-search-focus>
             <i class="ri-search-line"></i>
           </button>
-          <button class="icon-btn" aria-label="علاقه‌مندی‌ها">
+          <a href="./notifications.html" class="icon-btn" aria-label="علاقه‌مندی‌ها">
             <i class="ri-heart-3-line"></i>
             <span class="counter">3</span>
-          </button>
+          </a>
           <button class="icon-btn" aria-label="سبد خرید" data-cart-toggle>
             <i class="ri-shopping-bag-3-line"></i>
             <span class="counter">2</span>
           </button>
-          <a href="./login.html" class="hidden h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold md:flex">
+          <a href="./login.html"
+            class="hidden h-[42px] items-center gap-2 rounded-[13px] border border-border px-3.5 text-xs font-bold md:flex">
             <i class="ri-user-3-line"></i>
             <span>ورود / ثبت‌نام</span>
           </a>
         </div>
       </div>
 
-      <!-- Mega menu -->
+      <!-- Desktop mega menu -->
       <div id="megaMenu" class="hidden border-t border-border py-6 pb-8">
         <div class="grid gap-8 md:grid-cols-4">
           <div>
             <p class="mb-2.5 text-xs font-black">کتاب و ادبیات</p>
-            <a href="./category.html#fiction" class="menu-item">رمان و داستان</a>
-            <a href="./category.html#poetry" class="menu-item">شعر</a>
+            <a href="#" class="menu-item">رمان و داستان</a>
+            <a href="#" class="menu-item">شعر</a>
             <a href="#" class="menu-item">کلاسیک</a>
             <a href="#" class="menu-item">نمایشنامه</a>
           </div>
           <div>
             <p class="mb-2.5 text-xs font-black">دانش و توسعه</p>
-            <a href="./category.html#psychology" class="menu-item">روان‌شناسی</a>
-            <a href="./category.html#business" class="menu-item">کسب‌وکار</a>
+            <a href="#" class="menu-item">روان‌شناسی</a>
+            <a href="#" class="menu-item">کسب‌وکار</a>
             <a href="#" class="menu-item">فلسفه</a>
             <a href="#" class="menu-item">تاریخ و جامعه</a>
           </div>
           <div>
             <p class="mb-2.5 text-xs font-black">کودک و نوجوان</p>
-            <a href="./category.html#kids" class="menu-item">داستان کودک</a>
+            <a href="#" class="menu-item">داستان کودک</a>
             <a href="#" class="menu-item">نوجوان</a>
             <a href="#" class="menu-item">کمیک</a>
             <a href="#" class="menu-item">آموزشی</a>
           </div>
           <div class="rounded-3xl bg-ink p-6 text-white">
             <span class="mb-3 inline-flex rounded-full bg-white/10 px-3 py-1 text-xs">منتخب هفته</span>
-            <h3 class="text-xl font-black leading-8">کتاب‌هایی برای شروع یک فصل تازه</h3>
-            <p class="mt-2 text-sm leading-6 text-white/60">انتخاب سردبیر نِگار از میان تازه‌های نشر.</p>
+            <h3 class="text-xl font-black leading-8">
+              کتاب‌هایی برای شروع یک فصل تازه
+            </h3>
+            <p class="mt-2 text-sm leading-6 text-white/60">
+              انتخاب سردبیر نِگار از میان تازه‌های نشر.
+            </p>
+            <a href="#featured" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-accent">
+              مشاهده مجموعه <i class="ri-arrow-left-line"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -646,42 +668,52 @@
   </main>
 
   <!-- Footer -->
-  <footer class="mt-14 bg-ink text-white sm:mt-20">
+  <footer class="bg-ink text-white mt-14">
     <div class="container-app grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
       <div>
-        <a href="../index.html" class="inline-flex items-center gap-2.5 text-white">
-          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i class="ri-book-3-line"></i></span>
+        <a href="#" class="inline-flex items-center gap-2.5 text-white">
+          <span class="grid h-10 w-10 place-items-center rounded-[13px] bg-accent text-xl text-ink"><i
+              class="ri-book-3-line"></i></span>
           <span>
             <strong class="block text-[19px] font-black leading-none">نِگار</strong>
             <small class="mt-1 block text-[8px] font-semibold text-[#aeb8b3]">کتاب، ایده، زندگی</small>
           </span>
         </a>
         <p class="mt-5 max-w-sm text-sm leading-7 text-white/55">
-          فروشگاهی برای کسانی که کتاب را فقط یک محصول نمی‌دانند؛ یک تجربه می‌دانند.
+          فروشگاهی برای کسانی که کتاب را فقط یک محصول نمی‌دانند؛ یک تجربه
+          می‌دانند.
         </p>
         <div class="mt-5 flex gap-[7px]">
-          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-instagram-line"></i></a>
-          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-telegram-line"></i></a>
-          <a href="#" class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i class="ri-twitter-x-line"></i></a>
+          <a href="#"
+            class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i
+              class="ri-instagram-line"></i></a>
+          <a href="#"
+            class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i
+              class="ri-telegram-line"></i></a>
+          <a href="#"
+            class="grid h-[34px] w-[34px] place-items-center rounded-[10px] border border-white/[.12] text-[#b8c0bc]"><i
+              class="ri-twitter-x-line"></i></a>
         </div>
       </div>
       <div>
         <h3 class="mb-3.5 text-[11px]">خرید</h3>
-        <a href="./shop.html" class="my-2 block text-[10px] text-[#aeb8b3]">همه کتاب‌ها</a>
-        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تازه‌های نشر</a>
-        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پرفروش‌ها</a>
+        <a href="./src/pages/shop.html" class="my-2 block text-[10px] text-[#aeb8b3]">همه کتاب‌ها</a>
+        <a href="./src/pages/shop.html" class="my-2 block text-[10px] text-[#aeb8b3]">تازه‌های نشر</a>
+        <a href="./src/pages/shop.html" class="my-2 block text-[10px] text-[#aeb8b3]">پرفروش‌ها</a>
         <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تخفیف‌ها</a>
       </div>
       <div>
         <h3 class="mb-3.5 text-[11px]">راهنما</h3>
-        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">شیوه ارسال</a>
-        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">پیگیری سفارش</a>
-        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">سوالات متداول</a>
-        <a href="#" class="my-2 block text-[10px] text-[#aeb8b3]">تماس با ما</a>
+        <a href="./src/pages/terms.html" class="my-2 block text-[10px] text-[#aeb8b3]">شیوه ارسال</a>
+        <a href="./src/pages/order-tracking.html" class="my-2 block text-[10px] text-[#aeb8b3]">پیگیری سفارش</a>
+        <a href="./src/pages/faq.html" class="my-2 block text-[10px] text-[#aeb8b3]">سوالات متداول</a>
+        <a href="./src/pages/contact.html" class="my-2 block text-[10px] text-[#aeb8b3]">تماس با ما</a>
       </div>
       <div>
         <h3 class="mb-3.5 text-[11px]">با ما در ارتباط باش</h3>
-        <p class="text-sm leading-7 text-white/55">تهران، خیابان کتاب، پلاک ۲۴</p>
+        <p class="text-sm leading-7 text-white/55">
+          تهران، خیابان کتاب، پلاک ۲۴
+        </p>
         <p class="mt-2 text-sm text-white/75">۰۲۱-۱۲۳۴۵۶۷۸</p>
       </div>
     </div>
@@ -692,6 +724,7 @@
       </div>
     </div>
   </footer>
+
 
   <!-- Cart drawer -->
   <div id="cartPanel" class="fixed top-0 right-0 bottom-0 z-[80] flex w-[min(390px,92vw)] translate-x-[105%] flex-col bg-white shadow-[-20px_0_70px_rgba(0,0,0,.12)] transition-transform duration-300">
@@ -767,7 +800,7 @@
     </div>
   </div>
 
-  <!-- <script src="src/js/main.js"></script> -->
+  <script src="/src/js/main.js"></script>
   <script src="/src/js/author.js"></script>
 </body>
 </html>

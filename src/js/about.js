@@ -2,8 +2,6 @@
    About Page — شمارش آمار، فرم تماس
    ========================================================= */
 
-const $ = (s, root = document) => root.querySelector(s);
-const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 
 const faNum = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
 

@@ -2,8 +2,8 @@
    Author Page
    ========================================================= */
 
-const $ = (s, root = document) => root.querySelector(s);
-const $$ = (s, root = document) => [...root.querySelectorAll(s)];
+// const $ = (s, root = document) => root.querySelector(s);
+// const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 
 const faNum = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
 const tomanShort = n => faNum(Math.round(n).toLocaleString('en-US'));

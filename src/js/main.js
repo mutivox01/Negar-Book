@@ -1,6 +1,7 @@
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 
+
 /* ---------- Drawer/Panel helper ---------- */
 const createDrawer = ({ panel, overlay, openTriggers, closeTriggers }) => {
   if (!panel) return;
@@ -89,9 +90,9 @@ document.addEventListener('keydown', e => {
 });
 
 /* ---------- Product filters ---------- */
-const tabs = $$('.tab');
-tabs.forEach(tab => tab.addEventListener('click', () => {
-  tabs.forEach(t => {
+const tabsProductFilters = $$('.tab');
+tabsProductFilters.forEach(tab => tab.addEventListener('click', () => {
+  tabsProductFilters.forEach(t => {
     t.classList.toggle('bg-ink', t === tab);
     t.classList.toggle('text-white', t === tab);
     t.classList.toggle('text-[#8a928f]', t !== tab);
