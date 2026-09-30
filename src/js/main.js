@@ -5,17 +5,18 @@ const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const createDrawer = ({ panel, overlay, openTriggers, closeTriggers }) => {
   if (!panel) return;
   const open = () => {
-    panel.classList.add('open');
+    panel.classList.remove('translate-x-[105%]');
     overlay?.classList.remove('hidden');
     document.body.classList.add('overflow-hidden');
   };
   const close = () => {
-    panel.classList.remove('open');
+    panel.classList.add('translate-x-[105%]');
     overlay?.classList.add('hidden');
     document.body.classList.remove('overflow-hidden');
   };
   $$(openTriggers).forEach(el => el.addEventListener('click', open));
   $$(closeTriggers).forEach(el => el.addEventListener('click', close));
+  $$(".drawer-link").forEach(el => el.addEventListener('click' , close));
   return { open, close };
 };
 
